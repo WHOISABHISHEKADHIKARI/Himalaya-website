@@ -3,9 +3,9 @@ import { FaArrowRight } from "react-icons/fa";
 
 const ActionButton = ({ text, link, isExternal, variant = "primary" }) => {
   const styles = {
-    base: "flex items-center gap-3 px-6 py-3 rounded-full text-lg font-medium transition-transform transform hover:scale-105",
-    primary: "bg-emerald-500 text-white hover:bg-emerald-600",
-    secondary: "border border-white text-white hover:border-emerald-400 hover:text-emerald-400",
+    base: "flex items-center gap-3 px-8 py-4 rounded-full text-lg font-medium transition-all duration-500 transform hover:scale-105 hover:shadow-2xl active:scale-95 group relative overflow-hidden hover:-translate-y-1",
+    primary: "bg-gradient-to-r from-emerald-500 via-emerald-600 to-emerald-500 text-white hover:from-emerald-600 hover:via-emerald-500 hover:to-emerald-600 shadow-lg shadow-emerald-500/30 animate-float",
+    secondary: "border-2 border-white text-white hover:border-emerald-400 hover:text-emerald-400",
   };
 
   return (
@@ -13,11 +13,49 @@ const ActionButton = ({ text, link, isExternal, variant = "primary" }) => {
       onClick={() => (isExternal ? window.open(link, "_blank") : (window.location.href = link))}
       className={`${styles.base} ${styles[variant]}`}
     >
-      <span>{text}</span>
-      <FaArrowRight className="transition-transform duration-300 group-hover:translate-x-1" />
+      <span className="relative z-10 font-semibold tracking-wide group-hover:tracking-wider transition-all">{text}</span>
+      <FaArrowRight className="transition-all duration-300 transform group-hover:translate-x-3 group-hover:scale-110 relative z-10 animate-bounce-x" />
+      <div className="absolute inset-0 bg-gradient-to-r from-emerald-600 via-emerald-500 to-emerald-600 opacity-0 group-hover:opacity-100 transition-all duration-300 bg-size-200 animate-shimmer" />
     </button>
   );
 };
+
+// Add these to your tailwind.config.js extend section:
+// animation: {
+//   'float': 'float 3s ease-in-out infinite',
+//   'bounce-x': 'bounceX 1s infinite',
+//   'shimmer': 'shimmer 2s linear infinite',
+// },
+// keyframes: {
+//   float: {
+//     '0%, 100%': { transform: 'translateY(0)' },
+//     '50%': { transform: 'translateY(-5px)' }
+//   },
+//   bounceX: {
+//     '0%, 100%': { transform: 'translateX(0)' },
+//     '50%': { transform: 'translateX(3px)' }
+//   },
+//   shimmer: {
+//     '0%': { backgroundPosition: '200% 0' },
+//     '100%': { backgroundPosition: '-200% 0' }
+//   }
+// }
+
+// Add this to your tailwind.config.js extend section:
+// animation: {
+//   'bounce-gentle': 'bounce 3s infinite',
+//   'gradient': 'gradient 3s linear infinite',
+//   'pulse': 'pulse 2s infinite',
+// },
+// keyframes: {
+//   gradient: {
+//     '0%, 100%': { backgroundPosition: '0% 50%' },
+//     '50%': { backgroundPosition: '100% 50%' },
+//   }
+// },
+// backgroundSize: {
+//   'size-200': '200% 200%',
+// }
 
 const Home = () => {
   const [videoError, setVideoError] = useState(false);
@@ -53,13 +91,16 @@ const Home = () => {
 
       {/* Content */}
       <div className="relative flex flex-col items-center justify-center h-full text-white px-6 text-center">
-        <h1 className="text-4xl md:text-6xl font-bold">Welcome to Our Farm</h1>
-        <p className="text-lg md:text-xl mt-4 opacity-80">Experience the beauty and tranquility of our farm</p>
-        <div className="mt-6 flex flex-col md:flex-row gap-4">
-          <ActionButton text="Chat on WhatsApp" link="https://wa.me/9779823405140" isExternal />
-          <ActionButton text="Learn More" link="#about" variant="secondary" />
+        <h1 className="text-4xl md:text-6xl font-bold animate-fade-in-down">Welcome to Our Farm</h1>
+        <p className="text-lg md:text-xl mt-4 opacity-80 animate-fade-in-up delay-300">
+          Experience the beauty and tranquility of our farm
+        </p>
+        <div className="mt-8 animate-fade-in delay-500">
+          <ActionButton text="Learn More" link="/about" variant="primary" />
         </div>
       </div>
+
+
     </div>
   );
 };

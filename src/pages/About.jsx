@@ -35,7 +35,7 @@ const About = () => {
       
       {/* Hero Section - Updated with premium colors */}
       <section 
-        className="relative bg-cover bg-center h-screen flex items-center"
+        className="relative bg-cover bg-center h-screen flex items-center pt-28"
         style={{ backgroundImage: "url('/src/assets/image/imag1.jpeg')" }}
       >
         <div className="absolute inset-0" style={{ backgroundColor: colors.primary, opacity: 0.7 }}></div>
@@ -48,8 +48,12 @@ const About = () => {
           </p>
           <a 
             href="#heritage" 
-            className="inline-block px-8 py-4 font-bold uppercase tracking-wider text-sm transition duration-300"
-            style={{ backgroundColor: colors.secondary, color: colors.text.dark }}
+            className="inline-block px-8 py-4 rounded-full font-bold uppercase tracking-wider text-sm transition-all duration-300 transform hover:scale-105 hover:shadow-lg"
+            style={{ 
+              backgroundColor: colors.secondary, 
+              color: colors.text.dark,
+              boxShadow: '0 4px 12px rgba(216, 165, 29, 0.2)'
+            }}
             aria-label="Learn more about our heritage"
           >
             Discover Our Story
