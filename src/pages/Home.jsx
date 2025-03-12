@@ -114,6 +114,7 @@ const Home = () => {
         <div className="mt-8 animate-fade-in delay-500">
           <Link
             to="/about"
+            //kidiing
             className="flex items-center gap-3 px-8 py-4 rounded-full text-lg font-medium transition-all duration-500 transform hover:scale-105 hover:shadow-2xl active:scale-95 group relative overflow-hidden hover:-translate-y-1 bg-gradient-to-r from-emerald-500 via-emerald-600 to-emerald-500 text-white hover:from-emerald-600 hover:via-emerald-500 hover:to-emerald-600 shadow-lg shadow-emerald-500/30 animate-float"
           >
             <span className="relative z-10 font-semibold tracking-wide group-hover:tracking-wider transition-all">Learn More</span>
