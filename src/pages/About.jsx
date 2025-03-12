@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import LoadingBar from '../components/LoadingBar';
-import { FaPhoneAlt, FaEnvelope, FaLinkedin } from 'react-icons/fa';
+import { FaPhoneAlt, FaEnvelope, FaLinkedin, FaArrowUp } from 'react-icons/fa';
 import logo from '../assets/logo/logo_white_bg_removed.png';
 import { Helmet } from 'react-helmet-async';
-import { FaArrowUp } from 'react-icons/fa';
 import imag1 from '../assets/image/imag1.jpeg';
 import imag5 from '../assets/image/imag5.jpeg';
 import imag7 from '../assets/image/imag7.jpeg';
@@ -72,7 +71,7 @@ const About = () => {
       {/* Hero Section */}
       <section 
         className="relative bg-cover bg-center h-screen flex items-center pt-28"
-        style={{ backgroundImage: "url('/src/assets/image/imag1.jpeg')" }}
+        style={{ backgroundImage: `url(${imag1})` }}
       >
         <div className="absolute inset-0" style={{ backgroundColor: colors.primary, opacity: 0.7 }}></div>
         <div className="container mx-auto px-4 relative z-10 text-center">
