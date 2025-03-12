@@ -3,7 +3,12 @@ import LoadingBar from '../components/LoadingBar';
 import { FaPhoneAlt, FaEnvelope, FaLinkedin, FaArrowUp } from 'react-icons/fa';
 import logo from '../assets/logo/logo_white_bg_removed.png';
 import { Helmet } from 'react-helmet-async';
-// Update these image imports at the top
+// Add these imports at the top with other image imports
+import imag1 from '../assets/image/imag1.jpeg';
+import imag5 from '../assets/image/imag5.jpeg';
+import imag6 from '../assets/image/imag6.jpeg';
+import imag7 from '../assets/image/imag7.jpeg';
+import imag9 from '../assets/image/imag9.jpeg';
 import founder from '../assets/image/founder.jpg';
 import owner from '../assets/image/owner.jpg';     // Changed extension to .jpg to match actual file
 import manager from '../assets/image/manager.jpeg'; // This one is correct as .jpeg
