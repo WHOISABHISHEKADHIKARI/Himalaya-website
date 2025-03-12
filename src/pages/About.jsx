@@ -4,8 +4,10 @@ import { FaPhoneAlt, FaEnvelope, FaLinkedin } from 'react-icons/fa';
 import logo from '../assets/logo/logo_white_bg_removed.png';
 import { Helmet } from 'react-helmet-async';
 import { FaArrowUp } from 'react-icons/fa';
-
-// Premium color scheme
+import imag1 from '../assets/images/imag1.jpeg';
+import imag5 from '../assets/images/imag5.jpeg';
+import imag7 from '../assets/images/imag7.jpeg';
+import imag9 from '../assets/images/imag9.jpeg';
 const colors = { 
   primary: '#1C4E37', 
   secondary: '#D8A51D', 
@@ -240,7 +242,7 @@ const About = () => {
                   {/* Front */}
                   <div className="absolute inset-0 backface-hidden bg-white/10 backdrop-blur p-8 rounded-2xl border border-white/20">
                     <div className="h-full flex flex-col items-center justify-center">
-                      <div className="w-20 h-20 rounded-full bg-[#D8A51D] flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                       <div className="w-20 h-20 rounded-full bg-[#D8A51D] flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10 text-[#1C4E37]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                         </svg>
@@ -313,11 +315,37 @@ const About = () => {
                   <div className="relative h-full">
                     <div className="absolute inset-0" style={{ backgroundColor: `${colors.primary}10` }}></div>
                     {/* Team Section */}
+                    // Update the imports at the top
+                    import founder from '../assets/image/founder.jpg';
+                    import owner from '../assets/image/owner.jpg';
+                    import manager from '../assets/image/manager.jpeg';
+                    
+                    // Update image references in the code
                     <img 
-                      src="/src/assets/image/founder.jpg" 
+                      src={founder} 
                       alt="Thapa Prasad Adhikari - Co-Founder of our organic farm" 
                       className="w-full h-full object-cover"
                       loading="lazy"
+                      width="400"
+                      height="500"
+                    />
+                    
+                    <img 
+                      src={owner} 
+                      alt="Kedar Prasad Adhikari - Owner of our organic farm" 
+                      className="w-full h-full object-cover"
+                      loading="lazy"
+                      width="400"
+                      height="500"
+                    />
+                    
+                    <img 
+                      src={manager} 
+                      alt="Abhishek Adhikari - Manager of our organic farm" 
+                      className="w-full h-full object-cover"
+                      loading="lazy"
+                      width="400"
+                      height="500"
                     />
                   </div>
                 </div>
@@ -503,3 +531,11 @@ const About = () => {
 };
 
 export default About;
+<img 
+  src={imag1} 
+  alt="Farm Image 1"
+  loading="lazy"
+  width="800"
+  height="600"
+  className="w-full h-auto"
+/>
