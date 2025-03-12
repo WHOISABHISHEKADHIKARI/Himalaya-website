@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { GiCow, GiFarmTractor, GiWheat, GiMilkCarton } from 'react-icons/gi';
 import { FaHotel, FaSeedling, FaLeaf, FaChartLine, FaArrowDown } from 'react-icons/fa';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -435,13 +436,15 @@ const OurPlan = () => {
             <p className="text-lg text-[rgba(255,255,255,0.8)] mb-8 max-w-2xl mx-auto">
               Discover how our premium organic products can enhance your business or delight your family.
             </p>
-            <motion.button
-              className="px-8 py-3 bg-[#D8A51D] text-[#1C4E37] font-bold rounded-full hover:bg-[#E9B833] transition-all duration-300"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.98 }}
-            >
-              Contact Us Today
-            </motion.button>
+            <Link to="/contact">
+              <motion.button
+                className="px-8 py-3 bg-[#D8A51D] text-[#1C4E37] font-bold rounded-full hover:bg-[#E9B833] transition-all duration-300"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.98 }}
+              >
+                Contact Us Today
+              </motion.button>
+            </Link>
           </motion.div>
         </div>
       </footer>

@@ -1,9 +1,9 @@
 {
-  "name": "Himalaya Organic Farm",
-  "short_name": "Himalaya Farm",
+  "name": "Himalaya Krishi",
+  "short_name": "Himalaya",
   "icons": [
     {
-      "src": "./android-chrome-192x192.png",
+      "src": "/src/assets/logo/blacklogo_whitebg.png",
       "sizes": "192x192",
       "type": "image/png"
     }
