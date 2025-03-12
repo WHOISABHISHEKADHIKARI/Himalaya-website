@@ -130,7 +130,7 @@ const About = () => {
                   <div className="space-y-6">
                     <div className="overflow-hidden rounded-lg shadow-xl">
                       <img 
-                        src="/src/assets/image/imag9.jpeg" 
+                        src="/src/assets/image/imag7.jpeg" 
                         alt="Organic farming practices in action" 
                         className="w-full h-48 object-cover hover:scale-110 transition-transform duration-700"
                         loading="lazy"
@@ -138,7 +138,7 @@ const About = () => {
                     </div>
                     <div className="overflow-hidden rounded-lg shadow-xl">
                       <img 
-                        src="/src/assets/image/imag6.jpeg" 
+                        src="/src/assets/image/imag5.jpeg" 
                         alt="Sustainable agricultural methods" 
                         className="w-full h-64 object-cover hover:scale-110 transition-transform duration-700"
                         loading="lazy"
@@ -148,7 +148,7 @@ const About = () => {
                   <div className="mt-12">
                     <div className="overflow-hidden rounded-lg shadow-xl">
                       <img 
-                        src="/src/assets/image/imag3.jpeg" 
+                        src="/src/assets/image/imag6.jpeg" 
                         alt="Our organic farm landscape" 
                         className="w-full h-96 object-cover hover:scale-110 transition-transform duration-700"
                         loading="lazy"
@@ -345,6 +345,26 @@ const About = () => {
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Sneak Peek Section */}
+      <section aria-labelledby="sneak-peek" className="py-24" style={{ backgroundColor: colors.background.card }}>
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto text-center mb-16">
+            <h2 id="sneak-peek" className="text-3xl md:text-4xl font-serif font-bold mb-6" style={{ color: colors.text.dark }}>Sneak Peek</h2>
+            <div className="w-24 h-1 mx-auto mb-8" style={{ backgroundColor: colors.secondary }}></div>
+            <p className="text-lg" style={{ color: colors.text.medium }}>
+              Experience a glimpse of our farm's daily operations and organic practices through this video.
+            </p>
+          </div>
+
+          <div className="max-w-4xl mx-auto">
+            <video controls className="w-full rounded-lg shadow-lg">
+              <source src="/assets/video/farmvideo.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
           </div>
         </div>
       </section>

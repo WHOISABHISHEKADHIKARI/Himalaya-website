@@ -8,6 +8,7 @@ import OurPlan from "./pages/Vision";  // Fixed typo in import path
 import Contact from "./pages/Contact";
 import { HelmetProvider } from 'react-helmet-async';
 import FaviconHelmet from './components/FaviconHelmet';
+import NotFound from './pages/NotFound';
 
 // Create a wrapper component to conditionally render the footer
 const AppContent = () => {
@@ -21,8 +22,9 @@ const AppContent = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
-          <Route path="/vision" element={<OurPlan />} /> {/* Updated route path */}
+          <Route path="/vision" element={<OurPlan />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </main>
       {!isHomePage && <Footer />}

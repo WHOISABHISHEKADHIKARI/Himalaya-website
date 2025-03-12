@@ -222,7 +222,7 @@ const OurPlan = () => {
             <MetricCard
               icon={<GiMilkCarton />}
               title="Dairy Production"
-              value="60 Liters Daily"
+              value="200 Liters Daily"
               subtitle="Current Production"
             />
             <MetricCard
