@@ -25,6 +25,18 @@ module.exports = {
         'fade-in': 'fade-in 1s ease-out',
         'fade-in-up': 'fade-in-up 1s ease-out',
       },
+      perspective: {
+        '1000': '1000px',
+      },
+      rotate: {
+        'y-180': '180deg',
+      },
+      transformStyle: {
+        '3d': 'preserve-3d',
+      },
+      backfaceVisibility: {
+        'hidden': 'hidden',
+      },
     },
   },
   plugins: [],

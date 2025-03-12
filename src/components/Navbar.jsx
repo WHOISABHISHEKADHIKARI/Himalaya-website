@@ -98,36 +98,40 @@ const Navbar = ({ isHomePage }) => {
       </Helmet>
 
       <nav 
-        className={`fixed w-full top-0 z-50 transition-all duration-500 ${
+        className={`fixed w-full top-0 z-50 transition-all duration-700 ease-in-out ${
           scrolled 
-            ? `bg-opacity-95 backdrop-blur-md shadow-lg` 
-            : 'bg-gradient-to-r'
+            ? 'bg-opacity-90 backdrop-blur-lg shadow-xl h-20' 
+            : 'bg-gradient-to-r h-28'
         }`}
         style={{
           backgroundColor: scrolled ? colors.primary : 'transparent',
-          backgroundImage: !scrolled ? `linear-gradient(to right, ${colors.primary}, ${colors.primary})` : 'none'
+          backgroundImage: !scrolled ? `linear-gradient(to right, ${colors.primary}, ${colors.primary})` : 'none',
+          transform: `translateY(${scrolled ? '0' : '0'})`,
+          boxShadow: scrolled ? '0 4px 30px rgba(0, 0, 0, 0.1)' : 'none'
         }}
         aria-label="Main navigation"
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between h-28 items-center">
+          <div className={`flex justify-between items-center transition-all duration-700 h-full`}>
             {/* Logo with Animation */}
             <Link 
               to="/" 
               className="flex-shrink-0 transform hover:scale-105 transition-all duration-500"
               onMouseEnter={() => setIsHovered('logo')}
               onMouseLeave={() => setIsHovered('')}
-              aria-label="Aayo Rides Home"
+              aria-label="Himalaya Krishi Home"
             >
               <img
                 src={logo}
-                alt="Aayo Rides Logo"
-                className={`h-24 w-auto object-contain transition-all duration-500 animate-glow ${
+                alt="Himalaya Krishi Logo"
+                className={`transition-all duration-700 animate-glow ${
+                  scrolled ? 'h-16' : 'h-24'
+                } w-auto object-contain ${
                   isHovered === 'logo' ? 'filter drop-shadow-lg' : ''
                 }`}
                 style={{
                   filter: `drop-shadow(0 0 8px ${colors.secondary})`,
-                  transition: 'filter 0.5s ease-in-out'
+                  transition: 'all 0.7s cubic-bezier(0.4, 0, 0.2, 1)'
                 }}
               />
             </Link>
@@ -140,19 +144,24 @@ const Navbar = ({ isHomePage }) => {
                   to={item === 'Home' ? '/' : `/${item.toLowerCase().replace(/\s+/g, '-')}`}
                   onMouseEnter={() => setIsHovered(item)}
                   onMouseLeave={() => setIsHovered('')}
-                  className="relative text-lg font-semibold uppercase tracking-wider transition-all duration-300 group px-4 py-2"
+                  className={`relative text-lg font-semibold uppercase tracking-wider transition-all duration-500 group px-4 py-2 ${
+                    scrolled ? 'text-base' : 'text-lg'
+                  }`}
                   style={{
                     color: location.pathname === (item === 'Home' ? '/' : `/${item.toLowerCase()}`) || isHovered === item 
                       ? colors.text.gold 
                       : colors.text.light,
-                    transform: isHovered === item ? 'translateY(-2px)' : 'none'
+                    transform: isHovered === item ? 'translateY(-2px)' : 'none',
+                    opacity: scrolled ? 0.9 : 1
                   }}
-                  aria-current={location.pathname === (item === 'Home' ? '/' : `/${item.toLowerCase()}`) ? 'page' : undefined}
                 >
                   {item}
                   <span 
                     className="absolute bottom-0 left-0 h-0.5 transition-all duration-500 group-hover:w-full w-0"
-                    style={{ backgroundColor: colors.secondary }}
+                    style={{ 
+                      backgroundColor: colors.secondary,
+                      boxShadow: isHovered === item ? '0 0 10px rgba(216, 165, 29, 0.5)' : 'none'
+                    }}
                   ></span>
                 </Link>
               ))}

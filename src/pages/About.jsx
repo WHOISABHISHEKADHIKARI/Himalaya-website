@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import LoadingBar from '../components/LoadingBar';
 import { FaPhoneAlt, FaEnvelope, FaLinkedin } from 'react-icons/fa';
 import logo from '../assets/logo/logo_white_bg_removed.png';
 import { Helmet } from 'react-helmet-async';
+import { FaArrowUp } from 'react-icons/fa';
 
 // Premium color scheme
 const colors = { 
@@ -23,8 +25,37 @@ const colors = {
 };
 
 const About = () => {
+  const [loading, setLoading] = useState(true);
+  const [showBackToTop, setShowBackToTop] = useState(false);
+
+  useEffect(() => {
+    // Simulate loading time
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 3000); // Adjust the time as needed
+
+    // Back to top visibility handler
+    const handleScroll = () => {
+      setShowBackToTop(window.scrollY > 400);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      clearTimeout(timer);
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  };
+
   return (
     <div style={{ backgroundColor: colors.background.primary }}>
+      {loading && <LoadingBar />} {/* Show loading bar while loading */}
       {/* SEO Optimization */}
       <Helmet>
         <title>About Our Organic Farm | From Sirbani to Manahari</title>
@@ -175,43 +206,88 @@ const About = () => {
             </div>
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {/* Card 1 */}
-              <div className="p-8 rounded-lg shadow-lg hover:shadow-xl transition-shadow" style={{ backgroundColor: colors.background.card }}>
-                <div className="w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto" style={{ backgroundColor: `${colors.primary}20` }}>
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="w-8 h-8" style={{ color: colors.primary }}>
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
-                  </svg>
+              {/* Card 1 - Murrah-Based Dairy */}
+              <div className="group perspective-1000">
+                <div className="relative transform-style-3d transition-transform duration-700 group-hover:rotate-y-180 h-[400px]">
+                  {/* Front */}
+                  <div className="absolute inset-0 backface-hidden bg-white/10 backdrop-blur p-8 rounded-2xl border border-white/20">
+                    <div className="h-full flex flex-col items-center justify-center">
+                      <div className="w-20 h-20 rounded-full bg-[#D8A51D] flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10 text-[#1C4E37]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                        </svg>
+                      </div>
+                      <h3 className="text-2xl font-bold mb-2 text-center text-[#D8A51D]">
+                        Murrah-Based Dairy
+                      </h3>
+                      <p className="text-white/80 text-center">Click to learn more</p>
+                    </div>
+                  </div>
+                  {/* Back */}
+                  <div className="absolute inset-0 backface-hidden rotate-y-180 bg-[#D8A51D] p-8 rounded-2xl">
+                    <div className="h-full flex flex-col items-center justify-center">
+                      <p className="text-[#1C4E37] text-center font-medium leading-relaxed">
+                        Known for their superior quality and rich taste, our dairy products come from our carefully raised Murrah cows and represent the finest in organic dairy.
+                      </p>
+                    </div>
+                  </div>
                 </div>
-                <h3 className="text-xl font-bold mb-4 text-center" style={{ color: colors.text.dark }}>Production</h3>
-                <p className="text-justify" style={{ color: colors.text.medium }}>
-                  Sustainable farming methods that prioritize both yield and environmental responsibility in our agricultural practices.
-                </p>
               </div>
 
-              {/* Card 2 */}
-              <div className="p-8 rounded-lg shadow-lg hover:shadow-xl transition-shadow" style={{ backgroundColor: colors.background.card }}>
-                <div className="w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto" style={{ backgroundColor: `${colors.primary}20` }}>
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="w-8 h-8" style={{ color: colors.primary }}>
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-                  </svg>
+              {/* Card 2 - Organic Farming */}
+              <div className="group perspective-1000">
+                <div className="relative transform-style-3d transition-transform duration-700 group-hover:rotate-y-180 h-[400px]">
+                  {/* Front */}
+                  <div className="absolute inset-0 backface-hidden bg-white/10 backdrop-blur p-8 rounded-2xl border border-white/20">
+                    <div className="h-full flex flex-col items-center justify-center">
+                      <div className="w-20 h-20 rounded-full bg-[#D8A51D] flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10 text-[#1C4E37]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                      </div>
+                      <h3 className="text-2xl font-bold mb-2 text-center text-[#D8A51D]">
+                        Organic Farming
+                      </h3>
+                      <p className="text-white/80 text-center">Click to learn more</p>
+                    </div>
+                  </div>
+                  {/* Back */}
+                  <div className="absolute inset-0 backface-hidden rotate-y-180 bg-[#D8A51D] p-8 rounded-2xl">
+                    <div className="h-full flex flex-col items-center justify-center">
+                      <p className="text-[#1C4E37] text-center font-medium leading-relaxed">
+                        Every step, from our cows to our crops, follows sustainable practices. We believe in working with nature, not against it to produce the finest organic products.
+                      </p>
+                    </div>
+                  </div>
                 </div>
-                <h3 className="text-xl font-bold mb-4 text-center" style={{ color: colors.text.dark }}>Authenticity</h3>
-                <p className="text-justify" style={{ color: colors.text.medium }}>
-                  Every product carries our guarantee of genuine organic certification and traceable origins.
-                </p>
               </div>
 
-              {/* Card 3 */}
-              <div className="p-8 rounded-lg shadow-lg hover:shadow-xl transition-shadow" style={{ backgroundColor: colors.background.card }}>
-                <div className="w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto" style={{ backgroundColor: `${colors.primary}20` }}>
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="w-8 h-8" style={{ color: colors.primary }}>
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
+              {/* Card 3 - Legacy of Growth */}
+              <div className="group perspective-1000">
+                <div className="relative transform-style-3d transition-transform duration-700 group-hover:rotate-y-180 h-[400px]">
+                  {/* Front */}
+                  <div className="absolute inset-0 backface-hidden bg-white/10 backdrop-blur p-8 rounded-2xl border border-white/20">
+                    <div className="h-full flex flex-col items-center justify-center">
+                      <div className="w-20 h-20 rounded-full bg-[#D8A51D] flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10 text-[#1C4E37]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+                        </svg>
+                      </div>
+                      <h3 className="text-2xl font-bold mb-2 text-center text-[#D8A51D]">
+                        A Legacy of Growth
+                      </h3>
+                      <p className="text-white/80 text-center">Click to learn more</p>
+                    </div>
+                  </div>
+                  {/* Back */}
+                  <div className="absolute inset-0 backface-hidden rotate-y-180 bg-[#D8A51D] p-8 rounded-2xl">
+                    <div className="h-full flex flex-col items-center justify-center">
+                      <p className="text-[#1C4E37] text-center font-medium leading-relaxed">
+                        From a small herd to a thriving business, we have always believed in growth—both in business and in the community that supports us through the years.
+                      </p>
+                    </div>
+                  </div>
                 </div>
-                <h3 className="text-xl font-bold mb-4 text-center" style={{ color: colors.text.dark }}>Organic</h3>
-                <p className="text-justify" style={{ color: colors.text.medium }}>
-                  100% organic practices from seed to harvest, ensuring pure and natural products for healthier living.
-                </p>
               </div>
             </div>
           </div>
@@ -362,7 +438,7 @@ const About = () => {
           </div>
 
           <div className="max-w-4xl mx-auto">
-              <video controls className="w-full rounded-lg shadow-lg">
+            <video controls className="w-full rounded-lg shadow-lg">
               <source src="/assets/video/farmvideo.mp4" type="video/mp4" />
               Your browser does not support the video tag.
             </video>
@@ -370,56 +446,20 @@ const About = () => {
         </div>
       </section>
 
-      {/* What Sets Us Apart Section - Updated with premium colors */}
-      <section className="py-24" style={{ backgroundColor: colors.primary }}>
-        <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-serif font-bold mb-6" style={{ color: colors.text.light }}>What Sets Us Apart</h2>
-            <div className="w-24 h-1 mx-auto mb-8" style={{ backgroundColor: colors.secondary }}></div>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {/* Feature 1 */}
-            <div className="p-10 border-b-4" style={{ backgroundColor: `${colors.primary}90`, borderColor: colors.secondary }}>
-              <div className="w-16 h-16 rounded-full flex items-center justify-center mb-6" style={{ backgroundColor: colors.secondary }}>
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="w-8 h-8" style={{ color: colors.primary }}>
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
-                </svg>
-              </div>
-              <h3 className="text-xl font-bold mb-4" style={{ color: colors.text.light }}>Murrah-Based Dairy Products</h3>
-              <p style={{ color: `${colors.text.light}90` }}>
-                Known for their superior quality and rich taste, our dairy products come from our carefully raised Murrah cows and represent the finest in organic dairy.
-              </p>
-            </div>
-            
-            {/* Feature 2 */}
-            <div className="p-10 border-b-4" style={{ backgroundColor: `${colors.primary}90`, borderColor: colors.secondary }}>
-              <div className="w-16 h-16 rounded-full flex items-center justify-center mb-6" style={{ backgroundColor: colors.secondary }}>
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="w-8 h-8" style={{ color: colors.primary }}>
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-              </div>
-              <h3 className="text-xl font-bold mb-4" style={{ color: colors.text.light }}>Organic Farming</h3>
-              <p style={{ color: `${colors.text.light}90` }}>
-                Every step, from our cows to our crops, follows sustainable practices. We believe in working with nature, not against it to produce the finest organic products.
-              </p>
-            </div>
-            
-            {/* Feature 3 */}
-            <div className="p-10 border-b-4" style={{ backgroundColor: `${colors.primary}90`, borderColor: colors.secondary }}>
-              <div className="w-16 h-16 rounded-full flex items-center justify-center mb-6" style={{ backgroundColor: colors.secondary }}>
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="w-8 h-8" style={{ color: colors.primary }}>
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
-                </svg>
-              </div>
-              <h3 className="text-xl font-bold mb-4" style={{ color: colors.text.light }}>A Legacy of Growth</h3>
-              <p style={{ color: `${colors.text.light}90` }}>
-                From a small herd to a thriving business, we have always believed in growth—both in business and in the community that supports us through the years.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* Back to Top Button */}
+      <button
+        onClick={scrollToTop}
+        className={`fixed bottom-8 right-8 p-4 rounded-full shadow-lg transition-all duration-300 z-50 ${
+          showBackToTop ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-16'
+        }`}
+        style={{ 
+          backgroundColor: colors.primary,
+          boxShadow: '0 4px 20px rgba(28, 78, 55, 0.3)'
+        }}
+        aria-label="Back to top"
+      >
+        <FaArrowUp className="w-6 h-6" style={{ color: colors.text.light }} />
+      </button>
 
       {/* Structured Data for SEO */}
       <script type="application/ld+json">
@@ -439,7 +479,7 @@ const About = () => {
               {
                 "@type": "Person",
                 "name": "Thapa Prasad Adhikari",
-                "jobTitle": "Co-Founder"
+                "jobTitle": "Founder"
               },
               {
                 "@type": "Person",
