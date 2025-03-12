@@ -69,6 +69,7 @@ const About = () => {
       </Helmet>
       
       {/* Hero Section */}
+      // Update the Hero section image
       <section 
         className="relative bg-cover bg-center h-screen flex items-center pt-28"
         style={{ backgroundImage: `url(${imag1})` }}
@@ -313,7 +314,7 @@ const About = () => {
           <div className="max-w-4xl mx-auto mb-16">
             <div className="rounded-xl shadow-xl overflow-hidden transform hover:scale-[1.02] transition-all duration-300" style={{ backgroundColor: colors.background.card }}>
               <div className="md:flex">
-                <div className="md:w-2/5">
+                <div className="md:w-2/5 h-[400px]"> {/* Added fixed height */}
                   <div className="relative h-full">
                     <div className="absolute inset-0" style={{ backgroundColor: `${colors.primary}10` }}></div>
                     <img 
@@ -322,25 +323,7 @@ const About = () => {
                       className="w-full h-full object-cover"
                       loading="lazy"
                       width="400"
-                      height="500"
-                    />
-                    
-                    <img 
-                      src={owner} 
-                      alt="Kedar Prasad Adhikari - Owner of our organic farm" 
-                      className="w-full h-full object-cover"
-                      loading="lazy"
-                      width="400"
-                      height="500"
-                    />
-                    
-                    <img 
-                      src={manager} 
-                      alt="Abhishek Adhikari - Manager of our organic farm" 
-                      className="w-full h-full object-cover"
-                      loading="lazy"
-                      width="400"
-                      height="500"
+                      height="400"
                     />
                   </div>
                 </div>

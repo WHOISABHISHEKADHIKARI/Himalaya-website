@@ -1,16 +1,17 @@
 {
-  "name": "Himalaya Organic Farm",
-  "short_name": "Himalaya Farm",
-  "description": "Organic farming excellence from Sirbani to Manahari",
+  "name": "Himalaya Krishi",
+  "short_name": "Himalaya",
+  "description": "Leading Organic Farming Excellence in Nepal",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#F4F9F1",
+  "background_color": "#ffffff",
   "theme_color": "#1C4E37",
   "icons": [
     {
-      "src": "/assets/logo/logo_white_bg_removed.png",
+      "src": "/src/assets/logo/blacklogo_whitebg.png",
       "sizes": "192x192",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any maskable"
     }
   ]
 }
