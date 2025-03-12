@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
+import { Link } from "react-router-dom";
 import { FaArrowRight } from "react-icons/fa";
 
 const ActionButton = ({ text, link, isExternal, variant = "primary" }) => {
@@ -8,15 +9,30 @@ const ActionButton = ({ text, link, isExternal, variant = "primary" }) => {
     secondary: "border-2 border-white text-white hover:border-emerald-400 hover:text-emerald-400",
   };
 
+  if (isExternal) {
+    return (
+      <a
+        href={link}
+        target="_blank"
+        rel="noopener noreferrer"
+        className={`${styles.base} ${styles[variant]}`}
+      >
+        <span className="relative z-10 font-semibold tracking-wide group-hover:tracking-wider transition-all">{text}</span>
+        <FaArrowRight className="transition-all duration-300 transform group-hover:translate-x-3 group-hover:scale-110 relative z-10 animate-bounce-x" />
+        <div className="absolute inset-0 bg-gradient-to-r from-emerald-600 via-emerald-500 to-emerald-600 opacity-0 group-hover:opacity-100 transition-all duration-300 bg-size-200 animate-shimmer" />
+      </a>
+    );
+  }
+
   return (
-    <button
-      onClick={() => (isExternal ? window.open(link, "_blank") : (window.location.href = link))}
+    <Link
+      to={link}
       className={`${styles.base} ${styles[variant]}`}
     >
       <span className="relative z-10 font-semibold tracking-wide group-hover:tracking-wider transition-all">{text}</span>
       <FaArrowRight className="transition-all duration-300 transform group-hover:translate-x-3 group-hover:scale-110 relative z-10 animate-bounce-x" />
       <div className="absolute inset-0 bg-gradient-to-r from-emerald-600 via-emerald-500 to-emerald-600 opacity-0 group-hover:opacity-100 transition-all duration-300 bg-size-200 animate-shimmer" />
-    </button>
+    </Link>
   );
 };
 
@@ -96,7 +112,14 @@ const Home = () => {
           Experience the beauty and tranquility of our farm
         </p>
         <div className="mt-8 animate-fade-in delay-500">
-          <ActionButton text="Learn More" link="/about" variant="primary" />
+          <Link
+            to="/about"
+            className="flex items-center gap-3 px-8 py-4 rounded-full text-lg font-medium transition-all duration-500 transform hover:scale-105 hover:shadow-2xl active:scale-95 group relative overflow-hidden hover:-translate-y-1 bg-gradient-to-r from-emerald-500 via-emerald-600 to-emerald-500 text-white hover:from-emerald-600 hover:via-emerald-500 hover:to-emerald-600 shadow-lg shadow-emerald-500/30 animate-float"
+          >
+            <span className="relative z-10 font-semibold tracking-wide group-hover:tracking-wider transition-all">Learn More</span>
+            <FaArrowRight className="transition-all duration-300 transform group-hover:translate-x-3 group-hover:scale-110 relative z-10 animate-bounce-x" />
+            <div className="absolute inset-0 bg-gradient-to-r from-emerald-600 via-emerald-500 to-emerald-600 opacity-0 group-hover:opacity-100 transition-all duration-300 bg-size-200 animate-shimmer" />
+          </Link>
         </div>
       </div>
 
