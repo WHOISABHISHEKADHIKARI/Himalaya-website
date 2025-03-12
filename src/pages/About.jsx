@@ -6,6 +6,7 @@ import { Helmet } from 'react-helmet-async';
 // Update image imports at the top
 import imag1 from '../assets/image/imag1.jpeg';
 import imag5 from '../assets/image/imag5.jpeg';
+import imag6 from '../assets/image/imag6.jpeg';
 import imag7 from '../assets/image/imag7.jpeg';
 import imag9 from '../assets/image/imag9.jpeg';
 import founder from '../assets/image/founder.jpg';
@@ -73,9 +74,10 @@ const About = () => {
       // Update the Hero section image
       <section 
         className="relative bg-cover bg-center h-screen flex items-center pt-28"
-        style={{ backgroundImage: `url(${imag1})`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center'
+        style={{ 
+          backgroundImage: `url(${imag1})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center'
         }}
       >
         <div className="absolute inset-0" style={{ backgroundColor: colors.primary, opacity: 0.7 }}></div>
@@ -173,7 +175,7 @@ const About = () => {
                   <div className="space-y-6">
                     <div className="overflow-hidden rounded-lg shadow-xl">
                       <img 
-                        src="/src/assets/image/imag7.jpeg" 
+                        src={imag7}
                         alt="Organic farming practices in action" 
                         className="w-full h-48 object-cover hover:scale-110 transition-transform duration-700"
                         loading="lazy"
@@ -181,7 +183,7 @@ const About = () => {
                     </div>
                     <div className="overflow-hidden rounded-lg shadow-xl">
                       <img 
-                        src="/src/assets/image/imag5.jpeg" 
+                        src={imag5}
                         alt="Sustainable agricultural methods" 
                         className="w-full h-64 object-cover hover:scale-110 transition-transform duration-700"
                         loading="lazy"
@@ -191,7 +193,7 @@ const About = () => {
                   <div className="mt-12">
                     <div className="overflow-hidden rounded-lg shadow-xl">
                       <img 
-                        src="/src/assets/image/imag6.jpeg" 
+                        src={imag6}
                         alt="Our organic farm landscape" 
                         className="w-full h-96 object-cover hover:scale-110 transition-transform duration-700"
                         loading="lazy"
@@ -516,11 +518,3 @@ const About = () => {
 };
 
 export default About;
-<img 
-  src={imag1} 
-  alt="Farm Image 1"
-  loading="lazy"
-  width="800"
-  height="600"
-  className="w-full h-auto"
-/>
