@@ -4,10 +4,13 @@ import { FaPhoneAlt, FaEnvelope, FaLinkedin } from 'react-icons/fa';
 import logo from '../assets/logo/logo_white_bg_removed.png';
 import { Helmet } from 'react-helmet-async';
 import { FaArrowUp } from 'react-icons/fa';
-import imag1 from '../assets/images/imag1.jpeg';
-import imag5 from '../assets/images/imag5.jpeg';
-import imag7 from '../assets/images/imag7.jpeg';
-import imag9 from '../assets/images/imag9.jpeg';
+import imag1 from '../assets/image/imag1.jpeg';
+import imag5 from '../assets/image/imag5.jpeg';
+import imag7 from '../assets/image/imag7.jpeg';
+import imag9 from '../assets/image/imag9.jpeg';
+import founder from '../assets/image/founder.jpg';
+import owner from '../assets/image/owner.jpg';
+import manager from '../assets/image/manager.jpeg';
 const colors = { 
   primary: '#1C4E37', 
   secondary: '#D8A51D', 
@@ -314,16 +317,9 @@ const About = () => {
                 <div className="md:w-2/5">
                   <div className="relative h-full">
                     <div className="absolute inset-0" style={{ backgroundColor: `${colors.primary}10` }}></div>
-                    {/* Team Section */}
-                    // Update the imports at the top
-                    import founder from '../assets/image/founder.jpg';
-                    import owner from '../assets/image/owner.jpg';
-                    import manager from '../assets/image/manager.jpeg';
-                    
-                    // Update image references in the code
                     <img 
                       src={founder} 
-                      alt="Thapa Prasad Adhikari - Co-Founder of our organic farm" 
+                      alt="Thapa Prasad Adhikari - Founder of our organic farm" 
                       className="w-full h-full object-cover"
                       loading="lazy"
                       width="400"
