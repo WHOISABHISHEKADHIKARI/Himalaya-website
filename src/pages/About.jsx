@@ -33,7 +33,7 @@ const About = () => {
         <link rel="canonical" href="https://yourwebsite.com/about" />
       </Helmet>
       
-      {/* Hero Section - Updated with premium colors */}
+      {/* Hero Section */}
       <section 
         className="relative bg-cover bg-center h-screen flex items-center pt-28"
         style={{ backgroundImage: "url('/src/assets/image/imag1.jpeg')" }}
@@ -61,7 +61,7 @@ const About = () => {
         </div>
       </section>
 
-      {/* Our Heritage Section - Updated with premium colors */}
+      {/* Our Heritage Section */}
       <section id="heritage" className="py-24" style={{ backgroundColor: colors.background.card }}>
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
@@ -102,7 +102,7 @@ const About = () => {
         </div>
       </section>
 
-      {/* Our Philosophy Section - Updated with premium colors */}
+      {/* Our Philosophy Section */}
       <section className="py-24" style={{ backgroundColor: colors.background.accent }}>
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
@@ -162,7 +162,7 @@ const About = () => {
         </div>
       </section>
 
-      {/* What We Are Doing Section - Updated with premium colors */}
+      {/* What We Are Doing Section */}
       <section className="py-24" style={{ backgroundColor: colors.light }}>
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
@@ -218,7 +218,7 @@ const About = () => {
         </div>
       </section>
 
-      {/* Team Section - Enhanced with premium colors */}
+      {/* Team Section */}
       <section className="py-24" style={{ backgroundColor: colors.background.card }}>
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center mb-16">
@@ -236,6 +236,7 @@ const About = () => {
                 <div className="md:w-2/5">
                   <div className="relative h-full">
                     <div className="absolute inset-0" style={{ backgroundColor: `${colors.primary}10` }}></div>
+                    {/* Team Section */}
                     <img 
                       src="/src/assets/image/founder.jpg" 
                       alt="Thapa Prasad Adhikari - Co-Founder of our organic farm" 
@@ -361,7 +362,7 @@ const About = () => {
           </div>
 
           <div className="max-w-4xl mx-auto">
-            <video controls className="w-full rounded-lg shadow-lg">
+              <video controls className="w-full rounded-lg shadow-lg">
               <source src="/assets/video/farmvideo.mp4" type="video/mp4" />
               Your browser does not support the video tag.
             </video>

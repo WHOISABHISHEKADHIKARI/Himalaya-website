@@ -96,7 +96,7 @@ const Home = () => {
           Experience the beauty and tranquility of our farm
         </p>
         <div className="mt-8 animate-fade-in delay-500">
-          <ActionButton text="Learn More" link="/about" variant="primary" />
+          <ActionButton text="Learn More" link="./about" variant="primary" />
         </div>
       </div>
 
