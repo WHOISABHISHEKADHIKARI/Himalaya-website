@@ -3,13 +3,14 @@ import LoadingBar from '../components/LoadingBar';
 import { FaPhoneAlt, FaEnvelope, FaLinkedin, FaArrowUp } from 'react-icons/fa';
 import logo from '../assets/logo/logo_white_bg_removed.png';
 import { Helmet } from 'react-helmet-async';
-import imag1 from '@/assets/image/imag1.jpeg';
-import imag5 from '@/assets/image/imag5.jpeg';
-import imag7 from '@/assets/image/imag7.jpeg';
-import imag9 from '@/assets/image/imag9.jpeg';
-import founder from '@/assets/image/founder.jpg';
-import owner from '@/assets/image/owner.jpg';
-import manager from '@/assets/image/manager.jpeg';
+// Update image imports at the top
+import imag1 from '../assets/image/imag1.jpeg';
+import imag5 from '../assets/image/imag5.jpeg';
+import imag7 from '../assets/image/imag7.jpeg';
+import imag9 from '../assets/image/imag9.jpeg';
+import founder from '../assets/image/founder.jpg';
+import owner from '../assets/image/owner.jpg';
+import manager from '../assets/image/manager.jpeg';
 const colors = { 
   primary: '#1C4E37', 
   secondary: '#D8A51D', 
@@ -72,7 +73,10 @@ const About = () => {
       // Update the Hero section image
       <section 
         className="relative bg-cover bg-center h-screen flex items-center pt-28"
-        style={{ backgroundImage: `url(${imag1})` }}
+        style={{ backgroundImage: `url(${imag1})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center'
+        }}
       >
         <div className="absolute inset-0" style={{ backgroundColor: colors.primary, opacity: 0.7 }}></div>
         <div className="container mx-auto px-4 relative z-10 text-center">
@@ -124,67 +128,22 @@ const About = () => {
                   <span className="ml-4 font-medium" style={{ color: colors.text.gold }}>Est. 1992</span>
                 </div>
               </div>
-              // Update the heritage section image
-              <div className="relative">
+               <div className="relative h-[600px]">
                 <div className="absolute -top-5 -right-5 w-full h-full border-2" style={{ borderColor: colors.secondary }}></div>
-                <div className="relative">
-                  <div className="absolute inset-0 bg-gray-100 animate-pulse"></div>
-                  <img 
-                    src={imag9}
-                    alt="Our organic farm heritage showing Murrah buffaloes" 
-                    className="w-full h-auto relative z-10 shadow-xl"
-                    loading="eager"
-                    width="800"
-                    height="600"
-                    fetchPriority="high"
-                    decoding="async"
-                  />
-                </div>
+                <img 
+                  src={imag9}
+                  alt="Our organic farm heritage showing Murrah buffaloes" 
+                  className="w-full h-full object-cover relative z-10 shadow-xl rounded-lg"
+                  loading="eager"
+                />
               </div>
-              
-              // Update team member images
-              <div className="md:w-2/5 h-[400px]">
-                <div className="relative h-full">
-                  <div className="absolute inset-0 bg-gray-100 animate-pulse"></div>
-                  <img 
-                    src={founder}
-                    alt="Thapa Prasad Adhikari - Founder of our organic farm" 
-                    className="w-full h-full object-cover"
-                    loading="eager"
-                    width="400"
-                    height="400"
-                    fetchPriority="high"
-                    decoding="async"
-                  />
-                </div>
-              </div>
-              
-              // Update other team member images similarly
-              <img 
-                src={owner}
-                alt="Kedar Prasad Adhikari - Owner of our organic farm" 
-                className="w-full h-full object-cover"
-                loading="eager"
-                width="400"
-                height="400"
-                fetchPriority="high"
-                decoding="async"
-              />
-              
-              <img 
-                src={manager}
-                alt="Abhishek Adhikari - Manager of our organic farm" 
-                className="w-full h-full object-cover"
-                loading="eager"
-                width="400"
-                height="400"
-                fetchPriority="high"
-                decoding="async"
-              />
             </div>
           </div>
         </div>
       </section>
+
+      {/* Team Section */}
+      
 
       {/* Our Philosophy Section */}
       <section className="py-24" style={{ backgroundColor: colors.background.accent }}>
