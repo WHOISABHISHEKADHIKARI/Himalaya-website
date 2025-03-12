@@ -10,7 +10,7 @@ import imag6 from '../assets/image/imag6.jpeg';
 import imag7 from '../assets/image/imag7.jpeg';
 import imag9 from '../assets/image/imag9.jpeg';
 import founder from '../assets/image/founder.jpg';
-import owner from '../assets/image/owner.jpg';
+import owner from '../assets/image/owner.jpeg';
 import manager from '../assets/image/manager.jpeg';
 const colors = { 
   primary: '#1C4E37', 
@@ -356,7 +356,7 @@ const About = () => {
                   <div className="relative h-full">
                     <div className="absolute inset-0" style={{ backgroundColor: `${colors.primary}10` }}></div>
                     <img 
-                      src="/src/assets/image/owner.jpg" 
+                      src="/src/assets/image/owner.jpeg" 
                       alt="Kedar Prasad Adhikari - Owner of our organic farm" 
                       className="w-full h-full object-cover"
                       loading="lazy"
