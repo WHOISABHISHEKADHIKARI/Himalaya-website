@@ -1,4 +1,7 @@
 import React from 'react';
+import founderImage from '../assets/faces/founder.jpg';
+import ownerImage from '../assets/faces/owner.jpg';
+import managerImage from '../assets/faces/manager.jpeg';
 
 const TeamSection = () => {
   return (
@@ -17,7 +20,7 @@ const TeamSection = () => {
           <div className="md:flex">
             <div className="md:w-1/3">
               <img 
-                src="/assets/faces/founder.jpg" 
+                src={founderImage}
                 alt="Thapa Prasad Adhikari" 
                 className="w-full h-64 object-cover"
               />
@@ -38,7 +41,7 @@ const TeamSection = () => {
           <div className="md:flex">
             <div className="md:w-1/3">
               <img 
-                src="/assets/faces/owner.jpg" 
+                src={ownerImage}
                 alt="Kedar Prasad Adhikari" 
                 className="w-full h-64 object-cover"
               />
@@ -65,7 +68,7 @@ const TeamSection = () => {
           <div className="md:flex">
             <div className="md:w-1/3">
               <img 
-                src="/assets/faces/manager.jpg" 
+                src={managerImage}
                 alt="Abhishek Adhikari" 
                 className="w-full h-64 object-cover"
               />
