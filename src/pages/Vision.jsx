@@ -538,3 +538,73 @@ const CropCard = ({ title, items }) => (
 );
 
 export default OurPlan;
+
+// Update image imports with proper paths
+import farmImage1 from '../assets/image/imag1.jpeg';
+import farmImage2 from '../assets/image/imag2.jpeg';
+import farmImage3 from '../assets/image/imag3.jpeg';
+import farmImage4 from '../assets/image/imag4.jpeg';
+import kedarImage from '../assets/image/owner.jpg';
+import abhishekImage from '../assets/image/manager.jpeg';
+
+// Inside the Operations Section, add the team members
+<section className="mb-24">
+  <div className="grid md:grid-cols-2 gap-8">
+    {/* Kedar's Card */}
+    <motion.div 
+      className="bg-white rounded-2xl shadow-lg p-8 border border-[rgba(255,255,255,0.2)] relative overflow-hidden"
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true }}
+      variants={fadeIn}
+    >
+      <div className="flex flex-col md:flex-row items-center gap-6">
+        <div className="w-32 h-32 rounded-full overflow-hidden">
+          <img 
+            src={kedarImage} 
+            alt="Kedar Prasad Adhikari"
+            className="w-full h-full object-cover"
+            loading="eager"
+            onError={(e) => {
+              e.target.onerror = null;
+              e.target.src = 'https://via.placeholder.com/128?text=K';
+            }}
+          />
+        </div>
+        <div>
+          <h3 className="text-xl font-bold text-[#1C4E37]">Kedar Prasad Adhikari</h3>
+          <p className="text-[#3A5944]">Owner</p>
+        </div>
+      </div>
+    </motion.div>
+
+    {/* Abhishek's Card */}
+    <motion.div 
+      className="bg-white rounded-2xl shadow-lg p-8 border border-[rgba(255,255,255,0.2)] relative overflow-hidden"
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true }}
+      variants={fadeIn}
+      transition={{ delay: 0.2 }}
+    >
+      <div className="flex flex-col md:flex-row items-center gap-6">
+        <div className="w-32 h-32 rounded-full overflow-hidden">
+          <img 
+            src={abhishekImage} 
+            alt="Abhishek Adhikari"
+            className="w-full h-full object-cover"
+            loading="eager"
+            onError={(e) => {
+              e.target.onerror = null;
+              e.target.src = 'https://via.placeholder.com/128?text=A';
+            }}
+          />
+        </div>
+        <div>
+          <h3 className="text-xl font-bold text-[#1C4E37]">Abhishek Adhikari</h3>
+          <p className="text-[#3A5944]">Manager</p>
+        </div>
+      </div>
+    </motion.div>
+  </div>
+</section>
