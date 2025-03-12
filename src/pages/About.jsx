@@ -3,15 +3,10 @@ import LoadingBar from '../components/LoadingBar';
 import { FaPhoneAlt, FaEnvelope, FaLinkedin, FaArrowUp } from 'react-icons/fa';
 import logo from '../assets/logo/logo_white_bg_removed.png';
 import { Helmet } from 'react-helmet-async';
-// Update image imports at the top
-import imag1 from '../assets/image/imag1.jpeg';
-import imag5 from '../assets/image/imag5.jpeg';
-import imag6 from '../assets/image/imag6.jpeg';
-import imag7 from '../assets/image/imag7.jpeg';
-import imag9 from '../assets/image/imag9.jpeg';
+// Update these image imports at the top
 import founder from '../assets/image/founder.jpg';
-import owner from '../assets/image/owner.jpeg';
-import manager from '../assets/image/manager.jpeg';
+import owner from '../assets/image/owner.jpg';     // Changed extension to .jpg to match actual file
+import manager from '../assets/image/manager.jpeg'; // This one is correct as .jpeg
 const colors = { 
   primary: '#1C4E37', 
   secondary: '#D8A51D', 
@@ -326,7 +321,7 @@ const About = () => {
                 <div className="md:w-2/5 h-[400px]"> {/* Added fixed height */}
                   <div className="relative h-full">
                     <div className="absolute inset-0" style={{ backgroundColor: `${colors.primary}10` }}></div>
-                    <img 
+<img 
                       src={founder} 
                       alt="Thapa Prasad Adhikari - Founder of our organic farm" 
                       className="w-full h-full object-cover"
@@ -347,7 +342,7 @@ const About = () => {
               </div>
             </div>
           </div>
-
+          
           {/* Owner Card */}
           <div className="max-w-4xl mx-auto mb-16">
             <div className="rounded-xl shadow-xl overflow-hidden transform hover:scale-[1.02] transition-all duration-300" style={{ backgroundColor: colors.background.card }}>
@@ -356,7 +351,7 @@ const About = () => {
                   <div className="relative h-full">
                     <div className="absolute inset-0" style={{ backgroundColor: `${colors.primary}10` }}></div>
                     <img 
-                      src="/src/assets/image/owner.jpeg" 
+                      src= {owner}
                       alt="Kedar Prasad Adhikari - Owner of our organic farm" 
                       className="w-full h-full object-cover"
                       loading="lazy"
@@ -389,7 +384,7 @@ const About = () => {
                   <div className="relative h-full">
                     <div className="absolute inset-0" style={{ backgroundColor: `${colors.primary}10` }}></div>
                     <img 
-                      src="/src/assets/image/manager.jpeg" 
+                      src={manager}
                       alt="Abhishek Adhikari - Manager of our organic farm" 
                       className="w-full h-full object-cover"
                       loading="lazy"
