@@ -95,14 +95,9 @@ const Home = () => {
         <p className="text-lg md:text-xl mt-4 opacity-80 animate-fade-in-up delay-300">
           Experience the beauty and tranquility of our farm
         </p>
-        <div className="mt-8 opacity-0 animate-fade-in transition-opacity duration-700 delay-500">
-        <Link
-          to="/about"
-          className="px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 transition-all"
-        >
-          Learn More
-      </Link>
-    </div>
+        <div className="mt-8 animate-fade-in delay-500">
+          <ActionButton text="Learn More" link="/about" variant="primary" />
+        </div>
       </div>
 
 
