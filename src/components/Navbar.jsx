@@ -125,7 +125,7 @@ const Navbar = ({ isHomePage }) => {
                 src={logo}
                 alt="Himalaya Krishi Logo"
                 className={`transition-all duration-700 animate-glow ${
-                  scrolled ? 'h-16' : 'h-24'
+                  scrolled ? 'h-20' : 'h-32'
                 } w-auto object-contain ${
                   isHovered === 'logo' ? 'filter drop-shadow-lg' : ''
                 }`}
