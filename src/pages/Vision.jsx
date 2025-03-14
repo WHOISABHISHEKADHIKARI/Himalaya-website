@@ -474,72 +474,7 @@ const Vision = () => {
           </motion.div>
         </section>
         
-        {/* Community Leaders Testimonials */}
-        <section aria-labelledby="testimonials" className="mb-24">
-          <div className="text-center mb-12">
-            <span className="inline-block h-1 w-12 bg-[#D8A51D] mb-4"></span>
-            <h2 id="testimonials" className="text-3xl font-serif font-bold text-[#1C4E37] mb-4">
-              Community Leaders' Endorsements
-            </h2>
-            <p className="text-[#3A5944] text-lg max-w-2xl mx-auto">
-              Trusted and recognized by leading figures in our community
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            <motion.div
-              className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-500 relative overflow-hidden group"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.2 }}
-            >
-              <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-emerald-100/20 to-transparent rounded-bl-full" />
-              <div className="relative z-10">
-                <img 
-                  src="/assets/images/leaders/hari-bahadur.jpg"
-                  alt="Hari Bahadur Tamang"
-                  className="w-24 h-24 rounded-full mx-auto mb-6 object-cover border-4 border-emerald-100"
-                />
-                <p className="text-[#3A5944] italic mb-6 leading-relaxed">
-                  "Their innovative approach to organic farming has set new standards in our region. They're not just a business, but a catalyst for positive change in our community."
-                </p>
-                <div className="flex items-center">
-                  <div className="flex-1">
-                    <h3 className="font-bold text-[#1C4E37]">Hari Bahadur Tamang</h3>
-                    <p className="text-[#D8A51D] text-sm">Ward Chairman, Manahari-5</p>
-                  </div>
-                </div>
-              </div>
-            </motion.div>
-
-            <motion.div
-              className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-500 relative overflow-hidden group"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.4 }}
-            >
-              <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-emerald-100/20 to-transparent rounded-bl-full" />
-              <div className="relative z-10">
-                <img 
-                  src="/assets/images/leaders/sita-gurung.jpg"
-                  alt="Sita Gurung"
-                  className="w-24 h-24 rounded-full mx-auto mb-6 object-cover border-4 border-emerald-100"
-                />
-                <p className="text-[#3A5944] italic mb-6 leading-relaxed">
-                  "As agricultural consultants, we're impressed by their dedication to quality and sustainability. They're setting an example for modern organic farming in Nepal."
-                </p>
-                <div className="flex items-center">
-                  <div className="flex-1">
-                    <h3 className="font-bold text-[#1C4E37]">Sita Gurung</h3>
-                    <p className="text-[#D8A51D] text-sm">Director, ISHO Consultancy Pokhara</p>
-                  </div>
-                </div>
-              </div>
-            </motion.div>
-          </div>
-        </section>
+ 
         
         </main>
         

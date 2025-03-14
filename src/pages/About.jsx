@@ -432,21 +432,7 @@ const About = () => {
         </div>
       </section>
 
-      <section aria-labelledby="testimonials" className="py-24 bg-[#F4F9F1]">
-        <div className="container mx-auto px-4 max-w-5xl">
-          <div className="text-center mb-12">
-            <span className="inline-block h-1 w-12 bg-[#D8A51D] mb-4"></span>
-            <h2 id="testimonials" className="text-3xl font-serif font-bold text-[#1C4E37] mb-4">
-              Reviews About Our Pages
-            </h2>
-            <p className="text-[#3A5944] text-lg max-w-2xl mx-auto">
-              What our community says about our digital presence
-            </p>
-          </div>
-
-          
-        </div>
-      </section>
+     
 
             {/* Back to Top Button */}
       <button
