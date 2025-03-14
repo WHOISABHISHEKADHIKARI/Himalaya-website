@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import LoadingBar from '../components/LoadingBar';
 import { FaPhoneAlt, FaEnvelope, FaLinkedin, FaArrowUp } from 'react-icons/fa';
 import logo from '../assets/logo/logo_white_bg_removed.png';
+import { motion } from 'framer-motion';
 import { Helmet } from 'react-helmet-async';
 // Add these imports at the top with other image imports
 import imag1 from '../assets/image/imag1.jpeg';
@@ -33,6 +34,7 @@ const colors = {
 const About = () => {
   const [loading, setLoading] = useState(true);
   const [showBackToTop, setShowBackToTop] = useState(false);
+  const [scrollProgress, setScrollProgress] = useState(0);
 
   useEffect(() => {
     // Simulate loading time
@@ -40,9 +42,12 @@ const About = () => {
       setLoading(false);
     }, 3000); // Adjust the time as needed
 
-    // Back to top visibility handler
+    // Back to top visibility handler and scroll progress
     const handleScroll = () => {
       setShowBackToTop(window.scrollY > 400);
+      const totalHeight = document.body.scrollHeight - window.innerHeight;
+      const progress = (window.pageYOffset / totalHeight) * 100;
+      setScrollProgress(progress);
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -61,6 +66,11 @@ const About = () => {
 
   return (
     <div style={{ backgroundColor: colors.background.primary }}>
+      {/* Scroll Progress Indicator */}
+      <div 
+        className="fixed top-0 left-0 h-1 bg-gradient-to-r from-[#1C4E37] to-[#D8A51D] z-50"
+        style={{ width: `${scrollProgress}%` }}
+      />
       {loading && <LoadingBar />} {/* Show loading bar while loading */}
       {/* SEO Optimization */}
       <Helmet>
@@ -309,131 +319,92 @@ const About = () => {
       </section>
 
       {/* Team Section */}
-      <section className="py-24" style={{ backgroundColor: colors.background.card }}>
+      <section aria-labelledby="testimonials" className="py-24" style={{ backgroundColor: colors.background.card }}>
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-serif font-bold mb-6" style={{ color: colors.text.dark }}>Our Faces</h2>
+            <h2 className="text-3xl md:text-4xl font-serif font-bold mb-6" style={{ color: colors.text.dark }}>Reviews About Our Pages</h2>
             <div className="w-24 h-1 mx-auto mb-8" style={{ backgroundColor: colors.secondary }}></div>
             <p className="text-lg" style={{ color: colors.text.medium }}>
-              Meet the visionaries behind our journey of organic excellence.
+              What our community says about our digital presence
             </p>
           </div>
 
-          {/* Co-Founder Card */}
+          {/* Testimonial 1 - Shree Krishna Parajuli */}
           <div className="max-w-4xl mx-auto mb-16">
             <div className="rounded-xl shadow-xl overflow-hidden transform hover:scale-[1.02] transition-all duration-300" style={{ backgroundColor: colors.background.card }}>
               <div className="md:flex">
-                <div className="md:w-2/5 h-[400px]"> {/* Added fixed height */}
-                  <div className="relative h-full">
-                    <div className="absolute inset-0" style={{ backgroundColor: `${colors.primary}10` }}></div>
-<img 
-                      src={founder} 
-                      alt="Thapa Prasad Adhikari - Founder of our organic farm" 
-                      className="w-full h-full object-cover"
-                      loading="lazy"
-                      width="400"
-                      height="400"
-                    />
-                  </div>
-                </div>
-                <div className="p-8 md:w-3/5">
-                  <h3 className="text-2xl font-bold mb-2" style={{ color: colors.text.dark }}>Thapa Prasad Adhikari</h3>
-                  <p className="text-lg mb-4" style={{ color: colors.primary }}>Co-Founder</p>
-                  <div className="w-16 h-1 mb-6" style={{ backgroundColor: colors.secondary }}></div>
-                  <p className="italic mb-6 leading-relaxed" style={{ color: colors.text.medium }}>
-                    "I have no other option. As long as my interest and available resources allow, I find joy in working with soil and cow dung. Even now, at the age of 70, my mother herself is tending to the cattle. That is why one must keep working wherever life takes them."
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-          
-          {/* Owner Card */}
-          <div className="max-w-4xl mx-auto mb-16">
-            <div className="rounded-xl shadow-xl overflow-hidden transform hover:scale-[1.02] transition-all duration-300" style={{ backgroundColor: colors.background.card }}>
-              <div className="md:flex flex-row-reverse">
-                <div className="md:w-2/5">
+                <div className="md:w-2/5 h-[400px]">
                   <div className="relative h-full">
                     <div className="absolute inset-0" style={{ backgroundColor: `${colors.primary}10` }}></div>
                     <img 
-                      src= {owner}
-                      alt="Kedar Prasad Adhikari - Owner of our organic farm" 
+                      src="/assets/faces/Shree Krishna Parajuli.jpg"
+                      alt="Shree Krishna Parajuli" 
                       className="w-full h-full object-cover"
                       loading="lazy"
                     />
                   </div>
                 </div>
                 <div className="p-8 md:w-3/5">
-                  <h3 className="text-2xl font-bold mb-2" style={{ color: colors.text.dark }}>Kedar Prasad Adhikari</h3>
-                  <p className="text-lg mb-4" style={{ color: colors.primary }}>Owner</p>
+                  <h3 className="text-2xl font-bold mb-2" style={{ color: colors.text.dark }}>Shree Krishna Parajuli</h3>
+                  <p className="text-lg mb-4" style={{ color: colors.primary }}>Branch Manager, ADBL</p>
                   <div className="w-16 h-1 mb-6" style={{ backgroundColor: colors.secondary }}></div>
                   <p className="italic mb-6 leading-relaxed" style={{ color: colors.text.medium }}>
-                    "I have completed my degree in education, and even though various opportunities came my way, I chose to reflect on what society had given me at that time. I feel a responsibility to repay that debt, so I have immersed myself in the available resources and circumstances."
+                    "It brings me immense joy to witness their growth from humble beginnings. As someone who has been a helping hand in their journey, I am proud to see their dedication and the meaningful impact they've created through this platform."
                   </p>
-                  <div className="flex items-center mt-6">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="w-5 h-5 mr-2" style={{ color: colors.primary }}>
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                    </svg>
-                    <a href="tel:9845162511" className="font-medium hover:underline" style={{ color: colors.primary }} aria-label="Call Kedar Prasad Adhikari">9845162511</a>
-                  </div>
                 </div>
               </div>
             </div>
           </div>
 
-          {/* Manager Card */}
-          <div className="max-w-4xl mx-auto">
+          {/* Testimonial 2 - Bharat Gautam */}
+          <div className="max-w-4xl mx-auto mb-16">
             <div className="rounded-xl shadow-xl overflow-hidden transform hover:scale-[1.02] transition-all duration-300" style={{ backgroundColor: colors.background.card }}>
-              <div className="md:flex">
-                <div className="md:w-2/5">
+              <div className="md:flex flex-row-reverse">
+                <div className="md:w-2/5 h-[400px]">
                   <div className="relative h-full">
                     <div className="absolute inset-0" style={{ backgroundColor: `${colors.primary}10` }}></div>
                     <img 
-                      src={manager}
-                      alt="Abhishek Adhikari - Manager of our organic farm" 
+                      src="/assets/faces/Bharat Gautam.jpg"
+                      alt="Bharat Gautam" 
                       className="w-full h-full object-cover"
                       loading="lazy"
                     />
                   </div>
                 </div>
                 <div className="p-8 md:w-3/5">
-                  <h3 className="text-2xl font-bold mb-2" style={{ color: colors.text.dark }}>Abhishek Adhikari</h3>
-                  <p className="text-lg mb-4" style={{ color: colors.primary }}>Manager</p>
+                  <h3 className="text-2xl font-bold mb-2" style={{ color: colors.text.dark }}>Bharat Gautam</h3>
+                  <p className="text-lg mb-4" style={{ color: colors.primary }}>CEO, SmartAgroApp & ISHO Consultancy</p>
                   <div className="w-16 h-1 mb-6" style={{ backgroundColor: colors.secondary }}></div>
                   <p className="italic mb-6 leading-relaxed" style={{ color: colors.text.medium }}>
-                    "With decades of experience in agriculture and farming, my journey has evolved beyond primary production into scaling, exporting, and branding our traditional business on a larger platform."
+                    "It's inspiring to see young leadership driving innovation in agriculture. Their energy and vision for growth is remarkable, and I'm excited to see how they've embraced digital transformation to showcase their journey."
                   </p>
-                  <div className="flex flex-wrap gap-4 mt-6">
-                    <a 
-                      href="tel:9865412482" 
-                      className="inline-flex items-center px-4 py-2 rounded-full text-sm transition-colors"
-                      style={{ backgroundColor: `${colors.primary}10`, color: colors.primary }}
-                      aria-label="Call Abhishek Adhikari"
-                    >
-                      <FaPhoneAlt className="w-4 h-4 mr-2" />
-                      9865412482
-                    </a>
-                    <a 
-                      href="mailto:abhishekadhikari1254@gmail.com" 
-                      className="inline-flex items-center px-4 py-2 rounded-full text-sm transition-colors"
-                      style={{ backgroundColor: `${colors.primary}10`, color: colors.primary }}
-                      aria-label="Email Abhishek Adhikari"
-                    >
-                      <FaEnvelope className="w-4 h-4 mr-2" />
-                      Email
-                    </a>
-                    <a 
-                      href="https://www.linkedin.com/in/adheekariabhishek/" 
-                      className="inline-flex items-center px-4 py-2 rounded-full text-sm transition-colors" 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      style={{ backgroundColor: `${colors.primary}10`, color: colors.primary }}
-                      aria-label="Visit Abhishek Adhikari's LinkedIn profile"
-                    >
-                      <FaLinkedin className="w-4 h-4 mr-2" />
-                      LinkedIn
-                    </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Testimonial 3 - Dipendra Adhikari */}
+          <div className="max-w-4xl mx-auto">
+            <div className="rounded-xl shadow-xl overflow-hidden transform hover:scale-[1.02] transition-all duration-300" style={{ backgroundColor: colors.background.card }}>
+              <div className="md:flex">
+                <div className="md:w-2/5 h-[400px]">
+                  <div className="relative h-full">
+                    <div className="absolute inset-0" style={{ backgroundColor: `${colors.primary}10` }}></div>
+                    <img 
+                      src="/assets/faces/Dipendra Adhikari.jpg"
+                      alt="Dipendra Adhikari" 
+                      className="w-full h-full object-cover"
+                      loading="lazy"
+                    />
                   </div>
+                </div>
+                <div className="p-8 md:w-3/5">
+                  <h3 className="text-2xl font-bold mb-2" style={{ color: colors.text.dark }}>Dipendra Adhikari</h3>
+                  <p className="text-lg mb-4" style={{ color: colors.primary }}>Member, Manahari Municipality</p>
+                  <div className="w-16 h-1 mb-6" style={{ backgroundColor: colors.secondary }}></div>
+                  <p className="italic mb-6 leading-relaxed" style={{ color: colors.text.medium }}>
+                    "The website beautifully captures the essence of their organic farming journey. As a member of Manahari municipality, I am impressed by how they've showcased their commitment to serving society through this digital platform."
+                  </p>
                 </div>
               </div>
             </div>
@@ -461,7 +432,23 @@ const About = () => {
         </div>
       </section>
 
-      {/* Back to Top Button */}
+      <section aria-labelledby="testimonials" className="py-24 bg-[#F4F9F1]">
+        <div className="container mx-auto px-4 max-w-5xl">
+          <div className="text-center mb-12">
+            <span className="inline-block h-1 w-12 bg-[#D8A51D] mb-4"></span>
+            <h2 id="testimonials" className="text-3xl font-serif font-bold text-[#1C4E37] mb-4">
+              Reviews About Our Pages
+            </h2>
+            <p className="text-[#3A5944] text-lg max-w-2xl mx-auto">
+              What our community says about our digital presence
+            </p>
+          </div>
+
+          
+        </div>
+      </section>
+
+            {/* Back to Top Button */}
       <button
         onClick={scrollToTop}
         className={`fixed bottom-8 right-8 p-4 rounded-full shadow-lg transition-all duration-300 z-50 ${

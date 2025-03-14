@@ -26,7 +26,7 @@ const colors = {
 // Add this at the top with other imports
 import { Helmet } from 'react-helmet-async';
 
-// Add animation variants before the OurPlan component
+// Animation variants
 const fadeIn = {
   hidden: { opacity: 0, y: 30 },
   visible: { 
@@ -36,7 +36,40 @@ const fadeIn = {
   }
 };
 
-const OurPlan = () => {
+const staggerChildren = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.2
+    }
+  }
+};
+
+const heroAnimation = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.3,
+      delayChildren: 0.2
+    }
+  }
+};
+
+const heroTextAnimation = {
+  hidden: { opacity: 0, y: 40 },
+  visible: { 
+    opacity: 1, 
+    y: 0,
+    transition: { 
+      duration: 1, 
+      ease: [0.22, 1, 0.36, 1] 
+    }
+  }
+};
+
+const Vision = () => {
   const [scrollProgress, setScrollProgress] = useState(0);
   const [isLoaded, setIsLoaded] = useState(false);
 
@@ -440,35 +473,110 @@ const OurPlan = () => {
             </div>
           </motion.div>
         </section>
-      </main>
-      
-      {/* Contact CTA Section */}
-      <footer className="bg-[#1C4E37] text-white py-16">
-        <div className="container mx-auto px-4 max-w-5xl text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-          >
-            <h2 className="text-3xl font-serif font-bold mb-4">Ready to Partner With Us?</h2>
-            <p className="text-lg text-[rgba(255,255,255,0.8)] mb-8 max-w-2xl mx-auto">
-              Discover how our premium organic products can enhance your business or delight your family.
+        
+        {/* Community Leaders Testimonials */}
+        <section aria-labelledby="testimonials" className="mb-24">
+          <div className="text-center mb-12">
+            <span className="inline-block h-1 w-12 bg-[#D8A51D] mb-4"></span>
+            <h2 id="testimonials" className="text-3xl font-serif font-bold text-[#1C4E37] mb-4">
+              Community Leaders' Endorsements
+            </h2>
+            <p className="text-[#3A5944] text-lg max-w-2xl mx-auto">
+              Trusted and recognized by leading figures in our community
             </p>
-            <Link to="/contact">
-              <motion.button
-                className="px-8 py-3 bg-[#D8A51D] text-[#1C4E37] font-bold rounded-full hover:bg-[#E9B833] transition-all duration-300"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.98 }}
-              >
-                Contact Us Today
-              </motion.button>
-            </Link>
-          </motion.div>
-        </div>
-      </footer>
-    </div>
-  );
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            <motion.div
+              className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-500 relative overflow-hidden group"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+            >
+              <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-emerald-100/20 to-transparent rounded-bl-full" />
+              <div className="relative z-10">
+                <img 
+                  src="/assets/images/leaders/hari-bahadur.jpg"
+                  alt="Hari Bahadur Tamang"
+                  className="w-24 h-24 rounded-full mx-auto mb-6 object-cover border-4 border-emerald-100"
+                />
+                <p className="text-[#3A5944] italic mb-6 leading-relaxed">
+                  "Their innovative approach to organic farming has set new standards in our region. They're not just a business, but a catalyst for positive change in our community."
+                </p>
+                <div className="flex items-center">
+                  <div className="flex-1">
+                    <h3 className="font-bold text-[#1C4E37]">Hari Bahadur Tamang</h3>
+                    <p className="text-[#D8A51D] text-sm">Ward Chairman, Manahari-5</p>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+
+            <motion.div
+              className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-500 relative overflow-hidden group"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.4 }}
+            >
+              <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-emerald-100/20 to-transparent rounded-bl-full" />
+              <div className="relative z-10">
+                <img 
+                  src="/assets/images/leaders/sita-gurung.jpg"
+                  alt="Sita Gurung"
+                  className="w-24 h-24 rounded-full mx-auto mb-6 object-cover border-4 border-emerald-100"
+                />
+                <p className="text-[#3A5944] italic mb-6 leading-relaxed">
+                  "As agricultural consultants, we're impressed by their dedication to quality and sustainability. They're setting an example for modern organic farming in Nepal."
+                </p>
+                <div className="flex items-center">
+                  <div className="flex-1">
+                    <h3 className="font-bold text-[#1C4E37]">Sita Gurung</h3>
+                    <p className="text-[#D8A51D] text-sm">Director, ISHO Consultancy Pokhara</p>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </section>
+        
+        </main>
+        
+        {/* Contact CTA Section */}
+        <footer className="bg-gradient-to-r from-[#1C4E37] to-[#164A32] text-white py-20 relative overflow-hidden">
+          {/* Decorative elements */}
+          <div className="absolute inset-0 bg-[url('/assets/patterns/leaf-pattern.png')] opacity-5" />
+          <div className="absolute -right-20 -top-20 w-96 h-96 bg-emerald-400/10 rounded-full blur-3xl" />
+          <div className="absolute -left-20 -bottom-20 w-96 h-96 bg-[#D8A51D]/10 rounded-full blur-3xl" />
+          
+          <div className="container mx-auto px-4 max-w-5xl text-center relative z-10">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+            >
+              <h2 className="text-4xl md:text-5xl font-serif font-bold mb-6 text-white">
+                Ready to Partner With Us?
+              </h2>
+              <p className="text-xl text-white/80 mb-10 max-w-2xl mx-auto leading-relaxed">
+                Discover how our premium organic products can enhance your business or delight your family.
+              </p>
+              <Link to="/contact">
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="px-10 py-4 bg-[#D8A51D] text-white font-bold rounded-full hover:bg-[#C29419] transition-all duration-300 shadow-lg hover:shadow-xl hover:shadow-[#D8A51D]/20"
+                >
+                  Contact Us Today
+                </motion.button>
+              </Link>
+            </motion.div>
+          </div>
+        </footer>
+      </div>
+    );
 };
 
 // Enhanced Helper Components
@@ -556,70 +664,91 @@ const CropCard = ({ title, items }) => (
   </motion.div>
 );
 
-export default OurPlan;
-
-// Update image imports with dynamic imports
+// Remove these lines
 const ownerImage = new URL('../assets/image/owner.jpg', import.meta.url).href;
 const managerImage = new URL('../assets/image/manager.jpeg', import.meta.url).href;
 
-// Inside the Operations Section, add the team members
-<section className="mb-24">
-  <div className="grid md:grid-cols-2 gap-8">
-    {/* Kedar's Card */}
-    <motion.div 
-      className="bg-white rounded-2xl shadow-lg p-8 border border-[rgba(255,255,255,0.2)] relative overflow-hidden"
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true }}
-      variants={fadeIn}
-    >
-      <div className="flex flex-col md:flex-row items-center gap-6">
-        <div className="w-32 h-32 rounded-full overflow-hidden">
-          <img 
-            src={ownerImage}
-            alt="Kedar Prasad Adhikari"
-            className="w-full h-full object-cover"
-            loading="eager"
-            onError={(e) => {
-              e.target.onerror = null;
-              e.target.src = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 24 24"%3E%3Cpath fill="%231C4E37" d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/%3E%3C/svg%3E';
-            }}
-          />
-        </div>
-        <div>
-          <h3 className="text-xl font-bold text-[#1C4E37]">Kedar Prasad Adhikari</h3>
-          <p className="text-[#3A5944]">Owner</p>
-        </div>
-      </div>
-    </motion.div>
+// Remove the entire TeamSection component definition
+const TeamSection = () => (
+  <section aria-labelledby="team" className="mb-24 relative">
+    {/* Decorative background elements */}
+    <div className="absolute inset-0 bg-gradient-to-b from-transparent via-emerald-50/50 to-transparent -z-10" />
+    <div className="absolute right-0 top-1/2 transform -translate-y-1/2 w-64 h-64 bg-emerald-100/20 rounded-full blur-3xl -z-10" />
+    <div className="absolute left-0 top-1/4 w-48 h-48 bg-[#D8A51D]/10 rounded-full blur-2xl -z-10" />
 
-    {/* Abhishek's Card */}
-    <motion.div 
-      className="bg-white rounded-2xl shadow-lg p-8 border border-[rgba(255,255,255,0.2)] relative overflow-hidden"
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true }}
-      variants={fadeIn}
-      transition={{ delay: 0.2 }}
-    >
-      <div className="flex flex-col md:flex-row items-center gap-6">
-        <div className="w-32 h-32 rounded-full overflow-hidden">
-          <img 
-            src={managerImage}
-            alt="Abhishek Adhikari"
-            className="w-full h-full object-cover"
-            loading="eager"
-            onError={(e) => {
-              e.target.onerror = null;
-              e.target.src = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 24 24"%3E%3Cpath fill="%231C4E37" d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/%3E%3C/svg%3E';
-            }}
-          />
-        </div>
-        <div>
-          <h3 className="text-xl font-bold text-[#1C4E37]">Abhishek Adhikari</h3>
-          <p className="text-[#3A5944]">Manager</p>
-        </div>
+    <div className="container mx-auto px-4 max-w-5xl">
+      <motion.div 
+        className="text-center mb-16"
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+      >
+        <span className="inline-block h-1 w-24 bg-[#D8A51D] mb-6"></span>
+        <h2 className="text-4xl font-serif font-bold text-[#1C4E37] mb-4">
+          Meet Our Leadership
+        </h2>
+        <p className="text-[#3A5944] text-lg max-w-2xl mx-auto">
+          Dedicated professionals committed to sustainable agriculture and innovation
+        </p>
+      </motion.div>
+
+      <div className="grid md:grid-cols-2 gap-12">
+        {/* Kedar's Card */}
+        <motion.div 
+          className="group"
+          initial={{ opacity: 0, x: -30 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
+          <div className="bg-white rounded-2xl shadow-xl p-8 border border-emerald-100 relative overflow-hidden transition-all duration-500 hover:shadow-2xl hover:-translate-y-2">
+            <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-emerald-100/20 to-transparent rounded-bl-full" />
+            <div className="flex flex-col items-center text-center">
+              <div className="w-40 h-40 rounded-full overflow-hidden mb-6 border-4 border-emerald-100 shadow-lg">
+                <img 
+                  src={ownerImage}
+                  alt="Kedar Prasad Adhikari"
+                  className="w-full h-full object-cover transform transition-transform duration-500 group-hover:scale-110"
+                />
+              </div>
+              <h3 className="text-2xl font-bold text-[#1C4E37] mb-2">Kedar Prasad Adhikari</h3>
+              <p className="text-[#D8A51D] font-medium mb-4">Owner</p>
+              <p className="text-[#3A5944] leading-relaxed">
+                Visionary leader with extensive experience in sustainable agriculture
+              </p>
+            </div>
+          </div>
+        </motion.div>
+
+        {/* Abhishek's Card */}
+        <motion.div 
+          className="group"
+          initial={{ opacity: 0, x: 30 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+        >
+          <div className="bg-white rounded-2xl shadow-xl p-8 border border-emerald-100 relative overflow-hidden transition-all duration-500 hover:shadow-2xl hover:-translate-y-2">
+            <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-emerald-100/20 to-transparent rounded-bl-full" />
+            <div className="flex flex-col items-center text-center">
+              <div className="w-40 h-40 rounded-full overflow-hidden mb-6 border-4 border-emerald-100 shadow-lg">
+                <img 
+                  src={managerImage}
+                  alt="Abhishek Adhikari"
+                  className="w-full h-full object-cover transform transition-transform duration-500 group-hover:scale-110"
+                />
+              </div>
+              <h3 className="text-2xl font-bold text-[#1C4E37] mb-2">Abhishek Adhikari</h3>
+              <p className="text-[#D8A51D] font-medium mb-4">Manager</p>
+              <p className="text-[#3A5944] leading-relaxed">
+                Operations expert focused on implementing innovative farming solutions
+              </p>
+            </div>
+          </div>
+        </motion.div>
       </div>
-    </motion.div>
-  </div>
-</section>
+    </div>
+  </section>
+);
+
+export default Vision;
