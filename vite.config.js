@@ -9,6 +9,15 @@ export default defineConfig({
       '@': path.resolve(__dirname, './src'),
     },
   },
+  server: {
+    port: 3000,
+    open: false, // Changed to false to prevent automatic browser opening
+    host: 'localhost',
+    strictPort: false,
+    hmr: {
+      overlay: true
+    }
+  },
   build: {
     assetsInclude: ['**/*.jpeg', '**/*.jpg', '**/*.png', '**/*.gif', '**/*.svg', '**/*.mp4'],
     rollupOptions: {
@@ -22,4 +31,5 @@ export default defineConfig({
       },
     },
   },
+  base: '/',
 });
