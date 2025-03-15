@@ -322,10 +322,10 @@ const About = () => {
       <section aria-labelledby="testimonials" className="py-24" style={{ backgroundColor: colors.background.card }}>
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-serif font-bold mb-6" style={{ color: colors.text.dark }}>Reviews About Our Pages</h2>
+            <h2 className="text-3xl md:text-4xl font-serif font-bold mb-6" style={{ color: colors.text.dark }}>Reviews About Our Buissness</h2>
             <div className="w-24 h-1 mx-auto mb-8" style={{ backgroundColor: colors.secondary }}></div>
             <p className="text-lg" style={{ color: colors.text.medium }}>
-              What our community says about our digital presence
+              What our community says about our Buissness presence
             </p>
           </div>
 
@@ -373,7 +373,7 @@ const About = () => {
                 </div>
                 <div className="p-8 md:w-3/5">
                   <h3 className="text-2xl font-bold mb-2" style={{ color: colors.text.dark }}>Bharat Gautam</h3>
-                  <p className="text-lg mb-4" style={{ color: colors.primary }}>CEO, SmartAgroApp & ISHO Consultancy</p>
+                  <p className="text-lg mb-4" style={{ color: colors.primary }}> Livestock & Poultry Farm Consultant</p>
                   <div className="w-16 h-1 mb-6" style={{ backgroundColor: colors.secondary }}></div>
                   <p className="italic mb-6 leading-relaxed" style={{ color: colors.text.medium }}>
                     "It's inspiring to see young leadership driving innovation in agriculture. Their energy and vision for growth is remarkable, and I'm excited to see how they've embraced digital transformation to showcase their journey."
