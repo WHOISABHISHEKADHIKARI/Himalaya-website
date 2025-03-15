@@ -345,7 +345,7 @@ const About = () => {
                       </div>
                       <div className="p-8 md:w-3/5">
                         <h3 className="text-2xl font-bold mb-2" style={{ color: colors.text.dark }}>Thapa Prasad Adhikari</h3>
-                        <p className="text-lg mb-4" style={{ color: colors.primary }}>Co-Founder</p>
+                        <p className="text-lg mb-4" style={{ color: colors.primary }}>Founder</p>
                         <div className="w-16 h-1 mb-6" style={{ backgroundColor: colors.secondary }}></div>
                         <p className="italic mb-6 leading-relaxed" style={{ color: colors.text.medium }}>
                         "I have no other option. As long as my interest and available resources allow, I find joy in working with soil and cow dung. Even now, at the age of 70, my mother herself is tending to the cattle. That is why one must keep working wherever life takes them."
