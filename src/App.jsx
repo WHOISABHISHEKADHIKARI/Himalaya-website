@@ -19,7 +19,7 @@ function App() {
         <meta name="keywords" content="organic farming, Nepal agriculture, Himalaya Krishi, sustainable farming" />
         <meta name="robots" content="index, follow" />
         <meta name="geo.region" content="NP" />
-        <meta name="geo.placename" content="Nepal" />
+        <meta name="geo.placename" content="Manahari-5" />
         <link rel="alternate" href="https://himalayakrishi.com" hreflang="en-NP" />
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
         <link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png" />

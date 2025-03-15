@@ -47,7 +47,7 @@ const Footer = () => {
             <div className="flex flex-col space-y-2">
               <div className="flex items-center group hover:text-[#D8A51D] transition-colors duration-300">
                 <FaMapMarkerAlt className="text-[#D8A51D] mr-2" />
-                <span>Kathmandu, Nepal</span>
+                <span>Manahari-5, Makwanpur</span>
               </div>
               <div className="flex items-center group hover:text-[#D8A51D] transition-colors duration-300">
                 <FaPhone className="text-[#D8A51D] mr-2" />

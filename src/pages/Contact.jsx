@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { BsEnvelope, BsPerson } from 'react-icons/bs';
+import { FaMapMarkerAlt } from 'react-icons/fa'; // Add this import
 import { motion } from 'framer-motion';
 import { Helmet } from 'react-helmet-async';
 
@@ -96,6 +97,17 @@ const Contact = () => {
           <div className="w-16 h-1 bg-[#D8A51D] mx-auto mb-8" />
           <h1 className="text-4xl md:text-5xl font-serif font-bold text-center mb-4" style={{ color: colors.primary }}>Contact Us</h1>
           <p className="text-lg text-center mb-12" style={{ color: colors.text.medium }}>We'd love to hear from you. Please fill out the form below.</p>
+          
+          {/* Add location information */}
+          <div className="flex items-center mb-6 justify-center">
+            <div className="bg-[#1C4E37]/10 p-3 rounded-full mr-4">
+              <FaMapMarkerAlt className="text-[#1C4E37] text-xl" />
+            </div>
+            <div>
+              <h3 className="font-bold text-lg" style={{ color: colors.text.dark }}>Our Location</h3>
+              <p style={{ color: colors.text.medium }}>Manahari-5, Makwanpur</p>
+            </div>
+          </div>
           
           <motion.div 
             className="max-w-2xl mx-auto"
