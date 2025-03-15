@@ -1,7 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { HelmetProvider, Helmet } from 'react-helmet-async';
-import SplashScreen from './components/SplashScreen';
 import Navbar from './components/Navbar';
 import Home from './pages/Home';
 import About from './pages/About';
@@ -12,17 +11,6 @@ import Maintenance from './pages/Maintenance';
 import Vision from './pages/Vision';
 
 function App() {
-  const [showSplash, setShowSplash] = useState(true);
-
-  useEffect(() => {
-    // Remove localStorage check temporarily for testing
-    const timer = setTimeout(() => {
-      setShowSplash(false);
-    }, 3500); // Give enough time for splash screen animation
-
-    return () => clearTimeout(timer);
-  }, []);
-
   return (
     <HelmetProvider>
       <Helmet>
@@ -39,24 +27,20 @@ function App() {
         <link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png" />
       </Helmet>
       <Router>
-        {showSplash ? (
-          <SplashScreen onFinish={() => setShowSplash(false)} />
-        ) : (
-          <div className="flex flex-col min-h-screen">
-            <Navbar />
-            <main className="flex-grow">
-              <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/about" element={<About />} />
-                <Route path="/contact" element={<Contact />} />
-                <Route path="/maintenance" element={<Maintenance />} />
-                <Route path="/vision" element={<Vision />} />
-                <Route path="*" element={<NotFound />} />
-              </Routes>
-            </main>
-            <Footer />
-          </div>
-        )}
+        <div className="flex flex-col min-h-screen">
+          <Navbar />
+          <main className="flex-grow">
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/contact" element={<Contact />} />
+              <Route path="/maintenance" element={<Maintenance />} />
+              <Route path="/vision" element={<Vision />} />
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </main>
+          <Footer />
+        </div>
       </Router>
     </HelmetProvider>
   );

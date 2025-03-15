@@ -349,7 +349,7 @@ const About = () => {
                   <p className="text-lg mb-4" style={{ color: colors.primary }}>Branch Manager, ADBL</p>
                   <div className="w-16 h-1 mb-6" style={{ backgroundColor: colors.secondary }}></div>
                   <p className="italic mb-6 leading-relaxed" style={{ color: colors.text.medium }}>
-                    "It brings me immense joy to witness their growth from humble beginnings. As someone who has been a helping hand in their journey, I am proud to see their dedication and the meaningful impact they've created through this platform."
+                    "It brings me immense joy to witness their growth from humble beginnings. As someone who has been a helping hand in their journey, I am proud to see their dedication and the meaningful impact they've created through thier Buissness."
                   </p>
                 </div>
               </div>
@@ -400,13 +400,13 @@ const About = () => {
                 </div>
                 <div className="p-8 md:w-3/5">
                   <h3 className="text-2xl font-bold mb-2" style={{ color: colors.text.dark }}>Dipendra Adhikari</h3>
-                  <p className="text-lg mb-4" style={{ color: colors.primary }}>Member, Manahari Municipality</p>
+                  <p className="text-lg mb-4" style={{ color: colors.primary }}>Manahari 5, Ward Secretary</p>
                   <div className="w-16 h-1 mb-6" style={{ backgroundColor: colors.secondary }}></div>
                   <p className="italic mb-6 leading-relaxed" style={{ color: colors.text.medium }}>
-                    "The website beautifully captures the essence of their organic farming journey. As a member of Manahari municipality, I am impressed by how they've showcased their commitment to serving society through this digital platform."
+                    "The farm beautifully captures the essence of their organic farming and Manahari. As a member of Manahari-5 ward Secretary, I am impressed by how they've showcased their commitment to serving society through this Agriculture presence through this platform."
                   </p>
                 </div>
-              </div>
+              </div> 
             </div>
           </div>
         </div>
