@@ -71,11 +71,11 @@ const Navbar = ({ isHomePage }) => {
           location.pathname === '/about' ? 'Learn about Himalaya Krishi\'s journey in organic farming, our heritage, and commitment to sustainable agriculture in Nepal.' :
           location.pathname === '/vision' ? 'Explore Himalaya Krishi\'s vision for sustainable farming, organic excellence, and agricultural innovation in Nepal.' :
           'Connect with Himalaya Krishi for sustainable farming solutions and organic agriculture expertise in Nepal.'}`} />
-        <link rel="canonical" href={`https://himalayakrishi.com${location.pathname}`} />
+        <link rel="canonical" href={`https://krishihimlaya.com${location.pathname}`} />
         
         {/* Open Graph / Facebook */}
         <meta property="og:type" content="website" />
-        <meta property="og:url" content={`https://himalayakrishi.com${location.pathname}`} />
+        <meta property="og:url" content={`https://krishihimlaya.com${location.pathname}`} />
         <meta property="og:title" content={`${location.pathname === '/' ? 'Home' : location.pathname.substring(1).charAt(0).toUpperCase() + location.pathname.slice(2)} | Himalaya Krishi - Leading Organic Farming Excellence in Nepal`} />
         <meta property="og:description" content={`${location.pathname === '/' ? 'Discover Himalaya Krishi\'s organic farming excellence in Nepal. Leading sustainable agriculture practices and farmer empowerment since 1992.' : 
           location.pathname === '/about' ? 'Learn about Himalaya Krishi\'s journey in organic farming, our heritage, and commitment to sustainable agriculture in Nepal.' :
@@ -88,7 +88,7 @@ const Navbar = ({ isHomePage }) => {
         {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content="@himalayakrishi" />
-        <meta name="twitter:url" content={`https://himalayakrishi.com${location.pathname}`} />
+        <meta name="twitter:url" content={`https://krishihimlaya.com${location.pathname}`} />
         <meta name="twitter:title" content={`${location.pathname === '/' ? 'Home' : location.pathname.substring(1).charAt(0).toUpperCase() + location.pathname.slice(2)} | Himalaya Krishi - Leading Organic Farming Excellence in Nepal`} />
         <meta name="twitter:description" content={`${location.pathname === '/' ? 'Discover Himalaya Krishi\'s organic farming excellence in Nepal. Leading sustainable agriculture practices and farmer empowerment since 1992.' : 
           location.pathname === '/about' ? 'Learn about Himalaya Krishi\'s journey in organic farming, our heritage, and commitment to sustainable agriculture in Nepal.' :
