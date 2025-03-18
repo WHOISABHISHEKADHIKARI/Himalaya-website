@@ -2,25 +2,37 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+o t    <!-- Favicon and App Icons -->
     <link rel="icon" type="image/svg+xml" href="/logo.svg" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
     <link rel="manifest" href="/manifest.json" />
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#1C4E37" />
+    <meta name="apple-mobile-web-app-title" content="Himalaya Krishi" />
+    <meta name="application-name" content="Himalaya Krishi" />
+    <meta name="msapplication-TileColor" content="#1C4E37" />
+    <meta name="theme-color" content="#1C4E37" />
+    
+    <!-- Primary Meta Tags -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Himalaya Krishi - Nepal's Premier Organic Farming & Sustainable Agriculture</title>
     <meta name="description" content="Discover Himalaya Krishi, Nepal's leading organic farming initiative. We empower farmers, promote sustainable agriculture, and deliver premium organic products since 1992." />
-    <meta name="keywords" content="organic farming nepal, sustainable agriculture, farmer empowerment, organic certification, agricultural solutions" />
+    <meta name="keywords" content="organic farming nepal, sustainable agriculture, farmer empowerment, organic certification, agricultural solutions, himalaya krishi, organic products nepal" />
     <meta name="author" content="Himalaya Krishi" />
-    <meta name="robots" content="index, follow" />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
     <link rel="canonical" href="https://himalayakrishi.com" />
+    <meta name="geo.region" content="NP" />
+    <meta name="geo.placename" content="Manahari" />
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://himalayakrishi.com" />
     <meta property="og:title" content="Himalaya Krishi - Nepal's Premier Organic Farming & Sustainable Agriculture" />
     <meta property="og:description" content="Discover Himalaya Krishi, Nepal's leading organic farming initiative. We empower farmers, promote sustainable agriculture, and deliver premium organic products since 1992." />
-    <meta property="og:image" content="/seo/og-image.png" />
+    <meta property="og:image" content="https://himalayakrishi.com/seo/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
     <meta property="og:image:alt" content="Himalaya Krishi - Organic Farming Excellence" />
     <meta property="og:site_name" content="Himalaya Krishi" />
     <meta property="og:locale" content="en_US" />
@@ -31,34 +43,81 @@
     <meta name="twitter:creator" content="@himalayakrishi" />
     <meta name="twitter:title" content="Himalaya Krishi - Nepal's Premier Organic Farming & Sustainable Agriculture" />
     <meta name="twitter:description" content="Discover Himalaya Krishi, Nepal's leading organic farming initiative. We empower farmers, promote sustainable agriculture, and deliver premium organic products since 1992." />
-    <meta name="twitter:image" content="/seo/og-image.png" />
+    <meta name="twitter:image" content="https://himalayakrishi.com/seo/og-image.png" />
     <meta name="twitter:image:alt" content="Himalaya Krishi - Organic Farming Excellence" />
+    
+    <!-- Preconnect and DNS Prefetch -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
     
     <!-- Structured Data -->
     <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "Organization",
-        "name": "Himalaya Krishi",
-        "description": "Nepal's premier organic farming initiative promoting sustainable agriculture and farmer empowerment since 1992.",
-        "url": "https://himalayakrishi.com",
-        "logo": "https://himalayakrishi.com/logo.svg",
-        "foundingDate": "1992",
-        "address": {
-          "@type": "PostalAddress",
-          "addressLocality": "Manahari",
-          "addressRegion": "Makwanpur",
-          "addressCountry": "Nepal"
-        },
-        "sameAs": [
-          "https://twitter.com/himalayakrishi",
-          "https://facebook.com/himalayakrishi"
+    {
+      "@context": "https://schema.org",
+      "@type": ["Organization", "LocalBusiness", "AgricultureBusiness"],
+      "name": "Himalaya Krishi",
+      "url": "https://himalayakrishi.com",
+      "logo": "https://himalayakrishi.com/logo.png",
+      "description": "Nepal's leading organic farming initiative empowering farmers with sustainable agriculture solutions and premium organic products since 1992.",
+      "foundingDate": "1992",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Manahari-5",
+        "addressLocality": "Manahari",
+        "addressRegion": "Makwanpur",
+        "addressCountry": "NP",
+        "postalCode": "44400"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "27.479941",
+        "longitude": "84.838129"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+977-9823405140",
+        "contactType": "customer service",
+        "email": "info@krishihimalaya.com",
+        "availableLanguage": ["en", "ne"]
+      },
+      "sameAs": [
+        "https://twitter.com/himalayakrishi",
+        "https://facebook.com/himalayakrishi",
+        "https://wa.me/9779823405140"
+      ],
+      "areaServed": {
+        "@type": "Country",
+        "name": "Nepal"
+      },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Organic Products",
+        "itemListElement": [
+          {
+            "@type": "OfferCatalog",
+            "name": "Organic Vegetables",
+            "url": "https://himalayakrishi.com/products/organic-vegetables"
+          },
+          {
+            "@type": "OfferCatalog",
+            "name": "Organic Fruits",
+            "url": "https://himalayakrishi.com/products/organic-fruits"
+          },
+          {
+            "@type": "OfferCatalog",
+            "name": "Organic Grains",
+            "url": "https://himalayakrishi.com/products/organic-grains"
+          }
         ]
       }
+    }
     </script>
   </head>
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
+    <noscript>Please enable JavaScript to view this website.</noscript>
   </body>
 </html>

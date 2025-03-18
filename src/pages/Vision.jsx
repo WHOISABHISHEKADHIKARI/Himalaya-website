@@ -165,10 +165,69 @@ const Vision = () => {
   return (
     <div className="relative bg-gradient-to-b from-[#F4F9F1] to-[#EAEFE7] min-h-screen font-sans">
       <Helmet>
-        <title>Our Vision & Business Plan | Himalaya Krishi</title>
-        <meta name="description" content="Discover our comprehensive approach to sustainable agriculture and dairy production at Himalaya Krishi." />
-        <link rel="icon" type="image/png" sizes="192x192" href="/logo_192.png" />
-        <link rel="icon" type="image/png" sizes="512x512" href="/logo_512.png" />
+        <title>Vision & Strategic Plan | Himalaya Krishi - Sustainable Agriculture Excellence</title>
+        <meta name="description" content="Explore Himalaya Krishi's comprehensive vision for sustainable agriculture, dairy production, and organic farming in Nepal. From premium dairy products to innovative farming solutions." />
+        <meta name="keywords" content="himalaya krishi vision, organic farming nepal, sustainable agriculture plan, dairy production nepal" />
+        
+        {/* Technical SEO */}
+        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href="https://himalayakrishi.com/vision" />
+        
+        {/* Open Graph */}
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="Himalaya Krishi" />
+        <meta property="og:title" content="Strategic Vision | Himalaya Krishi" />
+        <meta property="og:description" content="Discover our vision for sustainable agriculture and organic farming excellence in Nepal. Premium dairy products, innovative farming solutions, and community development." />
+        <meta property="og:image" content="https://himalayakrishi.com/og-vision.jpg" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="@himalayakrishi" />
+        <meta name="twitter:title" content="Vision & Growth Plan | Himalaya Krishi" />
+        <meta name="twitter:description" content="Leading Nepal's sustainable agriculture revolution with innovative organic farming solutions and premium dairy products." />
+        <meta name="twitter:image" content="https://himalayakrishi.com/twitter-vision.jpg" />
+        
+        {/* Schema.org LD+JSON */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Article",
+            "headline": "Himalaya Krishi Vision & Strategic Plan",
+            "description": "Comprehensive vision for sustainable agriculture and organic farming excellence in Nepal",
+            "image": "https://himalayakrishi.com/og-vision.jpg",
+            "datePublished": "2024-01-01",
+            "dateModified": new Date().toISOString(),
+            "author": {
+              "@type": "Organization",
+              "name": "Himalaya Krishi",
+              "url": "https://himalayakrishi.com"
+            },
+            "publisher": {
+              "@type": "Organization",
+              "name": "Himalaya Krishi",
+              "logo": {
+                "@type": "ImageObject",
+                "url": "https://himalayakrishi.com/logo.png"
+              }
+            },
+            "mainEntity": {
+              "@type": "BusinessPlan",
+              "name": "Himalaya Krishi Strategic Vision",
+              "businessFunction": [
+                "Organic Dairy Production",
+                "Sustainable Agriculture",
+                "Community Development"
+              ],
+              "timeRequired": "5 years",
+              "audience": {
+                "@type": "Audience",
+                "audienceType": "Agricultural Stakeholders"
+              }
+            }
+          })}
+        </script>
       </Helmet>
       {/* Scroll Progress Indicator */}
       <div 

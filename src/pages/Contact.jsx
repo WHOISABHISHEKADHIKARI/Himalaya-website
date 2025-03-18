@@ -85,8 +85,78 @@ const Contact = () => {
   return (
     <div className="bg-gradient-to-b from-[#F4F9F1] to-[#EAEFE7] min-h-screen">
       <Helmet>
-        <title>Contact Us | Himalaya Krishi</title>
-        <meta name="description" content="Get in touch with Himalaya Krishi. We'd love to hear from you and discuss how we can help with your organic farming and dairy needs." />
+        <title>Contact Himalaya Krishi | Get in Touch for Organic Farming Solutions</title>
+        <meta name="description" content="Connect with Himalaya Krishi for organic farming expertise, dairy solutions, and sustainable agriculture guidance. Located in Manahari, Makwanpur, Nepal." />
+        <meta name="keywords" content="contact himalaya krishi, organic farming nepal, sustainable agriculture contact, manahari farm contact" />
+        
+        {/* Technical SEO */}
+        <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+        <link rel="canonical" href="https://himalayakrishi.com/contact" />
+        <meta name="author" content="Himalaya Krishi" />
+        <meta name="geo.region" content="NP-BAG" />
+        <meta name="geo.placename" content="Manahari" />
+        <meta name="geo.position" content="27.5545;84.8897" />
+        <meta name="ICBM" content="27.5545, 84.8897" />
+        
+        {/* Open Graph */}
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="Himalaya Krishi" />
+        <meta property="og:locale" content="en_NP" />
+        <meta property="og:url" content="https://himalayakrishi.com/contact" />
+        <meta property="og:title" content="Contact Himalaya Krishi | Organic Farming Excellence" />
+        <meta property="og:description" content="Reach out to Nepal's leading organic farm. Get expert guidance on sustainable farming, dairy solutions, and organic agriculture." />
+        <meta property="og:image" content="https://himalayakrishi.com/og-contact.jpg" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+    
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="@himalayakrishi" />
+        <meta name="twitter:title" content="Contact Himalaya Krishi | Get Expert Farming Guidance" />
+        <meta name="twitter:description" content="Connect with Nepal's premier organic farm for sustainable agriculture solutions and expert guidance." />
+        <meta name="twitter:image" content="https://himalayakrishi.com/twitter-contact.jpg" />
+    
+        {/* Schema.org LD+JSON */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "ContactPage",
+            "name": "Contact Himalaya Krishi",
+            "description": "Get in touch with Himalaya Krishi for organic farming solutions and sustainable agriculture guidance.",
+            "url": "https://himalayakrishi.com/contact",
+            "contactPoint": {
+              "@type": "ContactPoint",
+              "telephone": "+977-9823405140",
+              "contactType": "customer service",
+              "areaServed": "NP",
+              "availableLanguage": ["en", "ne"]
+            },
+            "location": {
+              "@type": "Place",
+              "name": "Himalaya Krishi Farm",
+              "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "Manahari-5",
+                "addressLocality": "Manahari",
+                "addressRegion": "Makwanpur",
+                "addressCountry": "Nepal"
+              },
+              "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": "27.5545",
+                "longitude": "84.8897"
+              }
+            },
+            "potentialAction": {
+              "@type": "ContactAction",
+              "target": {
+                "@type": "EntryPoint",
+                "urlTemplate": "https://himalayakrishi.com/contact",
+                "inLanguage": "en"
+              }
+            }
+          })}
+        </script>
       </Helmet>
       <div className="container mx-auto px-4 py-32 md:py-40">
         <motion.div 

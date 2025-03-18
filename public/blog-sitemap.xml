@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <!-- Organic Farming Guide -->
+  <url>
+    <loc>https://himalayakrishi.com/blog/organic-farming-guide</loc>
+    <lastmod>2024-01-15T14:30:00+05:45</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://himalayakrishi.com/blog/images/organic-farming-guide.jpg</image:loc>
+      <image:title>Complete Guide to Organic Farming</image:title>
+      <image:caption>Learn organic farming techniques and best practices</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Sustainable Practices -->
+  <url>
+    <loc>https://himalayakrishi.com/blog/sustainable-practices</loc>
+    <lastmod>2024-01-15T14:00:00+05:45</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://himalayakrishi.com/blog/images/sustainable-practices.jpg</image:loc>
+      <image:title>Sustainable Farming Practices</image:title>
+      <image:caption>Discover sustainable agricultural methods</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Farmer Success Stories -->
+  <url>
+    <loc>https://himalayakrishi.com/blog/farmer-success-stories</loc>
+    <lastmod>2024-01-15T13:30:00+05:45</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://himalayakrishi.com/blog/images/success-stories.jpg</image:loc>
+      <image:title>Farmer Success Stories</image:title>
+      <image:caption>Real stories of successful organic farmers</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Seasonal Growing Tips -->
+  <url>
+    <loc>https://himalayakrishi.com/blog/seasonal-growing-tips</loc>
+    <lastmod>2024-01-15T13:00:00+05:45</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://himalayakrishi.com/blog/images/seasonal-tips.jpg</image:loc>
+      <image:title>Seasonal Growing Guide</image:title>
+      <image:caption>Tips for successful seasonal farming</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Certification Process -->
+  <url>
+    <loc>https://himalayakrishi.com/blog/certification-process</loc>
+    <lastmod>2024-01-15T12:30:00+05:45</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://himalayakrishi.com/blog/images/certification.jpg</image:loc>
+      <image:title>Organic Certification Guide</image:title>
+      <image:caption>Understanding organic certification requirements</image:caption>
+    </image:image>
+  </url>
+
+</urlset>

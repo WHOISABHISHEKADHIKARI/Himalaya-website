@@ -161,25 +161,63 @@ const Home = () => {
   return (
     <>
       <Helmet>
-        <title>Himalaya Krishi - Nepal's Premier Organic Farming & Sustainable Agriculture</title>
-        <meta name="description" content="Discover Himalaya Krishi, Nepal's leading organic farming initiative. We empower farmers, promote sustainable agriculture, and deliver premium organic products since 1992." />
-        <meta name="keywords" content="organic farming nepal, sustainable agriculture, farmer empowerment, organic certification, agricultural solutions" />
-        <meta name="author" content="Himalaya Krishi" />
-        <meta name="robots" content="index, follow" />
+        <title>Himalaya Krishi - Premier Organic Farm & Sustainable Agriculture in Nepal</title>
+        <meta name="description" content="Experience Nepal's finest organic farming at Himalaya Krishi. We offer premium organic products, sustainable agriculture solutions, and empower local farmers since 1992." />
+        <meta name="keywords" content="organic farming nepal, sustainable agriculture, organic products, farmer empowerment, murrah buffalo, organic certification, himalayan agriculture" />
+        
+        {/* Technical SEO */}
+        <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
         <link rel="canonical" href="https://himalayakrishi.com" />
+        <meta name="author" content="Himalaya Krishi" />
+        <meta name="geo.region" content="NP" />
+        <meta name="geo.placename" content="Manahari" />
         
-        {/* Open Graph / Facebook */}
+        {/* Open Graph */}
         <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="Himalaya Krishi" />
+        <meta property="og:locale" content="en_NP" />
         <meta property="og:url" content="https://himalayakrishi.com" />
-        <meta property="og:title" content="Himalaya Krishi - Nepal's Premier Organic Farming & Sustainable Agriculture" />
-        <meta property="og:description" content="Discover Himalaya Krishi, Nepal's leading organic farming initiative. We empower farmers, promote sustainable agriculture, and deliver premium organic products since 1992." />
-        <meta property="og:image" content="/seo/og-image.png" />
-        
+        <meta property="og:title" content="Himalaya Krishi - Leading Organic Excellence in Nepal" />
+        <meta property="og:description" content="Discover premium organic products and sustainable farming solutions at Himalaya Krishi. Nepal's trusted name in organic agriculture since 1992." />
+        <meta property="og:image" content="https://himalayakrishi.com/og-image.jpg" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+
         {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Himalaya Krishi - Nepal's Premier Organic Farming & Sustainable Agriculture" />
-        <meta name="twitter:description" content="Discover Himalaya Krishi, Nepal's leading organic farming initiative. We empower farmers, promote sustainable agriculture, and deliver premium organic products since 1992." />
-        <meta name="twitter:image" content="/seo/og-image.png" />
+        <meta name="twitter:site" content="@himalayakrishi" />
+        <meta name="twitter:title" content="Himalaya Krishi - Organic Farming Excellence in Nepal" />
+        <meta name="twitter:description" content="Premium organic products and sustainable farming solutions from Nepal's leading organic farm. Trusted since 1992." />
+        <meta name="twitter:image" content="https://himalayakrishi.com/twitter-card.jpg" />
+        
+        {/* Schema.org LD+JSON */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": ["Organization", "LocalBusiness", "Farm"],
+            "name": "Himalaya Krishi",
+            "url": "https://himalayakrishi.com",
+            "logo": "https://himalayakrishi.com/logo.png",
+            "description": "Nepal's premier organic farming initiative promoting sustainable agriculture since 1992.",
+            "foundingDate": "1992",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Manahari",
+              "addressRegion": "Makwanpur",
+              "addressCountry": "Nepal"
+            },
+            "geo": {
+              "@type": "GeoCoordinates",
+              "latitude": "27.5545",
+              "longitude": "84.8897"
+            },
+            "sameAs": [
+              "https://facebook.com/himalayakrishi",
+              "https://twitter.com/himalayakrishi",
+              "https://instagram.com/himalayakrishi"
+            ]
+          })}
+        </script>
       </Helmet>
       <AnimatePresence>
         {isLoading ? (

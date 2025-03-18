@@ -66,6 +66,72 @@ const About = () => {
 
   return (
     <div style={{ backgroundColor: colors.background.primary }}>
+      <Helmet>
+        <title>About Himalaya Krishi | Organic Excellence Since 1992</title>
+        <meta name="description" content="Discover our journey from a small dairy farm to Nepal's leading organic enterprise. Learn about our heritage, sustainable practices, and commitment to organic excellence since 1992." />
+        <meta name="keywords" content="organic farm nepal, murrah buffalo dairy, sustainable agriculture nepal, organic farming manahari, himalaya krishi history" />
+        
+        {/* Technical SEO */}
+        <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+        <link rel="canonical" href="https://himalayakrishi.com/about" />
+        <meta name="author" content="Himalaya Krishi" />
+        <meta name="geo.region" content="NP-BAG" />
+        <meta name="geo.placename" content="Manahari" />
+        
+        {/* Open Graph */}
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="Himalaya Krishi" />
+        <meta property="og:locale" content="en_NP" />
+        <meta property="og:url" content="https://himalayakrishi.com/about" />
+        <meta property="og:title" content="About Himalaya Krishi | From Sirbani to Manahari - Our Organic Journey" />
+        <meta property="og:description" content="Explore our evolution from a small dairy farm to Nepal's premier organic enterprise. Discover our commitment to sustainable farming and community growth since 1992." />
+        <meta property="og:image" content="https://himalayakrishi.com/og-about.jpg" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+    
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="@himalayakrishi" />
+        <meta name="twitter:title" content="About Himalaya Krishi | Organic Excellence Since 1992" />
+        <meta name="twitter:description" content="From humble beginnings to organic excellence: Discover our journey of sustainable farming and community empowerment in Nepal." />
+        <meta name="twitter:image" content="https://himalayakrishi.com/twitter-about.jpg" />
+        
+        {/* Schema.org LD+JSON */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": ["Organization", "LocalBusiness", "Farm"],
+            "name": "Himalaya Krishi",
+            "foundingDate": "1992",
+            "description": "Premier organic farm in Nepal, specializing in Murrah buffalo dairy and sustainable agriculture since 1992.",
+            "founder": {
+              "@type": "Person",
+              "name": "Thapa Prasad Adhikari"
+            },
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Manahari",
+              "addressRegion": "Makwanpur",
+              "addressCountry": "Nepal"
+            },
+            "employee": [
+              {
+                "@type": "Person",
+                "name": "Kedar Prasad Adhikari",
+                "jobTitle": "Owner",
+                "telephone": "+9779845162511"
+              },
+              {
+                "@type": "Person",
+                "name": "Abhishek Adhikari",
+                "jobTitle": "Manager",
+                "telephone": "+9779865412482",
+                "email": "abhishekadhikari1254@gmail.com"
+              }
+            ]
+          })}
+        </script>
+      </Helmet>
       {/* Scroll Progress Indicator */}
       <div 
         className="fixed top-0 left-0 h-1 bg-gradient-to-r from-[#1C4E37] to-[#D8A51D] z-50"

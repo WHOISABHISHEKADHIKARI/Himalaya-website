@@ -26,23 +26,55 @@ const NotFound = () => {
   return (
     <div className="min-h-screen flex flex-col">
       <Helmet>
-        <title>404 - Page Not Found | Himalaya Krishi</title>
-        <meta name="description" content="The page you're looking for on Himalaya Krishi's website cannot be found. Please check the URL or navigate back to our homepage." />
+        <title>404 - Page Not Found | Himalaya Krishi - Organic Farming Excellence</title>
+        <meta name="description" content="Sorry, this page isn't available. Return to Himalaya Krishi's homepage for organic farming expertise, sustainable agriculture solutions, and dairy products in Nepal." />
         <meta name="robots" content="noindex, follow" />
-        <link rel="canonical" href="https://himalayakrishi.com/404" />
+        <link rel="canonical" href="https://himalayakrishi.com" />
         
-        {/* Open Graph / Facebook */}
+        {/* Open Graph */}
         <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="Himalaya Krishi" />
         <meta property="og:url" content="https://himalayakrishi.com/404" />
         <meta property="og:title" content="404 - Page Not Found | Himalaya Krishi" />
-        <meta property="og:description" content="The page you're looking for on Himalaya Krishi's website cannot be found. Please check the URL or navigate back to our homepage." />
-        <meta property="og:image" content="/seo/og-image.png" />
-        
+        <meta property="og:description" content="Sorry, this page isn't available. Explore our organic farming solutions and sustainable agriculture practices on our homepage." />
+        <meta property="og:image" content="https://himalayakrishi.com/og-404.jpg" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+
         {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="@himalayakrishi" />
         <meta name="twitter:title" content="404 - Page Not Found | Himalaya Krishi" />
-        <meta name="twitter:description" content="The page you're looking for on Himalaya Krishi's website cannot be found. Please check the URL or navigate back to our homepage." />
-        <meta name="twitter:image" content="/seo/og-image.png" />
+        <meta name="twitter:description" content="Page not found. Discover organic farming excellence at Himalaya Krishi's homepage." />
+        <meta name="twitter:image" content="https://himalayakrishi.com/twitter-404.jpg" />
+        
+        {/* Schema.org LD+JSON */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebPage",
+            "name": "404 - Page Not Found",
+            "description": "This page is not available. Please visit our homepage for organic farming solutions.",
+            "isPartOf": {
+              "@type": "WebSite",
+              "name": "Himalaya Krishi",
+              "url": "https://himalayakrishi.com"
+            },
+            "breadcrumb": {
+              "@type": "BreadcrumbList",
+              "itemListElement": [{
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://himalayakrishi.com"
+              }, {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "404 Not Found"
+              }]
+            }
+          })}
+        </script>
       </Helmet>
       <Navbar />
       <main className="flex-grow flex items-center justify-center py-20 px-4">

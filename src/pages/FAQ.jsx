@@ -91,3 +91,65 @@ const faqData = [
     tags: ["farm", "visit", "tour"]
   }
 ];
+
+const FAQ = () => {
+  return (
+    <div className="min-h-screen bg-gradient-to-b from-[#F4F9F1] to-[#EAEFE7]">
+      <Helmet>
+        <title>FAQ | Himalaya Krishi - Your Organic Farming Questions Answered</title>
+        <meta name="description" content="Find answers to common questions about organic farming, sustainable agriculture, and Himalaya Krishi's practices in Nepal. Expert guidance on traditional and modern farming methods." />
+        <meta name="keywords" content="organic farming FAQ, nepal agriculture questions, sustainable farming help, himalaya krishi guide" />
+        
+        {/* Technical SEO */}
+        <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+        <link rel="canonical" href="https://himalayakrishi.com/faq" />
+        <meta name="author" content="Himalaya Krishi" />
+        
+        {/* Open Graph */}
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="Himalaya Krishi" />
+        <meta property="og:locale" content="en_NP" />
+        <meta property="og:url" content="https://himalayakrishi.com/faq" />
+        <meta property="og:title" content="Organic Farming FAQ | Himalaya Krishi Knowledge Base" />
+        <meta property="og:description" content="Comprehensive guide to organic farming practices, sustainable agriculture, and traditional farming methods in Nepal. Expert answers to your farming questions." />
+        <meta property="og:image" content="https://himalayakrishi.com/og-faq.jpg" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="@himalayakrishi" />
+        <meta name="twitter:title" content="FAQ | Expert Organic Farming Guidance" />
+        <meta name="twitter:description" content="Get expert answers about organic farming, sustainable agriculture, and traditional farming methods in Nepal." />
+        <meta name="twitter:image" content="https://himalayakrishi.com/twitter-faq.jpg" />
+        
+        {/* Schema.org LD+JSON */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": faqData.map(item => ({
+              "@type": "Question",
+              "name": item.question,
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": item.answer
+              },
+              "keywords": item.tags.join(", ")
+            })),
+            "about": {
+              "@type": "Organization",
+              "name": "Himalaya Krishi",
+              "url": "https://himalayakrishi.com",
+              "description": "Leading organic farming initiative in Nepal promoting sustainable agriculture practices."
+            }
+          })}
+        </script>
+      </Helmet>
+
+      {/* ... rest of your component code ... */}
+    </div>
+  );
+};
+
+export default FAQ;

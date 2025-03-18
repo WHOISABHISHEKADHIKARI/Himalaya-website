@@ -1,0 +1,42 @@
+# Global rules
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /private/
+Disallow: /temp/
+Disallow: /api/
+Disallow: /backend/
+Disallow: /*.json$
+Disallow: /*?*
+Clean-param: utm_source&utm_medium&utm_campaign&utm_term&utm_content
+
+# Specific bot rules
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Googlebot-Image
+Allow: /assets/images/
+Allow: /products/images/
+Disallow: /temp/images/
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 2
+
+# Rate limiting
+Request-rate: 1/1s
+Crawl-delay: 2
+
+# Host preference
+Host: https://himalayakrishi.com
+
+# Sitemaps
+Sitemap: https://himalayakrishi.com/sitemap.xml
+Sitemap: https://himalayakrishi.com/blog-sitemap.xml
+Sitemap: https://himalayakrishi.com/news-sitemap.xml
+Sitemap: https://himalayakrishi.com/images-sitemap.xml
+Sitemap: https://himalayakrishi.com/products-sitemap.xml
+
+# Cache directives
+Cache-Control: max-age=3600
