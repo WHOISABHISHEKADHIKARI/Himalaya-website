@@ -36,6 +36,32 @@ const fadeIn = {
   }
 };
 
+// Add these new animation variants
+const heroAnimation = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: { staggerChildren: 0.2 }
+  }
+};
+
+const heroTextAnimation = {
+  hidden: { opacity: 0, y: 20 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] }
+  }
+};
+
+const staggerChildren = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: { staggerChildren: 0.2 }
+  }
+};
+
 const Vision = () => {
   const [scrollProgress, setScrollProgress] = useState(0);
   const [isLoaded, setIsLoaded] = useState(false);
@@ -528,70 +554,10 @@ const CropCard = ({ title, items }) => (
   </motion.div>
 );
 
-export default OurPlan;
+// Change the export name to match the component name
+export default Vision;
 
-// Update image imports with dynamic imports
-const ownerImage = new URL('../assets/image/owner.jpg', import.meta.url).href;
-const managerImage = new URL('../assets/image/manager.jpeg', import.meta.url).href;
-
-// Inside the Operations Section, add the team members
-<section className="mb-24">
-  <div className="grid md:grid-cols-2 gap-8">
-    {/* Kedar's Card */}
-    <motion.div 
-      className="bg-white rounded-2xl shadow-lg p-8 border border-[rgba(255,255,255,0.2)] relative overflow-hidden"
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true }}
-      variants={fadeIn}
-    >
-      <div className="flex flex-col md:flex-row items-center gap-6">
-        <div className="w-32 h-32 rounded-full overflow-hidden">
-          <img 
-            src={ownerImage}
-            alt="Kedar Prasad Adhikari"
-            className="w-full h-full object-cover"
-            loading="eager"
-            onError={(e) => {
-              e.target.onerror = null;
-              e.target.src = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 24 24"%3E%3Cpath fill="%231C4E37" d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/%3E%3C/svg%3E';
-            }}
-          />
-        </div>
-        <div>
-          <h3 className="text-xl font-bold text-[#1C4E37]">Kedar Prasad Adhikari</h3>
-          <p className="text-[#3A5944]">Owner</p>
-        </div>
-      </div>
-    </motion.div>
-
-    {/* Abhishek's Card */}
-    <motion.div 
-      className="bg-white rounded-2xl shadow-lg p-8 border border-[rgba(255,255,255,0.2)] relative overflow-hidden"
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true }}
-      variants={fadeIn}
-      transition={{ delay: 0.2 }}
-    >
-      <div className="flex flex-col md:flex-row items-center gap-6">
-        <div className="w-32 h-32 rounded-full overflow-hidden">
-          <img 
-            src={managerImage}
-            alt="Abhishek Adhikari"
-            className="w-full h-full object-cover"
-            loading="eager"
-            onError={(e) => {
-              e.target.onerror = null;
-              e.target.src = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 24 24"%3E%3Cpath fill="%231C4E37" d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/%3E%3C/svg%3E';
-            }}
-          />
-        </div>
-        <div>
-          <h3 className="text-xl font-bold text-[#1C4E37]">Abhishek Adhikari</h3>
-          <p className="text-[#3A5944]">Manager</p>
-        </div>
-      </div>
-    </motion.div>
-  </div>
-</section>
+// Remove these unused sections
+// Remove: const ownerImage = new URL...
+// Remove: const managerImage = new URL...
+// Remove: The entire team section that was after the export
