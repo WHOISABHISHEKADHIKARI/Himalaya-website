@@ -23,18 +23,20 @@ const colors = {
   }
 };
 
-<<<<<<< HEAD
 // Add this at the top with other imports
 import { Helmet } from 'react-helmet-async';
 
-// Import animation variants
-import { fadeIn, staggerChildren, heroAnimation, heroTextAnimation, cardAnimation } from '../utils/animations';
+// Add animation variants before the OurPlan component
+const fadeIn = {
+  hidden: { opacity: 0, y: 30 },
+  visible: { 
+    opacity: 1, 
+    y: 0,
+    transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] }
+  }
+};
 
-// Resolve component name conflict
 const Vision = () => {
-=======
-const OurPlan = () => {
->>>>>>> 00b7a8aea4fc8fa23173e88d8cce330a85658cab
   const [scrollProgress, setScrollProgress] = useState(0);
   const [isLoaded, setIsLoaded] = useState(false);
 
@@ -88,74 +90,12 @@ const OurPlan = () => {
 
   return (
     <div className="relative bg-gradient-to-b from-[#F4F9F1] to-[#EAEFE7] min-h-screen font-sans">
-<<<<<<< HEAD
       <Helmet>
-        <title>Vision & Strategic Plan | Himalaya Krishi - Sustainable Agriculture Excellence</title>
-        <meta name="description" content="Explore Himalaya Krishi's comprehensive vision for sustainable agriculture, dairy production, and organic farming in Nepal. From premium dairy products to innovative farming solutions." />
-        <meta name="keywords" content="himalaya krishi vision, organic farming nepal, sustainable agriculture plan, dairy production nepal" />
-        
-        {/* Technical SEO */}
-        <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="https://krishihimalaya.com/vision" />
-        
-        {/* Open Graph */}
-        <meta property="og:type" content="website" />
-        <meta property="og:site_name" content="Himalaya Krishi" />
-        <meta property="og:title" content="Strategic Vision | Himalaya Krishi" />
-        <meta property="og:description" content="Discover our vision for sustainable agriculture and organic farming excellence in Nepal. Premium dairy products, innovative farming solutions, and community development." />
-        <meta property="og:image" content="https://krishihimalaya.com/og-vision.jpg" />
-        <meta property="og:image:width" content="1200" />
-        <meta property="og:image:height" content="630" />
-        
-        {/* Twitter */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:site" content="@himalayakrishi" />
-        <meta name="twitter:title" content="Vision & Growth Plan | Himalaya Krishi" />
-        <meta name="twitter:description" content="Leading Nepal's sustainable agriculture revolution with innovative organic farming solutions and premium dairy products." />
-        <meta name="twitter:image" content="https://krishihimalaya.com/twitter-vision.jpg" />
-        
-        {/* Schema.org LD+JSON */}
-        <script type="application/ld+json">
-          {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Article",
-            "headline": "Himalaya Krishi Vision & Strategic Plan",
-            "description": "Comprehensive vision for sustainable agriculture and organic farming excellence in Nepal",
-            "image": "https://krishihimalaya.com/og-vision.jpg",
-            "datePublished": "2024-01-01",
-            "dateModified": new Date().toISOString(),
-            "author": {
-              "@type": "Organization",
-              "name": "Himalaya Krishi",
-              "url": "https://krishihimalaya.com"
-            },
-            "publisher": {
-              "@type": "Organization",
-              "name": "Himalaya Krishi",
-              "logo": {
-                "@type": "ImageObject",
-                "url": "https://krishihimalaya.com/logo.png"
-              }
-            },
-            "mainEntity": {
-              "@type": "BusinessPlan",
-              "name": "Himalaya Krishi Strategic Vision",
-              "businessFunction": [
-                "Organic Dairy Production",
-                "Sustainable Agriculture",
-                "Community Development"
-              ],
-              "timeRequired": "5 years",
-              "audience": {
-                "@type": "Audience",
-                "audienceType": "Agricultural Stakeholders"
-              }
-            }
-          })}
-        </script>
+        <title>Our Vision & Business Plan | Himalaya Krishi</title>
+        <meta name="description" content="Discover our comprehensive approach to sustainable agriculture and dairy production at Himalaya Krishi." />
+        <link rel="icon" type="image/png" sizes="192x192" href="/logo_192.png" />
+        <link rel="icon" type="image/png" sizes="512x512" href="/logo_512.png" />
       </Helmet>
-=======
->>>>>>> 00b7a8aea4fc8fa23173e88d8cce330a85658cab
       {/* Scroll Progress Indicator */}
       <div 
         className="fixed top-0 left-0 h-1 bg-gradient-to-r from-[#1C4E37] to-[#D8A51D] z-50"
@@ -588,99 +528,11 @@ const CropCard = ({ title, items }) => (
   </motion.div>
 );
 
-<<<<<<< HEAD
-// Remove these lines
-const ownerImage = new URL('../assets/image/owner.jpg', import.meta.url).href;
-const managerImage = new URL('../assets/image/manager.jpeg', import.meta.url).href;
-
-// Remove the entire TeamSection component definition
-const TeamSection = () => (
-  <section aria-labelledby="team" className="mb-24 relative">
-    {/* Decorative background elements */}
-    <div className="absolute inset-0 bg-gradient-to-b from-transparent via-emerald-50/50 to-transparent -z-10" />
-    <div className="absolute right-0 top-1/2 transform -translate-y-1/2 w-64 h-64 bg-emerald-100/20 rounded-full blur-3xl -z-10" />
-    <div className="absolute left-0 top-1/4 w-48 h-48 bg-[#D8A51D]/10 rounded-full blur-2xl -z-10" />
-
-    <div className="container mx-auto px-4 max-w-5xl">
-      <motion.div 
-        className="text-center mb-16"
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-      >
-        <span className="inline-block h-1 w-24 bg-[#D8A51D] mb-6"></span>
-        <h2 className="text-4xl font-serif font-bold text-[#1C4E37] mb-4">
-          Meet Our Leadership
-        </h2>
-        <p className="text-[#3A5944] text-lg max-w-2xl mx-auto">
-          Dedicated professionals committed to sustainable agriculture and innovation
-        </p>
-      </motion.div>
-
-      <div className="grid md:grid-cols-2 gap-12">
-        {/* Kedar's Card */}
-        <motion.div 
-          className="group"
-          initial={{ opacity: 0, x: -30 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-        >
-          <div className="bg-white rounded-2xl shadow-xl p-8 border border-emerald-100 relative overflow-hidden transition-all duration-500 hover:shadow-2xl hover:-translate-y-2">
-            <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-emerald-100/20 to-transparent rounded-bl-full" />
-            <div className="flex flex-col items-center text-center">
-              <div className="w-40 h-40 rounded-full overflow-hidden mb-6 border-4 border-emerald-100 shadow-lg">
-                <img 
-                  src={ownerImage}
-                  alt="Kedar Prasad Adhikari"
-                  className="w-full h-full object-cover transform transition-transform duration-500 group-hover:scale-110"
-                />
-              </div>
-              <h3 className="text-2xl font-bold text-[#1C4E37] mb-2">Kedar Prasad Adhikari</h3>
-              <p className="text-[#D8A51D] font-medium mb-4">Owner</p>
-              <p className="text-[#3A5944] leading-relaxed">
-                Visionary leader with extensive experience in sustainable agriculture
-              </p>
-            </div>
-          </div>
-        </motion.div>
-
-        {/* Abhishek's Card */}
-        <motion.div 
-          className="group"
-          initial={{ opacity: 0, x: 30 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-        >
-          <div className="bg-white rounded-2xl shadow-xl p-8 border border-emerald-100 relative overflow-hidden transition-all duration-500 hover:shadow-2xl hover:-translate-y-2">
-            <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-emerald-100/20 to-transparent rounded-bl-full" />
-            <div className="flex flex-col items-center text-center">
-              <div className="w-40 h-40 rounded-full overflow-hidden mb-6 border-4 border-emerald-100 shadow-lg">
-                <img 
-                  src={managerImage}
-                  alt="Abhishek Adhikari"
-                  className="w-full h-full object-cover transform transition-transform duration-500 group-hover:scale-110"
-                />
-              </div>
-              <h3 className="text-2xl font-bold text-[#1C4E37] mb-2">Abhishek Adhikari</h3>
-              <p className="text-[#D8A51D] font-medium mb-4">Manager</p>
-              <p className="text-[#3A5944] leading-relaxed">
-                Operations expert focused on implementing innovative farming solutions
-              </p>
-            </div>
-          </div>
-        </motion.div>
-=======
 export default OurPlan;
 
-// Update image imports with proper paths
-import farmImage1 from '../assets/image/imag1.jpeg';
-import farmImage2 from '../assets/image/imag2.jpeg';
-import farmImage3 from '../assets/image/imag3.jpeg';
-import farmImage4 from '../assets/image/imag4.jpeg';
-import kedarImage from '../assets/image/owner.jpg';
-import abhishekImage from '../assets/image/manager.jpeg';
+// Update image imports with dynamic imports
+const ownerImage = new URL('../assets/image/owner.jpg', import.meta.url).href;
+const managerImage = new URL('../assets/image/manager.jpeg', import.meta.url).href;
 
 // Inside the Operations Section, add the team members
 <section className="mb-24">
@@ -696,13 +548,13 @@ import abhishekImage from '../assets/image/manager.jpeg';
       <div className="flex flex-col md:flex-row items-center gap-6">
         <div className="w-32 h-32 rounded-full overflow-hidden">
           <img 
-            src={kedarImage} 
+            src={ownerImage}
             alt="Kedar Prasad Adhikari"
             className="w-full h-full object-cover"
             loading="eager"
             onError={(e) => {
               e.target.onerror = null;
-              e.target.src = 'https://via.placeholder.com/128?text=K';
+              e.target.src = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 24 24"%3E%3Cpath fill="%231C4E37" d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/%3E%3C/svg%3E';
             }}
           />
         </div>
@@ -725,13 +577,13 @@ import abhishekImage from '../assets/image/manager.jpeg';
       <div className="flex flex-col md:flex-row items-center gap-6">
         <div className="w-32 h-32 rounded-full overflow-hidden">
           <img 
-            src={abhishekImage} 
+            src={managerImage}
             alt="Abhishek Adhikari"
             className="w-full h-full object-cover"
             loading="eager"
             onError={(e) => {
               e.target.onerror = null;
-              e.target.src = 'https://via.placeholder.com/128?text=A';
+              e.target.src = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 24 24"%3E%3Cpath fill="%231C4E37" d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/%3E%3C/svg%3E';
             }}
           />
         </div>
@@ -739,10 +591,7 @@ import abhishekImage from '../assets/image/manager.jpeg';
           <h3 className="text-xl font-bold text-[#1C4E37]">Abhishek Adhikari</h3>
           <p className="text-[#3A5944]">Manager</p>
         </div>
->>>>>>> 00b7a8aea4fc8fa23173e88d8cce330a85658cab
       </div>
-    </div>
-  </section>
-);
-
-export default Vision;
+    </motion.div>
+  </div>
+</section>
