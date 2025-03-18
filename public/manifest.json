@@ -1,21 +1,75 @@
 {
-  "name": "Himalaya Krishi",
-  "short_name": "Himalaya",
-  "description": "Leading Organic Farming Excellence in Nepal",
-  "start_url": "/",
+  "name": "हिमालय कृषि | Himalaya Krishi - Nepal's Organic Farming Hub",
+  "short_name": "हिमालय कृषि",
+  "description": "नेपालको अग्रणी जैविक कृषि केन्द्र | Leading organic farming center in Nepal providing agricultural resources, farming techniques, and government subsidies information",
+  "start_url": "/?source=pwa",
+  "scope": "/",
   "display": "standalone",
+  "orientation": "any",
   "background_color": "#ffffff",
   "theme_color": "#1C4E37",
+  "categories": ["agriculture", "business", "education"],
+  "lang": "ne",
+  "dir": "ltr",
+  "prefer_related_applications": false,
+  "related_applications": [],
+  "shortcuts": [
+    {
+      "name": "कृषि अनुदान | Agriculture Grants",
+      "url": "/resources/agriculture-grants",
+      "description": "Latest agriculture grants and subsidies in Nepal"
+    },
+    {
+      "name": "खेती प्रविधि | Farming Techniques",
+      "url": "/resources/farming-techniques",
+      "description": "Modern farming techniques for Nepal"
+    },
+    {
+      "name": "जैविक खेती | Organic Farming",
+      "url": "/organic-farming",
+      "description": "Organic farming practices and certification"
+    }
+  ],
   "icons": [
     {
       "src": "/assets/logo/logo_192.png",
       "sizes": "192x192",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any maskable"
     },
     {
       "src": "/assets/logo/logo_512.png",
       "sizes": "512x512",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/assets/logo/logo_384.png",
+      "sizes": "384x384",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/assets/logo/logo_256.png",
+      "sizes": "256x256",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/assets/screenshots/homepage.jpg",
+      "sizes": "1280x720",
+      "type": "image/jpeg",
+      "platform": "wide",
+      "label": "Homepage of Himalaya Krishi"
+    },
+    {
+      "src": "/assets/screenshots/resources.jpg",
+      "sizes": "1280x720",
+      "type": "image/jpeg",
+      "platform": "wide",
+      "label": "Agricultural Resources and Grants"
     }
   ]
 }

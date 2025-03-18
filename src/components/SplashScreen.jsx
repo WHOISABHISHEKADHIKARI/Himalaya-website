@@ -24,15 +24,27 @@ const SplashScreen = ({ onFinish = () => {} }) => {
   return (
     <>
       <Helmet>
-        <title>Welcome to Himalaya Krishi | Loading...</title>
+        <title>हिमालय कृषि | Himalaya Krishi - नेपालको अग्रणी जैविक फार्म</title>
         <meta name="robots" content="noindex, nofollow" />
-        <meta name="preload" content="true" />
-        <link rel="preload" href="/assets/images/himalaya-logo-white.png" as="image" />
+        <meta name="description" content="नेपालको अग्रणी जैविक कृषि फार्म। कृषि अनुदान, जैविक खेती र कृषि नीतिहरूको जानकारी उपलब्ध छ। | Nepal's leading organic farm. Information on agricultural grants, organic farming, and policies available." />
+        
+        {/* Resource Hints for Performance */}
+        <link rel="preconnect" href="https://krishihimalaya.com" />
+        <link rel="dns-prefetch" href="https://krishihimalaya.com" />
+        <link rel="preload" href="/assets/images/himalaya-logo-white.png" as="image" type="image/png" />
+        
+        {/* PWA Meta Tags */}
+        <meta name="application-name" content="Himalaya Krishi" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-title" content="Himalaya Krishi" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="mobile-web-app-capable" content="yes" />
+        <meta name="theme-color" content="#1C4E37" />
       </Helmet>
 
       <div 
         role="status"
-        aria-label="Loading Himalaya Krishi website"
+        aria-label="हिमालय कृषि वेबसाइट लोड हुँदैछ | Loading Himalaya Krishi website"
         className={`fixed inset-0 z-50 flex items-center justify-center bg-gradient-to-b from-[#1C4E37] to-[#173E2C] transition-opacity duration-500 ${
           isVisible ? 'opacity-100' : 'opacity-0'
         }`}
@@ -40,7 +52,7 @@ const SplashScreen = ({ onFinish = () => {} }) => {
         <div className="text-center px-6">
           <img 
             src="/assets/images/himalaya-logo-white.png"
-            alt="Himalaya Krishi Logo" 
+            alt="हिमालय कृषि लोगो | Himalaya Krishi Logo" 
             className="w-64 h-64 mx-auto mb-6 filter brightness-100"
             onError={(e) => {
               console.error('Logo failed to load');
@@ -49,13 +61,17 @@ const SplashScreen = ({ onFinish = () => {} }) => {
             style={{ display: imageError ? 'none' : 'block' }}
             loading="eager"
             fetchpriority="high"
+            width="256"
+            height="256"
           />
           {imageError && (
             <h1 
               className="text-4xl font-bold text-white mb-6"
               aria-live="polite"
             >
-              Himalaya Krishi
+              <span lang="ne">हिमालय कृषि</span>
+              <span className="sr-only"> | </span>
+              <span>Himalaya Krishi</span>
             </h1>
           )}
           <div 
@@ -65,10 +81,14 @@ const SplashScreen = ({ onFinish = () => {} }) => {
             aria-live="polite"
           >
             <p className="text-xl text-white mb-2">
-              Welcome to Nepal's Premier Organic Farm
+              <span lang="ne">नेपालको अग्रणी जैविक फार्ममा स्वागत छ</span>
+              <span className="sr-only"> | </span>
+              <span>Welcome to Nepal's Premier Organic Farm</span>
             </p>
             <p className="text-lg text-[#D8A51D]/80">
-              Nurturing Nature, Harvesting Excellence
+              <span lang="ne">प्रकृतिको हेरचाह, उत्कृष्टताको फसल</span>
+              <span className="sr-only"> | </span>
+              <span>Nurturing Nature, Harvesting Excellence</span>
             </p>
           </div>
         </div>

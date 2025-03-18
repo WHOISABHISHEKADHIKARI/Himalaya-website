@@ -65,22 +65,45 @@ const Navbar = ({ isHomePage }) => {
   return (
     <>
       <Helmet>
-        {/* SEO Metadata */}
-        <title>{`${location.pathname === '/' ? 'Home' : location.pathname.substring(1).charAt(0).toUpperCase() + location.pathname.slice(2)} | Himalaya Krishi - Leading Organic Farming Excellence in Nepal`}</title>
-        <meta name="description" content={`${location.pathname === '/' ? 'Discover Himalaya Krishi\'s organic farming excellence in Nepal. Leading sustainable agriculture practices and farmer empowerment since 1992.' : 
-          location.pathname === '/about' ? 'Learn about Himalaya Krishi\'s journey in organic farming, our heritage, and commitment to sustainable agriculture in Nepal.' :
-          location.pathname === '/vision' ? 'Explore Himalaya Krishi\'s vision for sustainable farming, organic excellence, and agricultural innovation in Nepal.' :
-          'Connect with Himalaya Krishi for sustainable farming solutions and organic agriculture expertise in Nepal.'}`} />
-        <link rel="canonical" href={`https://krishihimalaya.com${location.pathname}`} />
+        {/* Enhanced Bilingual Meta Tags */}
+        <title>{`${
+          location.pathname === '/' 
+            ? 'हिमालय कृषि | Himalaya Krishi - नेपालको अग्रणी जैविक कृषि केन्द्र'
+            : `${location.pathname.substring(1).charAt(0).toUpperCase() + location.pathname.slice(2)} | कृषि अनुदान र नीतिहरू - Agriculture Grants & Policies`
+        }`}</title>
         
-        {/* Schema.org JSON-LD */}
+        <meta name="description" content={`${
+          location.pathname === '/' 
+            ? 'नेपालमा कृषि अनुदान, जैविक खेती र कृषि नीतिहरूको बारेमा जान्नुहोस्। सरकारी अनुदान र कृषि मन्त्रालयका कार्यक्रमहरूको जानकारी उपलब्ध छ। | Learn about agriculture grants, organic farming, and policies in Nepal.'
+            : location.pathname === '/about'
+            ? 'जैविक खेती र कृषि अनुदान सम्बन्धी जानकारी। हाम्रो यात्रा र उपलब्धिहरू। | Information about organic farming and agricultural grants. Our journey and achievements.'
+            : location.pathname === '/vision'
+            ? 'दिगो कृषि र जैविक खेतीको भविष्य। कृषि नीति र अनुदान कार्यक्रमहरू। | Future of sustainable farming and organic agriculture. Agricultural policies and grant programs.'
+            : 'कृषि सम्बन्धी सल्लाह र सहयोगको लागि सम्पर्क गर्नुहोस्। | Contact us for agricultural consultation and support.'
+        }`} />
+
+        {/* Language Alternates */}
+        <link rel="alternate" hrefLang="ne" href={`https://krishihimalaya.com/ne${location.pathname}`} />
+        <link rel="alternate" hrefLang="en" href={`https://krishihimalaya.com${location.pathname}`} />
+        <link rel="alternate" hrefLang="x-default" href={`https://krishihimalaya.com${location.pathname}`} />
+
+        {/* Enhanced Schema.org JSON-LD */}
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
             "@type": "Organization",
-            "name": "Himalaya Krishi",
+            "name": "हिमालय कृषि | Himalaya Krishi",
+            "alternateName": ["Himalaya Agriculture", "हिमालय एग्रीकल्चर"],
             "url": "https://krishihimalaya.com",
             "logo": "https://krishihimalaya.com/assets/logo/logo_white_bg_removed.png",
+            "description": "नेपालको अग्रणी जैविक कृषि केन्द्र | Nepal's Leading Organic Agriculture Center",
+            "knowsAbout": [
+              "Organic Farming",
+              "Agricultural Grants",
+              "Farming Techniques",
+              "Government Subsidies",
+              "Agricultural Policies"
+            ],
             "sameAs": [
               "https://www.facebook.com/himalayakrishi",
               "https://twitter.com/himalayakrishi",
@@ -102,6 +125,10 @@ const Navbar = ({ isHomePage }) => {
           })}
         </script>
 
+        {/* Enhanced Open Graph with Bilingual Support */}
+        <meta property="og:locale" content="ne_NP" />
+        <meta property="og:locale:alternate" content="en_US" />
+        
         {/* Navigation Schema */}
         <script type="application/ld+json">
           {JSON.stringify({
@@ -138,6 +165,7 @@ const Navbar = ({ isHomePage }) => {
         <meta name="twitter:image" content="/seo/og-image.png" />
       </Helmet>
 
+      {/* Navigation with Bilingual Support */}
       <nav 
         className={`fixed w-full top-0 z-50 transition-all duration-700 ease-in-out ${
           scrolled ? 'bg-opacity-90 backdrop-blur-lg shadow-xl h-20' : 'bg-gradient-to-r h-28'

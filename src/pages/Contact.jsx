@@ -43,10 +43,13 @@ const Contact = () => {
       }
     }
   };
+  // Update form data to include subject and language preference
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    message: ''
+    subject: '',
+    message: '',
+    language: 'en' // Default to English
   });
   const [status, setStatus] = useState('');
 
@@ -85,45 +88,33 @@ const Contact = () => {
   return (
     <div className="bg-gradient-to-b from-[#F4F9F1] to-[#EAEFE7] min-h-screen">
       <Helmet>
-        <title>Contact Himalaya Krishi | Get in Touch for Organic Farming Solutions</title>
-        <meta name="description" content="Connect with Himalaya Krishi for organic farming expertise, dairy solutions, and sustainable agriculture guidance. Located in Manahari, Makwanpur, Nepal." />
-        <meta name="keywords" content="contact himalaya krishi, organic farming nepal, sustainable agriculture contact, manahari farm contact" />
+        <title>सम्पर्क गर्नुहोस् | Contact Himalaya Krishi - कृषि सल्लाह र सहयोगको लागि</title>
+        <meta name="description" content="कृषि अनुदान, जैविक खेती, र कृषि नीति सम्बन्धी जानकारीको लागि सम्पर्क गर्नुहोस्। विशेषज्ञ सल्लाह र मार्गदर्शन उपलब्ध छ। | Contact us for agriculture grants, organic farming guidance, and policy information in Nepal." />
+        <meta name="keywords" content="कृषि सम्पर्क नेपाल, agriculture contact nepal, कृषि विज्ञ सम्पर्क, farming expert contact, कृषि अनुदान सहयोग, grant assistance contact, जैविक खेती सल्लाह, organic farming consultation" />
         
-        {/* Technical SEO */}
-        <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
-        <link rel="canonical" href="https://krishihimalaya.com/contact" />
-        <meta name="author" content="Himalaya Krishi" />
-        <meta name="geo.region" content="NP-BAG" />
-        <meta name="geo.placename" content="Manahari" />
-        <meta name="geo.position" content="27.5545;84.8897" />
-        <meta name="ICBM" content="27.5545, 84.8897" />
-        
-        {/* Open Graph */}
-        <meta property="og:type" content="website" />
-        <meta property="og:site_name" content="Himalaya Krishi" />
-        <meta property="og:locale" content="en_NP" />
-        <meta property="og:url" content="https://krishihimalaya.com/contact" />
-        <meta property="og:title" content="Contact Himalaya Krishi | Organic Farming Excellence" />
-        <meta property="og:description" content="Reach out to Nepal's leading organic farm. Get expert guidance on sustainable farming, dairy solutions, and organic agriculture." />
-        <meta property="og:image" content="https://krishihimalaya.com/og-contact.jpg" />
-        <meta property="og:image:width" content="1200" />
-        <meta property="og:image:height" content="630" />
-    
-        {/* Twitter */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:site" content="@himalayakrishi" />
-        <meta name="twitter:title" content="Contact Himalaya Krishi | Get Expert Farming Guidance" />
-        <meta name="twitter:description" content="Connect with Nepal's premier organic farm for sustainable agriculture solutions and expert guidance." />
-        <meta name="twitter:image" content="https://krishihimalaya.com/twitter-contact.jpg" />
-    
-        {/* Schema.org LD+JSON */}
+        <link rel="alternate" hrefLang="ne" href="https://krishihimalaya.com/ne/contact" />
+        <link rel="alternate" hrefLang="en" href="https://krishihimalaya.com/contact" />
+        <meta property="og:locale" content="ne_NP" />
+        <meta property="og:locale:alternate" content="en_US" />
+
+        {/* Update schema for better local business visibility */}
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
-            "@type": "ContactPage",
-            "name": "Contact Himalaya Krishi",
-            "description": "Get in touch with Himalaya Krishi for organic farming solutions and sustainable agriculture guidance.",
+            "@type": ["ContactPage", "LocalBusiness"],
+            "name": "हिमालय कृषि | Himalaya Krishi",
+            "description": "Expert consultation for agriculture grants, organic farming, and sustainable practices in Nepal",
             "url": "https://krishihimalaya.com/contact",
+            "areaServed": {
+              "@type": "Country",
+              "name": "Nepal"
+            },
+            "serviceType": [
+              "Agriculture Consultation",
+              "Organic Farming Guidance",
+              "Grant Application Assistance",
+              "Policy Information"
+            ],
             "contactPoint": {
               "@type": "ContactPoint",
               "telephone": "+977-9823405140",

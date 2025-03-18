@@ -1,4 +1,20 @@
+// Update FAQ data with bilingual content
 const faqData = [
+  // Government & Policy
+  {
+    questionNe: "नेपालमा कृषि अनुदान कसरी प्राप्त गर्ने?",
+    questionEn: "How to get agriculture grants in Nepal?",
+    answerNe: "कृषि मन्त्रालय र स्थानीय सरकारले प्रदान गर्ने विभिन्न अनुदान कार्यक्रमहरू छन्। हामी किसानहरूलाई आवेदन प्रक्रियामा सहयोग गर्छौं।",
+    answerEn: "Various grants are available through the Ministry of Agriculture and local governments. We assist farmers in the application process.",
+    tags: ["grants", "subsidies", "government-support", "कृषि-अनुदान"]
+  },
+  {
+    questionNe: "जैविक प्रमाणीकरण कसरी प्राप्त गर्ने?",
+    questionEn: "How to obtain organic certification?",
+    answerNe: "हामी किसानहरूलाई जैविक प्रमाणीकरणको लागि आवश्यक सबै प्रक्रियाहरूमा मार्गदर्शन गर्छौं।",
+    answerEn: "We guide farmers through all necessary steps for organic certification.",
+    tags: ["organic-certification", "standards", "जैविक-प्रमाणीकरण"]
+  },
   // About Himalaya Krishi
   {
     question: "What is Himalaya Krishi's mission?",
@@ -96,58 +112,72 @@ const FAQ = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-[#F4F9F1] to-[#EAEFE7]">
       <Helmet>
-        <title>FAQ | Himalaya Krishi - Your Organic Farming Questions Answered</title>
-        <meta name="description" content="Find answers to common questions about organic farming, sustainable agriculture, and Himalaya Krishi's practices in Nepal. Expert guidance on traditional and modern farming methods." />
-        <meta name="keywords" content="organic farming FAQ, nepal agriculture questions, sustainable farming help, himalaya krishi guide" />
+        <title>कृषि प्रश्नोत्तर | Agriculture FAQ - Himalaya Krishi</title>
+        <meta name="description" content="कृषि अनुदान, जैविक खेती, सरकारी नीति र प्राविधिक सहयोग सम्बन्धी जानकारी। नेपालको कृषि क्षेत्रको विश्वसनीय मार्गदर्शन। | Expert guidance on agriculture grants, organic farming, and government policies in Nepal." />
+        <meta name="keywords" content="कृषि अनुदान नेपाल, agriculture grants nepal, जैविक खेती, organic farming nepal, कृषि मन्त्रालय, agriculture ministry nepal, कृषि नीति, agricultural policies, सरकारी अनुदान, government subsidies nepal" />
         
-        {/* Technical SEO */}
-        <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
-        <link rel="canonical" href="https://krishihimalaya.com/faq" />
-        <meta name="author" content="Himalaya Krishi" />
-        
-        {/* Open Graph */}
-        <meta property="og:type" content="website" />
-        <meta property="og:site_name" content="Himalaya Krishi" />
-        <meta property="og:locale" content="en_NP" />
-        <meta property="og:url" content="https://krishihimalaya.com/faq" />
-        <meta property="og:title" content="Organic Farming FAQ | Himalaya Krishi Knowledge Base" />
-        <meta property="og:description" content="Comprehensive guide to organic farming practices, sustainable agriculture, and traditional farming methods in Nepal. Expert answers to your farming questions." />
-        <meta property="og:image" content="https://krishihimalaya.com/og-faq.jpg" />
-        <meta property="og:image:width" content="1200" />
-        <meta property="og:image:height" content="630" />
-
-        {/* Twitter */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:site" content="@himalayakrishi" />
-        <meta name="twitter:title" content="FAQ | Expert Organic Farming Guidance" />
-        <meta name="twitter:description" content="Get expert answers about organic farming, sustainable agriculture, and traditional farming methods in Nepal." />
-        <meta name="twitter:image" content="https://krishihimalaya.com/twitter-faq.jpg" />
+        <link rel="alternate" hrefLang="ne" href="https://krishihimalaya.com/ne/faq" />
+        <link rel="alternate" hrefLang="en" href="https://krishihimalaya.com/faq" />
+        <meta property="og:locale" content="ne_NP" />
+        <meta property="og:locale:alternate" content="en_US" />
         
         {/* Schema.org LD+JSON */}
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
             "@type": "FAQPage",
+            "inLanguage": ["ne-NP", "en-US"],
             "mainEntity": faqData.map(item => ({
               "@type": "Question",
-              "name": item.question,
+              "name": [
+                { "@language": "ne", "@value": item.questionNe },
+                { "@language": "en", "@value": item.questionEn }
+              ],
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": item.answer
+                "text": [
+                  { "@language": "ne", "@value": item.answerNe },
+                  { "@language": "en", "@value": item.answerEn }
+                ]
               },
               "keywords": item.tags.join(", ")
             })),
             "about": {
-              "@type": "Organization",
-              "name": "Himalaya Krishi",
-              "url": "https://krishihimalaya.com",
-              "description": "Leading organic farming initiative in Nepal promoting sustainable agriculture practices."
+              "@type": ["Organization", "AgricultureService"],
+              "name": "हिमालय कृषि | Himalaya Krishi",
+              "knowsAbout": [
+                "Agriculture Grants",
+                "Organic Farming",
+                "Agricultural Policies",
+                "Government Subsidies"
+              ]
             }
           })}
         </script>
       </Helmet>
 
-      {/* ... rest of your component code ... */}
+      {/* FAQ Content */}
+      <div className="container mx-auto px-4 py-12">
+        <h1 className="text-4xl font-bold text-center mb-8">
+          <span lang="ne" className="block mb-2">कृषि सम्बन्धी सामान्य जिज्ञासाहरू</span>
+          <span>Frequently Asked Questions</span>
+        </h1>
+        
+        <div className="max-w-3xl mx-auto space-y-6">
+          {faqData.map((faq, index) => (
+            <div key={index} className="bg-white rounded-lg shadow-md p-6">
+              <h2 className="text-xl font-semibold mb-4">
+                <span lang="ne" className="block mb-2">{faq.questionNe}</span>
+                <span>{faq.questionEn}</span>
+              </h2>
+              <p className="text-gray-600">
+                <span lang="ne" className="block mb-2">{faq.answerNe}</span>
+                <span>{faq.answerEn}</span>
+              </p>
+            </div>
+          ))}
+        </div>
+      </div>
     </div>
   );
 };

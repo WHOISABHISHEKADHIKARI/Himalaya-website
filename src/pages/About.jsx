@@ -67,8 +67,8 @@ const About = () => {
   return (
     <div style={{ backgroundColor: colors.background.primary }}>
       <Helmet>
-        <title>About Himalaya Krishi | Organic Excellence Since 1992</title>
-        <meta name="description" content="Discover our journey from a small dairy farm to Nepal's leading organic enterprise. Learn about our heritage, sustainable practices, and commitment to organic excellence since 1992." />
+        <title>About Himalaya Krishi | From Sirbani to Manahari - Our Organic Journey</title>
+        <meta name="description" content="Explore our evolution from a small dairy farm to Nepal's premier organic enterprise. Discover our commitment to sustainable farming and community growth since 1992." />
         <meta name="keywords" content="organic farm nepal, murrah buffalo dairy, sustainable agriculture nepal, organic farming manahari, himalaya krishi history" />
         
         {/* Technical SEO */}
@@ -76,7 +76,14 @@ const About = () => {
         <link rel="canonical" href="https://krishihimalaya.com/about" />
         <meta name="author" content="Himalaya Krishi" />
         <meta name="geo.region" content="NP-BAG" />
-        <meta name="geo.placename" content="Manahari" />
+        <meta name="geo.placename" content="Manahari, Makwanpur" />
+        <meta name="geo.position" content="27.5295;84.8174" />
+        <meta name="ICBM" content="27.5295, 84.8174" />
+
+        {/* Language Alternates */}
+        <link rel="alternate" hrefLang="ne" href="https://krishihimalaya.com/ne/about" />
+        <link rel="alternate" hrefLang="en" href="https://krishihimalaya.com/about" />
+        <link rel="alternate" hrefLang="x-default" href="https://krishihimalaya.com/about" />
         
         {/* Open Graph */}
         <meta property="og:type" content="website" />
@@ -95,57 +102,107 @@ const About = () => {
         <meta name="twitter:title" content="About Himalaya Krishi | Organic Excellence Since 1992" />
         <meta name="twitter:description" content="From humble beginnings to organic excellence: Discover our journey of sustainable farming and community empowerment in Nepal." />
         <meta name="twitter:image" content="https://krishihimalaya.com/twitter-about.jpg" />
-        
-        {/* Schema.org LD+JSON */}
-        <script type="application/ld+json">
-          {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": ["Organization", "LocalBusiness", "Farm"],
-            "name": "Himalaya Krishi",
-            "foundingDate": "1992",
-            "description": "Premier organic farm in Nepal, specializing in Murrah buffalo dairy and sustainable agriculture since 1992.",
-            "founder": {
-              "@type": "Person",
-              "name": "Thapa Prasad Adhikari"
-            },
-            "address": {
-              "@type": "PostalAddress",
-              "addressLocality": "Manahari",
-              "addressRegion": "Makwanpur",
-              "addressCountry": "Nepal"
-            },
-            "employee": [
-              {
-                "@type": "Person",
-                "name": "Kedar Prasad Adhikari",
-                "jobTitle": "Owner",
-                "telephone": "+9779845162511"
-              },
-              {
-                "@type": "Person",
-                "name": "Abhishek Adhikari",
-                "jobTitle": "Manager",
-                "telephone": "+9779865412482",
-                "email": "abhishekadhikari1254@gmail.com"
-              }
-            ]
-          })}
-        </script>
       </Helmet>
+
       {/* Scroll Progress Indicator */}
       <div 
         className="fixed top-0 left-0 h-1 bg-gradient-to-r from-[#1C4E37] to-[#D8A51D] z-50"
         style={{ width: `${scrollProgress}%` }}
       />
-      {loading && <LoadingBar />} {/* Show loading bar while loading */}
+      {loading && <LoadingBar />}
       {/* SEO Optimization */}
+      // Update Helmet section with enhanced SEO metadata
       <Helmet>
-        <title>About Our Organic Farm | From Sirbani to Manahari</title>
-        <meta name="description" content="Discover our journey from a small dairy farm to a thriving organic enterprise. Learn about our heritage, philosophy, and commitment to organic excellence since 1992." />
-        <meta name="keywords" content="organic farm, organic dairy, sustainable farming, Murrah buffaloes, organic production" />
-        <link rel="canonical" href="https://yourwebsite.com/about" />
+        {/* Primary Meta Tags */}
+        <title>About us</title>
+        <meta name="description" content="नेपालमा कृषि अनुदान, जैविक खेती र कृषि नीतिहरूको बारेमा जान्नुहोस्। सरकारी अनुदान र कृषि मन्त्रालयका कार्यक्रमहरूको जानकारी उपलब्ध छ। | Learn about agriculture grants, organic farming, and agricultural policies in Nepal. Information on government subsidies and Ministry programs available." />
+        <meta name="keywords" content="कृषि अनुदान नेपाल, agriculture grants nepal, कृषि मन्त्रालय, agriculture ministry nepal, जैविक खेती, organic farming nepal, सरकारी अनुदान, government subsidies nepal, कृषि नीति, agricultural policies nepal" />
+      
+        {/* Technical SEO Enhancements */}
+        <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+        <link rel="canonical" href="https://krishihimalaya.com/about" />
+        <meta name="author" content="Himalaya Krishi" />
+        <meta name="geo.region" content="NP-BAG" />
+        <meta name="geo.placename" content="Manahari, Makwanpur" />
+        <meta name="geo.position" content="27.5295;84.8174" />
+        <meta name="ICBM" content="27.5295, 84.8174" />
+      
+        {/* Language Alternates */}
+        <link rel="alternate" hrefLang="ne" href="https://krishihimalaya.com/ne/about" />
+        <link rel="alternate" hrefLang="en" href="https://krishihimalaya.com/about" />
+        <link rel="alternate" hrefLang="x-default" href="https://krishihimalaya.com/about" />
+      
+        {/* Open Graph */}
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="Himalaya Krishi" />
+        <meta property="og:locale" content="ne_NP" />
+        <meta property="og:locale:alternate" content="en_US" />
+        <meta property="og:url" content="https://krishihimalaya.com/about" />
+        <meta property="og:title" content="About us - Himalaya Krishi" />
+        <meta property="og:description" content="नेपालमा कृषि अनुदान र जैविक खेतीको अग्रणी संस्था। सरकारी अनुदान र कृषि नीतिहरूको जानकारी प्राप्त गर्नुहोस्। | Leading authority on agricultural grants and organic farming in Nepal. Access information about government subsidies and farming policies." />
+        
+        {/* Enhanced Schema.org LD+JSON */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@graph": [
+              {
+                "@type": ["Organization", "LocalBusiness", "Farm"],
+                "name": "हिमालय कृषि | Himalaya Krishi",
+                "alternateName": ["Himalaya Agriculture", "हिमालय एग्रीकल्चर"],
+                "url": "https://krishihimalaya.com",
+                "logo": "https://krishihimalaya.com/logo.png",
+                "sameAs": [
+                  "https://facebook.com/himalayakrishi",
+                  "https://linkedin.com/company/himalayakrishi"
+                ],
+                "address": {
+                  "@type": "PostalAddress",
+                  "streetAddress": "Manahari-5",
+                  "addressLocality": "Manahari",
+                  "addressRegion": "Bagmati",
+                  "postalCode": "44200",
+                  "addressCountry": "NP"
+                },
+                "geo": {
+                  "@type": "GeoCoordinates",
+                  "latitude": "27.5295",
+                  "longitude": "84.8174"
+                }
+              },
+              {
+                "@type": "WebPage",
+                "name": "About Us",
+                "description": "नेपालमा कृषि   | Information about agricultural grants and organic farming in Nepal",
+                "inLanguage": ["ne-NP", "en-US"],
+                "isPartOf": {
+                  "@type": "WebSite",
+                  "name": "Himalaya Krishi",
+                  "url": "https://krishihimalaya.com"
+                }
+              }
+            ]
+          })}
+        </script>
       </Helmet>
       
+        {/* Add structured breadcrumbs for SEO */}
+        <nav aria-label="breadcrumb" className="container mx-auto px-4 py-4">
+          <ol className="flex items-center space-x-2 text-sm">
+            <li>
+              <a href="/" className="hover:text-[#D8A51D]">
+                <span lang="ne">मुख्य पृष्ठ</span>
+                <span className="mx-1">/</span>
+                <span>Home</span>
+              </a>
+            </li>
+            <li aria-current="page" className="text-[#D8A51D]">
+              <span lang="ne">हाम्रो बारेमा</span>
+              <span> / </span>
+              <span>About Us</span>
+            </li>
+          </ol>
+        </nav>
       {/* Hero Section */}
       <section 
         className="relative bg-cover bg-center h-screen flex items-center pt-28"

@@ -1,6 +1,12 @@
 # Global rules
 User-agent: *
 Allow: /
+Allow: /ne/
+Allow: /en/
+Allow: /resources/
+Allow: /blog/
+Allow: /organic-farming/
+Allow: /local-resources/
 Disallow: /admin/
 Disallow: /private/
 Disallow: /temp/
@@ -13,15 +19,26 @@ Clean-param: utm_source&utm_medium&utm_campaign&utm_term&utm_content
 # Specific bot rules
 User-agent: Googlebot
 Allow: /
+Allow: /ne/
+Allow: /resources/agriculture-grants
+Allow: /resources/farming-techniques
+Allow: /resources/agricultural-policies
+Allow: /organic-farming
 Crawl-delay: 1
 
+# Image Indexing
 User-agent: Googlebot-Image
 Allow: /assets/images/
 Allow: /products/images/
+Allow: /resources/images/
+Allow: /blog/images/
 Disallow: /temp/images/
 
+# Local Search Optimization
 User-agent: Bingbot
 Allow: /
+Allow: /ne/
+Allow: /local-resources/
 Crawl-delay: 2
 
 # Rate limiting
@@ -33,10 +50,13 @@ Host: https://krishihimalaya.com
 
 # Sitemaps
 Sitemap: https://krishihimalaya.com/sitemap.xml
+Sitemap: https://krishihimalaya.com/ne/sitemap.xml
 Sitemap: https://krishihimalaya.com/blog-sitemap.xml
-Sitemap: https://krishihimalaya.com/news-sitemap.xml
+Sitemap: https://krishihimalaya.com/resources-sitemap.xml
+Sitemap: https://krishihimalaya.com/local-sitemap.xml
 Sitemap: https://krishihimalaya.com/images-sitemap.xml
 Sitemap: https://krishihimalaya.com/products-sitemap.xml
 
 # Cache directives
 Cache-Control: max-age=3600
+X-Robots-Tag: all

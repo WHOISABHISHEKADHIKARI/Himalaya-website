@@ -3,69 +3,93 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
 
-  <!-- Organic Farming Guide -->
+  <!-- Agriculture Grants Guide -->
   <url>
-    <loc>https://krishihimalaya.com/blog/organic-farming-guide</loc>
-    <lastmod>2024-01-15T14:30:00+05:45</lastmod>
+    <loc>https://krishihimalaya.com/blog/nepal-agriculture-grants-guide</loc>
+    <lastmod>2024-07-15T14:30:00+05:45</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="ne" href="https://krishihimalaya.com/ne/blog/nepal-agriculture-grants-guide" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://krishihimalaya.com/blog/nepal-agriculture-grants-guide" />
     <image:image>
-      <image:loc>https://krishihimalaya.com/blog/images/organic-farming-guide.jpg</image:loc>
-      <image:title>Complete Guide to Organic Farming</image:title>
-      <image:caption>Learn organic farming techniques and best practices</image:caption>
+      <image:loc>https://krishihimalaya.com/blog/images/agriculture-grants.jpg</image:loc>
+      <image:title>कृषि अनुदान मार्गदर्शन | Agriculture Grants Guide Nepal</image:title>
+      <image:caption>नेपालमा कृषि अनुदान प्राप्त गर्ने विस्तृत मार्गदर्शन | Comprehensive guide to obtaining agricultural grants in Nepal</image:caption>
     </image:image>
   </url>
 
-  <!-- Sustainable Practices -->
+  <!-- Modern Farming Techniques -->
   <url>
-    <loc>https://krishihimalaya.com/blog/sustainable-practices</loc>
-    <lastmod>2024-01-15T14:00:00+05:45</lastmod>
+    <loc>https://krishihimalaya.com/blog/modern-farming-techniques-nepal</loc>
+    <lastmod>2024-07-15T14:00:00+05:45</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="ne" href="https://krishihimalaya.com/ne/blog/modern-farming-techniques-nepal" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://krishihimalaya.com/blog/modern-farming-techniques-nepal" />
     <image:image>
-      <image:loc>https://krishihimalaya.com/blog/images/sustainable-practices.jpg</image:loc>
-      <image:title>Sustainable Farming Practices</image:title>
-      <image:caption>Discover sustainable agricultural methods</image:caption>
+      <image:loc>https://krishihimalaya.com/blog/images/modern-farming.jpg</image:loc>
+      <image:title>आधुनिक कृषि प्रविधिहरू | Modern Farming Techniques</image:title>
+      <image:caption>नेपालको भूगोल अनुकूल आधुनिक कृषि प्रविधिहरू | Modern farming techniques suitable for Nepal's geography</image:caption>
     </image:image>
   </url>
 
-  <!-- Farmer Success Stories -->
+  <!-- Government Agricultural Policies -->
   <url>
-    <loc>https://krishihimalaya.com/blog/farmer-success-stories</loc>
-    <lastmod>2024-01-15T13:30:00+05:45</lastmod>
+    <loc>https://krishihimalaya.com/blog/nepal-agricultural-policies</loc>
+    <lastmod>2024-07-14T13:30:00+05:45</lastmod>
     <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="ne" href="https://krishihimalaya.com/ne/blog/nepal-agricultural-policies" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://krishihimalaya.com/blog/nepal-agricultural-policies" />
+    <image:image>
+      <image:loc>https://krishihimalaya.com/blog/images/agricultural-policies.jpg</image:loc>
+      <image:title>कृषि नीतिहरू | Agricultural Policies</image:title>
+      <image:caption>नेपालको कृषि नीति र कार्यक्रमहरू | Nepal's agricultural policies and programs</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Organic Certification Guide -->
+  <url>
+    <loc>https://krishihimalaya.com/blog/organic-certification-nepal</loc>
+    <lastmod>2024-07-14T12:30:00+05:45</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="ne" href="https://krishihimalaya.com/ne/blog/organic-certification-nepal" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://krishihimalaya.com/blog/organic-certification-nepal" />
+    <image:image>
+      <image:loc>https://krishihimalaya.com/blog/images/organic-certification.jpg</image:loc>
+      <image:title>जैविक प्रमाणीकरण | Organic Certification</image:title>
+      <image:caption>नेपालमा जैविक खेती प्रमाणीकरण प्रक्रिया | Organic farming certification process in Nepal</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Government Subsidies Guide -->
+  <url>
+    <loc>https://krishihimalaya.com/blog/government-farming-subsidies</loc>
+    <lastmod>2024-07-13T11:30:00+05:45</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="ne" href="https://krishihimalaya.com/ne/blog/government-farming-subsidies" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://krishihimalaya.com/blog/government-farming-subsidies" />
+    <image:image>
+      <image:loc>https://krishihimalaya.com/blog/images/farming-subsidies.jpg</image:loc>
+      <image:title>कृषि अनुदान कार्यक्रम | Farming Subsidy Programs</image:title>
+      <image:caption>नेपाल सरकारको कृषि अनुदान कार्यक्रमहरू | Government farming subsidy programs in Nepal</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Success Stories -->
+  <url>
+    <loc>https://krishihimalaya.com/blog/nepal-farmer-success-stories</loc>
+    <lastmod>2024-07-12T10:30:00+05:45</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="ne" href="https://krishihimalaya.com/ne/blog/nepal-farmer-success-stories" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://krishihimalaya.com/blog/nepal-farmer-success-stories" />
     <image:image>
       <image:loc>https://krishihimalaya.com/blog/images/success-stories.jpg</image:loc>
-      <image:title>Farmer Success Stories</image:title>
-      <image:caption>Real stories of successful organic farmers</image:caption>
+      <image:title>सफल किसानका कथाहरू | Successful Farmer Stories</image:title>
+      <image:caption>नेपाली किसानहरूको सफलताका कथाहरू | Success stories of Nepali farmers</image:caption>
     </image:image>
   </url>
-
-  <!-- Seasonal Growing Tips -->
-  <url>
-    <loc>https://krishihimalaya.com/blog/seasonal-growing-tips</loc>
-    <lastmod>2024-01-15T13:00:00+05:45</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-    <image:image>
-      <image:loc>https://krishihimalaya.com/blog/images/seasonal-tips.jpg</image:loc>
-      <image:title>Seasonal Growing Guide</image:title>
-      <image:caption>Tips for successful seasonal farming</image:caption>
-    </image:image>
-  </url>
-
-  <!-- Certification Process -->
-  <url>
-    <loc>https://krishihimalaya.com/blog/certification-process</loc>
-    <lastmod>2024-01-15T12:30:00+05:45</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-    <image:image>
-      <image:loc>https://krishihimalaya.com/blog/images/certification.jpg</image:loc>
-      <image:title>Organic Certification Guide</image:title>
-      <image:caption>Understanding organic certification requirements</image:caption>
-    </image:image>
-  </url>
-
 </urlset>

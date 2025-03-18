@@ -114,6 +114,41 @@ const Vision = () => {
 
   // Using animation variants defined at the top level
 
+  // Enhanced SEO optimization
+  useEffect(() => {
+    // Update structured data for better search visibility
+    const schemaData = {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "हिमालय कृषि तथा पशुपालन फार्म | Himalaya Krishi Tatha Pasupalan Farm",
+      "description": "नेपालको अग्रणी जैविक कृषि र पशुपालन फार्म | Leading organic farming and dairy production in Nepal",
+      "url": window.location.href,
+      "areaServed": {
+        "@type": "Country",
+        "name": "Nepal"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Hetauda",
+        "addressRegion": "Bagmati",
+        "addressCountry": "Nepal"
+      },
+      "sameAs": [
+        "https://facebook.com/himalayakrishi",
+        "https://instagram.com/himalayakrishi"
+      ]
+    };
+
+    let scriptTag = document.querySelector('#schema-data');
+    if (!scriptTag) {
+      scriptTag = document.createElement('script');
+      scriptTag.id = "schema-data";
+      scriptTag.type = "application/ld+json";
+      document.head.appendChild(scriptTag);
+    }
+    scriptTag.innerHTML = JSON.stringify(schemaData);
+  }, []);
+
   return (
     <div className="relative bg-gradient-to-b from-[#F4F9F1] to-[#EAEFE7] min-h-screen font-sans">
       <Helmet>

@@ -1,82 +1,145 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:news="http://www.google.com/schemas/sitemap-news/0.9"
-        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
 
-  <!-- Latest Developments -->
+  <!-- Agricultural Grants News -->
   <url>
-    <loc>https://krishihimalaya.com/news/latest-developments</loc>
-    <lastmod>2024-01-15T14:30:00+05:45</lastmod>
+    <loc>https://krishihimalaya.com/news/agriculture-grants-nepal</loc>
+    <lastmod>2024-07-15T14:30:00+05:45</lastmod>
     <changefreq>daily</changefreq>
-    <priority>0.8</priority>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="ne" href="https://krishihimalaya.com/ne/news/agriculture-grants-nepal" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://krishihimalaya.com/news/agriculture-grants-nepal" />
     <news:news>
       <news:publication>
         <news:name>Himalaya Krishi News</news:name>
         <news:language>en</news:language>
       </news:publication>
-      <news:publication_date>2024-01-15T14:30:00+05:45</news:publication_date>
-      <news:title>Latest Developments in Organic Farming</news:title>
-      <news:keywords>organic farming, agriculture updates, sustainable farming</news:keywords>
+      <news:publication_date>2024-07-15T14:30:00+05:45</news:publication_date>
+      <news:title>Latest Agriculture Grants Available in Nepal 2024</news:title>
+      <news:keywords>agriculture grants, farming subsidies, nepal agriculture funding, government grants, organic farming support</news:keywords>
     </news:news>
     <image:image>
-      <image:loc>https://krishihimalaya.com/news/images/latest-developments.jpg</image:loc>
-      <image:title>Latest Organic Farming Developments</image:title>
+      <image:loc>https://krishihimalaya.com/news/images/agriculture-grants-nepal.jpg</image:loc>
+      <image:title>कृषि अनुदान नेपाल | Agriculture Grants in Nepal</image:title>
+      <image:caption>नेपालमा उपलब्ध कृषि अनुदानहरू | Available Agricultural Grants in Nepal</image:caption>
     </image:image>
   </url>
 
-  <!-- Press Releases -->
+  <!-- Ministry of Agriculture Updates -->
   <url>
-    <loc>https://krishihimalaya.com/news/press-releases</loc>
-    <lastmod>2024-01-15T12:00:00+05:45</lastmod>
+    <loc>https://krishihimalaya.com/news/agriculture-ministry-updates</loc>
+    <lastmod>2024-07-14T12:00:00+05:45</lastmod>
     <changefreq>daily</changefreq>
-    <priority>0.8</priority>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="ne" href="https://krishihimalaya.com/ne/news/agriculture-ministry-updates" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://krishihimalaya.com/news/agriculture-ministry-updates" />
     <news:news>
       <news:publication>
         <news:name>Himalaya Krishi News</news:name>
         <news:language>en</news:language>
       </news:publication>
-      <news:publication_date>2024-01-15T12:00:00+05:45</news:publication_date>
-      <news:title>Official Press Releases</news:title>
-      <news:keywords>company news, announcements, press release</news:keywords>
-    </news:news>
-  </url>
-
-  <!-- Events -->
-  <url>
-    <loc>https://krishihimalaya.com/news/events</loc>
-    <lastmod>2024-01-15T10:00:00+05:45</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.8</priority>
-    <news:news>
-      <news:publication>
-        <news:name>Himalaya Krishi News</news:name>
-        <news:language>en</news:language>
-      </news:publication>
-      <news:publication_date>2024-01-15T10:00:00+05:45</news:publication_date>
-      <news:title>Upcoming Agricultural Events</news:title>
-      <news:keywords>farming events, workshops, training sessions</news:keywords>
+      <news:publication_date>2024-07-14T12:00:00+05:45</news:publication_date>
+      <news:title>Latest Updates from Nepal's Agriculture Ministry</news:title>
+      <news:keywords>agriculture ministry nepal, ministry of agriculture, nepal farming policies, government agriculture initiatives</news:keywords>
     </news:news>
     <image:image>
-      <image:loc>https://krishihimalaya.com/news/images/events-banner.jpg</image:loc>
-      <image:title>Agricultural Events Calendar</image:title>
+      <image:loc>https://krishihimalaya.com/news/images/agriculture-ministry.jpg</image:loc>
+      <image:title>कृषि मन्त्रालय नेपाल | Agriculture Ministry Nepal</image:title>
+      <image:caption>नेपालको कृषि मन्त्रालयबाट नवीनतम अपडेटहरू | Latest Updates from Nepal's Agriculture Ministry</image:caption>
     </image:image>
   </url>
 
-  <!-- Awards -->
+  <!-- Modern Farming Techniques -->
   <url>
-    <loc>https://krishihimalaya.com/news/awards</loc>
-    <lastmod>2024-01-15T09:00:00+05:45</lastmod>
+    <loc>https://krishihimalaya.com/news/modern-farming-techniques</loc>
+    <lastmod>2024-07-13T10:00:00+05:45</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="ne" href="https://krishihimalaya.com/ne/news/modern-farming-techniques" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://krishihimalaya.com/news/modern-farming-techniques" />
+    <news:news>
+      <news:publication>
+        <news:name>Himalaya Krishi News</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2024-07-13T10:00:00+05:45</news:publication_date>
+      <news:title>Modern Farming Techniques for Nepal's Geography</news:title>
+      <news:keywords>farming techniques, modern agriculture, nepal farming methods, sustainable farming, agricultural technology</news:keywords>
+    </news:news>
+    <image:image>
+      <image:loc>https://krishihimalaya.com/news/images/farming-techniques.jpg</image:loc>
+      <image:title>आधुनिक कृषि प्रविधिहरू | Modern Farming Techniques</image:title>
+      <image:caption>नेपालको भूगोलको लागि उपयुक्त आधुनिक कृषि प्रविधिहरू | Modern Farming Techniques Suitable for Nepal's Geography</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Organic Farming Certification -->
+  <url>
+    <loc>https://krishihimalaya.com/news/organic-farming-certification</loc>
+    <lastmod>2024-07-12T09:00:00+05:45</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="ne" href="https://krishihimalaya.com/ne/news/organic-farming-certification" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://krishihimalaya.com/news/organic-farming-certification" />
     <news:news>
       <news:publication>
         <news:name>Himalaya Krishi News</news:name>
         <news:language>en</news:language>
       </news:publication>
-      <news:publication_date>2024-01-15T09:00:00+05:45</news:publication_date>
-      <news:title>Recognition and Achievements</news:title>
-      <news:keywords>awards, achievements, recognition, organic certification</news:keywords>
+      <news:publication_date>2024-07-12T09:00:00+05:45</news:publication_date>
+      <news:title>Guide to Organic Farming Certification in Nepal</news:title>
+      <news:keywords>organic farming, certification, organic standards, nepal organic products, organic agriculture</news:keywords>
+    </news:news>
+    <image:image>
+      <image:loc>https://krishihimalaya.com/news/images/organic-certification.jpg</image:loc>
+      <image:title>जैविक प्रमाणीकरण | Organic Certification</image:title>
+      <image:caption>नेपालमा जैविक खेती प्रमाणीकरण प्रक्रिया | Organic Farming Certification Process in Nepal</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Agricultural Policy Changes -->
+  <url>
+    <loc>https://krishihimalaya.com/news/agricultural-policy-updates</loc>
+    <lastmod>2024-07-11T11:30:00+05:45</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="ne" href="https://krishihimalaya.com/ne/news/agricultural-policy-updates" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://krishihimalaya.com/news/agricultural-policy-updates" />
+    <news:news>
+      <news:publication>
+        <news:name>Himalaya Krishi News</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2024-07-11T11:30:00+05:45</news:publication_date>
+      <news:title>Recent Changes in Nepal's Agricultural Policies</news:title>
+      <news:keywords>agricultural policies, nepal farming laws, policy changes, government regulations, farming legislation</news:keywords>
     </news:news>
   </url>
 
+  <!-- Government Subsidies -->
+  <url>
+    <loc>https://krishihimalaya.com/news/government-subsidies-agriculture</loc>
+    <lastmod>2024-07-10T13:45:00+05:45</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="ne" href="https://krishihimalaya.com/ne/news/government-subsidies-agriculture" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://krishihimalaya.com/news/government-subsidies-agriculture" />
+    <news:news>
+      <news:publication>
+        <news:name>Himalaya Krishi News</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2024-07-10T13:45:00+05:45</news:publication_date>
+      <news:title>How to Access Government Subsidies for Farmers in Nepal</news:title>
+      <news:keywords>government subsidies, farmer support, nepal agriculture subsidies, financial aid, farming assistance</news:keywords>
+    </news:news>
+    <image:image>
+      <image:loc>https://krishihimalaya.com/news/images/government-subsidies.jpg</image:loc>
+      <image:title>सरकारी अनुदान | Government Subsidies</image:title>
+      <image:caption>नेपालमा किसानहरूको लागि सरकारी अनुदानहरू | Government Subsidies for Farmers in Nepal</image:caption>
+    </image:image>
+  </url>
 </urlset>
