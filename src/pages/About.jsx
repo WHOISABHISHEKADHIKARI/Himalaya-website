@@ -530,7 +530,7 @@ const About = () => {
                       </div>
                       <div className="p-8 md:w-3/5">
                         <h3 className="text-2xl font-bold mb-2" style={{ color: colors.text.dark }}>Dipendra Adhikari</h3>
-                        <p className="text-lg mb-4" style={{ color: colors.primary }}>Manahari 5 Ward Secretary</p>
+                        <p className="text-lg mb-4" style={{ color: colors.primary }}>Manahari 5 Ward Chief</p>
                         <div className="w-16 h-1 mb-6" style={{ backgroundColor: colors.secondary }}></div>
                         <p className="italic mb-6 leading-relaxed" style={{ color: colors.text.medium }}>
                           "The farm beautifully captures the essence of their organic farming journey and represents Manahari's showcase. As a member of Manahari municipality, I am impressed by how they've showcased their commitment to serving society through this digital platform."

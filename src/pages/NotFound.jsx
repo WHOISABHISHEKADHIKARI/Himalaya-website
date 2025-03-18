@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 
@@ -24,6 +25,25 @@ const colors = {
 const NotFound = () => {
   return (
     <div className="min-h-screen flex flex-col">
+      <Helmet>
+        <title>404 - Page Not Found | Himalaya Krishi</title>
+        <meta name="description" content="The page you're looking for on Himalaya Krishi's website cannot be found. Please check the URL or navigate back to our homepage." />
+        <meta name="robots" content="noindex, follow" />
+        <link rel="canonical" href="https://himalayakrishi.com/404" />
+        
+        {/* Open Graph / Facebook */}
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://himalayakrishi.com/404" />
+        <meta property="og:title" content="404 - Page Not Found | Himalaya Krishi" />
+        <meta property="og:description" content="The page you're looking for on Himalaya Krishi's website cannot be found. Please check the URL or navigate back to our homepage." />
+        <meta property="og:image" content="/seo/og-image.png" />
+        
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="404 - Page Not Found | Himalaya Krishi" />
+        <meta name="twitter:description" content="The page you're looking for on Himalaya Krishi's website cannot be found. Please check the URL or navigate back to our homepage." />
+        <meta name="twitter:image" content="/seo/og-image.png" />
+      </Helmet>
       <Navbar />
       <main className="flex-grow flex items-center justify-center py-20 px-4">
         <div className="max-w-3xl text-center">

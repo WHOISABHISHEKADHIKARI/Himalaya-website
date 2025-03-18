@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { FaArrowRight } from "react-icons/fa";
 import { useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
+import { Helmet } from 'react-helmet-async';
 
 // Reduce stats to key metrics
 const stats = [
@@ -159,6 +160,27 @@ const Home = () => {
 
   return (
     <>
+      <Helmet>
+        <title>Himalaya Krishi - Nepal's Premier Organic Farming & Sustainable Agriculture</title>
+        <meta name="description" content="Discover Himalaya Krishi, Nepal's leading organic farming initiative. We empower farmers, promote sustainable agriculture, and deliver premium organic products since 1992." />
+        <meta name="keywords" content="organic farming nepal, sustainable agriculture, farmer empowerment, organic certification, agricultural solutions" />
+        <meta name="author" content="Himalaya Krishi" />
+        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href="https://himalayakrishi.com" />
+        
+        {/* Open Graph / Facebook */}
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://himalayakrishi.com" />
+        <meta property="og:title" content="Himalaya Krishi - Nepal's Premier Organic Farming & Sustainable Agriculture" />
+        <meta property="og:description" content="Discover Himalaya Krishi, Nepal's leading organic farming initiative. We empower farmers, promote sustainable agriculture, and deliver premium organic products since 1992." />
+        <meta property="og:image" content="/seo/og-image.png" />
+        
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Himalaya Krishi - Nepal's Premier Organic Farming & Sustainable Agriculture" />
+        <meta name="twitter:description" content="Discover Himalaya Krishi, Nepal's leading organic farming initiative. We empower farmers, promote sustainable agriculture, and deliver premium organic products since 1992." />
+        <meta name="twitter:image" content="/seo/og-image.png" />
+      </Helmet>
       <AnimatePresence>
         {isLoading ? (
           <motion.div

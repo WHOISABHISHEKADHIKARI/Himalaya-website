@@ -66,35 +66,53 @@ const Navbar = ({ isHomePage }) => {
     <>
       {/* SEO Optimization */}
       <Helmet>
-        <title>{`${location.pathname === '/' ? 'Home' : location.pathname.substring(1).charAt(0).toUpperCase() + location.pathname.slice(2)} | Himalaya Krishi - Leading Organic Farming Excellence in Nepal`}</title>
-        <meta name="description" content={`${location.pathname === '/' ? 'Discover Himalaya Krishi\'s organic farming excellence in Nepal. Leading sustainable agriculture practices and farmer empowerment since 1992.' : 
-          location.pathname === '/about' ? 'Learn about Himalaya Krishi\'s journey in organic farming, our heritage, and commitment to sustainable agriculture in Nepal.' :
-          location.pathname === '/vision' ? 'Explore Himalaya Krishi\'s vision for sustainable farming, organic excellence, and agricultural innovation in Nepal.' :
-          'Connect with Himalaya Krishi for sustainable farming solutions and organic agriculture expertise in Nepal.'}`} />
+        <title>{`${location.pathname === '/' ? 'Himalaya Krishi - Organic Farming Excellence & Sustainable Agriculture in Nepal' : 
+          location.pathname === '/about' ? 'About Himalaya Krishi - Leading Organic Farming Solutions in Nepal | Since 1992' :
+          location.pathname === '/vision' ? 'Our Vision - Pioneering Sustainable Agriculture & Farmer Empowerment in Nepal' :
+          'Contact Himalaya Krishi - Expert Organic Farming Solutions in Nepal'}`}</title>
+        <meta name="description" content={`${location.pathname === '/' ? 'Himalaya Krishi: Nepal\'s premier organic farming company. Offering sustainable agriculture solutions, farmer training, and organic certification services since 1992. Transform your farming practices today.' : 
+          location.pathname === '/about' ? 'Discover Himalaya Krishi\'s 30+ years of excellence in organic farming. Leading Nepal\'s agricultural transformation with sustainable practices, farmer education, and innovative solutions.' :
+          location.pathname === '/vision' ? 'Himalaya Krishi envisions a future where sustainable agriculture thrives in Nepal. Join our mission of organic excellence, farmer empowerment, and agricultural innovation.' :
+          'Connect with Nepal\'s trusted organic farming experts. Get personalized solutions, training, and certification support for your agricultural success.'}`} />
+        <meta name="keywords" content={`${location.pathname === '/' ? 'organic farming nepal, sustainable agriculture, farmer empowerment, organic certification, agricultural solutions' : 
+          location.pathname === '/about' ? 'organic farming company, sustainable practices, agricultural expertise, farmer training nepal, organic certification services' :
+          location.pathname === '/vision' ? 'sustainable farming future, agricultural innovation, organic excellence, farmer development, nepal agriculture' :
+          'organic farming consultation, agricultural support, farmer training programs, sustainable solutions nepal'}`} />
+        <meta name="author" content="Himalaya Krishi" />
+        <meta name="robots" content="index, follow" />
         <link rel="canonical" href={`https://himalayakrishi.com${location.pathname}`} />
         
         {/* Open Graph / Facebook */}
         <meta property="og:type" content="website" />
         <meta property="og:url" content={`https://himalayakrishi.com${location.pathname}`} />
-        <meta property="og:title" content={`${location.pathname === '/' ? 'Home' : location.pathname.substring(1).charAt(0).toUpperCase() + location.pathname.slice(2)} | Himalaya Krishi - Leading Organic Farming Excellence in Nepal`} />
-        <meta property="og:description" content={`${location.pathname === '/' ? 'Discover Himalaya Krishi\'s organic farming excellence in Nepal. Leading sustainable agriculture practices and farmer empowerment since 1992.' : 
-          location.pathname === '/about' ? 'Learn about Himalaya Krishi\'s journey in organic farming, our heritage, and commitment to sustainable agriculture in Nepal.' :
-          location.pathname === '/vision' ? 'Explore Himalaya Krishi\'s vision for sustainable farming, organic excellence, and agricultural innovation in Nepal.' :
-          'Connect with Himalaya Krishi for sustainable farming solutions and organic agriculture expertise in Nepal.'}`} />
+        <meta property="og:title" content={`${location.pathname === '/' ? 'Himalaya Krishi - Organic Farming Excellence & Sustainable Agriculture in Nepal' : 
+          location.pathname === '/about' ? 'About Himalaya Krishi - Leading Organic Farming Solutions in Nepal | Since 1992' :
+          location.pathname === '/vision' ? 'Our Vision - Pioneering Sustainable Agriculture & Farmer Empowerment in Nepal' :
+          'Contact Himalaya Krishi - Expert Organic Farming Solutions in Nepal'}`} />
+        <meta property="og:description" content={`${location.pathname === '/' ? 'Himalaya Krishi: Nepal\'s premier organic farming company. Offering sustainable agriculture solutions, farmer training, and organic certification services since 1992. Transform your farming practices today.' : 
+          location.pathname === '/about' ? 'Discover Himalaya Krishi\'s 30+ years of excellence in organic farming. Leading Nepal\'s agricultural transformation with sustainable practices, farmer education, and innovative solutions.' :
+          location.pathname === '/vision' ? 'Himalaya Krishi envisions a future where sustainable agriculture thrives in Nepal. Join our mission of organic excellence, farmer empowerment, and agricultural innovation.' :
+          'Connect with Nepal\'s trusted organic farming experts. Get personalized solutions, training, and certification support for your agricultural success.'}`} />
         <meta property="og:image" content="/seo/og-image.png" />
+        <meta property="og:image:alt" content="Himalaya Krishi - Organic Farming Excellence" />
         <meta property="og:site_name" content="Himalaya Krishi" />
         <meta property="og:locale" content="en_US" />
 
         {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content="@himalayakrishi" />
+        <meta name="twitter:creator" content="@himalayakrishi" />
         <meta name="twitter:url" content={`https://himalayakrishi.com${location.pathname}`} />
-        <meta name="twitter:title" content={`${location.pathname === '/' ? 'Home' : location.pathname.substring(1).charAt(0).toUpperCase() + location.pathname.slice(2)} | Himalaya Krishi - Leading Organic Farming Excellence in Nepal`} />
-        <meta name="twitter:description" content={`${location.pathname === '/' ? 'Discover Himalaya Krishi\'s organic farming excellence in Nepal. Leading sustainable agriculture practices and farmer empowerment since 1992.' : 
-          location.pathname === '/about' ? 'Learn about Himalaya Krishi\'s journey in organic farming, our heritage, and commitment to sustainable agriculture in Nepal.' :
-          location.pathname === '/vision' ? 'Explore Himalaya Krishi\'s vision for sustainable farming, organic excellence, and agricultural innovation in Nepal.' :
-          'Connect with Himalaya Krishi for sustainable farming solutions and organic agriculture expertise in Nepal.'}`} />
+        <meta name="twitter:title" content={`${location.pathname === '/' ? 'Himalaya Krishi - Organic Farming Excellence & Sustainable Agriculture in Nepal' : 
+          location.pathname === '/about' ? 'About Himalaya Krishi - Leading Organic Farming Solutions in Nepal | Since 1992' :
+          location.pathname === '/vision' ? 'Our Vision - Pioneering Sustainable Agriculture & Farmer Empowerment in Nepal' :
+          'Contact Himalaya Krishi - Expert Organic Farming Solutions in Nepal'}`} />
+        <meta name="twitter:description" content={`${location.pathname === '/' ? 'Himalaya Krishi: Nepal\'s premier organic farming company. Offering sustainable agriculture solutions, farmer training, and organic certification services since 1992. Transform your farming practices today.' : 
+          location.pathname === '/about' ? 'Discover Himalaya Krishi\'s 30+ years of excellence in organic farming. Leading Nepal\'s agricultural transformation with sustainable practices, farmer education, and innovative solutions.' :
+          location.pathname === '/vision' ? 'Himalaya Krishi envisions a future where sustainable agriculture thrives in Nepal. Join our mission of organic excellence, farmer empowerment, and agricultural innovation.' :
+          'Connect with Nepal\'s trusted organic farming experts. Get personalized solutions, training, and certification support for your agricultural success.'}`} />
         <meta name="twitter:image" content="/seo/og-image.png" />
+        <meta name="twitter:image:alt" content="Himalaya Krishi - Organic Farming Excellence" />
       </Helmet>
 
       <nav 
