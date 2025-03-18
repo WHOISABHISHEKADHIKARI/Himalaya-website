@@ -102,17 +102,17 @@ const FAQ = () => {
         
         {/* Technical SEO */}
         <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
-        <link rel="canonical" href="https://himalayakrishi.com/faq" />
+        <link rel="canonical" href="https://krishihimalaya.com/faq" />
         <meta name="author" content="Himalaya Krishi" />
         
         {/* Open Graph */}
         <meta property="og:type" content="website" />
         <meta property="og:site_name" content="Himalaya Krishi" />
         <meta property="og:locale" content="en_NP" />
-        <meta property="og:url" content="https://himalayakrishi.com/faq" />
+        <meta property="og:url" content="https://krishihimalaya.com/faq" />
         <meta property="og:title" content="Organic Farming FAQ | Himalaya Krishi Knowledge Base" />
         <meta property="og:description" content="Comprehensive guide to organic farming practices, sustainable agriculture, and traditional farming methods in Nepal. Expert answers to your farming questions." />
-        <meta property="og:image" content="https://himalayakrishi.com/og-faq.jpg" />
+        <meta property="og:image" content="https://krishihimalaya.com/og-faq.jpg" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
 
@@ -121,7 +121,7 @@ const FAQ = () => {
         <meta name="twitter:site" content="@himalayakrishi" />
         <meta name="twitter:title" content="FAQ | Expert Organic Farming Guidance" />
         <meta name="twitter:description" content="Get expert answers about organic farming, sustainable agriculture, and traditional farming methods in Nepal." />
-        <meta name="twitter:image" content="https://himalayakrishi.com/twitter-faq.jpg" />
+        <meta name="twitter:image" content="https://krishihimalaya.com/twitter-faq.jpg" />
         
         {/* Schema.org LD+JSON */}
         <script type="application/ld+json">
@@ -140,7 +140,7 @@ const FAQ = () => {
             "about": {
               "@type": "Organization",
               "name": "Himalaya Krishi",
-              "url": "https://himalayakrishi.com",
+              "url": "https://krishihimalaya.com",
               "description": "Leading organic farming initiative in Nepal promoting sustainable agriculture practices."
             }
           })}

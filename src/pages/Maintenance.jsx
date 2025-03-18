@@ -15,7 +15,7 @@ const Maintenance = () => {
         <meta property="og:site_name" content="Himalaya Krishi" />
         <meta property="og:title" content="Site Maintenance | Himalaya Krishi" />
         <meta property="og:description" content="We're currently updating our systems. Please check back soon for organic farming expertise and sustainable agriculture solutions." />
-        <meta property="og:image" content="https://himalayakrishi.com/og-maintenance.jpg" />
+        <meta property="og:image" content="https://krishihimalaya.com/og-maintenance.jpg" />
         
         {/* Twitter */}
         <meta name="twitter:card" content="summary" />

@@ -167,7 +167,7 @@ const Home = () => {
         
         {/* Technical SEO */}
         <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
-        <link rel="canonical" href="https://himalayakrishi.com" />
+        <link rel="canonical" href="https://krishihimalaya.com" />
         <meta name="author" content="Himalaya Krishi" />
         <meta name="geo.region" content="NP" />
         <meta name="geo.placename" content="Manahari" />
@@ -176,10 +176,10 @@ const Home = () => {
         <meta property="og:type" content="website" />
         <meta property="og:site_name" content="Himalaya Krishi" />
         <meta property="og:locale" content="en_NP" />
-        <meta property="og:url" content="https://himalayakrishi.com" />
+        <meta property="og:url" content="https://krishihimalaya.com" />
         <meta property="og:title" content="Himalaya Krishi - Leading Organic Excellence in Nepal" />
         <meta property="og:description" content="Discover premium organic products and sustainable farming solutions at Himalaya Krishi. Nepal's trusted name in organic agriculture since 1992." />
-        <meta property="og:image" content="https://himalayakrishi.com/og-image.jpg" />
+        <meta property="og:image" content="https://krishihimalaya.com/og-image.jpg" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
 
@@ -188,7 +188,7 @@ const Home = () => {
         <meta name="twitter:site" content="@himalayakrishi" />
         <meta name="twitter:title" content="Himalaya Krishi - Organic Farming Excellence in Nepal" />
         <meta name="twitter:description" content="Premium organic products and sustainable farming solutions from Nepal's leading organic farm. Trusted since 1992." />
-        <meta name="twitter:image" content="https://himalayakrishi.com/twitter-card.jpg" />
+        <meta name="twitter:image" content="https://krishihimalaya.com/twitter-card.jpg" />
         
         {/* Schema.org LD+JSON */}
         <script type="application/ld+json">
@@ -196,8 +196,8 @@ const Home = () => {
             "@context": "https://schema.org",
             "@type": ["Organization", "LocalBusiness", "Farm"],
             "name": "Himalaya Krishi",
-            "url": "https://himalayakrishi.com",
-            "logo": "https://himalayakrishi.com/logo.png",
+            "url": "https://krishihimalaya.com",
+            "logo": "https://krishihimalaya.com/logo.png",
             "description": "Nepal's premier organic farming initiative promoting sustainable agriculture since 1992.",
             "foundingDate": "1992",
             "address": {

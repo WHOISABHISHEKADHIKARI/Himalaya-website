@@ -73,7 +73,7 @@ const About = () => {
         
         {/* Technical SEO */}
         <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
-        <link rel="canonical" href="https://himalayakrishi.com/about" />
+        <link rel="canonical" href="https://krishihimalaya.com/about" />
         <meta name="author" content="Himalaya Krishi" />
         <meta name="geo.region" content="NP-BAG" />
         <meta name="geo.placename" content="Manahari" />
@@ -82,10 +82,10 @@ const About = () => {
         <meta property="og:type" content="website" />
         <meta property="og:site_name" content="Himalaya Krishi" />
         <meta property="og:locale" content="en_NP" />
-        <meta property="og:url" content="https://himalayakrishi.com/about" />
+        <meta property="og:url" content="https://krishihimalaya.com/about" />
         <meta property="og:title" content="About Himalaya Krishi | From Sirbani to Manahari - Our Organic Journey" />
         <meta property="og:description" content="Explore our evolution from a small dairy farm to Nepal's premier organic enterprise. Discover our commitment to sustainable farming and community growth since 1992." />
-        <meta property="og:image" content="https://himalayakrishi.com/og-about.jpg" />
+        <meta property="og:image" content="https://krishihimalaya.com/og-about.jpg" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
     
@@ -94,7 +94,7 @@ const About = () => {
         <meta name="twitter:site" content="@himalayakrishi" />
         <meta name="twitter:title" content="About Himalaya Krishi | Organic Excellence Since 1992" />
         <meta name="twitter:description" content="From humble beginnings to organic excellence: Discover our journey of sustainable farming and community empowerment in Nepal." />
-        <meta name="twitter:image" content="https://himalayakrishi.com/twitter-about.jpg" />
+        <meta name="twitter:image" content="https://krishihimalaya.com/twitter-about.jpg" />
         
         {/* Schema.org LD+JSON */}
         <script type="application/ld+json">

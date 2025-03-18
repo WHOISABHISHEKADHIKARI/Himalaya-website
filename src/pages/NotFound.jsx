@@ -29,15 +29,15 @@ const NotFound = () => {
         <title>404 - Page Not Found | Himalaya Krishi - Organic Farming Excellence</title>
         <meta name="description" content="Sorry, this page isn't available. Return to Himalaya Krishi's homepage for organic farming expertise, sustainable agriculture solutions, and dairy products in Nepal." />
         <meta name="robots" content="noindex, follow" />
-        <link rel="canonical" href="https://himalayakrishi.com" />
+        <link rel="canonical" href="https://krishihimalaya.com" />
         
         {/* Open Graph */}
         <meta property="og:type" content="website" />
         <meta property="og:site_name" content="Himalaya Krishi" />
-        <meta property="og:url" content="https://himalayakrishi.com/404" />
+        <meta property="og:url" content="https://krishihimalaya.com/404" />
         <meta property="og:title" content="404 - Page Not Found | Himalaya Krishi" />
         <meta property="og:description" content="Sorry, this page isn't available. Explore our organic farming solutions and sustainable agriculture practices on our homepage." />
-        <meta property="og:image" content="https://himalayakrishi.com/og-404.jpg" />
+        <meta property="og:image" content="https://krishihimalaya.com/og-404.jpg" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
 
@@ -46,7 +46,7 @@ const NotFound = () => {
         <meta name="twitter:site" content="@himalayakrishi" />
         <meta name="twitter:title" content="404 - Page Not Found | Himalaya Krishi" />
         <meta name="twitter:description" content="Page not found. Discover organic farming excellence at Himalaya Krishi's homepage." />
-        <meta name="twitter:image" content="https://himalayakrishi.com/twitter-404.jpg" />
+        <meta name="twitter:image" content="https://krishihimalaya.com/twitter-404.jpg" />
         
         {/* Schema.org LD+JSON */}
         <script type="application/ld+json">
@@ -58,7 +58,7 @@ const NotFound = () => {
             "isPartOf": {
               "@type": "WebSite",
               "name": "Himalaya Krishi",
-              "url": "https://himalayakrishi.com"
+              "url": "https://krishihimalaya.com"
             },
             "breadcrumb": {
               "@type": "BreadcrumbList",
@@ -66,7 +66,7 @@ const NotFound = () => {
                 "@type": "ListItem",
                 "position": 1,
                 "name": "Home",
-                "item": "https://himalayakrishi.com"
+                "item": "https://krishihimalaya.com"
               }, {
                 "@type": "ListItem",
                 "position": 2,

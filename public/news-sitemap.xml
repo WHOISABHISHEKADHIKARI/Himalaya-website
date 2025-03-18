@@ -5,7 +5,7 @@
 
   <!-- Latest Developments -->
   <url>
-    <loc>https://himalayakrishi.com/news/latest-developments</loc>
+    <loc>https://krishihimalaya.com/news/latest-developments</loc>
     <lastmod>2024-01-15T14:30:00+05:45</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
@@ -19,14 +19,14 @@
       <news:keywords>organic farming, agriculture updates, sustainable farming</news:keywords>
     </news:news>
     <image:image>
-      <image:loc>https://himalayakrishi.com/news/images/latest-developments.jpg</image:loc>
+      <image:loc>https://krishihimalaya.com/news/images/latest-developments.jpg</image:loc>
       <image:title>Latest Organic Farming Developments</image:title>
     </image:image>
   </url>
 
   <!-- Press Releases -->
   <url>
-    <loc>https://himalayakrishi.com/news/press-releases</loc>
+    <loc>https://krishihimalaya.com/news/press-releases</loc>
     <lastmod>2024-01-15T12:00:00+05:45</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
@@ -43,7 +43,7 @@
 
   <!-- Events -->
   <url>
-    <loc>https://himalayakrishi.com/news/events</loc>
+    <loc>https://krishihimalaya.com/news/events</loc>
     <lastmod>2024-01-15T10:00:00+05:45</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
@@ -57,14 +57,14 @@
       <news:keywords>farming events, workshops, training sessions</news:keywords>
     </news:news>
     <image:image>
-      <image:loc>https://himalayakrishi.com/news/images/events-banner.jpg</image:loc>
+      <image:loc>https://krishihimalaya.com/news/images/events-banner.jpg</image:loc>
       <image:title>Agricultural Events Calendar</image:title>
     </image:image>
   </url>
 
   <!-- Awards -->
   <url>
-    <loc>https://himalayakrishi.com/news/awards</loc>
+    <loc>https://krishihimalaya.com/news/awards</loc>
     <lastmod>2024-01-15T09:00:00+05:45</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>

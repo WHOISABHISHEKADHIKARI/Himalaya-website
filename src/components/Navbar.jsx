@@ -70,8 +70,8 @@ const Navbar = ({ isHomePage }) => {
             "@context": "https://schema.org",
             "@type": "Organization",
             "name": "Himalaya Krishi",
-            "url": "https://himalayakrishi.com",
-            "logo": "https://himalayakrishi.com/assets/logo/logo_white_bg_removed.png",
+            "url": "https://krishihimalaya.com",
+            "logo": "https://krishihimalaya.com/assets/logo/logo_white_bg_removed.png",
             "sameAs": [
               "https://www.facebook.com/himalayakrishi",
               "https://twitter.com/himalayakrishi",
@@ -100,7 +100,7 @@ const Navbar = ({ isHomePage }) => {
             "@type": "SiteNavigationElement",
             "name": navItems.map(item => item),
             "url": navItems.map(item => 
-              `https://himalayakrishi.com${item === 'Home' ? '/' : `/${item.toLowerCase()}`}`
+              `https://krishihimalaya.com${item === 'Home' ? '/' : `/${item.toLowerCase()}`}`
             )
           })}
         </script>

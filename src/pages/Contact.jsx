@@ -91,7 +91,7 @@ const Contact = () => {
         
         {/* Technical SEO */}
         <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
-        <link rel="canonical" href="https://himalayakrishi.com/contact" />
+        <link rel="canonical" href="https://krishihimalaya.com/contact" />
         <meta name="author" content="Himalaya Krishi" />
         <meta name="geo.region" content="NP-BAG" />
         <meta name="geo.placename" content="Manahari" />
@@ -102,10 +102,10 @@ const Contact = () => {
         <meta property="og:type" content="website" />
         <meta property="og:site_name" content="Himalaya Krishi" />
         <meta property="og:locale" content="en_NP" />
-        <meta property="og:url" content="https://himalayakrishi.com/contact" />
+        <meta property="og:url" content="https://krishihimalaya.com/contact" />
         <meta property="og:title" content="Contact Himalaya Krishi | Organic Farming Excellence" />
         <meta property="og:description" content="Reach out to Nepal's leading organic farm. Get expert guidance on sustainable farming, dairy solutions, and organic agriculture." />
-        <meta property="og:image" content="https://himalayakrishi.com/og-contact.jpg" />
+        <meta property="og:image" content="https://krishihimalaya.com/og-contact.jpg" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
     
@@ -114,7 +114,7 @@ const Contact = () => {
         <meta name="twitter:site" content="@himalayakrishi" />
         <meta name="twitter:title" content="Contact Himalaya Krishi | Get Expert Farming Guidance" />
         <meta name="twitter:description" content="Connect with Nepal's premier organic farm for sustainable agriculture solutions and expert guidance." />
-        <meta name="twitter:image" content="https://himalayakrishi.com/twitter-contact.jpg" />
+        <meta name="twitter:image" content="https://krishihimalaya.com/twitter-contact.jpg" />
     
         {/* Schema.org LD+JSON */}
         <script type="application/ld+json">
@@ -123,7 +123,7 @@ const Contact = () => {
             "@type": "ContactPage",
             "name": "Contact Himalaya Krishi",
             "description": "Get in touch with Himalaya Krishi for organic farming solutions and sustainable agriculture guidance.",
-            "url": "https://himalayakrishi.com/contact",
+            "url": "https://krishihimalaya.com/contact",
             "contactPoint": {
               "@type": "ContactPoint",
               "telephone": "+977-9823405140",
@@ -151,7 +151,7 @@ const Contact = () => {
               "@type": "ContactAction",
               "target": {
                 "@type": "EntryPoint",
-                "urlTemplate": "https://himalayakrishi.com/contact",
+                "urlTemplate": "https://krishihimalaya.com/contact",
                 "inLanguage": "en"
               }
             }

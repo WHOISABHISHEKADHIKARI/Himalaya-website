@@ -26,48 +26,8 @@ const colors = {
 // Add this at the top with other imports
 import { Helmet } from 'react-helmet-async';
 
-// Animation variants
-const fadeIn = {
-  hidden: { opacity: 0, y: 30 },
-  visible: { 
-    opacity: 1, 
-    y: 0,
-    transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] }
-  }
-};
-
-const staggerChildren = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.2
-    }
-  }
-};
-
-const heroAnimation = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.3,
-      delayChildren: 0.2
-    }
-  }
-};
-
-const heroTextAnimation = {
-  hidden: { opacity: 0, y: 40 },
-  visible: { 
-    opacity: 1, 
-    y: 0,
-    transition: { 
-      duration: 1, 
-      ease: [0.22, 1, 0.36, 1] 
-    }
-  }
-};
+// Import animation variants
+import { fadeIn, staggerChildren, heroAnimation, heroTextAnimation, cardAnimation } from '../utils/animations';
 
 const Vision = () => {
   const [scrollProgress, setScrollProgress] = useState(0);
@@ -119,48 +79,7 @@ const Vision = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Animation variants
-  const fadeIn = {
-    hidden: { opacity: 0, y: 30 },
-    visible: { 
-      opacity: 1, 
-      y: 0,
-      transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] }
-    }
-  };
-  
-  const staggerChildren = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2
-      }
-    }
-  };
-  
-  const heroAnimation = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.3,
-        delayChildren: 0.2
-      }
-    }
-  };
-  
-  const heroTextAnimation = {
-    hidden: { opacity: 0, y: 40 },
-    visible: { 
-      opacity: 1, 
-      y: 0,
-      transition: { 
-        duration: 1, 
-        ease: [0.22, 1, 0.36, 1] 
-      }
-    }
-  };
+  // Using animation variants defined at the top level
 
   return (
     <div className="relative bg-gradient-to-b from-[#F4F9F1] to-[#EAEFE7] min-h-screen font-sans">
@@ -171,14 +90,14 @@ const Vision = () => {
         
         {/* Technical SEO */}
         <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="https://himalayakrishi.com/vision" />
+        <link rel="canonical" href="https://krishihimalaya.com/vision" />
         
         {/* Open Graph */}
         <meta property="og:type" content="website" />
         <meta property="og:site_name" content="Himalaya Krishi" />
         <meta property="og:title" content="Strategic Vision | Himalaya Krishi" />
         <meta property="og:description" content="Discover our vision for sustainable agriculture and organic farming excellence in Nepal. Premium dairy products, innovative farming solutions, and community development." />
-        <meta property="og:image" content="https://himalayakrishi.com/og-vision.jpg" />
+        <meta property="og:image" content="https://krishihimalaya.com/og-vision.jpg" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         
@@ -187,7 +106,7 @@ const Vision = () => {
         <meta name="twitter:site" content="@himalayakrishi" />
         <meta name="twitter:title" content="Vision & Growth Plan | Himalaya Krishi" />
         <meta name="twitter:description" content="Leading Nepal's sustainable agriculture revolution with innovative organic farming solutions and premium dairy products." />
-        <meta name="twitter:image" content="https://himalayakrishi.com/twitter-vision.jpg" />
+        <meta name="twitter:image" content="https://krishihimalaya.com/twitter-vision.jpg" />
         
         {/* Schema.org LD+JSON */}
         <script type="application/ld+json">
@@ -196,20 +115,20 @@ const Vision = () => {
             "@type": "Article",
             "headline": "Himalaya Krishi Vision & Strategic Plan",
             "description": "Comprehensive vision for sustainable agriculture and organic farming excellence in Nepal",
-            "image": "https://himalayakrishi.com/og-vision.jpg",
+            "image": "https://krishihimalaya.com/og-vision.jpg",
             "datePublished": "2024-01-01",
             "dateModified": new Date().toISOString(),
             "author": {
               "@type": "Organization",
               "name": "Himalaya Krishi",
-              "url": "https://himalayakrishi.com"
+              "url": "https://krishihimalaya.com"
             },
             "publisher": {
               "@type": "Organization",
               "name": "Himalaya Krishi",
               "logo": {
                 "@type": "ImageObject",
-                "url": "https://himalayakrishi.com/logo.png"
+                "url": "https://krishihimalaya.com/logo.png"
               }
             },
             "mainEntity": {
@@ -606,19 +525,22 @@ const MetricCard = ({ icon, title, value, subtitle }) => (
 const TimelineCard = ({ year, title, points }) => (
   <motion.div 
     className="bg-[rgba(255,255,255,0.05)] backdrop-blur-sm rounded-2xl p-8 border border-[rgba(255,255,255,0.1)] hover:border-[rgba(255,255,255,0.2)] transition-all duration-300 transform hover:-translate-y-2"
-    variants={{
-      hidden: { opacity: 0, y: 30 },
-      visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
-    }}
+    variants={fadeIn}
+    onMouseDown={(e) => e.stopPropagation()}
   >
     <h3 className="text-[#D8A51D] font-serif font-bold text-2xl mb-2">{year}</h3>
     <h4 className="font-bold text-white text-xl mb-4">{title}</h4>
     <ul className="space-y-3">
       {points.map((point, index) => (
-        <li key={index} className="text-[rgba(255,255,255,0.8)] flex items-start">
+        <li 
+          key={index} 
+          className="text-[rgba(255,255,255,0.8)] flex items-start"
+          onMouseDown={(e) => e.stopPropagation()}
+        >
           <motion.span 
             className="text-[#D8A51D] mr-3"
             whileHover={{ scale: 1.2 }}
+            onMouseDown={(e) => e.stopPropagation()}
           >•</motion.span>
           <span>{point}</span>
         </li>
