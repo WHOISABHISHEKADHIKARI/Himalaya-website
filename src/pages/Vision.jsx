@@ -23,19 +23,6 @@ const colors = {
   }
 };
 
-// Add this at the top with other imports
-import { Helmet } from 'react-helmet-async';
-
-// Add animation variants before the OurPlan component
-const fadeIn = {
-  hidden: { opacity: 0, y: 30 },
-  visible: { 
-    opacity: 1, 
-    y: 0,
-    transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] }
-  }
-};
-
 const OurPlan = () => {
   const [scrollProgress, setScrollProgress] = useState(0);
   const [isLoaded, setIsLoaded] = useState(false);
@@ -131,12 +118,6 @@ const OurPlan = () => {
 
   return (
     <div className="relative bg-gradient-to-b from-[#F4F9F1] to-[#EAEFE7] min-h-screen font-sans">
-      <Helmet>
-        <title>Our Vision & Business Plan | Himalaya Krishi</title>
-        <meta name="description" content="Discover our comprehensive approach to sustainable agriculture and dairy production at Himalaya Krishi." />
-        <link rel="icon" type="image/png" sizes="192x192" href="/logo_192.png" />
-        <link rel="icon" type="image/png" sizes="512x512" href="/logo_512.png" />
-      </Helmet>
       {/* Scroll Progress Indicator */}
       <div 
         className="fixed top-0 left-0 h-1 bg-gradient-to-r from-[#1C4E37] to-[#D8A51D] z-50"
@@ -558,9 +539,13 @@ const CropCard = ({ title, items }) => (
 
 export default OurPlan;
 
-// Update image imports with dynamic imports
-const ownerImage = new URL('../assets/image/owner.jpg', import.meta.url).href;
-const managerImage = new URL('../assets/image/manager.jpeg', import.meta.url).href;
+// Update image imports with proper paths
+import farmImage1 from '../assets/image/imag1.jpeg';
+import farmImage2 from '../assets/image/imag2.jpeg';
+import farmImage3 from '../assets/image/imag3.jpeg';
+import farmImage4 from '../assets/image/imag4.jpeg';
+import kedarImage from '../assets/image/owner.jpg';
+import abhishekImage from '../assets/image/manager.jpeg';
 
 // Inside the Operations Section, add the team members
 <section className="mb-24">
@@ -576,13 +561,13 @@ const managerImage = new URL('../assets/image/manager.jpeg', import.meta.url).hr
       <div className="flex flex-col md:flex-row items-center gap-6">
         <div className="w-32 h-32 rounded-full overflow-hidden">
           <img 
-            src={ownerImage}
+            src={kedarImage} 
             alt="Kedar Prasad Adhikari"
             className="w-full h-full object-cover"
             loading="eager"
             onError={(e) => {
               e.target.onerror = null;
-              e.target.src = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 24 24"%3E%3Cpath fill="%231C4E37" d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/%3E%3C/svg%3E';
+              e.target.src = 'https://via.placeholder.com/128?text=K';
             }}
           />
         </div>
@@ -605,13 +590,13 @@ const managerImage = new URL('../assets/image/manager.jpeg', import.meta.url).hr
       <div className="flex flex-col md:flex-row items-center gap-6">
         <div className="w-32 h-32 rounded-full overflow-hidden">
           <img 
-            src={managerImage}
+            src={abhishekImage} 
             alt="Abhishek Adhikari"
             className="w-full h-full object-cover"
             loading="eager"
             onError={(e) => {
               e.target.onerror = null;
-              e.target.src = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 24 24"%3E%3Cpath fill="%231C4E37" d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/%3E%3C/svg%3E';
+              e.target.src = 'https://via.placeholder.com/128?text=A';
             }}
           />
         </div>

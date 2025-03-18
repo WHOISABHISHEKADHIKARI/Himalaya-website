@@ -71,7 +71,6 @@ const About = () => {
       </Helmet>
       
       {/* Hero Section */}
-      // Update the Hero section image
       <section 
         className="relative bg-cover bg-center h-screen flex items-center pt-28"
         style={{ 
