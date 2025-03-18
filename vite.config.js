@@ -8,7 +8,12 @@ export default defineConfig({
   build: {
     outDir: 'dist',
     rollupOptions: {
-      input: resolve(__dirname, 'index.html')
+      input: {
+        main: resolve(__dirname, 'index.html')
+      },
+      output: {
+        manualChunks: undefined
+      }
     }
   }
 })

@@ -23,13 +23,18 @@ const colors = {
   }
 };
 
+<<<<<<< HEAD
 // Add this at the top with other imports
 import { Helmet } from 'react-helmet-async';
 
 // Import animation variants
 import { fadeIn, staggerChildren, heroAnimation, heroTextAnimation, cardAnimation } from '../utils/animations';
 
+// Resolve component name conflict
 const Vision = () => {
+=======
+const OurPlan = () => {
+>>>>>>> 00b7a8aea4fc8fa23173e88d8cce330a85658cab
   const [scrollProgress, setScrollProgress] = useState(0);
   const [isLoaded, setIsLoaded] = useState(false);
 
@@ -83,6 +88,7 @@ const Vision = () => {
 
   return (
     <div className="relative bg-gradient-to-b from-[#F4F9F1] to-[#EAEFE7] min-h-screen font-sans">
+<<<<<<< HEAD
       <Helmet>
         <title>Vision & Strategic Plan | Himalaya Krishi - Sustainable Agriculture Excellence</title>
         <meta name="description" content="Explore Himalaya Krishi's comprehensive vision for sustainable agriculture, dairy production, and organic farming in Nepal. From premium dairy products to innovative farming solutions." />
@@ -148,6 +154,8 @@ const Vision = () => {
           })}
         </script>
       </Helmet>
+=======
+>>>>>>> 00b7a8aea4fc8fa23173e88d8cce330a85658cab
       {/* Scroll Progress Indicator */}
       <div 
         className="fixed top-0 left-0 h-1 bg-gradient-to-r from-[#1C4E37] to-[#D8A51D] z-50"
@@ -580,6 +588,7 @@ const CropCard = ({ title, items }) => (
   </motion.div>
 );
 
+<<<<<<< HEAD
 // Remove these lines
 const ownerImage = new URL('../assets/image/owner.jpg', import.meta.url).href;
 const managerImage = new URL('../assets/image/manager.jpeg', import.meta.url).href;
@@ -662,6 +671,75 @@ const TeamSection = () => (
             </div>
           </div>
         </motion.div>
+=======
+export default OurPlan;
+
+// Update image imports with proper paths
+import farmImage1 from '../assets/image/imag1.jpeg';
+import farmImage2 from '../assets/image/imag2.jpeg';
+import farmImage3 from '../assets/image/imag3.jpeg';
+import farmImage4 from '../assets/image/imag4.jpeg';
+import kedarImage from '../assets/image/owner.jpg';
+import abhishekImage from '../assets/image/manager.jpeg';
+
+// Inside the Operations Section, add the team members
+<section className="mb-24">
+  <div className="grid md:grid-cols-2 gap-8">
+    {/* Kedar's Card */}
+    <motion.div 
+      className="bg-white rounded-2xl shadow-lg p-8 border border-[rgba(255,255,255,0.2)] relative overflow-hidden"
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true }}
+      variants={fadeIn}
+    >
+      <div className="flex flex-col md:flex-row items-center gap-6">
+        <div className="w-32 h-32 rounded-full overflow-hidden">
+          <img 
+            src={kedarImage} 
+            alt="Kedar Prasad Adhikari"
+            className="w-full h-full object-cover"
+            loading="eager"
+            onError={(e) => {
+              e.target.onerror = null;
+              e.target.src = 'https://via.placeholder.com/128?text=K';
+            }}
+          />
+        </div>
+        <div>
+          <h3 className="text-xl font-bold text-[#1C4E37]">Kedar Prasad Adhikari</h3>
+          <p className="text-[#3A5944]">Owner</p>
+        </div>
+      </div>
+    </motion.div>
+
+    {/* Abhishek's Card */}
+    <motion.div 
+      className="bg-white rounded-2xl shadow-lg p-8 border border-[rgba(255,255,255,0.2)] relative overflow-hidden"
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true }}
+      variants={fadeIn}
+      transition={{ delay: 0.2 }}
+    >
+      <div className="flex flex-col md:flex-row items-center gap-6">
+        <div className="w-32 h-32 rounded-full overflow-hidden">
+          <img 
+            src={abhishekImage} 
+            alt="Abhishek Adhikari"
+            className="w-full h-full object-cover"
+            loading="eager"
+            onError={(e) => {
+              e.target.onerror = null;
+              e.target.src = 'https://via.placeholder.com/128?text=A';
+            }}
+          />
+        </div>
+        <div>
+          <h3 className="text-xl font-bold text-[#1C4E37]">Abhishek Adhikari</h3>
+          <p className="text-[#3A5944]">Manager</p>
+        </div>
+>>>>>>> 00b7a8aea4fc8fa23173e88d8cce330a85658cab
       </div>
     </div>
   </section>
