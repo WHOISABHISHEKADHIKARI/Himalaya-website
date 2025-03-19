@@ -1,6 +1,6 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
-import './LoadingBar.css';
+import '../components/LoadingBar.css';  // Update the import path
 
 const LoadingBar = () => {
   return (
