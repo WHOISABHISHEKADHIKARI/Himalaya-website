@@ -10,5 +10,17 @@ app.use((req, res, next) => {
     "connect-src 'self' https://*.googleapis.com; " +
     "worker-src 'self' blob:;"
   );
+  res.setHeader(
+    "Strict-Transport-Security",
+    "max-age=31536000; includeSubDomains; preload"
+  );
+  res.setHeader(
+    "Cross-Origin-Opener-Policy",
+    "same-origin"
+  );
+  res.setHeader(
+    "X-Frame-Options",
+    "SAMEORIGIN"
+  );
   next();
 });

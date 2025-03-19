@@ -143,7 +143,47 @@ const ActionButton = ({ text, link, isExternal, variant = "primary" }) => {
 // }
 
 const Home = () => {
-  const [videoError, setVideoError] = useState(false);
+  const VideoSection = () => {
+    const [videoError, setVideoError] = useState(false);
+    const videoRef = useRef(null);
+  
+    const handleVideoError = (error) => {
+      console.log('Video error:', error);
+      setVideoError(true);
+    };
+  
+    return (
+      <div className="relative w-full h-screen">
+        {!videoError ? (
+          <video
+            ref={videoRef}
+            className="absolute top-0 left-0 w-full h-full object-cover"
+            autoPlay
+            muted
+            loop
+            playsInline
+            onError={handleVideoError}
+            poster="/assets/images/fallback-image.webp" // Add a fallback image
+          >
+            <source 
+              src="/assets/video/farmvideo.mp4" 
+              type="video/mp4"
+              onError={handleVideoError}
+            />
+            {/* Fallback text */}
+            Your browser does not support the video tag.
+          </video>
+        ) : (
+          // Fallback content when video fails
+          <div className="absolute top-0 left-0 w-full h-full bg-cover bg-center"
+               style={{ backgroundImage: 'url(/assets/images/fallback-image.webp)' }}>
+            {/* Optional: Add any overlay content here */}
+          </div>
+        )}
+        {/* Your existing overlay content */}
+      </div>
+    );
+  };
   const [isLoading, setIsLoading] = useState(true);
   const videoRef = useRef(null);
 
