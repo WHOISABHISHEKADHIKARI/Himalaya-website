@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { BsEnvelope, BsPerson } from 'react-icons/bs';
-import { FaMapMarkerAlt } from 'react-icons/fa'; // Add this import
+import { FaMapMarkerAlt, FaPhone } from 'react-icons/fa'; // Added FaPhone
 import { motion } from 'framer-motion';
 import { Helmet } from 'react-helmet-async';
 
@@ -256,6 +256,60 @@ const Contact = () => {
               </div>
             </form>
           </motion.div>
+        </motion.div>
+        
+        {/* Premium Google Maps Section */}
+        <motion.div
+          className="mt-20 max-w-5xl mx-auto"
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.5, duration: 0.8 }}
+        >
+          <div className="w-16 h-1 bg-[#D8A51D] mx-auto mb-8" />
+          <h2 className="text-3xl md:text-4xl font-serif font-bold text-center mb-6" style={{ color: colors.primary }}>Visit Our Farm</h2>
+          <p className="text-lg text-center mb-10" style={{ color: colors.text.medium }}>Experience sustainable farming practices firsthand at our location</p>
+          
+          <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
+            <div className="h-[500px] w-full relative">
+              <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3539.6568722147323!2d84.84372097497744!3d27.479941382889246!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3994c90007a70f09%3A0x370a576d09ff0ad0!2sHimalaya%20Krishi%20Tatha%20Pasupalan%20Farm!5e1!3m2!1sen!2sus!4v1741707048886!5m2!1sen!2sus" 
+                width="100%" 
+                height="100%" 
+                style={{ border: 0 }} 
+                allowFullScreen="" 
+                loading="lazy" 
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Himalaya Krishi Farm Location"
+                className="filter contrast-125 brightness-105"
+              ></iframe>
+            </div>
+            
+            <div className="p-8 grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div className="flex items-start space-x-4">
+                <div className="bg-[#1C4E37]/10 p-3 rounded-full flex-shrink-0">
+                  <FaMapMarkerAlt className="text-[#1C4E37] text-xl" />
+                </div>
+                <div>
+                  <h3 className="font-bold text-lg mb-2" style={{ color: colors.text.dark }}>Our Location</h3>
+                  <p style={{ color: colors.text.medium }}>Himalaya Krishi Tatha Pasupalan Farm</p>
+                  <p style={{ color: colors.text.medium }}>Manahari-5, Makwanpur</p>
+                  <p style={{ color: colors.text.medium }}>Bagmati Province, Nepal</p>
+                </div>
+              </div>
+              
+              <div className="flex items-start space-x-4">
+                <div className="bg-[#1C4E37]/10 p-3 rounded-full flex-shrink-0">
+                  <FaPhone className="text-[#1C4E37] text-xl" />
+                </div>
+                <div>
+                  <h3 className="font-bold text-lg mb-2" style={{ color: colors.text.dark }}>Contact Details</h3>
+                  <p style={{ color: colors.text.medium }}>Phone: +977 9823405140</p>
+                  <p style={{ color: colors.text.medium }}>Email: info@krishihimalaya.com</p>
+                  <p style={{ color: colors.text.medium }}>Hours: 9:00 AM - 5:00 PM (Sun-Fri)</p>
+                </div>
+              </div>
+            </div>
+          </div>
         </motion.div>
       </div>
     </div>

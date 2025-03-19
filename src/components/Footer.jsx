@@ -1,4 +1,4 @@
-import React, { lazy, Suspense } from "react";
+import React from "react";
 import { 
   FaFacebook, 
   FaWhatsapp, 
@@ -7,7 +7,7 @@ import {
   FaEnvelope 
 } from "react-icons/fa";
 
-const LazyGoogleMap = lazy(() => import('./GoogleMap'));
+// Removed the lazy import for GoogleMap
 
 const Footer = () => {
   const colors = {
@@ -107,11 +107,7 @@ const Footer = () => {
                 <FaEnvelope />
               </a>
             </div>
-            <div className="overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
-              <Suspense fallback={<div>Loading map...</div>}>
-                <LazyGoogleMap />
-              </Suspense>
-            </div>
+            {/* Removed the Google Map component and its Suspense wrapper */}
           </div>
         </div>
 
