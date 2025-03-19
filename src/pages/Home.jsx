@@ -4,7 +4,8 @@ import { FaArrowRight } from "react-icons/fa";
 import { useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Helmet } from 'react-helmet-async';
-
+// Remove this import at the top
+// import farmVideo from '../assets/videos/farmvideo.mp4';
 // Reduce stats to key metrics
 const stats = [
   { value: "1000+", label: "Farmers Empowered" },
@@ -151,10 +152,19 @@ const Home = () => {
       setIsLoading(false);
     }, 2000);
 
-    if (videoRef.current) {
-      videoRef.current.play().catch(() => setVideoError(true));
-    }
+    const loadVideo = async () => {
+      try {
+        if (videoRef.current) {
+          await videoRef.current.load(); // Add load() before play()
+          await videoRef.current.play();
+        }
+      } catch (error) {
+        console.error('Video playback failed:', error);
+        setVideoError(true);
+      }
+    };
 
+    loadVideo();
     return () => clearTimeout(timer);
   }, []);
 
@@ -255,7 +265,10 @@ const Home = () => {
       >
         {/* Background Media */}
         {videoError ? (
-          <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: "url('/assets/image/imag1.jpeg')" }} />
+          <div 
+            className="absolute inset-0 bg-cover bg-center" 
+            style={{ backgroundImage: "url('/assets/images/fallback.webp')" }}
+          />
         ) : (
           <video
             ref={videoRef}
@@ -263,10 +276,18 @@ const Home = () => {
             loop
             muted
             playsInline
+            preload="auto"
             className="absolute inset-0 w-full h-full object-cover"
-            onError={() => setVideoError(true)}
+            onError={(e) => {
+              console.error('Video loading failed:', e);
+              setVideoError(true);
+            }}
+            poster="/assets/images/fallback.webp"
           >
-            <source src="/assets/video/farmvideo.mp4" type="video/mp4" />
+            <source 
+              src="/assets/video/farmvideo.mp4"
+              type="video/mp4"
+            />
           </video>
         )}
 

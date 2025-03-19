@@ -31,7 +31,7 @@ const SplashScreen = ({ onFinish = () => {} }) => {
         {/* Resource Hints for Performance */}
         <link rel="preconnect" href="https://krishihimalaya.com" />
         <link rel="dns-prefetch" href="https://krishihimalaya.com" />
-        <link rel="preload" href="/assets/images/himalaya-logo-white.png" as="image" type="image/png" />
+        <link rel="preload" href="/assets/images/himalaya-logo-white.webp" as="image" type="image/webp" />
         
         {/* PWA Meta Tags */}
         <meta name="application-name" content="Himalaya Krishi" />
@@ -51,7 +51,7 @@ const SplashScreen = ({ onFinish = () => {} }) => {
       >
         <div className="text-center px-6">
           <img 
-            src="/assets/images/himalaya-logo-white.png"
+            src="/assets/images/himalaya-logo-white.webp"
             alt="हिमालय कृषि लोगो | Himalaya Krishi Logo" 
             className="w-64 h-64 mx-auto mb-6 filter brightness-100"
             onError={(e) => {

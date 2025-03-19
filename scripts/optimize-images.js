@@ -9,17 +9,26 @@ async function optimizeLogos() {
   // Ensure public directory exists
   await fs.mkdir(publicDir, { recursive: true });
 
-  // Create 192x192 version
+  // Create modern format versions
   await sharp(sourceLogo)
     .resize(192, 192)
-    .png()
-    .toFile(path.join(publicDir, 'logo_192.png'));
+    .webp({ quality: 90 })
+    .toFile(path.join(publicDir, 'logo_192.webp'));
 
-  // Create 512x512 version
+  await sharp(sourceLogo)
+    .resize(192, 192)
+    .avif({ quality: 80 })
+    .toFile(path.join(publicDir, 'logo_192.avif'));
+
   await sharp(sourceLogo)
     .resize(512, 512)
-    .png()
-    .toFile(path.join(publicDir, 'logo_512.png'));
+    .webp({ quality: 90 })
+    .toFile(path.join(publicDir, 'logo_512.webp'));
+
+  await sharp(sourceLogo)
+    .resize(512, 512)
+    .avif({ quality: 80 })
+    .toFile(path.join(publicDir, 'logo_512.avif'));
 }
 
 optimizeLogos().catch(console.error);

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { HiMenu, HiX } from 'react-icons/hi';
 import { Helmet } from 'react-helmet-async';
-import logo from '../assets/logo/logo_white_bg_removed.png';
+import logo from '../assets/logo/whitelogo-blackbg-removebg-preview.webp';
 
 const Navbar = ({ isHomePage }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -15,6 +15,11 @@ const Navbar = ({ isHomePage }) => {
     const timer = setTimeout(() => {
       setIsPulsing(false);
     }, 10000);
+    
+    // Preload logo
+    const img = new Image();
+    img.src = logo;
+    
     return () => clearTimeout(timer);
   }, []);
 
@@ -95,7 +100,7 @@ const Navbar = ({ isHomePage }) => {
             "name": "हिमालय कृषि | Himalaya Krishi",
             "alternateName": ["Himalaya Agriculture", "हिमालय एग्रीकल्चर"],
             "url": "https://krishihimalaya.com",
-            "logo": "https://krishihimalaya.com/assets/logo/logo_white_bg_removed.png",
+            "logo": "https://krishihimalaya.com/assets/logo/logo_white_bg_removed.webp",
             "description": "नेपालको अग्रणी जैविक कृषि केन्द्र | Nepal's Leading Organic Agriculture Center",
             "knowsAbout": [
               "Organic Farming",
@@ -179,7 +184,6 @@ const Navbar = ({ isHomePage }) => {
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className={`flex justify-between items-center transition-all duration-700 h-full`}>
-            {/* Logo with Animation */}
             <Link 
               to="/" 
               className="flex-shrink-0 transform hover:scale-105 transition-all duration-500"
@@ -190,8 +194,8 @@ const Navbar = ({ isHomePage }) => {
               <img
                 src={logo}
                 alt="Himalaya Krishi Logo"
-                className={`transition-all duration-700 animate-glow ${
-                  scrolled ? 'h-20' : 'h-32'
+                className={`transition-all duration-700 ${
+                  scrolled ? 'h-16' : 'h-24'
                 } w-auto object-contain ${
                   isHovered === 'logo' ? 'filter drop-shadow-lg' : ''
                 }`}
@@ -199,9 +203,11 @@ const Navbar = ({ isHomePage }) => {
                   filter: `drop-shadow(0 0 8px ${colors.secondary})`,
                   transition: 'all 0.7s cubic-bezier(0.4, 0, 0.2, 1)'
                 }}
+                loading="eager"
+                fetchpriority="high"
               />
             </Link>
-
+            
             {/* Desktop Menu with Enhanced Animations */}
             <div className="hidden md:flex items-center space-x-10">
               {navItems.map((item) => (

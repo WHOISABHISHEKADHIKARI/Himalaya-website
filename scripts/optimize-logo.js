@@ -11,13 +11,23 @@ async function optimizeLogo() {
   // Create PWA icons
   await sharp(sourceLogo)
     .resize(192, 192, { fit: 'contain', background: { r: 255, g: 255, b: 255, alpha: 0 } })
-    .png()
-    .toFile(path.join(publicDir, 'logo_192.png'));
+    .webp({ quality: 90 })
+    .toFile(path.join(publicDir, 'logo_192.webp'));
+
+  await sharp(sourceLogo)
+    .resize(192, 192, { fit: 'contain', background: { r: 255, g: 255, b: 255, alpha: 0 } })
+    .avif({ quality: 80 })
+    .toFile(path.join(publicDir, 'logo_192.avif'));
 
   await sharp(sourceLogo)
     .resize(512, 512, { fit: 'contain', background: { r: 255, g: 255, b: 255, alpha: 0 } })
-    .png()
-    .toFile(path.join(publicDir, 'logo_512.png'));
+    .webp({ quality: 90 })
+    .toFile(path.join(publicDir, 'logo_512.webp'));
+
+  await sharp(sourceLogo)
+    .resize(512, 512, { fit: 'contain', background: { r: 255, g: 255, b: 255, alpha: 0 } })
+    .avif({ quality: 80 })
+    .toFile(path.join(publicDir, 'logo_512.avif'));
 }
 
 optimizeLogo().catch(console.error);

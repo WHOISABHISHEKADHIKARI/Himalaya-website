@@ -12,13 +12,23 @@ async function generateIcons() {
   // Generate PWA icons
   await sharp(sourceLogo)
     .resize(192, 192)
-    .png()
-    .toFile(path.join(publicDir, 'logo_192.png'));
+    .webp({ quality: 90 })
+    .toFile(path.join(publicDir, 'logo_192.webp'));
+
+  await sharp(sourceLogo)
+    .resize(192, 192)
+    .avif({ quality: 80 })
+    .toFile(path.join(publicDir, 'logo_192.avif'));
 
   await sharp(sourceLogo)
     .resize(512, 512)
-    .png()
-    .toFile(path.join(publicDir, 'logo_512.png'));
+    .webp({ quality: 90 })
+    .toFile(path.join(publicDir, 'logo_512.webp'));
+
+  await sharp(sourceLogo)
+    .resize(512, 512)
+    .avif({ quality: 80 })
+    .toFile(path.join(publicDir, 'logo_512.avif'));
 }
 
 generateIcons().catch(console.error);

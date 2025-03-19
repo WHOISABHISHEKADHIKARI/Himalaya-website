@@ -56,7 +56,3 @@ Sitemap: https://krishihimalaya.com/resources-sitemap.xml
 Sitemap: https://krishihimalaya.com/local-sitemap.xml
 Sitemap: https://krishihimalaya.com/images-sitemap.xml
 Sitemap: https://krishihimalaya.com/products-sitemap.xml
-
-# Cache directives
-Cache-Control: max-age=3600
-X-Robots-Tag: all

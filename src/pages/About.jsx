@@ -1,18 +1,18 @@
 import React, { useState, useEffect } from 'react';
 import LoadingBar from '../components/LoadingBar';
 import { FaPhoneAlt, FaEnvelope, FaLinkedin, FaArrowUp } from 'react-icons/fa';
-import logo from '../assets/logo/logo_white_bg_removed.png';
+import logo from '../assets/logo/whitelogo-blackbg-removebg-preview.webp';
+import imag1 from '../assets/image/imag1.webp';
+import imag5 from '../assets/image/imag5.webp';
+import imag6 from '../assets/image/imag6.webp';
+import imag7 from '../assets/image/imag7.webp';
+import imag9 from '../assets/image/imag9.webp';
+import founder from '../assets/image/founder.webp';
+import owner from '../assets/image/owner.webp';
+import manager from '../assets/image/manager.webp';
 import { motion } from 'framer-motion';
 import { Helmet } from 'react-helmet-async';
-// Add these imports at the top with other image imports
-import imag1 from '../assets/image/imag1.jpeg';
-import imag5 from '../assets/image/imag5.jpeg';
-import imag6 from '../assets/image/imag6.jpeg';
-import imag7 from '../assets/image/imag7.jpeg';
-import imag9 from '../assets/image/imag9.jpeg';
-import founder from '../assets/image/founder.jpg';
-import owner from '../assets/image/owner.jpg';     // Changed extension to .jpg to match actual file
-import manager from '../assets/image/manager.jpeg'; // This one is correct as .jpeg
+import VideoBackground from '../components/VideoBackground';
 const colors = { 
   primary: '#1C4E37', 
   secondary: '#D8A51D', 
@@ -35,12 +35,14 @@ const About = () => {
   const [loading, setLoading] = useState(true);
   const [showBackToTop, setShowBackToTop] = useState(false);
   const [scrollProgress, setScrollProgress] = useState(0);
+  const [isLoading, setIsLoading] = useState(false); // Add this line
+  const [videoError, setVideoError] = useState(false); // Add this line if you're using video
 
   useEffect(() => {
     // Simulate loading time
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 3000); // Adjust the time as needed
+    }, 3000);
 
     // Back to top visibility handler and scroll progress
     const handleScroll = () => {
@@ -676,10 +678,40 @@ const About = () => {
                 </div>
       
                 <div className="max-w-4xl mx-auto">
-                  <video controls className="w-full rounded-lg shadow-lg">
-                    <source src="/assets/video/farmvideo.mp4" type="video/mp4" />
-                    Your browser does not support the video tag.
-                  </video>
+                  <div className="relative">
+                    {isLoading && (
+                      <div className="absolute inset-0 flex items-center justify-center bg-gray-100 rounded-lg">
+                        <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-emerald-500"></div>
+                      </div>
+                    )}
+                    <video
+                      controls
+                      className="w-full rounded-lg shadow-lg"
+                      poster="/assets/images/farm-poster.jpg"
+                      onLoadStart={() => setIsLoading(true)}
+                      onLoadedData={() => setIsLoading(false)}
+                      onError={(e) => {
+                        console.warn('Video loading failed:', e);
+                        setIsLoading(false);
+                        setVideoError(true);
+                      }}
+                    >
+                      <source 
+                        src="/assets/video/farmvideo.mp4" 
+                        type="video/mp4"
+                      />
+                      {/* Fallback content */}
+                      <img 
+                        src="/assets/images/farm-poster.jpg" 
+                        alt="Farm overview" 
+                        className="w-full rounded-lg shadow-lg"
+                      />
+                    </video>
+                    {videoError && (
+                      <div className="mt-4 text-red-600 text-sm">
+                       </div>
+                    )}
+                  </div>
                 </div>
               </div>
             </section>
