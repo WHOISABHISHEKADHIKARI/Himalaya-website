@@ -87,6 +87,20 @@ const Navbar = ({ isHomePage }) => {
             : 'कृषि सम्बन्धी सल्लाह र सहयोगको लागि सम्पर्क गर्नुहोस्। | Contact us for agricultural consultation and support.'
         }`} />
 
+        {/* Enhanced Keywords for Better SEO */}
+        <meta name="keywords" content={`${
+          location.pathname === '/' 
+            ? 'कृषि अनुदान नेपाल, जैविक खेती, agriculture grants nepal, organic farming, sustainable agriculture, कृषि नीति, farming subsidies'
+            : location.pathname === '/about'
+            ? 'हिमालय कृषि इतिहास, जैविक खेती नेपाल, himalaya krishi history, organic farming nepal, sustainable agriculture practices'
+            : location.pathname === '/vision'
+            ? 'कृषि भविष्य, जैविक खेती योजना, agriculture future, organic farming plans, sustainable development goals'
+            : 'कृषि सम्पर्क, जैविक खेती सल्लाह, agriculture contact, organic farming consultation, farming expert nepal'
+        }`} />
+
+        {/* Canonical URL to prevent duplicate content issues */}
+        <link rel="canonical" href={`https://krishihimalaya.com${location.pathname}`} />
+
         {/* Language Alternates */}
         <link rel="alternate" hrefLang="ne" href={`https://krishihimalaya.com/ne${location.pathname}`} />
         <link rel="alternate" hrefLang="en" href={`https://krishihimalaya.com${location.pathname}`} />
@@ -107,33 +121,65 @@ const Navbar = ({ isHomePage }) => {
               "Agricultural Grants",
               "Farming Techniques",
               "Government Subsidies",
-              "Agricultural Policies"
+              "Agricultural Policies",
+              "Sustainable Agriculture",
+              "Crop Rotation",
+              "Soil Health Management"
             ],
             "sameAs": [
-              "https://www.facebook.com/himalayakrishi",
-              "https://twitter.com/himalayakrishi",
-              "https://www.linkedin.com/company/himalayakrishi"
+              "https://www.facebook.com/profile.php?id=61572480220650",
+              "https://wa.me/9779823405140"
             ],
             "contactPoint": {
               "@type": "ContactPoint",
               "telephone": "+977-9823405140",
               "contactType": "customer service",
-              "availableLanguage": ["en", "ne"]
+              "availableLanguage": ["en", "ne"],
+              "areaServed": "NP"
             },
             "address": {
               "@type": "PostalAddress",
               "streetAddress": "Manahari-5",
               "addressLocality": "Manahari",
               "addressRegion": "Makwanpur",
+              "postalCode": "44400",
               "addressCountry": "Nepal"
+            },
+            "geo": {
+              "@type": "GeoCoordinates",
+              "latitude": "27.479941",
+              "longitude": "84.843720"
+            },
+            "foundingDate": "2020",
+            "founder": {
+              "@type": "Person",
+              "name": "Himalaya Krishi Team"
             }
           })}
         </script>
 
-        {/* Enhanced Open Graph with Bilingual Support */}
-        <meta property="og:locale" content="ne_NP" />
-        <meta property="og:locale:alternate" content="en_US" />
-        
+        {/* BreadcrumbList Schema for Better Navigation Understanding */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://krishihimalaya.com/"
+              },
+              ...(location.pathname !== '/' ? [{
+                "@type": "ListItem",
+                "position": 2,
+                "name": location.pathname.substring(1).charAt(0).toUpperCase() + location.pathname.slice(2),
+                "item": `https://krishihimalaya.com${location.pathname}`
+              }] : [])
+            ]
+          })}
+        </script>
+
         {/* Navigation Schema */}
         <script type="application/ld+json">
           {JSON.stringify({
@@ -146,28 +192,42 @@ const Navbar = ({ isHomePage }) => {
           })}
         </script>
 
-        {/* Open Graph / Facebook */}
+        {/* Open Graph / Facebook - Enhanced */}
         <meta property="og:type" content="website" />
         <meta property="og:url" content={`https://krishihimalaya.com${location.pathname}`} />
         <meta property="og:title" content={`${location.pathname === '/' ? 'Home' : location.pathname.substring(1).charAt(0).toUpperCase() + location.pathname.slice(2)} | Himalaya Krishi - Leading Organic Farming Excellence in Nepal`} />
-        <meta property="og:description" content={`${location.pathname === '/' ? 'Discover Himalaya Krishi\'s organic farming excellence in Nepal. Leading sustainable agriculture practices and farmer empowerment since 1992.' : 
+        <meta property="og:description" content={`${location.pathname === '/' ? 'Discover Himalaya Krishi\'s organic farming excellence in Nepal. Leading sustainable agriculture practices and farmer empowerment since 2020.' : 
           location.pathname === '/about' ? 'Learn about Himalaya Krishi\'s journey in organic farming, our heritage, and commitment to sustainable agriculture in Nepal.' :
           location.pathname === '/vision' ? 'Explore Himalaya Krishi\'s vision for sustainable farming, organic excellence, and agricultural innovation in Nepal.' :
           'Connect with Himalaya Krishi for sustainable farming solutions and organic agriculture expertise in Nepal.'}`} />
-        <meta property="og:image" content="/seo/og-image.png" />
+        <meta property="og:image" content="https://krishihimalaya.com/assets/logo/whitelogo-blackbg-removebg-preview.webp" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
         <meta property="og:site_name" content="Himalaya Krishi" />
         <meta property="og:locale" content="en_US" />
+        <meta property="og:locale:alternate" content="ne_NP" />
 
-        {/* Twitter */}
+        {/* Twitter - Enhanced */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content="@himalayakrishi" />
         <meta name="twitter:url" content={`https://krishihimalaya.com${location.pathname}`} />
         <meta name="twitter:title" content={`${location.pathname === '/' ? 'Home' : location.pathname.substring(1).charAt(0).toUpperCase() + location.pathname.slice(2)} | Himalaya Krishi - Leading Organic Farming Excellence in Nepal`} />
-        <meta name="twitter:description" content={`${location.pathname === '/' ? 'Discover Himalaya Krishi\'s organic farming excellence in Nepal. Leading sustainable agriculture practices and farmer empowerment since 1992.' : 
+        <meta name="twitter:description" content={`${location.pathname === '/' ? 'Discover Himalaya Krishi\'s organic farming excellence in Nepal. Leading sustainable agriculture practices and farmer empowerment since 2020.' : 
           location.pathname === '/about' ? 'Learn about Himalaya Krishi\'s journey in organic farming, our heritage, and commitment to sustainable agriculture in Nepal.' :
           location.pathname === '/vision' ? 'Explore Himalaya Krishi\'s vision for sustainable farming, organic excellence, and agricultural innovation in Nepal.' :
           'Connect with Himalaya Krishi for sustainable farming solutions and organic agriculture expertise in Nepal.'}`} />
-        <meta name="twitter:image" content="/seo/og-image.png" />
+        <meta name="twitter:image" content="https://krishihimalaya.com/assets/logo/whitelogo-blackbg-removebg-preview.webp" />
+        
+        {/* Mobile Optimization */}
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+        <meta name="theme-color" content="#1C4E37" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+        
+        {/* Additional SEO Enhancements */}
+        <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+        <meta name="author" content="Himalaya Krishi" />
+        <meta name="google-site-verification" content="your-verification-code" />
       </Helmet>
 
       {/* Navigation with Bilingual Support */}

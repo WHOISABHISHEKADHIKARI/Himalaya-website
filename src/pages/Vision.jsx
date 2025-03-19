@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { GiCow, GiFarmTractor, GiWheat, GiMilkCarton } from 'react-icons/gi';
 import { FaHotel, FaSeedling, FaLeaf, FaChartLine, FaArrowDown } from 'react-icons/fa';
 import { motion, AnimatePresence } from 'framer-motion';
+import ScrollToTopButton from '../components/ScrollToTopButton';
 
 // Premium color palette
 const colors = {
