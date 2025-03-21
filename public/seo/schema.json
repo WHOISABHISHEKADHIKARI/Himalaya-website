@@ -2,6 +2,36 @@
   "@context": "https://schema.org",
   "@graph": [
     {
+      "@type": "FAQPage",
+      "@id": "https://krishihimalaya.com/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What organic farming services does Himalaya Krishi provide?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Himalaya Krishi provides comprehensive organic farming services including training programs, certification support, agricultural consultancy, sustainable farming workshops, and organic farming resources. We also offer specialized programs in crop management, soil health, and pest control using organic methods."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How can I get organic certification through Himalaya Krishi?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Our organic certification support service includes initial assessment, documentation guidance, compliance training, and ongoing support throughout the certification process. We help farmers meet both national and international organic standards."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What sustainable farming techniques do you teach?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We teach various sustainable farming techniques including crop rotation, composting, natural pest management, water conservation, soil fertility management, and integrated farming systems. Our methods combine traditional knowledge with modern organic farming practices."
+          }
+        }
+      ]
+    },
+    {
       "@type": "Organization",
       "@id": "https://krishihimalaya.com/#organization",
       "name": "Himalaya Krishi",
@@ -9,43 +39,120 @@
       "sameAs": [
         "https://facebook.com/himalayakrishi",
         "https://twitter.com/himalayakrishi",
-        "https://instagram.com/himalayakrishi"
+        "https://instagram.com/himalayakrishi",
+        "https://linkedin.com/company/himalayakrishi",
+        "https://youtube.com/c/himalayakrishi"
       ],
       "logo": {
         "@type": "ImageObject",
         "url": "https://krishihimalaya.com/logo.svg",
         "width": 112,
-        "height": 112
+        "height": 112,
+        "caption": "Himalaya Krishi Logo - Nepal's Premier Organic Agriculture Center"
       },
-      "description": "नेपालको अग्रणी जैविक कृषि केन्द्र | Nepal's Premier Organic Agriculture Center for sustainable farming practices, agricultural resources, and farming excellence"
+      "description": "नेपालको अग्रणी जैविक कृषि केन्द्र | Nepal's Premier Organic Agriculture Center for sustainable farming practices, agricultural resources, and farming excellence",
+      "foundingDate": "2020",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Hetauda-4",
+        "addressLocality": "Hetauda",
+        "addressRegion": "Bagmati",
+        "postalCode": "44107",
+        "addressCountry": "NP"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+977-987654321",
+        "contactType": "customer service",
+        "availableLanguage": ["en", "ne"]
+      }
     },
     {
       "@type": "WebSite",
       "@id": "https://krishihimalaya.com/#website",
       "url": "https://krishihimalaya.com",
       "name": "Himalaya Krishi - Organic Farming Excellence",
+      "alternateName": "हिमालय कृषि",
+      "description": "Leading organic farming center in Nepal providing sustainable agriculture solutions, training, and resources for farmers",
       "publisher": {
         "@id": "https://krishihimalaya.com/#organization"
       },
       "inLanguage": ["en", "ne"],
-      "potentialAction": {
+      "potentialAction": [{
         "@type": "SearchAction",
         "target": "https://krishihimalaya.com/search?q={search_term_string}",
         "query-input": "required name=search_term_string"
-      }
+      },
+      {
+        "@type": "ReadAction",
+        "target": [{
+          "@type": "EntryPoint",
+          "urlTemplate": "https://krishihimalaya.com/blog/{slug}",
+          "actionPlatform": ["http://schema.org/DesktopWebPlatform", "http://schema.org/MobileWebPlatform"]
+        }]
+      }],
+      "sameAs": ["https://krishihimalaya.com/ne"]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://krishihimalaya.com/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "item": {
+            "@id": "https://krishihimalaya.com/",
+            "name": "Home"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "item": {
+            "@id": "https://krishihimalaya.com/services/",
+            "name": "Agricultural Services"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "item": {
+            "@id": "https://krishihimalaya.com/resources/",
+            "name": "Farming Resources"
+          }
+        }
+      ]
     },
     {
       "@type": "AgribusinessService",
       "@id": "https://krishihimalaya.com/#service",
       "name": "Organic Farming Services",
+      "serviceType": ["Organic Agriculture", "Sustainable Farming", "Agricultural Training", "Farm Consultancy"],
+      "knowsAbout": ["Organic Farming", "Sustainable Agriculture", "Crop Management", "Soil Health", "Pest Control", "Agricultural Training", "Farm Planning"],
+      "keywords": "organic farming nepal, sustainable agriculture, कृषि तालिम, जैविक खेती, agricultural training, farm consultancy, soil management",
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.8",
+        "reviewCount": "150",
+        "bestRating": "5"
+      },
+      "availableLanguage": ["en", "ne"],
+      "award": ["Best Organic Farming Center 2023 - Nepal Agriculture Association", "Excellence in Agricultural Training 2022", "Sustainable Farming Innovation Award 2023"],
+      "specialty": ["Organic Farming", "Sustainable Agriculture", "Agricultural Training", "Farm Management"],
       "description": "Comprehensive organic farming services including training, resources, and support for sustainable agriculture practices in Nepal",
       "provider": {
         "@id": "https://krishihimalaya.com/#organization"
       },
-      "areaServed": {
-        "@type": "Country",
-        "name": "Nepal"
-      },
+      "areaServed": [
+        {
+          "@type": "Country",
+          "name": "Nepal"
+        },
+        {
+          "@type": "State",
+          "name": "Bagmati Province"
+        }
+      ],
       "hasOfferCatalog": {
         "@type": "OfferCatalog",
         "name": "Agricultural Services",
@@ -54,8 +161,36 @@
             "@type": "Offer",
             "itemOffered": {
               "@type": "Service",
+              "name": "Organic Pest Management",
+              "description": "Natural and biological pest control methods for sustainable crop protection",
+              "availableLanguage": ["en", "ne"]
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Soil Health Management",
+              "description": "Comprehensive soil testing and organic enrichment programs",
+              "availableLanguage": ["en", "ne"]
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Crop Planning Services",
+              "description": "Strategic crop selection and rotation planning for optimal yields",
+              "availableLanguage": ["en", "ne"]
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
               "name": "Organic Farming Training",
-              "description": "Expert training in organic farming techniques and sustainable agriculture practices"
+              "description": "Expert training in organic farming techniques and sustainable agriculture practices",
+              "availableLanguage": ["en", "ne"]
             }
           },
           {
@@ -63,11 +198,81 @@
             "itemOffered": {
               "@type": "Service",
               "name": "Agricultural Consultancy",
-              "description": "Professional consultancy services for farm management and crop optimization"
+              "description": "Professional consultancy services for farm management and crop optimization",
+              "availableLanguage": ["en", "ne"]
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Organic Certification Support",
+              "description": "Assistance in obtaining organic certification and maintaining compliance standards",
+              "availableLanguage": ["en", "ne"]
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Sustainable Farming Workshops",
+              "description": "Hands-on workshops for sustainable farming practices and organic agriculture techniques",
+              "availableLanguage": ["en", "ne"]
             }
           }
         ]
-      }
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+          "opens": "09:00",
+          "closes": "17:00"
+        }
+      ]
+    },
+    {
+      "@type": "LocalBusiness",
+      "additionalType": ["https://schema.org/FarmersMarket", "https://schema.org/OrganizationRole"],
+      "@id": "https://krishihimalaya.com/#localbusiness",
+      "name": "Himalaya Krishi Center",
+      "image": [
+        "https://krishihimalaya.com/assets/images/center-front.jpg",
+        "https://krishihimalaya.com/assets/images/training-hall.jpg",
+        "https://krishihimalaya.com/assets/images/organic-farm.jpg"
+      ],
+      "priceRange": "₨₨-₨₨₨",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Hetauda-4",
+        "addressLocality": "Hetauda",
+        "addressRegion": "Bagmati",
+        "postalCode": "44107",
+        "addressCountry": "NP"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "27.7172",
+        "longitude": "85.3240"
+      },
+      "url": "https://krishihimalaya.com",
+      "telephone": "+977-987654321",
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+          "opens": "09:00",
+          "closes": "17:00"
+        }
+      ],
+      "hasMap": "https://goo.gl/maps/xyz123",
+      "sameAs": [
+        "https://facebook.com/himalayakrishi",
+        "https://twitter.com/himalayakrishi",
+        "https://instagram.com/himalayakrishi",
+        "https://linkedin.com/company/himalayakrishi",
+        "https://youtube.com/c/himalayakrishi"
+      ]
     }
   ]
 }

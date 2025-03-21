@@ -4,7 +4,7 @@ import securityConfig from './src/security/config'
 
 export default defineConfig({
   root: './',
-  base: './',
+  base: '/',
   plugins: [react()],
   build: {
     rollupOptions: {
@@ -13,12 +13,13 @@ export default defineConfig({
       }
     }
   },
+  optimizeDeps: {
+    include: ['react', 'react-dom', 'react-router-dom']
+  },
   server: {
-    headers: {
-      'Content-Security-Policy': Object.entries(securityConfig.contentSecurityPolicy.directives)
-        .map(([key, value]) => `${key} ${value.join(' ')}`)
-        .join('; ')
-    }
+    host: 'localhost',
+    port: 5173,
+    strictPort: true
   }
-});
+})
 

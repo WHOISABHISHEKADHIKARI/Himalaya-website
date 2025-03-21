@@ -44,7 +44,9 @@ const securityConfig = {
         "http://localhost:*",
         "ws://localhost:*",
         "https://krishihimalaya.com",
-        "https://maps.googleapis.com"
+        "https://maps.googleapis.com",
+        "https://vitals.vercel-insights.com",
+        "https://*.vercel-insights.com"
       ],
       "worker-src": ["'self'", "blob:", "http://localhost:*"],
       "object-src": ["'none'"],

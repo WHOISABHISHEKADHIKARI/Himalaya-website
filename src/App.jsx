@@ -1,6 +1,7 @@
 import { BrowserRouter } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
 import { lazy, Suspense } from 'react';
+import { Analytics } from '@vercel/analytics/react';
 import ScrollToTop from './components/ScrollToTop';
 import { Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
@@ -16,6 +17,7 @@ function App() {
   return (
     <HelmetProvider>
       <BrowserRouter>
+        <Analytics />
         <ScrollToTop />
         <Navbar />
         <Suspense fallback={<div className="min-h-screen flex items-center justify-center">Loading...</div>}>

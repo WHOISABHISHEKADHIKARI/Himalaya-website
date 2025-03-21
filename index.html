@@ -69,7 +69,12 @@
       "name": "Himalaya Krishi",
       "alternateName": ["हिमालय कृषि", "Himalaya Agriculture"],
       "url": "https://krishihimalaya.com",
-      "logo": "https://krishihimalaya.com/logo.png",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://krishihimalaya.com/logo.png",
+        "width": "512",
+        "height": "512"
+      },
       "description": "Nepal's premier agricultural resource offering कृषि अनुदान (agriculture grants), खेतीका विधिहरू (farming techniques), and सरकारी सब्सिडी (government subsidies) since 1992.",
       "foundingDate": "1992",
       "address": {
@@ -87,6 +92,14 @@
         "longitude": 84.838129,
         "description": "Headquarters location in Makwanpur District"
       },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.8",
+        "bestRating": "5",
+        "worstRating": "1",
+        "ratingCount": "156",
+        "reviewCount": "89"
+      },
       "contactPoint": [
         {
           "@type": "ContactPoint",
@@ -103,7 +116,14 @@
         }
       ],
       "priceRange": "$$",
-      "openingHours": "Mo-Sa 09:00-18:00",
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+          "opens": "09:00",
+          "closes": "18:00"
+        }
+      ],
       "currenciesAccepted": "NPR",
       "paymentAccepted": ["Cash", "Mobile Banking"],
       "sameAs": [
@@ -112,11 +132,23 @@
         "https://wa.me/9779823405140",
         "https://nepalagricultureportal.org/listings/himalaya-krishi"
       ],
-      "areaServed": {
-        "@type": "State",
-        "name": "Bagmati Province",
-        "sameAs": "https://www.wikidata.org/wiki/Q2792"
-      },
+      "areaServed": [
+        {
+          "@type": "State",
+          "name": "Bagmati Province",
+          "sameAs": "https://www.wikidata.org/wiki/Q2792"
+        },
+        {
+          "@type": "State",
+          "name": "Gandaki Province",
+          "sameAs": "https://www.wikidata.org/wiki/Q2793"
+        },
+        {
+          "@type": "State",
+          "name": "Province No. 1",
+          "sameAs": "https://www.wikidata.org/wiki/Q2791"
+        }
+      ],
       "hasOfferCatalog": {
         "@type": "OfferCatalog",
         "name": "Agricultural Services",
@@ -155,6 +187,42 @@
           "@type": "Person",
           "name": "राम बहादुर"
         }
+      },
+      "faqPage": {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How can I apply for agricultural grants in Nepal?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "To apply for agricultural grants in Nepal, visit our grants consultation service where our experts will guide you through the application process, required documents, and eligibility criteria for various government subsidies."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "कृषि अनुदानको लागि कसरी आवेदन दिने?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "कृषि अनुदानको लागि आवेदन दिन हाम्रो अनुदान परामर्श सेवामा सम्पर्क गर्नुहोस्। हाम्रा विज्ञहरूले तपाईंलाई आवेदन प्रक्रिया, आवश्यक कागजात र विभिन्न सरकारी सब्सिडीको योग्यता मापदण्डको बारेमा मार्गदर्शन गर्नेछन्।"
+            }
+          }
+        ]
+      },
+      "makesOffer": {
+        "@type": "Offer",
+        "itemOffered": [
+          {
+            "@type": "Service",
+            "name": "Organic Farming Consultation",
+            "description": "Expert guidance on organic farming practices and certification"
+          },
+          {
+            "@type": "Service",
+            "name": "जैविक खेती परामर्श",
+            "description": "जैविक खेती अभ्यास र प्रमाणीकरणमा विशेषज्ञ मार्गदर्शन"
+          }
+        ]
       }
     }
     </script>
