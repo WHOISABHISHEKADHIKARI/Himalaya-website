@@ -7,16 +7,28 @@
 
   <!-- Organic Farming Guides -->
   <url>
-    <loc>https://krishihimalaya.com/blog/organic-farming-guide-nepal</loc>
+    <loc>https://www.krishihimalaya.com/blog/organic-farming-guide-nepal</loc>
     <lastmod>2024-07-15T10:00:00+05:45</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.95</priority>
-    <xhtml:link rel="alternate" hreflang="ne" href="https://krishihimalaya.com/ne/blog/organic-farming-guide-nepal" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://krishihimalaya.com/blog/organic-farming-guide-nepal" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://krishihimalaya.com/blog/organic-farming-guide-nepal" />
+    <xhtml:link rel="alternate" hreflang="ne" href="https://www.krishihimalaya.com/ne/blog/organic-farming-guide-nepal" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.krishihimalaya.com/blog/organic-farming-guide-nepal" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.krishihimalaya.com/blog/organic-farming-guide-nepal" />
+    <news:news>
+      <news:publication>
+        <news:name>Himalaya Krishi Blog</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2024-07-15T10:00:00+05:45</news:publication_date>
+      <news:title>Comprehensive Guide to Organic Farming in Nepal</news:title>
+      <news:keywords>organic farming, Nepal agriculture, sustainable farming</news:keywords>
+    </news:news>
     <image:image>
-      <image:loc>https://krishihimalaya.com/blog/images/organic-farming-guide.jpg</image:loc>
+      <image:loc>https://www.krishihimalaya.com/blog/images/organic-farming-guide.jpg</image:loc>
       <image:title>हिमालय कृषि - जैविक खेती मार्गदर्शन | Himalaya Krishi - Organic Farming Guide</image:title>
+      <image:caption>A comprehensive guide to organic farming practices in Nepal</image:caption>
+      <image:geo_location>Nepal</image:geo_location>
+      <image:license>https://www.krishihimalaya.com/image-license</image:license>
       <image:caption>हिमालय कृषिको नेपालमा जैविक खेती गर्ने विशेष मार्गदर्शन | Himalaya Krishi's Special Guide to Organic Farming in Nepal</image:caption>
     </image:image>
     <local:business>
@@ -29,14 +41,14 @@
 
   <!-- Seasonal Farming Tips -->
   <url>
-    <loc>https://krishihimalaya.com/blog/seasonal-farming-tips</loc>
+    <loc>https://www.krishihimalaya.com/blog/seasonal-farming-tips</loc>
     <lastmod>2024-07-14T15:30:00+05:45</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
-    <xhtml:link rel="alternate" hreflang="ne" href="https://krishihimalaya.com/ne/blog/seasonal-farming-tips" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://krishihimalaya.com/blog/seasonal-farming-tips" />
+    <xhtml:link rel="alternate" hreflang="ne" href="https://www.krishihimalaya.com/ne/blog/seasonal-farming-tips" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.krishihimalaya.com/blog/seasonal-farming-tips" />
     <image:image>
-      <image:loc>https://krishihimalaya.com/blog/images/seasonal-farming.jpg</image:loc>
+      <image:loc>https://www.krishihimalaya.com/blog/images/seasonal-farming.jpg</image:loc>
       <image:title>मौसमी खेती सुझाव | Seasonal Farming Tips</image:title>
       <image:caption>नेपालको विभिन्न मौसममा खेती गर्ने तरिका | Farming Tips for Different Seasons in Nepal</image:caption>
     </image:image>
@@ -44,14 +56,14 @@
 
   <!-- Sustainable Agriculture -->
   <url>
-    <loc>https://krishihimalaya.com/blog/sustainable-agriculture-nepal</loc>
+    <loc>https://www.krishihimalaya.com/blog/sustainable-agriculture-nepal</loc>
     <lastmod>2024-07-13T11:00:00+05:45</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
-    <xhtml:link rel="alternate" hreflang="ne" href="https://krishihimalaya.com/ne/blog/sustainable-agriculture-nepal" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://krishihimalaya.com/blog/sustainable-agriculture-nepal" />
+    <xhtml:link rel="alternate" hreflang="ne" href="https://www.krishihimalaya.com/ne/blog/sustainable-agriculture-nepal" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.krishihimalaya.com/blog/sustainable-agriculture-nepal" />
     <image:image>
-      <image:loc>https://krishihimalaya.com/blog/images/sustainable-agriculture.jpg</image:loc>
+      <image:loc>https://www.krishihimalaya.com/blog/images/sustainable-agriculture.jpg</image:loc>
       <image:title>दिगो कृषि | Sustainable Agriculture</image:title>
       <image:caption>नेपालमा दिगो कृषि विकास | Sustainable Agricultural Development in Nepal</image:caption>
     </image:image>

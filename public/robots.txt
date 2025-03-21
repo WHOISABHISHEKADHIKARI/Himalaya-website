@@ -70,15 +70,17 @@ Request-rate: 1/1s
 Crawl-delay: 2
 
 # Host preference
-Host: https://krishihimalaya.com
+Host: https://www.krishihimalaya.com
 
-# Sitemaps
-Sitemap: https://krishihimalaya.com/sitemap.xml
-Sitemap: https://krishihimalaya.com/ne/sitemap.xml
-Sitemap: https://krishihimalaya.com/blog-sitemap.xml
-Sitemap: https://krishihimalaya.com/news-sitemap.xml
-Sitemap: https://krishihimalaya.com/resources-sitemap.xml
-Sitemap: https://krishihimalaya.com/local-sitemap.xml
-Sitemap: https://krishihimalaya.com/images-sitemap.xml
-Sitemap: https://krishihimalaya.com/videos-sitemap.xml
-Sitemap: https://krishihimalaya.com/products-sitemap.xml
+# Sitemaps (simplified to single entry)
+Sitemap: https://www.krishihimalaya.com/sitemap.xml
+
+# Remove these commented lines and any non-existent sitemaps
+Sitemap: https://www.krishihimalaya.com/ne/sitemap.xml  <!-- Remove if not existing -->
+Sitemap: https://www.krishihimalaya.com/blog-sitemap.xml
+Sitemap: https://www.krishihimalaya.com/news-sitemap.xml
+Sitemap: https://www.krishihimalaya.com/resources-sitemap.xml
+# Sitemap: https://www.krishihimalaya.com/local-sitemap.xml  <!-- Remove if not existing -->
+Sitemap: https://www.krishihimalaya.com/images-sitemap.xml
+Sitemap: https://www.krishihimalaya.com/videos-sitemap.xml
+Sitemap: https://www.krishihimalaya.com/products-sitemap.xml

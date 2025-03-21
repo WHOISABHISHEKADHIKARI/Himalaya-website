@@ -1,34 +1,28 @@
-const sharp = require('sharp');
-const fs = require('fs').promises;
-const path = require('path');
+import sharp from 'sharp';
+import { glob } from 'glob';
+import path from 'path';
+import { fileURLToPath } from 'url';
+import { dirname } from 'path';
 
-async function optimizeLogos() {
-  const sourceLogo = path.join(__dirname, '../src/assets/logo/logo_white_bg_removed.png');
-  const publicDir = path.join(__dirname, '../public');
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
-  // Ensure public directory exists
-  await fs.mkdir(publicDir, { recursive: true });
-
-  // Create modern format versions
-  await sharp(sourceLogo)
-    .resize(192, 192)
-    .webp({ quality: 90 })
-    .toFile(path.join(publicDir, 'logo_192.webp'));
-
-  await sharp(sourceLogo)
-    .resize(192, 192)
-    .avif({ quality: 80 })
-    .toFile(path.join(publicDir, 'logo_192.avif'));
-
-  await sharp(sourceLogo)
-    .resize(512, 512)
-    .webp({ quality: 90 })
-    .toFile(path.join(publicDir, 'logo_512.webp'));
-
-  await sharp(sourceLogo)
-    .resize(512, 512)
-    .avif({ quality: 80 })
-    .toFile(path.join(publicDir, 'logo_512.avif'));
+async function optimizeImages() {
+  const imageFiles = await glob('src/assets/**/*.{jpg,png,jpeg}');
+  
+  for (const file of imageFiles) {
+    const outputFile = file.replace(/\.(jpg|png|jpeg)$/, '.webp');
+    
+    await sharp(file)
+      .webp({ quality: 80 })
+      .resize(1200, 1200, {
+        fit: 'inside',
+        withoutEnlargement: true
+      })
+      .toFile(outputFile);
+    
+    console.log(`Optimized: ${file} -> ${outputFile}`);
+  }
 }
 
-optimizeLogos().catch(console.error);
+optimizeImages().catch(console.error);
