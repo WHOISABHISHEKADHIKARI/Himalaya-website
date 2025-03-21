@@ -1,0 +1,73 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://krishihimalaya.com/#organization",
+      "name": "Himalaya Krishi",
+      "url": "https://krishihimalaya.com",
+      "sameAs": [
+        "https://facebook.com/himalayakrishi",
+        "https://twitter.com/himalayakrishi",
+        "https://instagram.com/himalayakrishi"
+      ],
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://krishihimalaya.com/logo.svg",
+        "width": 112,
+        "height": 112
+      },
+      "description": "नेपालको अग्रणी जैविक कृषि केन्द्र | Nepal's Premier Organic Agriculture Center for sustainable farming practices, agricultural resources, and farming excellence"
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://krishihimalaya.com/#website",
+      "url": "https://krishihimalaya.com",
+      "name": "Himalaya Krishi - Organic Farming Excellence",
+      "publisher": {
+        "@id": "https://krishihimalaya.com/#organization"
+      },
+      "inLanguage": ["en", "ne"],
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://krishihimalaya.com/search?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    },
+    {
+      "@type": "AgribusinessService",
+      "@id": "https://krishihimalaya.com/#service",
+      "name": "Organic Farming Services",
+      "description": "Comprehensive organic farming services including training, resources, and support for sustainable agriculture practices in Nepal",
+      "provider": {
+        "@id": "https://krishihimalaya.com/#organization"
+      },
+      "areaServed": {
+        "@type": "Country",
+        "name": "Nepal"
+      },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Agricultural Services",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Organic Farming Training",
+              "description": "Expert training in organic farming techniques and sustainable agriculture practices"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Agricultural Consultancy",
+              "description": "Professional consultancy services for farm management and crop optimization"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

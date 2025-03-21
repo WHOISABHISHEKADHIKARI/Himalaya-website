@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+
+  <!-- Hero Banner Image -->
+  <url>
+    <loc>https://krishihimalaya.com/</loc>
+    <image:image>
+      <image:loc>https://krishihimalaya.com/assets/images/hero-banner.jpg</image:loc>
+      <image:title>हिमालय कृषि - जैविक खेती उत्कृष्टता | Himalaya Krishi - Organic Farming Excellence</image:title>
+      <image:caption>नेपालको अग्रणी जैविक कृषि केन्द्र | Nepal's Premier Organic Agriculture Center</image:caption>
+      <image:geo_location>Nepal</image:geo_location>
+      <image:license>https://krishihimalaya.com/image-license</image:license>
+    </image:image>
+  </url>
+
+  <!-- Farming Techniques Images -->
+  <url>
+    <loc>https://krishihimalaya.com/resources/farming-techniques</loc>
+    <image:image>
+      <image:loc>https://krishihimalaya.com/assets/images/farming-techniques.jpg</image:loc>
+      <image:title>आधुनिक कृषि प्रविधिहरू | Modern Farming Techniques</image:title>
+      <image:caption>नेपालमा उपयुक्त आधुनिक कृषि प्रविधिहरू | Modern Farming Techniques Suitable for Nepal</image:caption>
+      <image:geo_location>Nepal</image:geo_location>
+      <image:license>https://krishihimalaya.com/image-license</image:license>
+    </image:image>
+  </url>
+
+  <!-- Organic Farming Images -->
+  <url>
+    <loc>https://krishihimalaya.com/organic-farming</loc>
+    <image:image>
+      <image:loc>https://krishihimalaya.com/assets/images/organic-farming.jpg</image:loc>
+      <image:title>जैविक खेती | Organic Farming</image:title>
+      <image:caption>नेपालमा जैविक खेतीको महत्व र फाइदाहरू | Importance and Benefits of Organic Farming in Nepal</image:caption>
+      <image:geo_location>Nepal</image:geo_location>
+      <image:license>https://krishihimalaya.com/image-license</image:license>
+    </image:image>
+  </url>
+
+  <!-- Blog Images -->
+  <url>
+    <loc>https://krishihimalaya.com/blog/modern-farming-techniques-nepal</loc>
+    <image:image>
+      <image:loc>https://krishihimalaya.com/blog/images/modern-farming.jpg</image:loc>
+      <image:title>आधुनिक कृषि प्रविधिहरू | Modern Farming Techniques</image:title>
+      <image:caption>नेपालको भूगोल अनुकूल आधुनिक कृषि प्रविधिहरू | Modern farming techniques suitable for Nepal's geography</image:caption>
+      <image:geo_location>Nepal</image:geo_location>
+      <image:license>https://krishihimalaya.com/image-license</image:license>
+    </image:image>
+  </url>
+
+  <!-- News Images -->
+  <url>
+    <loc>https://krishihimalaya.com/news/agriculture-grants-nepal</loc>
+    <image:image>
+      <image:loc>https://krishihimalaya.com/news/images/agriculture-grants-nepal.jpg</image:loc>
+      <image:title>कृषि अनुदान नेपाल | Agriculture Grants in Nepal</image:title>
+      <image:caption>नेपालमा उपलब्ध कृषि अनुदानहरू | Available Agricultural Grants in Nepal</image:caption>
+      <image:geo_location>Nepal</image:geo_location>
+      <image:license>https://krishihimalaya.com/image-license</image:license>
+    </image:image>
+  </url>
+</urlset>

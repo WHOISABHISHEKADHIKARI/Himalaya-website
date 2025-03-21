@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml"
+        xmlns:local="http://www.google.com/schemas/sitemap-local/1.0">
+
+  <!-- Agricultural Resources -->
+  <url>
+    <loc>https://krishihimalaya.com/resources/organic-farming-resources</loc>
+    <lastmod>2024-07-15T10:00:00+05:45</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+    <xhtml:link rel="alternate" hreflang="ne" href="https://krishihimalaya.com/ne/resources/organic-farming-resources" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://krishihimalaya.com/resources/organic-farming-resources" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://krishihimalaya.com/resources/organic-farming-resources" />
+    <image:image>
+      <image:loc>https://krishihimalaya.com/resources/images/organic-farming-resources.jpg</image:loc>
+      <image:title>हिमालय कृषि जैविक खेती स्रोतहरू | Himalaya Krishi Organic Farming Resources</image:title>
+      <image:caption>हिमालय कृषिको विशेष जैविक खेती स्रोत संग्रह | Himalaya Krishi's Special Organic Farming Resource Collection</image:caption>
+    </image:image>
+    <local:business>
+      <local:name>Himalaya Krishi - हिमालय कृषि</local:name>
+      <local:type>Agricultural Resource Center</local:type>
+      <local:address>Nepal</local:address>
+      <local:phone>+977-XX-XXXXXXX</local:phone>
+    </local:business>
+  </url>
+
+  <!-- Agricultural Education -->
+  <url>
+    <loc>https://krishihimalaya.com/resources/agriculture-education</loc>
+    <lastmod>2024-07-14T15:30:00+05:45</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="ne" href="https://krishihimalaya.com/ne/resources/agriculture-education" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://krishihimalaya.com/resources/agriculture-education" />
+    <image:image>
+      <image:loc>https://krishihimalaya.com/resources/images/agriculture-education.jpg</image:loc>
+      <image:title>कृषि शिक्षा | Agriculture Education</image:title>
+      <image:caption>नेपालमा कृषि शिक्षा र तालिम | Agriculture Education and Training in Nepal</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Farming Equipment Guide -->
+  <url>
+    <loc>https://krishihimalaya.com/resources/farming-equipment-guide</loc>
+    <lastmod>2024-07-13T11:00:00+05:45</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="ne" href="https://krishihimalaya.com/ne/resources/farming-equipment-guide" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://krishihimalaya.com/resources/farming-equipment-guide" />
+    <image:image>
+      <image:loc>https://krishihimalaya.com/resources/images/farming-equipment.jpg</image:loc>
+      <image:title>कृषि उपकरण मार्गदर्शन | Farming Equipment Guide</image:title>
+      <image:caption>आधुनिक कृषि उपकरणहरूको मार्गदर्शन | Guide to Modern Farming Equipment</image:caption>
+    </image:image>
+  </url>
+</urlset>

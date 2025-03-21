@@ -186,6 +186,7 @@ const Home = () => {
   };
   const [isLoading, setIsLoading] = useState(true);
   const videoRef = useRef(null);
+  const [videoError, setVideoError] = useState(false); // Add this line to define videoError at the component level
 
   useEffect(() => {
     const timer = setTimeout(() => {
