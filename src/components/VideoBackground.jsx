@@ -10,6 +10,7 @@ const VideoBackground = () => {
     const loadVideo = async () => {
       try {
         if (videoRef.current) {
+          videoRef.current.load();
           const playPromise = videoRef.current.play();
           if (playPromise !== undefined) {
             await playPromise;
@@ -23,12 +24,23 @@ const VideoBackground = () => {
       }
     };
 
-    loadVideo();
+    const handleVideoError = () => {
+      console.error('Video loading failed');
+      setVideoError(true);
+      setIsLoading(false);
+    };
+
+    if (videoRef.current) {
+      videoRef.current.addEventListener('error', handleVideoError);
+      loadVideo();
+    }
 
     return () => {
       if (videoRef.current) {
+        videoRef.current.removeEventListener('error', handleVideoError);
         videoRef.current.pause();
         videoRef.current.src = '';
+        videoRef.current.load();
       }
     };
   }, []);
@@ -61,6 +73,7 @@ const VideoBackground = () => {
       loop
       muted
       playsInline
+      preload="auto"
       className="absolute inset-0 w-full h-full object-cover"
       onError={() => setVideoError(true)}
     >
