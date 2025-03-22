@@ -1,4 +1,5 @@
 import React, { useRef, useState, useEffect } from 'react';
+import fallbackImage from '../assets/image/imag1.webp';
 
 const VideoBackground = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -9,8 +10,11 @@ const VideoBackground = () => {
     const loadVideo = async () => {
       try {
         if (videoRef.current) {
-          await videoRef.current.play();
-          setIsLoading(false);
+          const playPromise = videoRef.current.play();
+          if (playPromise !== undefined) {
+            await playPromise;
+            setIsLoading(false);
+          }
         }
       } catch (error) {
         console.error('Video playback failed:', error);
@@ -20,18 +24,33 @@ const VideoBackground = () => {
     };
 
     loadVideo();
+
+    return () => {
+      if (videoRef.current) {
+        videoRef.current.pause();
+        videoRef.current.src = '';
+      }
+    };
   }, []);
 
   if (videoError || isLoading) {
     return (
       <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat animate-fade-in"
         style={{ 
-          backgroundImage: "url('/assets/images/fallback-bg.webp')",
+          backgroundImage: `url(${fallbackImage})`,
           backgroundSize: 'cover',
           backgroundPosition: 'center'
         }}
-      />
+        role="img"
+        aria-label="Background fallback image"
+      >
+        {isLoading && !videoError && (
+          <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50">
+            <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-white"></div>
+          </div>
+        )}
+      </div>
     );
   }
 
