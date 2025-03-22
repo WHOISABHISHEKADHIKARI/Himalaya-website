@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450">
+  <rect width="800" height="450" fill="#f0f4f8"/>
+  <g transform="translate(250,150)">
+    <path d="M0 0h300v150H0z" fill="#4a5568"/>
+    <text x="150" y="85" font-family="Arial" font-size="24" fill="#fff" text-anchor="middle">Modern Farming Techniques</text>
+  </g>
+  <path d="M350 50c-8.3 0-15 6.7-15 15v320c0 8.3 6.7 15 15 15h100c8.3 0 15-6.7 15-15V65c0-8.3-6.7-15-15-15H350zm50 330c-5.5 0-10-4.5-10-10s4.5-10 10-10 10 4.5 10 10-4.5 10-10 10z" fill="#2d3748"/>
+</svg>
