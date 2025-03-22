@@ -5,6 +5,8 @@ import { Analytics } from '@vercel/analytics/react';
 import ScrollToTop from './components/ScrollToTop';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
+import ErrorBoundary from './components/ErrorBoundary';
+import LoadingBar from './components/LoadingBar';
 
 // Lazy load route components
 const NotFound = lazy(() => import('./pages/NotFound'));
@@ -24,9 +26,11 @@ const router = createBrowserRouter(
           <Analytics />
           <ScrollToTop />
           <Navbar />
-          <Suspense fallback={<div className="min-h-screen flex items-center justify-center">Loading...</div>}>
-            <Outlet />
-          </Suspense>
+          <ErrorBoundary>
+            <Suspense fallback={<LoadingBar />}>
+              <Outlet />
+            </Suspense>
+          </ErrorBoundary>
           <Footer />
         </>
       }
