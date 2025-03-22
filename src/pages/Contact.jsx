@@ -89,8 +89,8 @@ const Contact = () => {
     <div className="bg-gradient-to-b from-[#F4F9F1] to-[#EAEFE7] min-h-screen">
       <Helmet>
         <title>सम्पर्क गर्नुहोस् | Contact Himalaya Krishi - कृषि सल्लाह र सहयोगको लागि</title>
-        <meta name="description" content="कृषि अनुदान, जैविक खेती, र कृषि नीति सम्बन्धी जानकारीको लागि सम्पर्क गर्नुहोस्। विशेषज्ञ सल्लाह र मार्गदर्शन उपलब्ध छ। | Contact us for agriculture grants, organic farming guidance, and policy information in Nepal." />
-        <meta name="keywords" content="कृषि सम्पर्क नेपाल, agriculture contact nepal, कृषि विज्ञ सम्पर्क, farming expert contact, कृषि अनुदान सहयोग, grant assistance contact, जैविक खेती सल्लाह, organic farming consultation" />
+        <meta name="description" content="कृषि सहयोग, जैविक खेती, र कृषि नीति सम्बन्धी जानकारीको लागि सम्पर्क गर्नुहोस्। विशेषज्ञ सल्लाह र मार्गदर्शन उपलब्ध छ। | Contact us for agriculture support, organic farming guidance, and policy information in Nepal." />
+        <meta name="keywords" content="कृषि सम्पर्क नेपाल, agriculture contact nepal, कृषि विज्ञ सम्पर्क, farming expert contact, कृषि सहयोग, support assistance contact, जैविक खेती सल्लाह, organic farming consultation" />
         
         <link rel="alternate" hrefLang="ne" href="https://krishihimalaya.com/ne/contact" />
         <link rel="alternate" hrefLang="en" href="https://krishihimalaya.com/contact" />
@@ -103,7 +103,7 @@ const Contact = () => {
             "@context": "https://schema.org",
             "@type": ["ContactPage", "LocalBusiness"],
             "name": "हिमालय कृषि | Himalaya Krishi",
-            "description": "Expert consultation for agriculture grants, organic farming, and sustainable practices in Nepal",
+            "description": "Expert consultation for agriculture , organic farming, and sustainable practices in Nepal",
             "url": "https://krishihimalaya.com/contact",
             "areaServed": {
               "@type": "Country",

@@ -4,27 +4,27 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
 
-  <!-- Agricultural Grants News -->
+  <!-- Agricultural  News -->
   <url>
-    <loc>https://krishihimalaya.com/news/agriculture-grants-nepal</loc>
+    <loc>https://krishihimalaya.com/news/agriculture--nepal</loc>
     <lastmod>2024-07-15T14:30:00+05:45</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.9</priority>
-    <xhtml:link rel="alternate" hreflang="ne" href="https://krishihimalaya.com/ne/news/agriculture-grants-nepal" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://krishihimalaya.com/news/agriculture-grants-nepal" />
+    <xhtml:link rel="alternate" hreflang="ne" href="https://krishihimalaya.com/ne/news/agriculture--nepal" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://krishihimalaya.com/news/agriculture--nepal" />
     <news:news>
       <news:publication>
         <news:name>Himalaya Krishi News</news:name>
         <news:language>en</news:language>
       </news:publication>
       <news:publication_date>2024-07-15T14:30:00+05:45</news:publication_date>
-      <news:title>Latest Agriculture Grants Available in Nepal 2024</news:title>
-      <news:keywords>agriculture grants, farming subsidies, nepal agriculture funding, government grants, organic farming support</news:keywords>
+      <news:title>Latest Agriculture  Available in Nepal 2024</news:title>
+      <news:keywords>agriculture , farming subsidies, nepal agriculture funding, government , organic farming support</news:keywords>
     </news:news>
     <image:image>
-      <image:loc>https://krishihimalaya.com/news/images/agriculture-grants-nepal.jpg</image:loc>
-      <image:title>कृषि अनुदान नेपाल | Agriculture Grants in Nepal</image:title>
-      <image:caption>नेपालमा उपलब्ध कृषि अनुदानहरू | Available Agricultural Grants in Nepal</image:caption>
+      <image:loc>https://krishihimalaya.com/news/images/agriculture--nepal.jpg</image:loc>
+      <image:title> नेपाल | Agriculture  in Nepal</image:title>
+      <image:caption>नेपालमा उपलब्धहरू | Available Agricultural  in Nepal</image:caption>
     </image:image>
   </url>
 
@@ -47,8 +47,8 @@
     </news:news>
     <image:image>
       <image:loc>https://krishihimalaya.com/news/images/agriculture-ministry.jpg</image:loc>
-      <image:title>कृषि मन्त्रालय नेपाल | Agriculture Ministry Nepal</image:title>
-      <image:caption>नेपालको कृषि मन्त्रालयबाट नवीनतम अपडेटहरू | Latest Updates from Nepal's Agriculture Ministry</image:caption>
+      <image:title>कृषि  नेपाल | Agriculture Ministry Nepal</image:title>
+      <image:caption>नेपालको कृषि बाट नवीनतम अपडेटहरू | Latest Updates from Nepal's Agriculture Ministry</image:caption>
     </image:image>
   </url>
 

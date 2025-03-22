@@ -117,8 +117,8 @@ const About = () => {
       <Helmet>
         {/* Primary Meta Tags */}
         <title>About us</title>
-        <meta name="description" content="नेपालमा कृषि अनुदान, जैविक खेती र कृषि नीतिहरूको बारेमा जान्नुहोस्। सरकारी अनुदान र कृषि मन्त्रालयका कार्यक्रमहरूको जानकारी उपलब्ध छ। | Learn about agriculture grants, organic farming, and agricultural policies in Nepal. Information on government subsidies and Ministry programs available." />
-        <meta name="keywords" content="कृषि अनुदान नेपाल, agriculture grants nepal, कृषि मन्त्रालय, agriculture ministry nepal, जैविक खेती, organic farming nepal, सरकारी अनुदान, government subsidies nepal, कृषि नीति, agricultural policies nepal" />
+        <meta name="description" content="नेपालमा, जैविक खेती र कृषि नीतिहरूको बारेमा जान्नुहोस्। सरकारी अनुदान र कृषि का कार्यक्रमहरूको जानकारी उपलब्ध छ। | Learn about agriculture , organic farming, and agricultural policies in Nepal. Information on government subsidies and Ministry programs available." />
+        <meta name="keywords" content=" नेपाल, agriculture  nepal, कृषि , agriculture ministry nepal, जैविक खेती, organic farming nepal, सरकारी अनुदान, government subsidies nepal, कृषि नीति, agricultural policies nepal" />
       
         {/* Technical SEO Enhancements */}
         <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
@@ -141,7 +141,7 @@ const About = () => {
         <meta property="og:locale:alternate" content="en_US" />
         <meta property="og:url" content="https://krishihimalaya.com/about" />
         <meta property="og:title" content="About us - Himalaya Krishi" />
-        <meta property="og:description" content="नेपालमा कृषि अनुदान र जैविक खेतीको अग्रणी संस्था। सरकारी अनुदान र कृषि नीतिहरूको जानकारी प्राप्त गर्नुहोस्। | Leading authority on agricultural grants and organic farming in Nepal. Access information about government subsidies and farming policies." />
+        <meta property="og:description" content="नेपालमा र जैविक खेतीको अग्रणी संस्था। सरकारी अनुदान र कृषि नीतिहरूको जानकारी प्राप्त गर्नुहोस्। | Leading authority on agricultural  and organic farming in Nepal. Access information about government subsidies and farming policies." />
         
         {/* Enhanced Schema.org LD+JSON */}
         <script type="application/ld+json">
@@ -175,7 +175,7 @@ const About = () => {
               {
                 "@type": "WebPage",
                 "name": "About Us",
-                "description": "नेपालमा कृषि   | Information about agricultural grants and organic farming in Nepal",
+                "description": "नेपालमा कृषि   | Information about agricultural  and organic farming in Nepal",
                 "inLanguage": ["ne-NP", "en-US"],
                 "isPartOf": {
                   "@type": "WebSite",

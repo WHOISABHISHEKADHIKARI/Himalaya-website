@@ -26,7 +26,7 @@ const SplashScreen = ({ onFinish = () => {} }) => {
       <Helmet>
         <title>हिमालय कृषि | Himalaya Krishi - नेपालको अग्रणी जैविक फार्म</title>
         <meta name="robots" content="noindex, nofollow" />
-        <meta name="description" content="नेपालको अग्रणी जैविक कृषि फार्म। कृषि अनुदान, जैविक खेती र कृषि नीतिहरूको जानकारी उपलब्ध छ। | Nepal's leading organic farm. Information on agricultural grants, organic farming, and policies available." />
+        <meta name="description" content="नेपालको अग्रणी जैविक कृषि फार्म। कृषि सहयोग, जैविक खेती र कृषि नीतिहरूको जानकारी उपलब्ध छ। | Nepal's leading organic farm. Information on agricultural support, organic farming, and policies available." />
         
         {/* Resource Hints for Performance */}
         <link rel="preconnect" href="https://krishihimalaya.com" />

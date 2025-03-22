@@ -52,11 +52,11 @@
 
   <!-- News Images -->
   <url>
-    <loc>https://krishihimalaya.com/news/agriculture-grants-nepal</loc>
+    <loc>https://krishihimalaya.com/news/agriculture--nepal</loc>
     <image:image>
-      <image:loc>https://krishihimalaya.com/news/images/agriculture-grants-nepal.jpg</image:loc>
-      <image:title>कृषि अनुदान नेपाल | Agriculture Grants in Nepal</image:title>
-      <image:caption>नेपालमा उपलब्ध कृषि अनुदानहरू | Available Agricultural Grants in Nepal</image:caption>
+      <image:loc>https://krishihimalaya.com/news/images/agriculture--nepal.jpg</image:loc>
+      <image:title> नेपाल | Agriculture  in Nepal</image:title>
+      <image:caption>नेपालमा उपलब्धहरू | Available Agricultural  in Nepal</image:caption>
       <image:geo_location>Nepal</image:geo_location>
       <image:license>https://krishihimalaya.com/image-license</image:license>
     </image:image>

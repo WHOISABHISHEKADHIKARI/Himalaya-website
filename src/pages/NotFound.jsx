@@ -27,7 +27,7 @@ const NotFound = () => {
     <div className="min-h-screen flex flex-col">
       <Helmet>
         <title>पृष्ठ फेला परेन | Page Not Found - Himalaya Krishi</title>
-        <meta name="description" content="माफ गर्नुहोस्, यो पृष्ठ उपलब्ध छैन। हिमालय कृषिको मुख्य पृष्ठमा फर्कनुहोस् र जैविक खेती, कृषि अनुदान र दिगो कृषि समाधानहरू पत्ता लगाउनुहोस्। | Sorry, this page isn't available. Return to Himalaya Krishi for organic farming solutions." />
+        <meta name="description" content="माफ गर्नुहोस्, यो पृष्ठ उपलब्ध छैन। हिमालय कृषिको मुख्य पृष्ठमा फर्कनुहोस् र जैविक खेती, कृषि सहयोग र दिगो कृषि समाधानहरू पत्ता लगाउनुहोस्। | Sorry, this page isn't available. Return to Himalaya Krishi for organic farming solutions." />
         <meta name="robots" content="noindex, follow" />
         <link rel="canonical" href="https://krishihimalaya.com" />
         <link rel="alternate" hrefLang="ne" href="https://krishihimalaya.com/ne/404" />
@@ -89,7 +89,7 @@ const NotFound = () => {
               </p>
               <div className="mt-4 space-x-4">
                 <Link to="/organic-farming" className="text-[#1C4E37] hover:underline">जैविक खेती | Organic Farming</Link>
-                <Link to="/grants" className="text-[#1C4E37] hover:underline">कृषि अनुदान | Agriculture Grants</Link>
+                <Link to="/" className="text-[#1C4E37] hover:underline">कृषि सहयोग | Agriculture Support</Link>
               </div>
             </div>
           </div>

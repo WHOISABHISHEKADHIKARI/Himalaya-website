@@ -7,6 +7,9 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 
 // Lazy load route components
+const NotFound = lazy(() => import('./pages/NotFound'));
+
+// Lazy load route components
 const Home = lazy(() => import('./pages/Home'));
 const About = lazy(() => import('./pages/About'));
 const Vision = lazy(() => import('./pages/Vision'));
@@ -32,6 +35,7 @@ const router = createBrowserRouter(
       <Route path="about" element={<About />} />
       <Route path="vision" element={<Vision />} />
       <Route path="contact" element={<Contact />} />
+      <Route path="*" element={<NotFound />} />
     </Route>
   ),
   {

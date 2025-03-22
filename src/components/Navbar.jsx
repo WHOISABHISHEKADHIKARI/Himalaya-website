@@ -74,23 +74,23 @@ const Navbar = ({ isHomePage }) => {
         <title>{`${
           location.pathname === '/' 
             ? 'हिमालय कृषि | Himalaya Krishi - नेपालको अग्रणी जैविक कृषि केन्द्र'
-            : `${location.pathname.substring(1).charAt(0).toUpperCase() + location.pathname.slice(2)} | कृषि अनुदान र नीतिहरू - Agriculture Grants & Policies`
+            : `${location.pathname.substring(1).charAt(0).toUpperCase() + location.pathname.slice(2)} | कृषि सहयोग र नीतिहरू - Agriculture Support & Policies`
         }`}</title>
         
         <meta name="description" content={`${
           location.pathname === '/' 
-            ? 'नेपालमा कृषि अनुदान, जैविक खेती र कृषि नीतिहरूको बारेमा जान्नुहोस्। सरकारी अनुदान र कृषि मन्त्रालयका कार्यक्रमहरूको जानकारी उपलब्ध छ। | Learn about agriculture grants, organic farming, and policies in Nepal.'
+            ? 'नेपालमा कृषि सहयोग, जैविक खेती र कृषि नीतिहरूको बारेमा जान्नुहोस्। सरकारी सहयोग र कृषि का कार्यक्रमहरूको जानकारी उपलब्ध छ। | Learn about agriculture support, organic farming, and policies in Nepal.'
             : location.pathname === '/about'
-            ? 'जैविक खेती र कृषि अनुदान सम्बन्धी जानकारी। हाम्रो यात्रा र उपलब्धिहरू। | Information about organic farming and agricultural grants. Our journey and achievements.'
+            ? 'जैविक खेती र कृषि सहयोग सम्बन्धी जानकारी। हाम्रो यात्रा र उपलब्धिहरू। | Information about organic farming and agricultural support. Our journey and achievements.'
             : location.pathname === '/vision'
-            ? 'दिगो कृषि र जैविक खेतीको भविष्य। कृषि नीति र अनुदान कार्यक्रमहरू। | Future of sustainable farming and organic agriculture. Agricultural policies and grant programs.'
+            ? 'दिगो कृषि र जैविक खेतीको भविष्य। कृषि नीति र सहयोग कार्यक्रमहरू। | Future of sustainable farming and organic agriculture. Agricultural policies and support programs.'
             : 'कृषि सम्बन्धी सल्लाह र सहयोगको लागि सम्पर्क गर्नुहोस्। | Contact us for agricultural consultation and support.'
         }`} />
 
         {/* Enhanced Keywords for Better SEO */}
         <meta name="keywords" content={`${
           location.pathname === '/' 
-            ? 'कृषि अनुदान नेपाल, जैविक खेती, agriculture grants nepal, organic farming, sustainable agriculture, कृषि नीति, farming subsidies'
+            ? 'कृषि सहयोग नेपाल, जैविक खेती, agriculture support nepal, organic farming, sustainable agriculture, कृषि नीति, farming subsidies'
             : location.pathname === '/about'
             ? 'हिमालय कृषि इतिहास, जैविक खेती नेपाल, himalaya krishi history, organic farming nepal, sustainable agriculture practices'
             : location.pathname === '/vision'
@@ -118,7 +118,7 @@ const Navbar = ({ isHomePage }) => {
             "description": "नेपालको अग्रणी जैविक कृषि केन्द्र | Nepal's Leading Organic Agriculture Center",
             "knowsAbout": [
               "Organic Farming",
-              "Agricultural Grants",
+              "Agricultural ",
               "Farming Techniques",
               "Government Subsidies",
               "Agricultural Policies",

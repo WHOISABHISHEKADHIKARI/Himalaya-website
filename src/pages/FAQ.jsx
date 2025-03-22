@@ -2,11 +2,11 @@
 const faqData = [
   // Government & Policy
   {
-    questionNe: "नेपालमा कृषि अनुदान कसरी प्राप्त गर्ने?",
-    questionEn: "How to get agriculture grants in Nepal?",
-    answerNe: "कृषि मन्त्रालय र स्थानीय सरकारले प्रदान गर्ने विभिन्न अनुदान कार्यक्रमहरू छन्। हामी किसानहरूलाई आवेदन प्रक्रियामा सहयोग गर्छौं।",
-    answerEn: "Various grants are available through the Ministry of Agriculture and local governments. We assist farmers in the application process.",
-    tags: ["grants", "subsidies", "government-support", "कृषि-अनुदान"]
+    questionNe: "नेपालमा कृषि सहयोग कसरी प्राप्त गर्ने?",
+    questionEn: "How to get agriculture  in Nepal?",
+    answerNe: "कृषि  र स्थानीय सरकारले प्रदान गर्ने विभिन्न सहयोग कार्यक्रमहरू छन्। हामी किसानहरूलाई आवेदन प्रक्रियामा सहयोग गर्छौं।",
+    answerEn: "Various  are available through the Ministry of Agriculture and local governments. We assist farmers in the application process.",
+    tags: ["", "subsidies", "government-support", "कृषि-सहयोग"]
   },
   {
     questionNe: "जैविक प्रमाणीकरण कसरी प्राप्त गर्ने?",
@@ -113,8 +113,8 @@ const FAQ = () => {
     <div className="min-h-screen bg-gradient-to-b from-[#F4F9F1] to-[#EAEFE7]">
       <Helmet>
         <title>कृषि प्रश्नोत्तर | Agriculture FAQ - Himalaya Krishi</title>
-        <meta name="description" content="कृषि अनुदान, जैविक खेती, सरकारी नीति र प्राविधिक सहयोग सम्बन्धी जानकारी। नेपालको कृषि क्षेत्रको विश्वसनीय मार्गदर्शन। | Expert guidance on agriculture grants, organic farming, and government policies in Nepal." />
-        <meta name="keywords" content="कृषि अनुदान नेपाल, agriculture grants nepal, जैविक खेती, organic farming nepal, कृषि मन्त्रालय, agriculture ministry nepal, कृषि नीति, agricultural policies, सरकारी अनुदान, government subsidies nepal" />
+        <meta name="description" content="कृषि सहयोग, जैविक खेती, सरकारी नीति र प्राविधिक सहयोग सम्बन्धी जानकारी। नेपालको कृषि क्षेत्रको विश्वसनीय मार्गदर्शन। | Expert guidance on agriculture support, organic farming, and government policies in Nepal." />
+        <meta name="keywords" content="कृषि सहयोग नेपाल, agriculture support nepal, जैविक खेती, organic farming nepal, कृषि , agriculture ministry nepal, कृषि नीति, agricultural policies, सरकारी सहयोग, government subsidies nepal" />
         
         <link rel="alternate" hrefLang="ne" href="https://krishihimalaya.com/ne/faq" />
         <link rel="alternate" hrefLang="en" href="https://krishihimalaya.com/faq" />
@@ -146,7 +146,7 @@ const FAQ = () => {
               "@type": ["Organization", "AgricultureService"],
               "name": "हिमालय कृषि | Himalaya Krishi",
               "knowsAbout": [
-                "Agriculture Grants",
+                "Agriculture ",
                 "Organic Farming",
                 "Agricultural Policies",
                 "Government Subsidies"

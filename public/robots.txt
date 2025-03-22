@@ -26,7 +26,7 @@ User-agent: Googlebot
 Allow: /
 Allow: /ne/
 Allow: /en/
-Allow: /resources/agriculture-grants
+Allow: /resources/agriculture-
 Allow: /resources/farming-techniques
 Allow: /resources/agricultural-policies
 Allow: /organic-farming

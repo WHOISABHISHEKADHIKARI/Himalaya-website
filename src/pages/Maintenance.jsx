@@ -7,7 +7,7 @@ const Maintenance = () => {
     <div className="min-h-screen bg-gradient-to-b from-emerald-50 to-white flex items-center justify-center px-4">
       <Helmet>
         <title>मर्मत कार्य जारी | Site Maintenance - Himalaya Krishi</title>
-        <meta name="description" content="हिमालय कृषि वेबसाइट मर्मत कार्य जारी छ। जैविक खेती, कृषि अनुदान र दिगो कृषि सम्बन्धी जानकारीको लागि चाँडै फर्किनुहोस्। | Himalaya Krishi is under maintenance. Check back soon for organic farming and agricultural grant information." />
+        <meta name="description" content="हिमालय कृषि वेबसाइट मर्मत कार्य जारी छ। जैविक खेती, कृषि सहयोग र दिगो कृषि सम्बन्धी जानकारीको लागि चाँडै फर्किनुहोस्। | Himalaya Krishi is under maintenance. Check back soon for organic farming and agricultural support information." />
         <meta name="robots" content="noindex, nofollow" />
         <link rel="alternate" hrefLang="ne" href="https://krishihimalaya.com/ne/maintenance" />
         <link rel="alternate" hrefLang="en" href="https://krishihimalaya.com/maintenance" />
@@ -16,7 +16,7 @@ const Maintenance = () => {
         <meta property="og:locale" content="ne_NP" />
         <meta property="og:locale:alternate" content="en_US" />
         <meta property="og:title" content="मर्मत कार्य जारी | Site Maintenance - Himalaya Krishi" />
-        <meta property="og:description" content="जैविक खेती र कृषि अनुदान सम्बन्धी जानकारीको लागि चाँडै फर्किनुहोस् | Check back soon for organic farming updates" />
+        <meta property="og:description" content="जैविक खेती र कृषि सहयोग सम्बन्धी जानकारीको लागि चाँडै फर्किनुहोस् | Check back soon for organic farming updates" />
         
         {/* Schema.org LD+JSON with enhanced local business info */}
         <script type="application/ld+json">
