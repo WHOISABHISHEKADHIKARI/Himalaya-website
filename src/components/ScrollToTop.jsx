@@ -5,27 +5,21 @@ function ScrollToTop() {
   const { pathname, hash } = useLocation();
 
   useEffect(() => {
-    if (hash) {
-      setTimeout(() => {
+    const handleScroll = () => {
+      if (hash) {
         const element = document.getElementById(hash.substring(1));
         if (element) {
-          element.scrollIntoView({ 
-            behavior: 'smooth',
-            block: 'start'
-          });
+          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
         } else {
-          window.scrollTo({ 
-            top: 0, 
-            behavior: 'smooth' 
-          });
+          window.scrollTo({ top: 0, behavior: 'smooth' });
         }
-      }, 100);
-    } else {
-      window.scrollTo({ 
-        top: 0, 
-        behavior: 'smooth' 
-      });
-    }
+      } else {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    };
+
+    // Use requestAnimationFrame for smoother scrolling
+    requestAnimationFrame(handleScroll);
 
     // Bilingual page change announcement
     const pageTitle = document.title || pathname.split('/').pop() || 'Home';
