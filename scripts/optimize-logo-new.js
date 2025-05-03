@@ -22,7 +22,12 @@ async function optimizeLogo() {
         fit: 'contain',
         background: { r: 255, g: 255, b: 255, alpha: 0 }
       })
-      .webp({ quality: 90, lossless: true })
+      .webp({ 
+        quality: 85,
+        effort: 4,
+        lossless: false,
+        nearLossless: true
+      })
       .toFile(path.join(assetsDir, `logo_${size}.webp`));
 
     // AVIF format for modern browsers
@@ -31,7 +36,11 @@ async function optimizeLogo() {
         fit: 'contain',
         background: { r: 255, g: 255, b: 255, alpha: 0 }
       })
-      .avif({ quality: 80, speed: 0 })
+      .avif({ 
+        quality: 75,
+        speed: 5,
+        effort: 6
+      })
       .toFile(path.join(assetsDir, `logo_${size}.avif`));
   }
 

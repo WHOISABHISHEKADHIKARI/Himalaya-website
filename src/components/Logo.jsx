@@ -17,7 +17,7 @@ const Logo = () => (
     </Helmet>
 
     <Link 
-      to="/" 
+      to="/home" 
       className="flex items-center space-x-2 group"
       aria-label="हिमालय कृषि - गृहपृष्ठमा फर्कनुहोस् | Himalaya Krishi - Return to Homepage"
     >
@@ -38,8 +38,8 @@ const Logo = () => (
         ></div>
       </div>
       <span className="sr-only">
-        <span lang="ne">हिमालय कृषि - नेपालको अग्रणी जैविक कृषि केन्द्र</span>
-        <span lang="en">Himalaya Krishi - Nepal's Premier Organic Agriculture Center</span>
+        <span lang="ne">हिमालय कृषि - नेपालको जैविक कृषि केन्द्र</span>
+        <span lang="en">Himalaya Krishi - Nepal's Organic Agriculture Center</span>
       </span>
     </Link>
   </>

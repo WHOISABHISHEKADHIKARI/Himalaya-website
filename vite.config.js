@@ -8,10 +8,20 @@ export default defineConfig({
   plugins: [react()],
   build: {
     rollupOptions: {
-      input: {
-        main: './index.html'
+      output: {
+        manualChunks: {
+          vendor: ['react', 'react-dom', 'react-router-dom'],
+          // Split larger dependencies into separate chunks
+        }
       }
-    }
+    },
+    chunkSizeWarningLimit: 1000,
+    cssCodeSplit: true,
+    sourcemap: false,
+    // Enable compression
+    brotliSize: true,
+    // Optimize chunk size
+    minChunks: 1
   },
   optimizeDeps: {
     include: ['react', 'react-dom', 'react-router-dom']
