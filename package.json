@@ -10,10 +10,10 @@
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "lint:fix": "eslint . --ext js,jsx --fix",
     "analyze": "vite-bundle-visualizer",
-    "optimize:images": "node scripts/optimize-images.js",
+    "optimize:images": "node scripts/optimize-logo-new.js",
     "clean": "del-cli dist",
     "prebuild": "npm run clean",
-    "postbuild": "npm run optimize:images",
+    "postbuild": "echo 'Skipping image optimization'",
     "security": "npm audit fix --force"
   },
   "dependencies": {
