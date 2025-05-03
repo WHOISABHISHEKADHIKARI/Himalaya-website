@@ -10,7 +10,9 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
 async function optimizeImages() {
+  // Add a try/catch block at the beginning of your file
   try {
+    const sharp = require('sharp');
     console.log('Starting image optimization...');
     const imageFiles = await glob('src/assets/**/*.{jpg,png,jpeg,gif}');
     const totalFiles = imageFiles.length;
