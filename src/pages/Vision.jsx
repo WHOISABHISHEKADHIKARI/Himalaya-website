@@ -152,6 +152,7 @@ const Vision = () => {
 
   return (
     <div className="relative bg-gradient-to-b from-[#F4F9F1] to-[#EAEFE7] min-h-screen font-sans">
+      <ScrollToTopButton />
       <Helmet>
         <title>Our Vision & Business Plan | Himalaya Krishi</title>
         <meta name="description" content="Discover our comprehensive approach to sustainable agriculture and dairy production at Himalaya Krishi." />
