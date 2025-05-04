@@ -1,0 +1,86 @@
+# Global rules
+User-agent: *
+Allow: /
+Allow: /ne/
+Allow: /en/
+Allow: /resources/
+Allow: /blog/
+Allow: /news/
+Allow: /organic-farming/
+Allow: /local-resources/
+Allow: /videos/
+Allow: /assets/
+Disallow: /admin/
+Disallow: /private/
+Disallow: /temp/
+Disallow: /api/
+Disallow: /backend/
+Disallow: /security/
+Disallow: /*.json$
+Disallow: /*?*
+Disallow: /*utm_*
+Clean-param: utm_source&utm_medium&utm_campaign&utm_term&utm_content&fbclid&gclid
+
+# Specific bot rules
+User-agent: Googlebot
+Allow: /
+Allow: /ne/
+Allow: /en/
+Allow: /resources/agriculture-
+Allow: /resources/farming-techniques
+Allow: /resources/agricultural-policies
+Allow: /organic-farming
+Allow: /news/
+Allow: /blog/
+Crawl-delay: 1
+
+# Image Indexing
+User-agent: Googlebot-Image
+Allow: /assets/images/
+Allow: /products/images/
+Allow: /resources/images/
+Allow: /blog/images/
+Allow: /news/images/
+Allow: /seo/
+Disallow: /temp/images/
+
+# Video Indexing
+User-agent: Googlebot-Video
+Allow: /videos/
+Allow: /assets/videos/
+
+# Local Search Optimization
+User-agent: Bingbot
+Allow: /
+Allow: /ne/
+Allow: /en/
+Allow: /local-resources/
+Allow: /news/
+Crawl-delay: 2
+
+# Mobile Optimization
+User-agent: Googlebot-Mobile
+Allow: /
+Allow: /ne/
+Allow: /en/
+Crawl-delay: 1
+
+# Rate limiting
+Request-rate: 1/1s
+Crawl-delay: 2
+
+# Host preference
+Host: https://www.krishihimalaya.com
+
+# Sitemaps (simplified to single entry)
+Sitemap: https://www.krishihimalaya.com/sitemap.xml
+
+# Remove these commented lines and any non-existent sitemaps
+Sitemap: https://www.krishihimalaya.com/ne/sitemap.xml  <!-- Remove if not existing -->
+Sitemap: https://www.krishihimalaya.com/blog-sitemap.xml
+Sitemap: https://www.krishihimalaya.com/news-sitemap.xml
+Sitemap: https://www.krishihimalaya.com/resources-sitemap.xml
+# Sitemap: https://www.krishihimalaya.com/local-sitemap.xml  <!-- Remove if not existing -->
+Sitemap: https://www.krishihimalaya.com/images-sitemap.xml
+Sitemap: https://www.krishihimalaya.com/videos-sitemap.xml
+Sitemap: https://www.krishihimalaya.com/products-sitemap.xml
