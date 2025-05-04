@@ -1,8 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, lazy, Suspense } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { HiMenu, HiX } from 'react-icons/hi';
-import { Helmet } from 'react-helmet-async';
-import logo from '../assets/logo/whitelogo-blackbg-removebg-preview.webp';
+
+// Lazy load components
+const SEOHelmet = lazy(() => import('./SEOHelmet'));
+const logo = new URL('../assets/logo/whitelogo-blackbg-removebg-preview.webp', import.meta.url).href;
 
 const Navbar = ({ isHomePage }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -23,23 +25,13 @@ const Navbar = ({ isHomePage }) => {
     return () => clearTimeout(timer);
   }, []);
 
-  // Colors from the provided theme
-  const colors = { 
-    primary: '#1C4E37', 
-    secondary: '#D8A51D', 
-    light: '#F4F9F1', 
-    accent: '#8C3E2F', 
-    text: { 
-      dark: '#1A2E1D', 
-      medium: '#3A5944', 
-      light: '#F9FCF7', 
-      gold: '#D8A51D' 
-    }, 
-    background: { 
-      primary: '#F4F9F1', 
-      card: '#FFFFFF', 
-      accent: 'rgba(216, 165, 29, 0.07)' 
-    } 
+  const colors = {
+    primary: '#1C4E37',
+    secondary: '#D8A51D',
+    text: {
+      light: '#F9FCF7',
+      gold: '#D8A51D'
+    }
   };
 
   // Define navigation items based on current page
@@ -69,166 +61,9 @@ const Navbar = ({ isHomePage }) => {
 
   return (
     <>
-      <Helmet>
-        {/* Enhanced Bilingual Meta Tags */}
-        <title>{`${
-          location.pathname === '/' 
-            ? 'हिमालय कृषि | Himalaya Krishi - नेपालको अग्रणी जैविक कृषि केन्द्र'
-            : `${location.pathname.substring(1).charAt(0).toUpperCase() + location.pathname.slice(2)} | कृषि सहयोग र नीतिहरू - Agriculture Support & Policies`
-        }`}</title>
-        
-        <meta name="description" content={`${
-          location.pathname === '/' 
-            ? 'नेपालमा कृषि सहयोग, जैविक खेती र कृषि नीतिहरूको बारेमा जान्नुहोस्। सरकारी सहयोग र कृषि का कार्यक्रमहरूको जानकारी उपलब्ध छ। | Learn about agriculture support, organic farming, and policies in Nepal.'
-            : location.pathname === '/about'
-            ? 'जैविक खेती र कृषि सहयोग सम्बन्धी जानकारी। हाम्रो यात्रा र उपलब्धिहरू। | Information about organic farming and agricultural support. Our journey and achievements.'
-            : location.pathname === '/vision'
-            ? 'दिगो कृषि र जैविक खेतीको भविष्य। कृषि नीति र सहयोग कार्यक्रमहरू। | Future of sustainable farming and organic agriculture. Agricultural policies and support programs.'
-            : 'कृषि सम्बन्धी सल्लाह र सहयोगको लागि सम्पर्क गर्नुहोस्। | Contact us for agricultural consultation and support.'
-        }`} />
-
-        {/* Enhanced Keywords for Better SEO */}
-        <meta name="keywords" content={`${
-          location.pathname === '/' 
-            ? 'कृषि सहयोग नेपाल, जैविक खेती, agriculture support nepal, organic farming, sustainable agriculture, कृषि नीति, farming subsidies'
-            : location.pathname === '/about'
-            ? 'हिमालय कृषि इतिहास, जैविक खेती नेपाल, himalaya krishi history, organic farming nepal, sustainable agriculture practices'
-            : location.pathname === '/vision'
-            ? 'कृषि भविष्य, जैविक खेती योजना, agriculture future, organic farming plans, sustainable development goals'
-            : 'कृषि सम्पर्क, जैविक खेती सल्लाह, agriculture contact, organic farming consultation, farming expert nepal'
-        }`} />
-
-        {/* Canonical URL to prevent duplicate content issues */}
-        <link rel="canonical" href={`https://krishihimalaya.com${location.pathname}`} />
-
-        {/* Language Alternates */}
-        <link rel="alternate" hrefLang="ne" href={`https://krishihimalaya.com/ne${location.pathname}`} />
-        <link rel="alternate" hrefLang="en" href={`https://krishihimalaya.com${location.pathname}`} />
-        <link rel="alternate" hrefLang="x-default" href={`https://krishihimalaya.com${location.pathname}`} />
-
-        {/* Enhanced Schema.org JSON-LD */}
-        <script type="application/ld+json">
-          {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Organization",
-            "name": "हिमालय कृषि | Himalaya Krishi",
-            "alternateName": ["Himalaya Agriculture", "हिमालय एग्रीकल्चर"],
-            "url": "https://krishihimalaya.com",
-            "logo": "https://krishihimalaya.com/assets/logo/logo_white_bg_removed.webp",
-            "description": "नेपालको अग्रणी जैविक कृषि केन्द्र | Nepal's Leading Organic Agriculture Center",
-            "knowsAbout": [
-              "Organic Farming",
-              "Agricultural ",
-              "Farming Techniques",
-              "Government Subsidies",
-              "Agricultural Policies",
-              "Sustainable Agriculture",
-              "Crop Rotation",
-              "Soil Health Management"
-            ],
-            "sameAs": [
-              "https://www.facebook.com/profile.php?id=61572480220650",
-              "https://wa.me/9779823405140"
-            ],
-            "contactPoint": {
-              "@type": "ContactPoint",
-              "telephone": "+977-9823405140",
-              "contactType": "customer service",
-              "availableLanguage": ["en", "ne"],
-              "areaServed": "NP"
-            },
-            "address": {
-              "@type": "PostalAddress",
-              "streetAddress": "Manahari-5",
-              "addressLocality": "Manahari",
-              "addressRegion": "Makwanpur",
-              "postalCode": "44400",
-              "addressCountry": "Nepal"
-            },
-            "geo": {
-              "@type": "GeoCoordinates",
-              "latitude": "27.479941",
-              "longitude": "84.843720"
-            },
-            "foundingDate": "2020",
-            "founder": {
-              "@type": "Person",
-              "name": "Himalaya Krishi Team"
-            }
-          })}
-        </script>
-
-        {/* BreadcrumbList Schema for Better Navigation Understanding */}
-        <script type="application/ld+json">
-          {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "BreadcrumbList",
-            "itemListElement": [
-              {
-                "@type": "ListItem",
-                "position": 1,
-                "name": "Home",
-                "item": "https://krishihimalaya.com/"
-              },
-              ...(location.pathname !== '/' ? [{
-                "@type": "ListItem",
-                "position": 2,
-                "name": location.pathname.substring(1).charAt(0).toUpperCase() + location.pathname.slice(2),
-                "item": `https://krishihimalaya.com${location.pathname}`
-              }] : [])
-            ]
-          })}
-        </script>
-
-        {/* Navigation Schema */}
-        <script type="application/ld+json">
-          {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "SiteNavigationElement",
-            "name": navItems.map(item => item),
-            "url": navItems.map(item => 
-              `https://krishihimalaya.com${item === 'Home' ? '/' : `/${item.toLowerCase()}`}`
-            )
-          })}
-        </script>
-
-        {/* Open Graph / Facebook - Enhanced */}
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content={`https://krishihimalaya.com${location.pathname}`} />
-        <meta property="og:title" content={`${location.pathname === '/' ? 'Home' : location.pathname.substring(1).charAt(0).toUpperCase() + location.pathname.slice(2)} | Himalaya Krishi - Leading Organic Farming Excellence in Nepal`} />
-        <meta property="og:description" content={`${location.pathname === '/' ? 'Discover Himalaya Krishi\'s organic farming excellence in Nepal. Leading sustainable agriculture practices and farmer empowerment since 2020.' : 
-          location.pathname === '/about' ? 'Learn about Himalaya Krishi\'s journey in organic farming, our heritage, and commitment to sustainable agriculture in Nepal.' :
-          location.pathname === '/vision' ? 'Explore Himalaya Krishi\'s vision for sustainable farming, organic excellence, and agricultural innovation in Nepal.' :
-          'Connect with Himalaya Krishi for sustainable farming solutions and organic agriculture expertise in Nepal.'}`} />
-        <meta property="og:image" content="https://krishihimalaya.com/assets/logo/whitelogo-blackbg-removebg-preview.webp" />
-        <meta property="og:image:width" content="1200" />
-        <meta property="og:image:height" content="630" />
-        <meta property="og:site_name" content="Himalaya Krishi" />
-        <meta property="og:locale" content="en_US" />
-        <meta property="og:locale:alternate" content="ne_NP" />
-
-        {/* Twitter - Enhanced */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:site" content="@himalayakrishi" />
-        <meta name="twitter:url" content={`https://krishihimalaya.com${location.pathname}`} />
-        <meta name="twitter:title" content={`${location.pathname === '/' ? 'Home' : location.pathname.substring(1).charAt(0).toUpperCase() + location.pathname.slice(2)} | Himalaya Krishi - Leading Organic Farming Excellence in Nepal`} />
-        <meta name="twitter:description" content={`${location.pathname === '/' ? 'Discover Himalaya Krishi\'s organic farming excellence in Nepal. Leading sustainable agriculture practices and farmer empowerment since 2020.' : 
-          location.pathname === '/about' ? 'Learn about Himalaya Krishi\'s journey in organic farming, our heritage, and commitment to sustainable agriculture in Nepal.' :
-          location.pathname === '/vision' ? 'Explore Himalaya Krishi\'s vision for sustainable farming, organic excellence, and agricultural innovation in Nepal.' :
-          'Connect with Himalaya Krishi for sustainable farming solutions and organic agriculture expertise in Nepal.'}`} />
-        <meta name="twitter:image" content="https://krishihimalaya.com/assets/logo/whitelogo-blackbg-removebg-preview.webp" />
-        
-        {/* Mobile Optimization */}
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
-        <meta name="theme-color" content="#1C4E37" />
-        <meta name="apple-mobile-web-app-capable" content="yes" />
-        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-        
-        {/* Additional SEO Enhancements */}
-        <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
-        <meta name="author" content="Himalaya Krishi" />
-        <meta name="google-site-verification" content="your-verification-code" />
-      </Helmet>
+      <Suspense fallback={null}>
+        <SEOHelmet location={location} navItems={navItems} />
+      </Suspense>
 
       {/* Navigation with Bilingual Support */}
       <nav 
@@ -263,8 +98,10 @@ const Navbar = ({ isHomePage }) => {
                   filter: `drop-shadow(0 0 8px ${colors.secondary})`,
                   transition: 'all 0.7s cubic-bezier(0.4, 0, 0.2, 1)'
                 }}
-                loading="eager"
-                fetchpriority="high"
+                loading="lazy"
+                decoding="async"
+                width="150"
+                height="150"
               />
             </Link>
             

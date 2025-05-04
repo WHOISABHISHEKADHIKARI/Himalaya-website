@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import ScrollToTopButton from '../components/ScrollToTopButton';
 import { FaArrowRight } from "react-icons/fa";
 import { useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Helmet } from 'react-helmet-async';
+import SEO from '../components/SEO';
 import imag1 from '../assets/image/imag1.webp';
 import imag5 from '../assets/image/imag5.webp';
 import imag6 from '../assets/image/imag6.webp';
@@ -14,6 +15,8 @@ import ekrajVisit2 from '../assets/image/ekraj-visit-2.webp';
 import ekrajVisit3 from '../assets/image/ekraj-visit-3.webp';
 import ekrajVisit4 from '../assets/image/ekraj-visit-4.webp';
 import ekrajVisit5 from '../assets/image/ekraj-visit-5.webp';
+import FAQ from '../components/FAQ';
+import LinkedInProfile from '../components/LinkedInProfile';
 
 // Testimonial images array
 const testimonialImages = [
@@ -145,29 +148,17 @@ const Home = () => {
 
   return (
     <div className="min-h-screen bg-white">
-      <Helmet>
-        <title>Himalaya Krishi - Premier Organic Farm & Sustainable Agriculture in Nepal</title>
-        <meta name="description" content="Experience Nepal's finest organic farming at Himalaya Krishi. We offer premium organic products, sustainable agriculture solutions, and empower local farmers since 1992." />
-        <meta name="keywords" content="organic farming nepal, sustainable agriculture, organic products, farmer empowerment, murrah buffalo, organic certification, himalayan agriculture" />
-        <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
-        <link rel="canonical" href="https://krishihimalaya.com" />
-        <meta name="author" content="Himalaya Krishi" />
+      <ScrollToTopButton />
+      <SEO
+        title="Premier Organic Farm & Sustainable Agriculture in Nepal"
+        description="Experience Nepal's finest organic farming at Himalaya Krishi. We offer premium organic products, sustainable agriculture solutions, and empower local farmers since 1992."
+        keywords="organic farming nepal, sustainable agriculture, organic products, farmer empowerment, murrah buffalo, organic certification, himalayan agriculture"
+        canonicalUrl="https://krishihimalaya.com"
+        ogImage="https://krishihimalaya.com/og-image.jpg"
+      >
         <meta name="geo.region" content="NP" />
         <meta name="geo.placename" content="Manahari" />
-        <meta property="og:type" content="website" />
-        <meta property="og:site_name" content="Himalaya Krishi" />
         <meta property="og:locale" content="en_NP" />
-        <meta property="og:url" content="https://krishihimalaya.com" />
-        <meta property="og:title" content="Himalaya Krishi - Leading Organic Excellence in Nepal" />
-        <meta property="og:description" content="Discover premium organic products and sustainable farming solutions at Himalaya Krishi. Nepal's trusted name in organic agriculture since 1992." />
-        <meta property="og:image" content="https://krishihimalaya.com/og-image.jpg" />
-        <meta property="og:image:width" content="1200" />
-        <meta property="og:image:height" content="630" />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:site" content="@himalayakrishi" />
-        <meta name="twitter:title" content="Himalaya Krishi - Organic Farming Excellence in Nepal" />
-        <meta name="twitter:description" content="Premium organic products and sustainable farming solutions from Nepal's leading organic farm. Trusted since 1992." />
-        <meta name="twitter:image" content="https://krishihimalaya.com/twitter-card.jpg" />
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
@@ -195,8 +186,8 @@ const Home = () => {
             ]
           })}
         </script>
-      </Helmet>
-      <AnimatePresence>
+                </SEO>
+   <AnimatePresence>
         {isLoading ? (
           <motion.div
             initial={{ opacity: 1 }}
@@ -469,6 +460,7 @@ const Home = () => {
           </div>
         </div>
       </section>        
+      
     </div>
   );
 };

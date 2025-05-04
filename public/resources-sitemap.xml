@@ -23,17 +23,13 @@ https://www.krishihimalaya.com/      <image:geo_location>Nepal</image:geo_locati
     <local:business>
       <local:name>Himalaya Krishi - हिमालय कृषि</local:name>
       <local:type>Agricultural Education and Resource Center</local:type>
-      <local:address>Kathmandu, Nepal</local:address>
-      <local:phone>+977-XX-XXXXXXX</local:phone>
+      <local:address>Hetauda-4, Makwanpur, Nepal</local:address>
+      <local:phone>+977-9823405140</local:phone>
       <local:geo>
         <local:latitude>27.7172</local:latitude>
         <local:longitude>85.3240</local:longitude>
       </local:geo>
       <local:opening_hours>Mo-Sa 09:00-18:00</local:opening_hours>
-      <local:name>Himalaya Krishi - हिमालय कृषि</local:name>
-      <local:type>Agricultural Resource Center</local:type>
-      <local:address>Nepal</local:address>
-      <local:phone>+977-XX-XXXXXXX</local:phone>
     </local:business>
   </url>
 
