@@ -1,86 +1,115 @@
+# Himalaya Krishi - Robots.txt
+# https://krishihimalaya.com
+
 # Global rules
 User-agent: *
 Allow: /
-Allow: /ne/
-Allow: /en/
-Allow: /resources/
-Allow: /blog/
-Allow: /news/
-Allow: /organic-farming/
-Allow: /local-resources/
+
+# Important pages - High priority crawling
+Allow: /about
+Allow: /vision
+Allow: /contact
+Allow: /NewsAboutUs
+Allow: /faq
+Allow: /careers
+Allow: /terms
+Allow: /blog
+Allow: /services
+Allow: /products
+
+# SEO optimization paths
+Allow: /sitemap.xml
+Allow: /robots.txt
+Allow: /manifest.json
+
+# Media files - Allow crawling
+Allow: /images/
 Allow: /videos/
-Allow: /assets/
+Allow: /thumbnails/
+Allow: /*.jpg$
+Allow: /*.jpeg$
+Allow: /*.png$
+Allow: /*.gif$
+Allow: /*.webp$
+Allow: /*.svg$
+Allow: /*.pdf$
+Allow: /*.mp4$
+Allow: /*.webm$
+
+# Block sensitive and unnecessary paths
 Disallow: /admin/
 Disallow: /private/
 Disallow: /temp/
+Disallow: /draft/
+Disallow: /backup/
+Disallow: /dev/
+Disallow: /test/
 Disallow: /api/
-Disallow: /backend/
-Disallow: /security/
 Disallow: /*.json$
+Disallow: /*.xml$
+Disallow: /*.txt$
 Disallow: /*?*
-Disallow: /*utm_*
-Clean-param: utm_source&utm_medium&utm_campaign&utm_term&utm_content&fbclid&gclid
+Disallow: /*?
+Disallow: /search?
+Disallow: /*/search
+Disallow: /*&
+Disallow: /*.md$
+Disallow: /*.log$
+Disallow: /cgi-bin/
+Disallow: /wp-admin/
+Disallow: /wp-includes/
+Disallow: /wp-content/plugins/
+Disallow: /wp-content/themes/
+Disallow: /wp-content/cache/
+Disallow: /wp-json/
 
-# Specific bot rules
+# Specific crawler rules
 User-agent: Googlebot
 Allow: /
-Allow: /ne/
-Allow: /en/
-Allow: /resources/agriculture-
-Allow: /resources/farming-techniques
-Allow: /resources/agricultural-policies
-Allow: /organic-farming
-Allow: /news/
-Allow: /blog/
 Crawl-delay: 1
+Allow: /*.js$
+Allow: /*.css$
 
-# Image Indexing
-User-agent: Googlebot-Image
-Allow: /assets/images/
-Allow: /products/images/
-Allow: /resources/images/
-Allow: /blog/images/
-Allow: /news/images/
-Allow: /seo/
-Disallow: /temp/images/
-
-# Video Indexing
-User-agent: Googlebot-Video
-Allow: /videos/
-Allow: /assets/videos/
-
-# Local Search Optimization
 User-agent: Bingbot
 Allow: /
-Allow: /ne/
-Allow: /en/
-Allow: /local-resources/
-Allow: /news/
 Crawl-delay: 2
 
-# Mobile Optimization
-User-agent: Googlebot-Mobile
+User-agent: DuckDuckBot
 Allow: /
-Allow: /ne/
-Allow: /en/
-Crawl-delay: 1
-
-# Rate limiting
-Request-rate: 1/1s
 Crawl-delay: 2
 
-# Host preference
-Host: https://www.krishihimalaya.com
+User-agent: Yandexbot
+Allow: /
+Crawl-delay: 2
 
-# Sitemaps (simplified to single entry)
-Sitemap: https://www.krishihimalaya.com/sitemap.xml
+User-agent: Baiduspider
+Allow: /
+Crawl-delay: 2
 
-# Remove these commented lines and any non-existent sitemaps
-Sitemap: https://www.krishihimalaya.com/ne/sitemap.xml  <!-- Remove if not existing -->
-Sitemap: https://www.krishihimalaya.com/blog-sitemap.xml
-Sitemap: https://www.krishihimalaya.com/news-sitemap.xml
-Sitemap: https://www.krishihimalaya.com/resources-sitemap.xml
-# Sitemap: https://www.krishihimalaya.com/local-sitemap.xml  <!-- Remove if not existing -->
-Sitemap: https://www.krishihimalaya.com/images-sitemap.xml
-Sitemap: https://www.krishihimalaya.com/videos-sitemap.xml
-Sitemap: https://www.krishihimalaya.com/products-sitemap.xml
+# Block bad bots
+User-agent: *bot
+Disallow: /
+
+User-agent: *spider
+Disallow: /
+
+User-agent: *crawler
+Disallow: /
+
+User-agent: *scraper
+Disallow: /
+
+# Clean Parameters
+Disallow: /*?utm_
+Disallow: /*&utm_
+Disallow: /*?fb_
+Disallow: /*&fb_
+Disallow: /*?gclid
+Disallow: /*&gclid
+Disallow: /*?fbclid
+Disallow: /*&fbclid
+
+# Sitemaps
+Sitemap: https://krishihimalaya.com/sitemap.xml
+Sitemap: https://krishihimalaya.com/sitemap-images.xml
+Sitemap: https://krishihimalaya.com/sitemap-videos.xml

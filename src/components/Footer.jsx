@@ -31,10 +31,9 @@ const Footer = () => {
   const quickLinks = [
     { name: "Home", url: "/" },
     { name: "About Us", url: "/about" },
-    { name: "New About Us", url: "/new-about" },
-    { name: "Our Plan", url: "/our-plan" },
+    { name: "Vision", url: "/vision" },
     { name: "Contact", url: "/contact" },
-  ];
+ ];
 
   return (
     <footer className="bg-gradient-to-r from-[#1C4E37] to-[#173E2C] text-white py-12">
@@ -43,7 +42,7 @@ const Footer = () => {
           <div>
             <h3 className="text-xl font-bold mb-4 text-[#D8A51D]">Himalaya Krishi</h3>
             <p className="text-gray-300 mb-4">
-              Empowering farmers with sustainable practices and modern techniques.
+              Leading sustainable and organic farming in Nepal. We're pioneering modern agricultural techniques with traditional wisdom to create one of Nepal's best integrated farming systems. Our murra farm and organic dairy practices set new standards in sustainable agriculture.
             </p>
             <div className="flex flex-col space-y-2">
               <div className="flex items-center group hover:text-[#D8A51D] transition-colors duration-300">
@@ -108,6 +107,42 @@ const Footer = () => {
                 <FaEnvelope />
               </a>
             </div>
+            
+            {/* Added Links */}
+            <ul className="space-y-2">
+              <li>
+                <a 
+                  href="/faq"
+                  className="text-gray-300 hover:text-[#D8A51D] transition-colors duration-300 flex items-center group"
+                >
+                  <span className="transform group-hover:translate-x-2 transition-transform duration-300">FAQ</span>
+                </a>
+              </li>
+              <li>
+                <a 
+                  href="/terms"
+                  className="text-gray-300 hover:text-[#D8A51D] transition-colors duration-300 flex items-center group"
+                >
+                  <span className="transform group-hover:translate-x-2 transition-transform duration-300">Terms & Conditions</span>
+                </a>
+              </li>
+              <li>
+                <a 
+                  href="/careers"
+                  className="text-gray-300 hover:text-[#D8A51D] transition-colors duration-300 flex items-center group"
+                >
+                  <span className="transform group-hover:translate-x-2 transition-transform duration-300">Careers</span>
+                </a>
+              </li>
+              <li>
+                <a 
+                  href="/NewsAboutUs"
+                  className="text-gray-300 hover:text-[#D8A51D] transition-colors duration-300 flex items-center group"
+                >
+                  <span className="transform group-hover:translate-x-2 transition-transform duration-300">News About Us</span>
+                </a>
+              </li>
+            </ul>
             {/* Removed the Google Map component and its Suspense wrapper */}
           </div>
         </div>
