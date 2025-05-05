@@ -10,6 +10,7 @@ const ErrorBoundary = lazy(() => import('./components/ErrorBoundary'));
 const LoadingBar = lazy(() => import('./components/LoadingBar'));
 const SEO = lazy(() => import('./pages/SEO'));
 const FAQ = lazy(() => import('./pages/FAQ'));
+const Terms = lazy(() => import('./pages/Terms')); // Add this line
 
 // Lazy load route components
 const NotFound = lazy(() => import('./pages/NotFound'));
@@ -18,6 +19,8 @@ const Home = lazy(() => import('./pages/Home'));
 const About = lazy(() => import(/* webpackPrefetch: true */ './pages/About'));
 const Vision = lazy(() => import(/* webpackPrefetch: true */ './pages/Vision'));
 const Contact = lazy(() => import(/* webpackPrefetch: true */ './pages/Contact'));
+const NewsAboutUs = lazy(() => import('./pages/NewsAboutUs'));
+const Careers = lazy(() => import('./pages/Careers')); // Add this line
 
 function App() {
   return (
@@ -34,7 +37,10 @@ function App() {
               <Route path="/vision" element={<Vision />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="/seo" element={<SEO />} />
+              <Route path="/NewsAboutUs" element={<NewsAboutUs />} />
               <Route path="/faq" element={<FAQ />} />
+              <Route path="/careers" element={<Careers />} />
+              <Route path="/terms" element={<Terms />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </Suspense>

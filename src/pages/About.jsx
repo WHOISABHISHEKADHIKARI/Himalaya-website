@@ -1,12 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import LoadingBar from '../components/LoadingBar';
 import { FaPhoneAlt, FaEnvelope, FaLinkedin, FaArrowUp } from 'react-icons/fa';
-import logo from '../assets/logo/whitelogo-blackbg-removebg-preview.webp';
-import imag1 from '../assets/image/imag1.webp';
-import imag5 from '../assets/image/imag5.webp';
-import imag6 from '../assets/image/imag6.webp';
-import imag7 from '../assets/image/imag7.webp';
-import imag9 from '../assets/image/imag9.webp';
+import bankingPartner from '../assets/image/Partner/Banking Parntner  kantirajpath Branch.webp';
+import consultingPartner from '../assets/image/Partner/Consultng Partner Pokhara Isha consulting .webp';
+import creativePartner from '../assets/image/Partner/Creative Content Parnter The ads Maker HETAUDA .webp';
+import techPartner from '../assets/image/Partner/Tech support Partner chitwan Sdtech .webp';
 import founder from '../assets/image/founder.webp';
 import owner from '../assets/image/owner.webp';
 import manager from '../assets/image/manager.webp';
@@ -309,6 +307,8 @@ const About = () => {
           </div>
         </div>
       </section>
+      
+    
       {/* Our Faces Section */}
             <section className="py-24" style={{ backgroundColor: colors.background.card }}>
               <div className="container mx-auto px-4">
@@ -439,6 +439,122 @@ const About = () => {
                 </div>
               </div>
             </section>
+         {/* Partners Section with Enhanced Design */}
+         <section className="relative py-24">
+        <div className="absolute inset-0 bg-gradient-to-r from-[#1C4E37]/20 via-[#D8A51D]/10 to-[#1C4E37]/20 rounded-[2.5rem] blur-2xl transition-all duration-700"></div>
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl md:text-5xl font-serif font-bold mb-6" style={{ color: colors.primary }}>
+                Our Trusted Partners
+              </h2>
+              <div className="w-32 h-1 mx-auto mb-8" style={{ backgroundColor: colors.secondary }}></div>
+              <p className="text-xl max-w-3xl mx-auto" style={{ color: colors.text.medium }}>
+                Working together to deliver excellence in every aspect
+              </p>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+              {/* Banking Partner */}
+              <div className="relative group perspective-1000">
+                <div className="absolute inset-0 bg-gradient-to-r from-[#1C4E37]/20 via-[#D8A51D]/10 to-[#1C4E37]/20 rounded-[2.5rem] blur-2xl transition-all duration-700 group-hover:blur-3xl group-hover:scale-105 animate-pulse"></div>
+                <div className="bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-white/95 via-white/90 to-white/80 backdrop-blur-2xl p-8 rounded-[2.5rem] border border-white/30 shadow-[0_8px_32px_rgba(28,78,55,0.15)] hover:shadow-[0_32px_80px_rgba(28,78,55,0.3)] transition-all duration-700 relative h-full overflow-hidden transform-gpu group-hover:translate-y-[-8px] hover:border-[#D8A51D]/30">
+                  <div className="absolute -top-20 -right-20 w-40 h-40 bg-[#D8A51D]/5 rounded-full blur-3xl group-hover:blur-4xl transition-all duration-700"></div>
+                  <div className="absolute -bottom-20 -left-20 w-40 h-40 bg-[#1C4E37]/5 rounded-full blur-3xl group-hover:blur-4xl transition-all duration-700"></div>
+                  <div className="h-full flex flex-col items-center justify-center relative z-10">
+                    <div className="aspect-w-16 aspect-h-9 mb-6">
+                      <img 
+                        src={bankingPartner}
+                        alt="Banking Partner - Kantirajpath Branch"
+                        className="object-contain w-full h-32 transform transition-all duration-700 group-hover:scale-110"
+                      />
+                    </div>
+                    <h3 className="text-lg font-semibold text-center mb-2" style={{ color: colors.primary }}>
+                      Banking Partner
+                    </h3>
+                    <p className="text-center text-sm" style={{ color: colors.text.medium }}>
+                      Kantirajpath Branch
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Consulting Partner */}
+              <div className="relative group perspective-1000">
+                <div className="absolute inset-0 bg-gradient-to-r from-[#1C4E37]/20 via-[#D8A51D]/10 to-[#1C4E37]/20 rounded-[2.5rem] blur-2xl transition-all duration-700 group-hover:blur-3xl group-hover:scale-105 animate-pulse"></div>
+                <div className="bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-white/95 via-white/90 to-white/80 backdrop-blur-2xl p-8 rounded-[2.5rem] border border-white/30 shadow-[0_8px_32px_rgba(28,78,55,0.15)] hover:shadow-[0_32px_80px_rgba(28,78,55,0.3)] transition-all duration-700 relative h-full overflow-hidden transform-gpu group-hover:translate-y-[-8px] hover:border-[#D8A51D]/30">
+                  <div className="absolute -top-20 -right-20 w-40 h-40 bg-[#D8A51D]/5 rounded-full blur-3xl group-hover:blur-4xl transition-all duration-700"></div>
+                  <div className="absolute -bottom-20 -left-20 w-40 h-40 bg-[#1C4E37]/5 rounded-full blur-3xl group-hover:blur-4xl transition-all duration-700"></div>
+                  <div className="h-full flex flex-col items-center justify-center relative z-10">
+                    <div className="aspect-w-16 aspect-h-9 mb-6">
+                      <img 
+                        src={consultingPartner}
+                        alt="Consulting Partner - Isha Consulting Pokhara"
+                        className="object-contain w-full h-32 transform transition-all duration-700 group-hover:scale-110"
+                      />
+                    </div>
+                    <h3 className="text-lg font-semibold text-center mb-2" style={{ color: colors.primary }}>
+                      Consulting Partner
+                    </h3>
+                    <p className="text-center text-sm" style={{ color: colors.text.medium }}>
+                      Isha Consulting, Pokhara
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Creative Content Partner */}
+              <div className="relative group perspective-1000">
+                <div className="absolute inset-0 bg-gradient-to-r from-[#1C4E37]/20 via-[#D8A51D]/10 to-[#1C4E37]/20 rounded-[2.5rem] blur-2xl transition-all duration-700 group-hover:blur-3xl group-hover:scale-105 animate-pulse"></div>
+                <div className="bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-white/95 via-white/90 to-white/80 backdrop-blur-2xl p-8 rounded-[2.5rem] border border-white/30 shadow-[0_8px_32px_rgba(28,78,55,0.15)] hover:shadow-[0_32px_80px_rgba(28,78,55,0.3)] transition-all duration-700 relative h-full overflow-hidden transform-gpu group-hover:translate-y-[-8px] hover:border-[#D8A51D]/30">
+                  <div className="absolute -top-20 -right-20 w-40 h-40 bg-[#D8A51D]/5 rounded-full blur-3xl group-hover:blur-4xl transition-all duration-700"></div>
+                  <div className="absolute -bottom-20 -left-20 w-40 h-40 bg-[#1C4E37]/5 rounded-full blur-3xl group-hover:blur-4xl transition-all duration-700"></div>
+                  <div className="h-full flex flex-col items-center justify-center relative z-10">
+                    <div className="aspect-w-16 aspect-h-9 mb-6">
+                      <img 
+                        src={creativePartner}
+                        alt="Creative Content Partner - The Ads Maker Hetauda"
+                        className="object-contain w-full h-32 transform transition-all duration-700 group-hover:scale-110"
+                      />
+                    </div>
+                    <h3 className="text-lg font-semibold text-center mb-2" style={{ color: colors.primary }}>
+                      Creative Content Partner
+                    </h3>
+                    <p className="text-center text-sm" style={{ color: colors.text.medium }}>
+                      The Ads Maker, Hetauda
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Tech Support Partner */}
+              <div className="relative group perspective-1000">
+                <div className="absolute inset-0 bg-gradient-to-r from-[#1C4E37]/20 via-[#D8A51D]/10 to-[#1C4E37]/20 rounded-[2.5rem] blur-2xl transition-all duration-700 group-hover:blur-3xl group-hover:scale-105 animate-pulse"></div>
+                <div className="bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-white/95 via-white/90 to-white/80 backdrop-blur-2xl p-8 rounded-[2.5rem] border border-white/30 shadow-[0_8px_32px_rgba(28,78,55,0.15)] hover:shadow-[0_32px_80px_rgba(28,78,55,0.3)] transition-all duration-700 relative h-full overflow-hidden transform-gpu group-hover:translate-y-[-8px] hover:border-[#D8A51D]/30">
+                  <div className="absolute -top-20 -right-20 w-40 h-40 bg-[#D8A51D]/5 rounded-full blur-3xl group-hover:blur-4xl transition-all duration-700"></div>
+                  <div className="absolute -bottom-20 -left-20 w-40 h-40 bg-[#1C4E37]/5 rounded-full blur-3xl group-hover:blur-4xl transition-all duration-700"></div>
+                  <div className="h-full flex flex-col items-center justify-center relative z-10">
+                    <div className="aspect-w-16 aspect-h-9 mb-6">
+                      <img 
+                        src={techPartner}
+                        alt="Tech Support Partner - SDTech Chitwan"
+                        className="object-contain w-full h-32 transform transition-all duration-700 group-hover:scale-110"
+                      />
+                    </div>
+                    <h3 className="text-lg font-semibold text-center mb-2" style={{ color: colors.primary }}>
+                      Tech Support Partner
+                    </h3>
+                    <p className="text-center text-sm" style={{ color: colors.text.medium }}>
+                      SDTech, Chitwan
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
       
             {/* Testimonials Section */}
             <section aria-labelledby="testimonials" className="py-24" style={{ backgroundColor: colors.background.card }}>
