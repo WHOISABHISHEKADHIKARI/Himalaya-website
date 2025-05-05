@@ -31,6 +31,7 @@ const Footer = () => {
   const quickLinks = [
     { name: "Home", url: "/" },
     { name: "About Us", url: "/about" },
+    { name: "New About Us", url: "/new-about" },
     { name: "Our Plan", url: "/our-plan" },
     { name: "Contact", url: "/contact" },
   ];
