@@ -6,7 +6,24 @@
   <title>पृष्ठ फेला परेन | Page Not Found - Himalaya Krishi</title>
   <meta name="robots" content="noindex, follow">
   <link rel="canonical" href="https://krishihimalaya.com">
-  <meta http-equiv="status-code" content="404">
+  <meta http-equiv="refresh" content="10;url=https://krishihimalaya.com">
+  <!-- Return proper HTTP status code -->
+  <script>
+    // Ensure the page is actually returning a 404 HTTP status code
+    if (window.location.pathname !== '/' && 
+        window.location.pathname !== '/index.html' && 
+        window.location.pathname !== '/404.html') {
+      document.addEventListener('DOMContentLoaded', function() {
+        // Log 404 errors to analytics if you have it
+        if (typeof gtag === 'function') {
+          gtag('event', '404_error', {
+            'event_category': 'Error',
+            'event_label': window.location.pathname
+          });
+        }
+      });
+    }
+  </script>
   <style>
     body {
       font-family: 'Arial', sans-serif;
@@ -65,6 +82,10 @@
     .secondary:hover {
       background-color: #E8F0E4;
     }
+    .sitemap-link {
+      margin-top: 20px;
+      font-size: 0.9rem;
+    }
     @media (min-width: 640px) {
       .buttons {
         flex-direction: row;
@@ -84,6 +105,10 @@
       <a href="/" class="button primary">मुख्य पृष्ठमा फर्कनुहोस् | Return Home</a>
       <a href="/contact" class="button secondary">सम्पर्क गर्नुहोस् | Contact Us</a>
     </div>
+    
+    <p class="sitemap-link">
+      <a href="/sitemap.xml">View our sitemap</a> to find what you're looking for.
+    </p>
   </div>
 </body>
 </html>
