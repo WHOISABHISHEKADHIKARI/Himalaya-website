@@ -1,0 +1,45 @@
+# Robots.txt for Himalaya Krishi
+User-agent: *
+Allow: /
+
+# Disallow admin and private areas
+Disallow: /admin/
+Disallow: /private/
+Disallow: /login/
+Disallow: /account/
+
+# Prevent crawling of duplicate content
+Disallow: /*?*
+Disallow: /*&*
+
+# Specific parameter exclusions
+Disallow: /*?utm_*
+Disallow: /*&utm_*
+Disallow: /*?fb_*
+Disallow: /*&fb_*
+Disallow: /*?gclid=*
+Disallow: /*&gclid=*
+Disallow: /*?fbclid=*
+Disallow: /*&fbclid=*
+
+# Prevent crawling of search results
+Disallow: /search
+
+# Set a reasonable crawl rate
+Crawl-delay: 2
+
+# Block bad bots
+User-agent: *bot
+Disallow: /
+
+User-agent: *spider
+Disallow: /
+
+User-agent: *crawler
+Disallow: /
+
+User-agent: *scraper
+Disallow: /
+
+# Sitemaps - consolidated and verified
+Sitemap: https://krishihimalaya.com/sitemap-index.xml

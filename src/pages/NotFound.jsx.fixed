@@ -1,0 +1,119 @@
+import React, { useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
+
+const colors = {
+  primary: '#1C4E37',
+  secondary: '#D8A51D',
+  light: '#F4F9F1',
+  accent: '#8C3E2F',
+  text: {
+    dark: '#1A2E1D',
+    medium: '#3A5944',
+    light: '#F9FCF7',
+    gold: '#D8A51D'
+  },
+  background: {
+    primary: '#F4F9F1',
+    card: '#FFFFFF',
+    accent: 'rgba(216, 165, 29, 0.07)'
+  }
+};
+
+const NotFound = () => {
+  useEffect(() => {
+    // Set the status code to 404
+    document.title = 'पृष्ठ फेला परेन | Page Not Found - Himalaya Krishi';
+    
+    // This helps with SSR and static generation
+    if (typeof window.__INITIAL_STATUS_CODE__ !== 'undefined') {
+      window.__INITIAL_STATUS_CODE__ = 404;
+    }
+    
+    // For client-side rendering, we can use this meta tag approach
+    const metaStatusCode = document.createElement('meta');
+    metaStatusCode.httpEquiv = 'status-code';
+    metaStatusCode.content = '404';
+    document.head.appendChild(metaStatusCode);
+    
+    return () => {
+      // Clean up when component unmounts
+      const metaTag = document.querySelector('meta[http-equiv="status-code"]');
+      if (metaTag) {
+        metaTag.remove();
+      }
+    };
+  }, []);
+
+  return (
+    <div className="min-h-screen flex flex-col">
+      <Helmet>
+        <title>पृष्ठ फेला परेन | Page Not Found - Himalaya Krishi</title>
+        <meta name="description" content="माफ गर्नुहोस्, यो पृष्ठ उपलब्ध छैन। हिमालय कृषिको मुख्य पृष्ठमा फर्कनुहोस् र जैविक खेती, कृषि सहयोग र दिगो कृषि समाधानहरू पत्ता लगाउनुहोस्। | Sorry, this page isn't available." />
+        <meta name="robots" content="noindex, follow" />
+        <link rel="canonical" href="https://krishihimalaya.com" />
+        <link rel="alternate" hrefLang="ne" href="https://krishihimalaya.com/ne/404" />
+        <link rel="alternate" hrefLang="en" href="https://krishihimalaya.com/404" />
+        
+        {/* Open Graph with bilingual support */}
+        <meta property="og:locale" content="ne_NP" />
+        <meta property="og:locale:alternate" content="en_US" />
+        <meta property="og:title" content="पृष्ठ फेला परेन | Page Not Found - Himalaya Krishi" />
+        <meta property="og:description" content="जैविक खेती र कृषि समाधानहरूको लागि हाम्रो मुख्य पृष्ठमा जानुहोस् | Visit our homepage for organic farming solutions" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://krishihimalaya.com/404" />
+        <meta property="og:site_name" content="Himalaya Krishi" />
+        
+        {/* Add status code meta tag */}
+        <meta httpEquiv="status-code" content="404" />
+      </Helmet>
+      <Navbar />
+      <main className="flex-grow flex items-center justify-center py-20 px-4">
+        <div className="max-w-3xl text-center">
+          <div className="mb-12">
+            <h1 className="text-9xl font-bold" style={{ color: colors.primary }}>४०४</h1>
+            <h2 className="text-4xl mt-4" style={{ color: colors.text.dark }}>
+              पृष्ठ फेला परेन | Page Not Found
+            </h2>
+          </div>
+          
+          <div className="mb-8">
+            <p className="text-xl mb-4" style={{ color: colors.text.medium }}>
+              माफ गर्नुहोस्, तपाईंले खोज्नुभएको पृष्ठ फेला पार्न सकिएन।
+            </p>
+            <p className="text-xl" style={{ color: colors.text.medium }}>
+              Sorry, the page you were looking for could not be found.
+            </p>
+          </div>
+          
+          <div className="flex flex-col sm:flex-row justify-center gap-4">
+            <Link 
+              to="/" 
+              className="px-6 py-3 rounded-lg text-white font-medium transition-all"
+              style={{ backgroundColor: colors.primary, hover: { backgroundColor: '#163C2A' } }}
+            >
+              मुख्य पृष्ठमा फर्कनुहोस् | Return Home
+            </Link>
+            <Link 
+              to="/contact" 
+              className="px-6 py-3 rounded-lg font-medium transition-all"
+              style={{ 
+                backgroundColor: colors.light, 
+                color: colors.primary,
+                border: `1px solid ${colors.primary}`,
+                hover: { backgroundColor: '#E8F0E4' } 
+              }}
+            >
+              सम्पर्क गर्नुहोस् | Contact Us
+            </Link>
+          </div>
+        </div>
+      </main>
+      <Footer />
+    </div>
+  );
+};
+
+export default NotFound;
