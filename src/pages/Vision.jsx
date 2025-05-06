@@ -264,25 +264,25 @@ const Vision = () => {
             <MetricCard
               icon={<GiMilkCarton />}
               title="Dairy Production"
-              value="200 Liters Daily"
+              value="250 Liters Daily"
               subtitle="Current Production"
             />
             <MetricCard
               icon={<GiCow />}
               title="Buffalo Herd"
-              value="130 Buffaloes"
-              subtitle="Including 20 milking & 50 pregnant"
+              value="180 Buffaloes"
+              subtitle="Including 30 milking & 50 pregnant"
             />
             <MetricCard
               icon={<FaSeedling />}
               title="Farm Land"
-              value="5 Bigha"
-              subtitle="For grass cultivation"
+              value="5 Bigha*2"
+              subtitle="For grass+ oeganic vegitable cultivation"
             />
             <MetricCard
               icon={<FaHotel />}
               title="Expansion"
-              value="Organic Hotel"
+              value="Organic Hotel+Dairy Outlates"
               subtitle="Coming to Hetauda"
             />
           </motion.div>
