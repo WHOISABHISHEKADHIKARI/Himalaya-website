@@ -156,9 +156,9 @@ const SEOHelmet = ({ location, navItems }) => {
         {JSON.stringify({
           "@context": "https://schema.org",
           "@type": "SiteNavigationElement",
-          "name": navItems.map(item => item),
+          "name": navItems.map(item => item.name),
           "url": navItems.map(item => 
-            `https://krishihimalaya.com${item === 'Home' ? '/' : `/${item.toLowerCase()}`}`
+            `https://krishihimalaya.com${item.name === 'Home' ? '/' : `/${item.name.toLowerCase()}`}`
           )
         })}
       </script>

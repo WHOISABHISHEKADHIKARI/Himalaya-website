@@ -34,10 +34,19 @@ const Navbar = ({ isHomePage }) => {
     }
   };
 
-  // Define navigation items based on current page
+  // Define navigation items with SEO-friendly structure
   const navItems = isHomePage 
-    ? ['About', 'Vision', 'Contact'] 
-    : ['Home', 'About', 'Vision', 'Contact'];
+    ? [
+      { name: 'About', path: '/about', title: 'About Himalaya Krishi - Organic Farming Excellence' },
+      { name: 'Vision', path: '/vision', title: 'Our Vision for Sustainable Agriculture' },
+      { name: 'Contact', path: '/contact', title: 'Contact Himalaya Krishi - Get in Touch' }
+    ] 
+    : [
+      { name: 'Home', path: '/', title: 'Himalaya Krishi - Leading Organic Farm in Nepal' },
+      { name: 'About', path: '/about', title: 'About Himalaya Krishi - Organic Farming Excellence' },
+      { name: 'Vision', path: '/vision', title: 'Our Vision for Sustainable Agriculture' },
+      { name: 'Contact', path: '/contact', title: 'Contact Himalaya Krishi - Get in Touch' }
+    ];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -109,27 +118,28 @@ const Navbar = ({ isHomePage }) => {
             <div className="hidden md:flex items-center space-x-10">
               {navItems.map((item) => (
                 <Link
-                  key={item}
-                  to={item === 'Home' ? '/' : `/${item.toLowerCase().replace(/\s+/g, '-')}`}
-                  onMouseEnter={() => setIsHovered(item)}
+                  key={item.name}
+                  to={item.path}
+                  onMouseEnter={() => setIsHovered(item.name)}
                   onMouseLeave={() => setIsHovered('')}
                   className={`relative text-lg font-semibold uppercase tracking-wider transition-all duration-500 group px-4 py-2 ${
                     scrolled ? 'text-base' : 'text-lg'
                   }`}
                   style={{
-                    color: location.pathname === (item === 'Home' ? '/' : `/${item.toLowerCase()}`) || isHovered === item 
+                    color: location.pathname === item.path || isHovered === item.name 
                       ? colors.text.gold 
                       : colors.text.light,
-                    transform: isHovered === item ? 'translateY(-2px)' : 'none',
+                    transform: isHovered === item.name ? 'translateY(-2px)' : 'none',
                     opacity: scrolled ? 0.9 : 1
                   }}
+                  title={item.title}
                 >
-                  {item}
+                  {item.name}
                   <span 
                     className="absolute bottom-0 left-0 h-0.5 transition-all duration-500 group-hover:w-full w-0"
                     style={{ 
                       backgroundColor: colors.secondary,
-                      boxShadow: isHovered === item ? '0 0 10px rgba(216, 165, 29, 0.5)' : 'none'
+                      boxShadow: isHovered === item.name ? '0 0 10px rgba(216, 165, 29, 0.5)' : 'none'
                     }}
                   ></span>
                 </Link>
@@ -189,17 +199,18 @@ const Navbar = ({ isHomePage }) => {
           <div className="px-4 py-3 space-y-2">
             {navItems.map((item) => (
               <Link
-                key={item}
-                to={item === 'Home' ? '/' : `/${item.toLowerCase()}`}
+                key={item.name}
+                to={item.path}
                 className="block px-4 py-3 text-lg font-medium rounded-xl transition-all duration-300"
                 style={{
-                  color: location.pathname === (item === 'Home' ? '/' : `/${item.toLowerCase()}`) ? colors.text.gold : colors.text.light,
-                  backgroundColor: location.pathname === (item === 'Home' ? '/' : `/${item.toLowerCase()}`) ? `${colors.primary}a0` : 'transparent'
+                  color: location.pathname === item.path ? colors.text.gold : colors.text.light,
+                  backgroundColor: location.pathname === item.path ? `${colors.primary}a0` : 'transparent'
                 }}
                 onClick={() => setIsOpen(false)}
-                aria-current={location.pathname === (item === 'Home' ? '/' : `/${item.toLowerCase()}`) ? 'page' : undefined}
+                aria-current={location.pathname === item.path ? 'page' : undefined}
+                title={item.title}
               >
-                {item}
+                {item.name}
               </Link>
             ))}
             <button 
