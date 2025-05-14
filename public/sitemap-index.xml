@@ -3,57 +3,41 @@
               xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <!-- Primary Content Sitemaps -->
   <sitemap>
-    <loc>https://www.krishihimalaya.com/sitemap.xml</loc>
+    <loc>https://krishihimalaya.com/sitemap.xml</loc>
     <lastmod>2024-07-15T10:00:00+05:45</lastmod>
   </sitemap>
-  <sitemap>
-    <loc>https://www.krishihimalaya.com/ne/sitemap.xml</loc>
-    <lastmod>2024-07-15T10:00:00+05:45</lastmod>
-  </sitemap>
-
+  
   <!-- Business Offerings -->
   <sitemap>
-    <loc>https://www.krishihimalaya.com/products-sitemap.xml</loc>
+    <loc>https://krishihimalaya.com/products-sitemap.xml</loc>
     <lastmod>2024-07-15T10:00:00+05:45</lastmod>
   </sitemap>
   <sitemap>
-    <loc>https://www.krishihimalaya.com/services-sitemap.xml</loc>
+    <loc>https://krishihimalaya.com/services-sitemap.xml</loc>
     <lastmod>2024-07-15T10:00:00+05:45</lastmod>
   </sitemap>
 
   <!-- Knowledge Hub Sitemaps -->
   <sitemap>
-    <loc>https://www.krishihimalaya.com/blog-sitemap.xml</loc>
+    <loc>https://krishihimalaya.com/blog-sitemap.xml</loc>
     <lastmod>2024-07-15T10:00:00+05:45</lastmod>
   </sitemap>
   <sitemap>
-    <loc>https://www.krishihimalaya.com/news-sitemap.xml</loc>
-    <lastmod>2024-07-15T10:00:00+05:45</lastmod>
-  </sitemap>
-
-  <!-- Educational Resources -->
-  <sitemap>
-    <loc>https://www.krishihimalaya.com/resources-sitemap.xml</loc>
+    <loc>https://krishihimalaya.com/news-sitemap.xml</loc>
     <lastmod>2024-07-15T10:00:00+05:45</lastmod>
   </sitemap>
   <sitemap>
-    <loc>https://www.krishihimalaya.com/local-sitemap.xml</loc>
+    <loc>https://krishihimalaya.com/resources-sitemap.xml</loc>
     <lastmod>2024-07-15T10:00:00+05:45</lastmod>
   </sitemap>
-
-  <!-- Media Content Sitemaps -->
+  
+  <!-- Media Sitemaps -->
   <sitemap>
-    <loc>https://www.krishihimalaya.com/images-sitemap.xml</loc>
+    <loc>https://krishihimalaya.com/images-sitemap.xml</loc>
     <lastmod>2024-07-15T10:00:00+05:45</lastmod>
   </sitemap>
   <sitemap>
-    <loc>https://www.krishihimalaya.com/videos-sitemap.xml</loc>
-    <lastmod>2024-07-15T10:00:00+05:45</lastmod>
-  </sitemap>
-
-  <!-- Seasonal Content -->
-  <sitemap>
-    <loc>https://www.krishihimalaya.com/products-sitemap.xml</loc>
+    <loc>https://krishihimalaya.com/videos-sitemap.xml</loc>
     <lastmod>2024-07-15T10:00:00+05:45</lastmod>
   </sitemap>
 </sitemapindex>
