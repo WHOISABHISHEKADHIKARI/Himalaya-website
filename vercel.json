@@ -75,18 +75,5 @@
         }
       ]
     }
-  ],
-  "redirects": [
-    { 
-      "source": "/((?!ne/).*)", 
-      "has": [{ "type": "header", "key": "x-vercel-ip-country", "value": "NP" }], 
-      "destination": "/ne/$1", 
-      "permanent": false 
-    },
-    {
-      "source": "/ne",
-      "destination": "/ne/",
-      "permanent": true
-    }
   ]
 }
