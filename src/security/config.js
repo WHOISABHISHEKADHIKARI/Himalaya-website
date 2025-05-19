@@ -1,6 +1,7 @@
 const securityConfig = {
   contentSecurityPolicy: {
     directives: {
+      "upgrade-insecure-requests": [],
       "default-src": ["'self'"],
       "script-src": [
         "'self'",
@@ -42,7 +43,7 @@ const securityConfig = {
         "'self'", 
         "https://*.googleapis.com", 
         "http://localhost:*",
-        "ws://localhost:*",
+        "wss://localhost:*",
         "https://krishihimalaya.com",
         "https://maps.googleapis.com",
         "https://vitals.vercel-insights.com",

@@ -1,7 +1,9 @@
-const js = require('@eslint/js');
+const { Linter } = require('eslint');
 const globals = require('globals');
 const reactHooks = require('eslint-plugin-react-hooks');
 const reactRefresh = require('eslint-plugin-react-refresh');
+
+const linter = new Linter();
 
 module.exports = [
   { ignores: ['dist'] },
