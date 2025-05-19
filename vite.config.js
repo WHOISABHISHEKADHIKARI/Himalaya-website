@@ -10,18 +10,27 @@ export default defineConfig({
     rollupOptions: {
       output: {
         manualChunks: {
-          vendor: ['react', 'react-dom', 'react-router-dom'],
-          // Split larger dependencies into separate chunks
-        }
+          vendor: ['react', 'react-dom'],
+          ui: ['react-icons', 'framer-motion'],
+          routing: ['react-router-dom'],
+          meta: ['react-helmet-async']
+        },
+        assetFileNames: (assetInfo) => {
+          if (assetInfo.name.endsWith('.css')) {
+            return 'assets/css/[name]-[hash][extname]';
+          }
+          return 'assets/[name]-[hash][extname]';
+        },
+        chunkFileNames: 'assets/js/[name]-[hash].js',
+        entryFileNames: 'assets/js/[name]-[hash].js'
       }
     },
     chunkSizeWarningLimit: 1000,
     cssCodeSplit: true,
     sourcemap: false,
-    // Enable compression
-    brotliSize: true,
-    // Optimize chunk size
-    minChunks: 1
+    minify: 'esbuild',
+    target: 'esnext',
+    reportCompressedSize: false
   },
   optimizeDeps: {
     include: ['react', 'react-dom', 'react-router-dom']
@@ -29,7 +38,11 @@ export default defineConfig({
   server: {
     host: 'localhost',
     port: 5173,
-    strictPort: true
+    strictPort: true,
+    https: {
+      key: process.env.SSL_KEY_FILE,
+      cert: process.env.SSL_CERT_FILE
+    }
   }
 })
 
