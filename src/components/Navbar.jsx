@@ -39,13 +39,15 @@ const Navbar = ({ isHomePage }) => {
     ? [
       { name: 'About', path: '/about', title: 'About Himalaya Krishi - Organic Farming Excellence' },
       { name: 'Vision', path: '/vision', title: 'Our Vision for Sustainable Agriculture' },
-      { name: 'Contact', path: '/contact', title: 'Contact Himalaya Krishi - Get in Touch' }
+      { name: 'Contact', path: '/contact', title: 'Contact Himalaya Krishi - Get in Touch' }, // Yesma comma add garnu paryo Haha.
+      { name: 'Blog', path: '/blog', title: 'Himalaya Krishi Blog - Latest Updates' } // Added Blog
     ] 
     : [
       { name: 'Home', path: '/', title: 'Himalaya Krishi - Leading Organic Farm in Nepal' },
       { name: 'About', path: '/about', title: 'About Himalaya Krishi - Organic Farming Excellence' },
       { name: 'Vision', path: '/vision', title: 'Our Vision for Sustainable Agriculture' },
-      { name: 'Contact', path: '/contact', title: 'Contact Himalaya Krishi - Get in Touch' }
+      { name: 'Contact', path: '/contact', title: 'Contact Himalaya Krishi - Get in Touch' }, // Yesma comma add garnu paryo Haha.
+      { name: 'Blog', path: '/blog', title: 'Himalaya Krishi Blog - Latest Updates' } // Added Blog
     ];
 
   useEffect(() => {
