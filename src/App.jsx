@@ -24,6 +24,8 @@ const Careers = lazy(() => import('./pages/Careers')); // Add this line
 // Add these imports at the top with other lazy imports
 const AgricultureSupport = lazy(() => import('./pages/AgricultureSupport'));
 const Centers = lazy(() => import('./pages/Centers'));
+const Blog = lazy(() => import('./pages/Blog'));
+const BlogPost = lazy(() => import('./pages/BlogPost'));
 
 function App() {
   return (
@@ -45,6 +47,8 @@ function App() {
             <Route path="/terms" element={<Terms />} />
             <Route path="/agriculture-support-policies" element={<AgricultureSupport />} />
             <Route path="/centers/:centerName" element={<Centers />} />
+            <Route path="/blog" element={<Blog />} />
+            <Route path="/blog/:slug" element={<BlogPost />} />
             <Route path="/ne/*" element={<Routes>
               <Route path="/about" element={<About />} />
               <Route path="/vision" element={<Vision />} />
@@ -56,6 +60,8 @@ function App() {
               <Route path="/terms" element={<Terms />} />
               <Route path="/agriculture-support-policies" element={<AgricultureSupport />} />
               <Route path="/centers/:centerName" element={<Centers />} />
+              <Route path="/blog" element={<Blog />} />
+              <Route path="/blog/:slug" element={<BlogPost />} />
               <Route path="*" element={<NotFound />} />
             </Routes>} />
             <Route path="*" element={<NotFound />} />
