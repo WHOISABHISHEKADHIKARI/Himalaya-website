@@ -20,9 +20,6 @@ const BlogPost = () => {
             }
         };
 
-        // Reset scroll position to top when component mounts
-        window.scrollTo(0, 0);
-
         fetchPost();
     }, [slug]);
 

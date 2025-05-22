@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
 
 const NewsAboutUs = () => {
@@ -53,11 +53,6 @@ const NewsAboutUs = () => {
       }
     }
   };
-
-  useEffect(() => {
-    // Reset scroll position to top when component mounts
-    window.scrollTo(0, 0);
-  }, []);
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-[#1C4E37]/5 via-white to-[#F4F9F1]/50">
