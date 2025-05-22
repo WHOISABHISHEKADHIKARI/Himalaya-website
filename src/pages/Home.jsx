@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import ScrollToTopButton from '../components/ScrollToTopButton';
 import { FaArrowRight } from "react-icons/fa";
 import { useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import SEO from '../components/SEO';
+import imag1 from '../assets/image/imag1.webp';
 import imag5 from '../assets/image/imag5.webp';
 import imag6 from '../assets/image/imag6.webp';
 import imag7 from '../assets/image/imag7.webp';
@@ -13,6 +15,8 @@ import ekrajVisit2 from '../assets/image/ekraj-visit-2.webp';
 import ekrajVisit3 from '../assets/image/ekraj-visit-3.webp';
 import ekrajVisit4 from '../assets/image/ekraj-visit-4.webp';
 import ekrajVisit5 from '../assets/image/ekraj-visit-5.webp';
+import FAQ from '../components/FAQ';
+import LinkedInProfile from '../components/LinkedInProfile';
 
 // Testimonial images array
 const testimonialImages = [
@@ -28,6 +32,25 @@ const stats = [
   { value: "1000+", label: "Farmers Empowered" },
   { value: "5000+", label: "Hectares Organic" },
   { value: "15+", label: "Years Experience" }
+];
+
+// Features array
+const features = [
+  {
+    icon: "🌱",
+    title: "Organic Excellence",
+    description: "Promoting sustainable organic farming practices across Nepal"
+  },
+  {
+    icon: "👨‍🌾",
+    title: "Expert Support",
+    description: "Guidance from experienced agricultural specialists"
+  },
+  {
+    icon: "🤝",
+    title: "Community Impact",
+    description: "Building stronger farming communities across Nepal"
+  }
 ];
 
 // Styles object
@@ -120,8 +143,6 @@ const Home = () => {
       setIsLoading(false);
     }, 2000);
 
-    // Reset scroll position to top when component mounts
-    window.scrollTo(0, 0);
     return () => clearTimeout(timer);
   }, []);
 
@@ -165,8 +186,8 @@ const Home = () => {
             ]
           })}
         </script>
-      </SEO>
-      <AnimatePresence>
+                </SEO>
+   <AnimatePresence>
         {isLoading ? (
           <motion.div
             initial={{ opacity: 1 }}
@@ -196,17 +217,12 @@ const Home = () => {
       {/* Hero Section */}
       <section 
         className="relative h-screen flex items-center pt-28"
+        style={{
+          backgroundImage: `url(${imag1})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center center'
+        }}
       >
-        {/* Video Background */}
-        <video
-          className="absolute inset-0 w-full h-full object-cover z-0"
-          src="/assets/video/farmvideo.mp4"
-          autoPlay
-          loop
-          muted
-          playsInline
-        />
-        {/* Overlay for darkening the video */}
         <div className="absolute inset-0" style={{ backgroundColor: colors.primary, opacity: 0.7 }}></div>
         <div className="container mx-auto px-4 relative z-10 text-center">
           <h1 className="text-4xl md:text-6xl font-serif font-bold mb-6" style={{ color: colors.text.light }}>
@@ -444,6 +460,7 @@ const Home = () => {
           </div>
         </div>
       </section>        
+      
     </div>
   );
 };
