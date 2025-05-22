@@ -13,23 +13,42 @@ const heroTextAnimation = {
 
 const Blog = () => {
     const [posts, setPosts] = useState([]);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
 
     useEffect(() => {
         const fetchPosts = async () => {
             try {
-                const response = await fetch('https://blogdata.dapirates.xyz/wp-json/wp/v2/posts?_embed=true');
+                setLoading(true);
+                const response = await fetch('https://blogdata.dapirates.xyz/wp-json/wp/v2/posts?_embed=true', {
+                    headers: {
+                        'Accept': 'application/json',
+                        'Content-Type': 'application/json',
+                    },
+                });
+                
+                if (!response.ok) {
+                    throw new Error('Failed to fetch blog posts');
+                }
+                
                 const data = await response.json();
                 setPosts(data);
             } catch (error) {
                 console.error('Error fetching posts:', error);
+                setError('Unable to load blog posts. Please try again later.');
+            } finally {
+                setLoading(false);
             }
         };
+
+        // Reset scroll position to top when component mounts
+        window.scrollTo(0, 0);
 
         fetchPosts();
     }, []);
 
     return (
-        <div className="min-h-screen bg-gradient-to-b from-[#1C4E37]/5 via-white to-[#F4F9F1]/50">
+        <div className="min-h-screen bg-gradient-to-b from-[#1C4E37]/5 via-white to-[#F4F9F1]/50 pt-3">
             {/* Decorative Elements */}
             <div className="absolute top-0 left-0 w-full h-64 bg-gradient-to-r from-[#1C4E37]/10 via-[#D8A51D]/5 to-[#1C4E37]/10 transform -skew-y-6"></div>
             <div className="absolute top-20 left-20 w-72 h-72 bg-[#D8A51D]/5 rounded-full blur-3xl animate-pulse"></div>
@@ -79,7 +98,21 @@ const Blog = () => {
                             transition={{ delay: 0.2, duration: 0.6 }}
                             className="grid grid-cols-1 gap-6"
                         >
-                            {posts.length === 0 ? (
+                            {loading ? (
+                                <div className="flex justify-center items-center py-8">
+                                    <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-[#D8A51D]"></div>
+                                </div>
+                            ) : error ? (
+                                <div className="text-center py-8">
+                                    <p className="text-red-500">{error}</p>
+                                    <button 
+                                        onClick={() => window.location.reload()} 
+                                        className="mt-4 px-4 py-2 bg-[#D8A51D] text-white rounded hover:bg-[#1C4E37] transition-colors"
+                                    >
+                                        Try Again
+                                    </button>
+                                </div>
+                            ) : posts.length === 0 ? (
                                 <p className="text-center text-gray-500">No blog posts available.</p>
                             ) : (
                                 posts.map(post => (
