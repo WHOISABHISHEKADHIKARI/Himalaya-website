@@ -183,21 +183,30 @@ const Footer = () => {
                 </a>
               </li>
               <li className="mt-4">
-                <button
-                  onClick={handleLanguageSwitch}
-                  className="w-full px-5 py-3.5 rounded-xl bg-gradient-to-r from-[#D8A51D] via-[#E3B543] to-[#B88A17] 
-                    text-white font-semibold transform hover:scale-105 active:scale-95 transition-all duration-300 
-                    shadow-lg hover:shadow-[#D8A51D]/30 flex items-center justify-center space-x-4 
-                    relative overflow-hidden border border-[#D8A51D]/10 hover:brightness-110"
-                  aria-label={language === 'en' ? 'Switch to Nepali' : 'Switch to English'}
-                >
-                  <div className="flex items-center justify-center space-x-4">
-                    <FaGlobe className="text-white text-xl transition-transform duration-500 ease-out group-hover:rotate-180" />
-                    <span className="tracking-wider text-lg font-medium">
-                      {language === 'en' ? 'नेपाली' : 'English'}
-                    </span>
-                  </div>
-                </button>
+                <div className="relative group cursor-pointer">
+                  <button
+                    onClick={handleLanguageSwitch}
+                    className="w-full px-5 py-3.5 rounded-xl bg-gradient-to-r from-[#D8A51D] via-[#E3B543] to-[#B88A17] 
+                      text-white font-semibold transform hover:scale-102 active:scale-98 transition-all duration-300 
+                      shadow-lg hover:shadow-[#D8A51D]/30 flex items-center justify-center space-x-4 
+                      relative z-10 overflow-hidden group border border-[#D8A51D]/10"
+                    aria-label={language === 'en' ? 'Switch to Nepali' : 'Switch to English'}
+                  >
+                    <div className="relative flex items-center justify-center space-x-4">
+                      <FaGlobe className="text-white text-xl group-hover:rotate-180 transition-transform duration-500 ease-out" />
+                      <span className="relative z-10 tracking-wider text-lg font-medium">
+                        {language === 'en' ? 'नेपाली' : 'English'}
+                      </span>
+                    </div>
+                    <div className="absolute inset-0 bg-gradient-to-r from-[#B88A17] via-[#D8A51D] to-[#B88A17] opacity-0 
+                      group-hover:opacity-100 transition-all duration-300 ease-out"></div>
+                    <div className="absolute inset-0 bg-black/5 opacity-0 group-hover:opacity-100 
+                      group-active:opacity-20 transition-opacity duration-200"></div>
+                  </button>
+                  <div className="absolute -inset-0.5 bg-gradient-to-r from-[#D8A51D] via-[#B88A17] to-[#D8A51D] 
+                    blur-md opacity-25 group-hover:opacity-40 transition-all duration-300 rounded-xl 
+                    group-active:opacity-50"></div>
+                </div>
               </li>
             </ul>
             {/* Removed the Google Map component and its Suspense wrapper */}

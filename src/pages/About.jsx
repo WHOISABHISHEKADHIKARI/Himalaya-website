@@ -43,9 +43,6 @@ const About = () => {
       setIsLoading(false);
     }, 2000); // Reduced from 3000ms
 
-    // Reset scroll position to top when component mounts
-    window.scrollTo(0, 0);
-
     // Back to top visibility handler and scroll progress
     const handleScroll = () => {
       setShowBackToTop(window.scrollY > 400);
