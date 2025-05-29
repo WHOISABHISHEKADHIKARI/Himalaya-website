@@ -10,14 +10,9 @@ export default defineConfig({
     rollupOptions: {
       output: {
         manualChunks: {
-<<<<<<< HEAD
-          vendor: ['react', 'react-dom', 'react-router-dom'],
-          ui: ['react-icons', 'framer-motion'],
-=======
           vendor: ['react', 'react-dom'],
           ui: ['react-icons', 'framer-motion'],
           routing: ['react-router-dom'],
->>>>>>> 3dc3a38f61b98bbe1af4ae2e3f9475f3b3fea703
           meta: ['react-helmet-async']
         },
         assetFileNames: (assetInfo) => {
@@ -30,28 +25,35 @@ export default defineConfig({
         entryFileNames: 'assets/js/[name]-[hash].js'
       }
     },
-    chunkSizeWarningLimit: 1000,
-    cssCodeSplit: true,
-    sourcemap: false,
-    minify: 'esbuild',
     target: 'esnext',
-    reportCompressedSize: false
-  },
-  optimizeDeps: {
-    include: ['react', 'react-dom', 'react-router-dom']
+    minify: 'esbuild',
+    sourcemap: false,
+    cssCodeSplit: true,
+    assetsInlineLimit: 4096
   },
   server: {
-    host: 'localhost',
     port: 5173,
-<<<<<<< HEAD
-    strictPort: true
-=======
-    strictPort: true,
-    https: {
-      key: process.env.SSL_KEY_FILE,
-      cert: process.env.SSL_CERT_FILE
+    host: true,
+    open: false,
+    cors: true,
+    headers: {
+      'Cross-Origin-Embedder-Policy': 'require-corp',
+      'Cross-Origin-Opener-Policy': 'same-origin',
+      ...securityConfig.headers
     }
->>>>>>> 3dc3a38f61b98bbe1af4ae2e3f9475f3b3fea703
+  },
+  preview: {
+    port: 4173,
+    host: true,
+    cors: true,
+    headers: {
+      'Cross-Origin-Embedder-Policy': 'require-corp',
+      'Cross-Origin-Opener-Policy': 'same-origin',
+      ...securityConfig.headers
+    }
+  },
+  define: {
+    __DEV__: JSON.stringify(process.env.NODE_ENV === 'development')
   }
 })
 
