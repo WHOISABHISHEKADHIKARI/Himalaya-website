@@ -10,8 +10,14 @@ export default defineConfig({
     rollupOptions: {
       output: {
         manualChunks: {
+<<<<<<< HEAD
           vendor: ['react', 'react-dom', 'react-router-dom'],
           ui: ['react-icons', 'framer-motion'],
+=======
+          vendor: ['react', 'react-dom'],
+          ui: ['react-icons', 'framer-motion'],
+          routing: ['react-router-dom'],
+>>>>>>> 3dc3a38f61b98bbe1af4ae2e3f9475f3b3fea703
           meta: ['react-helmet-async']
         },
         assetFileNames: (assetInfo) => {
@@ -37,7 +43,15 @@ export default defineConfig({
   server: {
     host: 'localhost',
     port: 5173,
+<<<<<<< HEAD
     strictPort: true
+=======
+    strictPort: true,
+    https: {
+      key: process.env.SSL_KEY_FILE,
+      cert: process.env.SSL_CERT_FILE
+    }
+>>>>>>> 3dc3a38f61b98bbe1af4ae2e3f9475f3b3fea703
   }
 })
 
