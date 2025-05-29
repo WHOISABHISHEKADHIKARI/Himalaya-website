@@ -4,6 +4,19 @@ import { Link } from 'react-router-dom';
 import { FaCalendar, FaUser, FaTags } from 'react-icons/fa';
 import logo from '../assets/logo/whitelogo-blackbg-removebg-preview.webp';
 
+// Premium color palette
+const colors = {
+    primary: '#1C4E37', // Deep forest green
+    secondary: '#D8A51D', // Rich gold
+    light: '#F4F9F1', // Soft sage white
+    accent: '#8C3E2F', // Terracotta
+    background: {
+        primary: '#F4F9F1',
+        card: '#FFFFFF',
+        accent: 'rgba(216, 165, 29, 0.07)'
+    }
+};
+
 const Blog = () => {
     const [posts, setPosts] = useState([]);
     const [loading, setLoading] = useState(true);
@@ -84,18 +97,21 @@ const Blog = () => {
                         </div>
                     ) : (
                         posts.map(post => (
-                            <Link key={post.id} to={`/blog/${post.slug}`} className="block">
+                            <Link key={post.id} to={`/blog/${post.slug}`} className="block h-full">
                                 <motion.div
                                     initial={{ opacity: 0, y: 20 }}
                                     animate={{ opacity: 1, y: 0 }}
-                                    className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 cursor-pointer"
+                                    className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl hover:scale-[1.02] transition-all duration-300 cursor-pointer h-full flex flex-col"
                                 >
-                                    <div className="w-full h-48 bg-gray-100 flex items-center justify-center overflow-hidden">
+                                    <div className="w-full h-48 bg-[#1C4E37] flex items-center justify-center overflow-hidden flex-shrink-0 relative">
+                                        {/* Clean overlay for consistency */}
+                                        <div className="absolute inset-0 bg-gradient-to-br from-black/10 via-transparent to-[#D8A51D]/20"></div>
+                                        
                                         {post._embedded?.['wp:featuredmedia'] ? (
                                             <img
                                                 src={post._embedded['wp:featuredmedia'][0].source_url}
                                                 alt={post.title.rendered}
-                                                className="w-full h-full object-cover"
+                                                className="w-full h-full object-cover relative z-10 opacity-80"
                                                 onError={(e) => {
                                                     e.target.style.display = 'none';
                                                     e.target.nextSibling.style.display = 'flex';
@@ -103,17 +119,17 @@ const Blog = () => {
                                             />
                                         ) : null}
                                         <div 
-                                            className="w-full h-full flex items-center justify-center bg-gray-50"
+                                            className="w-full h-full flex items-center justify-center relative z-10"
                                             style={{ display: post._embedded?.['wp:featuredmedia'] ? 'none' : 'flex' }}
                                         >
                                             <img 
                                                 src={logo} 
                                                 alt="Himalaya Krishi Logo" 
-                                                className="h-20 w-auto opacity-80"
+                                                className="h-20 w-auto opacity-90 filter brightness-0 invert"
                                             />
                                         </div>
                                     </div>
-                                    <div className="p-6">
+                                    <div className="p-6 flex flex-col flex-grow">
                                         <div className="flex items-center gap-4 text-sm text-gray-500 mb-3">
                                             <span className="flex items-center">
                                                 <FaCalendar className="mr-1" />
@@ -124,14 +140,14 @@ const Blog = () => {
                                                 Admin
                                             </span>
                                         </div>
-                                        <h2 className="text-xl font-bold text-[#1C4E37] mb-3 hover:text-[#D8A51D] transition-colors"
+                                        <h2 className="text-xl font-bold text-[#1C4E37] mb-3 hover:text-[#D8A51D] transition-colors line-clamp-2"
                                             dangerouslySetInnerHTML={{ __html: post.title.rendered }}
                                         />
                                         <div 
-                                            className="text-gray-600 mb-4 line-clamp-3"
+                                            className="text-gray-600 mb-4 line-clamp-3 flex-grow"
                                             dangerouslySetInnerHTML={{ __html: post.excerpt.rendered }}
                                         />
-                                        <span className="inline-flex items-center text-[#D8A51D] hover:text-[#1C4E37] transition-colors">
+                                        <span className="inline-flex items-center text-[#D8A51D] hover:text-[#1C4E37] transition-colors mt-auto">
                                             Read More →
                                         </span>
                                     </div>
