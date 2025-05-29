@@ -11,7 +11,7 @@
     "lint:fix": "eslint . --ext js,jsx --fix",
     "analyze": "vite-bundle-visualizer",
     "optimize:images": "node scripts/optimize-logo-new.js",
-    "clean": "del-cli dist",
+    "clean": "rimraf dist",
     "prebuild": "npm run clean",
     "postbuild": "echo 'Build completed successfully'",
     "security": "npm audit fix --force",
@@ -21,5 +21,8 @@
     "test": "vitest",
     "test:coverage": "vitest run --coverage",
     "format": "prettier --write \"src/**/*.{js,jsx,css,md}\""
+  },
+  "dependencies": {
+    "rimraf": "^5.0.1"
   }
 }
