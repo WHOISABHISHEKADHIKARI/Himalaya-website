@@ -1,62 +1,63 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-<<<<<<< HEAD
-  
   <url>
-    <loc>https://www.krishihimalaya.com/</loc>
-    <changefreq>daily</changefreq>
-    <priority>1</priority>
-  </url>
-  <url>
-    <loc>https://www.krishihimalaya.com/blog/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-=======
-  <url>
-    <loc>https://www.krishihimalaya.com/</loc>
+    <loc>https://krishihimalaya.com/</loc>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
+    <lastmod>2024-12-19</lastmod>
   </url>
   <url>
-    <loc>https://www.krishihimalaya.com/about</loc>
+    <loc>https://krishihimalaya.com/about</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+    <lastmod>2024-12-19</lastmod>
   </url>
   <url>
-    <loc>https://www.krishihimalaya.com/vision</loc>
+    <loc>https://krishihimalaya.com/blog</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2024-12-19</lastmod>
+  </url>
+  <url>
+    <loc>https://krishihimalaya.com/contact</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2024-12-19</lastmod>
+  </url>
+  <url>
+    <loc>https://krishihimalaya.com/vision</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <lastmod>2024-12-19</lastmod>
   </url>
   <url>
-    <loc>https://www.krishihimalaya.com/contact</loc>
+    <loc>https://krishihimalaya.com/agriculture-support</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <lastmod>2024-12-19</lastmod>
   </url>
   <url>
-    <loc>https://www.krishihimalaya.com/seo</loc>
+    <loc>https://krishihimalaya.com/centers</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
+    <priority>0.7</priority>
+    <lastmod>2024-12-19</lastmod>
   </url>
   <url>
-    <loc>https://www.krishihimalaya.com/NewsAboutUs</loc>
+    <loc>https://krishihimalaya.com/careers</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
+    <lastmod>2024-12-19</lastmod>
   </url>
   <url>
-    <loc>https://www.krishihimalaya.com/faq</loc>
+    <loc>https://krishihimalaya.com/faq</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <lastmod>2024-12-19</lastmod>
   </url>
   <url>
-    <loc>https://www.krishihimalaya.com/careers</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.krishihimalaya.com/terms</loc>
+    <loc>https://krishihimalaya.com/terms</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
+    <lastmod>2024-12-19</lastmod>
   </url>
->>>>>>> 3dc3a38f61b98bbe1af4ae2e3f9475f3b3fea703
 </urlset>

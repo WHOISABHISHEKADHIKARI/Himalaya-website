@@ -1,12 +1,28 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
+import { compression } from 'vite-plugin-compression'
 import securityConfig from './src/security/config'
 
 export default defineConfig({
   root: './',
   base: '/',
-  plugins: [react()],
+  plugins: [
+    react(),
+    compression({
+      algorithm: 'gzip',
+      ext: '.gz'
+    }),
+    compression({
+      algorithm: 'brotliCompress',
+      ext: '.br'
+    })
+  ],
   build: {
+    target: 'esnext',
+    minify: 'esbuild',
+    sourcemap: false,
+    cssCodeSplit: true,
+    assetsInlineLimit: 4096,
     rollupOptions: {
       output: {
         manualChunks: {
@@ -24,12 +40,7 @@ export default defineConfig({
         chunkFileNames: 'assets/js/[name]-[hash].js',
         entryFileNames: 'assets/js/[name]-[hash].js'
       }
-    },
-    target: 'esnext',
-    minify: 'esbuild',
-    sourcemap: false,
-    cssCodeSplit: true,
-    assetsInlineLimit: 4096
+    }
   },
   server: {
     port: 5173,
