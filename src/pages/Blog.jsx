@@ -103,13 +103,32 @@ const Blog = () => {
                                             />
                                         ) : null}
                                         <div 
-                                            className={`w-full h-full flex items-center justify-center bg-bedded?.['                                  style={{ display: post._embedded?.['wp:featuredmedia'] ? 'none' : 'flex' }}
+                                            className="w-full h-full flex items-center justify-center bg-gray-50"
+                                            style={{ display: post._embedded?.['wp:featuredmedia'] ? 'none' : 'flex' }}
                                         >
-                             lsName="h-20 w-auto opacity-80"
-   >                              </div>
-                 "asName="flex items-center gap-4 text-sm text-gra0   n                          </span>
+                                            <img 
+                                                src={logo} 
+                                                alt="Himalaya Krishi Logo" 
+                                                className="h-20 w-auto opacity-80"
+                                            />
                                         </div>
-                                    <h2 className="text-xl fon20bo[#1C4hover:ten                                  className="tex-y-600 mb-4 line-clamp-3"
+                                    </div>
+                                    <div className="p-6">
+                                        <div className="flex items-center gap-4 text-sm text-gray-500 mb-3">
+                                            <span className="flex items-center">
+                                                <FaCalendar className="mr-1" />
+                                                {new Date(post.date).toLocaleDateString()}
+                                            </span>
+                                            <span className="flex items-center">
+                                                <FaUser className="mr-1" />
+                                                Admin
+                                            </span>
+                                        </div>
+                                        <h2 className="text-xl font-bold text-[#1C4E37] mb-3 hover:text-[#D8A51D] transition-colors"
+                                            dangerouslySetInnerHTML={{ __html: post.title.rendered }}
+                                        />
+                                        <div 
+                                            className="text-gray-600 mb-4 line-clamp-3"
                                             dangerouslySetInnerHTML={{ __html: post.excerpt.rendered }}
                                         />
                                         <span className="inline-flex items-center text-[#D8A51D] hover:text-[#1C4E37] transition-colors">

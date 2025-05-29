@@ -18,11 +18,7 @@
   },
   "dependencies": {
     "@vercel/analytics": "^1.5.0",
-<<<<<<< HEAD
     "framer-motion": "^12.15.0",
-=======
-    "framer-motion": "^12.5.0",
->>>>>>> 3dc3a38f61b98bbe1af4ae2e3f9475f3b3fea703
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-helmet-async": "^2.0.5",
@@ -31,18 +27,11 @@
     "sharp": "^0.33.5"
   },
   "devDependencies": {
-<<<<<<< HEAD
     "@eslint/eslintrc": "^2.1.4",
-=======
->>>>>>> 3dc3a38f61b98bbe1af4ae2e3f9475f3b3fea703
     "@vitejs/plugin-react": "^4.2.1",
     "autoprefixer": "^10.4.21",
     "del-cli": "^5.1.0",
     "eslint": "^8.56.0",
-<<<<<<< HEAD
-=======
-    "@eslint/eslintrc": "^2.1.4",
->>>>>>> 3dc3a38f61b98bbe1af4ae2e3f9475f3b3fea703
     "globby": "^14.0.0",
     "postcss": "^8.5.3",
     "tailwindcss": "^3.4.17",
