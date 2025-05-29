@@ -17,6 +17,54 @@ const colors = {
     }
 };
 
+// Add Helmet import
+import { Helmet } from 'react-helmet-async';
+
+// Add structured data for blog listing
+const generateBlogStructuredData = () => {
+    return {
+        "@context": "https://schema.org",
+        "@type": "Blog",
+        "name": "Himalaya Krishi Blog",
+        "description": "Latest insights on organic farming, sustainable agriculture, and agricultural technology in Nepal",
+        "url": "https://himalayakrishi.com/blog",
+        "publisher": {
+            "@type": "Organization",
+            "name": "Himalaya Krishi",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://himalayakrishi.com/logo_512.png"
+            }
+        },
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://himalayakrishi.com/blog"
+        }
+    };
+};
+
+// Add breadcrumb structured data
+const generateBreadcrumbData = () => {
+    return {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://himalayakrishi.com"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Blog",
+                "item": "https://himalayakrishi.com/blog"
+            }
+        ]
+    };
+};
+
 const Blog = () => {
     const [posts, setPosts] = useState([]);
     const [loading, setLoading] = useState(true);
@@ -178,3 +226,36 @@ const Blog = () => {
 };
 
 export default Blog;
+
+// Add this after the opening div in Blog component
+<Helmet>
+    <title>Blog | Himalaya Krishi - Organic Farming Insights & Agricultural News Nepal</title>
+    <meta name="description" content="Discover the latest insights on organic farming, sustainable agriculture, and agricultural technology in Nepal. Expert advice and updates from Himalaya Krishi." />
+    <meta name="keywords" content="organic farming blog, sustainable agriculture Nepal, farming tips, agricultural technology, Himalaya Krishi news" />
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
+    
+    {/* Open Graph Meta Tags */}
+    <meta property="og:title" content="Himalaya Krishi Blog - Organic Farming Insights Nepal" />
+    <meta property="og:description" content="Discover the latest insights on organic farming, sustainable agriculture, and agricultural technology in Nepal." />
+    <meta property="og:image" content="/logo_512.png" />
+    <meta property="og:url" content="https://himalayakrishi.com/blog" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Himalaya Krishi" />
+    
+    {/* Twitter Card Meta Tags */}
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Himalaya Krishi Blog - Organic Farming Insights Nepal" />
+    <meta name="twitter:description" content="Discover the latest insights on organic farming, sustainable agriculture, and agricultural technology in Nepal." />
+    <meta name="twitter:image" content="/logo_512.png" />
+    
+    {/* Structured Data */}
+    <script type="application/ld+json">
+        {JSON.stringify(generateBlogStructuredData())}
+    </script>
+    <script type="application/ld+json">
+        {JSON.stringify(generateBreadcrumbData())}
+    </script>
+    
+    {/* Canonical URL */}
+    <link rel="canonical" href="https://himalayakrishi.com/blog" />
+</Helmet>
