@@ -103,44 +103,13 @@ const Blog = () => {
                                             />
                                         ) : null}
                                         <div 
-                                            className={`w-full h-full flex items-center justify-center bg-gradient-to-br from-[#1C4E37] via-[#2A5F47] to-[#1C4E37] relative overflow-hidden ${post._embedded?.['wp:featuredmedia'] ? 'hidden' : 'flex'}`}
-                                            style={{ display: post._embedded?.['wp:featuredmedia'] ? 'none' : 'flex' }}
+                                            className={`w-full h-full flex items-center justify-center bg-bedded?.['                                  style={{ display: post._embedded?.['wp:featuredmedia'] ? 'none' : 'flex' }}
                                         >
-                                            {/* Decorative Pattern */}
-                                            <div className="absolute inset-0 opacity-10">
-                                                <div className="absolute top-4 left-4 w-8 h-8 border-2 border-white/30 rounded-full"></div>
-                                                <div className="absolute top-8 right-6 w-4 h-4 border border-white/20 rotate-45"></div>
-                                                <div className="absolute bottom-6 left-8 w-6 h-6 border border-white/25 rounded-full"></div>
-                                                <div className="absolute bottom-4 right-4 w-3 h-3 bg-white/20 rounded-full"></div>
-                                            </div>
-                                            
-                                            {/* Logo */}
-                                            <div className="relative z-10 text-center">
-                                                <img
-                                                    src={logo}
-                                                    alt="Himalaya Krishi Logo"
-                                                    className="h-16 w-auto mx-auto mb-2 opacity-90 filter drop-shadow-lg"
-                                                />
-                                                <p className="text-white/80 text-xs font-medium tracking-wide">Himalaya Krishi</p>
-                                            </div>
+                             lsName="h-20 w-auto opacity-80"
+   >                              </div>
+                 "asName="flex items-center gap-4 text-sm text-gra0   n                          </span>
                                         </div>
-                                    </div>
-                                    <div className="p-6">
-                                        <div className="flex items-center gap-4 text-sm text-gray-500 mb-4">
-                                            <span className="flex items-center gap-1">
-                                                <FaCalendar className="text-[#D8A51D]" />
-                                                {new Date(post.date).toLocaleDateString()}
-                                            </span>
-                                            <span className="flex items-center gap-1">
-                                                <FaUser className="text-[#D8A51D]" />
-                                                Admin
-                                            </span>
-                                        </div>
-                                        <h2 className="text-xl font-bold text-[#1C4E37] hover:text-[#D8A51D] transition-colors mb-3">
-                                            {post.title.rendered}
-                                        </h2>
-                                        <div
-                                            className="text-gray-600 mb-4 line-clamp-3"
+                                    <h2 className="text-xl fon20bo[#1C4hover:ten                                  className="tex-y-600 mb-4 line-clamp-3"
                                             dangerouslySetInnerHTML={{ __html: post.excerpt.rendered }}
                                         />
                                         <span className="inline-flex items-center text-[#D8A51D] hover:text-[#1C4E37] transition-colors">
