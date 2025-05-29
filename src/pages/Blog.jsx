@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { FaCalendar, FaUser, FaTags } from 'react-icons/fa';
 import logo from '../assets/logo/whitelogo-blackbg-removebg-preview.webp';
+import { Helmet } from 'react-helmet-async';
 
 // Premium color palette
 const colors = {
@@ -17,8 +18,101 @@ const colors = {
     }
 };
 
-// Add Helmet import
-import { Helmet } from 'react-helmet-async';
+// Skeleton Card Component
+const SkeletonCard = () => (
+    <div className="bg-white rounded-2xl shadow-lg overflow-hidden h-full flex flex-col animate-pulse">
+        {/* Image skeleton */}
+        <div className="w-full h-48 bg-gray-200 flex-shrink-0"></div>
+        
+        {/* Content skeleton */}
+        <div className="p-6 flex flex-col flex-grow">
+            {/* Meta info skeleton */}
+            <div className="flex items-center gap-4 mb-3">
+                <div className="h-4 bg-gray-200 rounded w-24"></div>
+                <div className="h-4 bg-gray-200 rounded w-20"></div>
+            </div>
+            
+            {/* Title skeleton */}
+            <div className="space-y-2 mb-3">
+                <div className="h-6 bg-gray-200 rounded w-full"></div>
+                <div className="h-6 bg-gray-200 rounded w-3/4"></div>
+            </div>
+            
+            {/* Excerpt skeleton */}
+            <div className="space-y-2 mb-4 flex-grow">
+                <div className="h-4 bg-gray-200 rounded w-full"></div>
+                <div className="h-4 bg-gray-200 rounded w-full"></div>
+                <div className="h-4 bg-gray-200 rounded w-2/3"></div>
+            </div>
+            
+            {/* Read more skeleton */}
+            <div className="h-4 bg-gray-200 rounded w-24 mt-auto"></div>
+        </div>
+    </div>
+);
+
+// Blog Card Component
+const BlogCard = ({ post, index }) => (
+    <Link key={post.id} to={`/blog/${post.slug}`} className="block h-full">
+        <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: index * 0.1 }}
+            className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl hover:scale-[1.02] transition-all duration-300 cursor-pointer h-full flex flex-col"
+        >
+            <div className="w-full h-48 bg-[#1C4E37] flex items-center justify-center overflow-hidden flex-shrink-0 relative">
+                {/* Clean overlay for consistency */}
+                <div className="absolute inset-0 bg-gradient-to-br from-black/10 via-transparent to-[#D8A51D]/20"></div>
+                
+                {post._embedded?.['wp:featuredmedia'] ? (
+                    <img
+                        src={post._embedded['wp:featuredmedia'][0].source_url}
+                        alt={post.title.rendered}
+                        className="w-full h-full object-cover relative z-10 opacity-80"
+                        loading="lazy"
+                        onError={(e) => {
+                            e.target.style.display = 'none';
+                            e.target.nextSibling.style.display = 'flex';
+                        }}
+                    />
+                ) : null}
+                <div 
+                    className="w-full h-full flex items-center justify-center relative z-10"
+                    style={{ display: post._embedded?.['wp:featuredmedia'] ? 'none' : 'flex' }}
+                >
+                    <img 
+                        src={logo} 
+                        alt="Himalaya Krishi Logo" 
+                        className="h-20 w-auto opacity-90 filter brightness-0 invert"
+                        loading="lazy"
+                    />
+                </div>
+            </div>
+            <div className="p-6 flex flex-col flex-grow">
+                <div className="flex items-center gap-4 text-sm text-gray-500 mb-3">
+                    <span className="flex items-center">
+                        <FaCalendar className="mr-1" />
+                        {new Date(post.date).toLocaleDateString()}
+                    </span>
+                    <span className="flex items-center">
+                        <FaUser className="mr-1" />
+                        Admin
+                    </span>
+                </div>
+                <h2 className="text-xl font-bold text-[#1C4E37] mb-3 hover:text-[#D8A51D] transition-colors line-clamp-2"
+                    dangerouslySetInnerHTML={{ __html: post.title.rendered }}
+                />
+                <div 
+                    className="text-gray-600 mb-4 line-clamp-3 flex-grow"
+                    dangerouslySetInnerHTML={{ __html: post.excerpt.rendered }}
+                />
+                <span className="inline-flex items-center text-[#D8A51D] hover:text-[#1C4E37] transition-colors mt-auto">
+                    Read More →
+                </span>
+            </div>
+        </motion.div>
+    </Link>
+);
 
 // Add structured data for blog listing
 const generateBlogStructuredData = () => {
@@ -69,13 +163,19 @@ const Blog = () => {
     const [posts, setPosts] = useState([]);
     const [loading, setLoading] = useState(true);
     const [filter, setFilter] = useState('all');
+    const [displayedPosts, setDisplayedPosts] = useState([]);
+    const [loadingMore, setLoadingMore] = useState(false);
+    const [page, setPage] = useState(1);
+    const postsPerPage = 6;
 
     useEffect(() => {
         const fetchPosts = async () => {
             try {
-                const response = await fetch('https://blogdata.dapirates.xyz/wp-json/wp/v2/posts?_embed=true');
+                setLoading(true);
+                const response = await fetch('https://blogdata.dapirates.xyz/wp-json/wp/v2/posts?_embed=true&per_page=20');
                 const data = await response.json();
                 setPosts(data);
+                setDisplayedPosts(data.slice(0, postsPerPage));
                 setLoading(false);
             } catch (error) {
                 console.error('Error fetching posts:', error);
@@ -85,8 +185,56 @@ const Blog = () => {
         fetchPosts();
     }, []);
 
+    const loadMorePosts = () => {
+        setLoadingMore(true);
+        setTimeout(() => {
+            const nextPage = page + 1;
+            const startIndex = (nextPage - 1) * postsPerPage;
+            const endIndex = startIndex + postsPerPage;
+            const newPosts = posts.slice(startIndex, endIndex);
+            
+            setDisplayedPosts(prev => [...prev, ...newPosts]);
+            setPage(nextPage);
+            setLoadingMore(false);
+        }, 500); // Simulate loading delay
+    };
+
+    const hasMorePosts = displayedPosts.length < posts.length;
+
     return (
         <div className="min-h-screen bg-gradient-to-b from-[#1C4E37]/5 via-white to-[#F4F9F1]/50">
+            <Helmet>
+                <title>Blog | Himalaya Krishi - Organic Farming Insights & Agricultural News Nepal</title>
+                <meta name="description" content="Discover the latest insights on organic farming, sustainable agriculture, and agricultural technology in Nepal. Expert advice and updates from Himalaya Krishi." />
+                <meta name="keywords" content="organic farming blog, sustainable agriculture Nepal, farming tips, agricultural technology, Himalaya Krishi news" />
+                <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
+                
+                {/* Open Graph Meta Tags */}
+                <meta property="og:title" content="Himalaya Krishi Blog - Organic Farming Insights Nepal" />
+                <meta property="og:description" content="Discover the latest insights on organic farming, sustainable agriculture, and agricultural technology in Nepal." />
+                <meta property="og:image" content="/logo_512.png" />
+                <meta property="og:url" content="https://himalayakrishi.com/blog" />
+                <meta property="og:type" content="website" />
+                <meta property="og:site_name" content="Himalaya Krishi" />
+                
+                {/* Twitter Card Meta Tags */}
+                <meta name="twitter:card" content="summary_large_image" />
+                <meta name="twitter:title" content="Himalaya Krishi Blog - Organic Farming Insights Nepal" />
+                <meta name="twitter:description" content="Discover the latest insights on organic farming, sustainable agriculture, and agricultural technology in Nepal." />
+                <meta name="twitter:image" content="/logo_512.png" />
+                
+                {/* Structured Data */}
+                <script type="application/ld+json">
+                    {JSON.stringify(generateBlogStructuredData())}
+                </script>
+                <script type="application/ld+json">
+                    {JSON.stringify(generateBreadcrumbData())}
+                </script>
+                
+                {/* Canonical URL */}
+                <link rel="canonical" href="https://himalayakrishi.com/blog" />
+            </Helmet>
+
             {/* Hero Section with Search */}
             <div className="relative overflow-hidden py-20 bg-[#1C4E37]">
                 <div className="container mx-auto px-4">
@@ -136,126 +284,43 @@ const Blog = () => {
                 {/* Blog Grid */}
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {loading ? (
-                        <div className="col-span-full text-center py-20">
-                            <div className="animate-spin rounded-full h-12 w-12 border-4 border-[#1C4E37] border-t-transparent mx-auto"></div>
-                        </div>
-                    ) : posts.length === 0 ? (
+                        // Show skeleton cards while loading
+                        Array.from({ length: 6 }).map((_, index) => (
+                            <SkeletonCard key={index} />
+                        ))
+                    ) : displayedPosts.length === 0 ? (
                         <div className="col-span-full text-center py-20">
                             <p className="text-gray-500">No blog posts available.</p>
                         </div>
                     ) : (
-                        posts.map(post => (
-                            <Link key={post.id} to={`/blog/${post.slug}`} className="block h-full">
-                                <motion.div
-                                    initial={{ opacity: 0, y: 20 }}
-                                    animate={{ opacity: 1, y: 0 }}
-                                    className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl hover:scale-[1.02] transition-all duration-300 cursor-pointer h-full flex flex-col"
-                                >
-                                    <div className="w-full h-48 bg-[#1C4E37] flex items-center justify-center overflow-hidden flex-shrink-0 relative">
-                                        {/* Clean overlay for consistency */}
-                                        <div className="absolute inset-0 bg-gradient-to-br from-black/10 via-transparent to-[#D8A51D]/20"></div>
-                                        
-                                        {post._embedded?.['wp:featuredmedia'] ? (
-                                            <img
-                                                src={post._embedded['wp:featuredmedia'][0].source_url}
-                                                alt={post.title.rendered}
-                                                className="w-full h-full object-cover relative z-10 opacity-80"
-                                                onError={(e) => {
-                                                    e.target.style.display = 'none';
-                                                    e.target.nextSibling.style.display = 'flex';
-                                                }}
-                                            />
-                                        ) : null}
-                                        <div 
-                                            className="w-full h-full flex items-center justify-center relative z-10"
-                                            style={{ display: post._embedded?.['wp:featuredmedia'] ? 'none' : 'flex' }}
-                                        >
-                                            <img 
-                                                src={logo} 
-                                                alt="Himalaya Krishi Logo" 
-                                                className="h-20 w-auto opacity-90 filter brightness-0 invert"
-                                            />
-                                        </div>
-                                    </div>
-                                    <div className="p-6 flex flex-col flex-grow">
-                                        <div className="flex items-center gap-4 text-sm text-gray-500 mb-3">
-                                            <span className="flex items-center">
-                                                <FaCalendar className="mr-1" />
-                                                {new Date(post.date).toLocaleDateString()}
-                                            </span>
-                                            <span className="flex items-center">
-                                                <FaUser className="mr-1" />
-                                                Admin
-                                            </span>
-                                        </div>
-                                        <h2 className="text-xl font-bold text-[#1C4E37] mb-3 hover:text-[#D8A51D] transition-colors line-clamp-2"
-                                            dangerouslySetInnerHTML={{ __html: post.title.rendered }}
-                                        />
-                                        <div 
-                                            className="text-gray-600 mb-4 line-clamp-3 flex-grow"
-                                            dangerouslySetInnerHTML={{ __html: post.excerpt.rendered }}
-                                        />
-                                        <span className="inline-flex items-center text-[#D8A51D] hover:text-[#1C4E37] transition-colors mt-auto">
-                                            Read More →
-                                        </span>
-                                    </div>
-                                </motion.div>
-                            </Link>
+                        displayedPosts.map((post, index) => (
+                            <BlogCard key={post.id} post={post} index={index} />
+                        ))
+                    )}
+                    
+                    {/* Show skeleton cards while loading more */}
+                    {loadingMore && (
+                        Array.from({ length: 3 }).map((_, index) => (
+                            <SkeletonCard key={`loading-${index}`} />
                         ))
                     )}
                 </div>
 
-                {/* Pagination */}
-                <div className="flex justify-center mt-12 gap-2">
-                    {[1, 2, 3].map(page => (
+                {/* Load More Button */}
+                {!loading && hasMorePosts && (
+                    <div className="flex justify-center mt-12">
                         <button
-                            key={page}
-                            className={`w-10 h-10 rounded-full flex items-center justify-center ${
-                                page === 1
-                                    ? 'bg-[#1C4E37] text-white'
-                                    : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
-                            }`}
+                            onClick={loadMorePosts}
+                            disabled={loadingMore}
+                            className="px-8 py-3 bg-[#1C4E37] text-white rounded-full hover:bg-[#D8A51D] transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                         >
-                            {page}
+                            {loadingMore ? 'Loading...' : 'Load More Posts'}
                         </button>
-                    ))}
-                </div>
+                    </div>
+                )}
             </div>
         </div>
     );
 };
 
 export default Blog;
-
-// Add this after the opening div in Blog component
-<Helmet>
-    <title>Blog | Himalaya Krishi - Organic Farming Insights & Agricultural News Nepal</title>
-    <meta name="description" content="Discover the latest insights on organic farming, sustainable agriculture, and agricultural technology in Nepal. Expert advice and updates from Himalaya Krishi." />
-    <meta name="keywords" content="organic farming blog, sustainable agriculture Nepal, farming tips, agricultural technology, Himalaya Krishi news" />
-    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
-    
-    {/* Open Graph Meta Tags */}
-    <meta property="og:title" content="Himalaya Krishi Blog - Organic Farming Insights Nepal" />
-    <meta property="og:description" content="Discover the latest insights on organic farming, sustainable agriculture, and agricultural technology in Nepal." />
-    <meta property="og:image" content="/logo_512.png" />
-    <meta property="og:url" content="https://himalayakrishi.com/blog" />
-    <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="Himalaya Krishi" />
-    
-    {/* Twitter Card Meta Tags */}
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Himalaya Krishi Blog - Organic Farming Insights Nepal" />
-    <meta name="twitter:description" content="Discover the latest insights on organic farming, sustainable agriculture, and agricultural technology in Nepal." />
-    <meta name="twitter:image" content="/logo_512.png" />
-    
-    {/* Structured Data */}
-    <script type="application/ld+json">
-        {JSON.stringify(generateBlogStructuredData())}
-    </script>
-    <script type="application/ld+json">
-        {JSON.stringify(generateBreadcrumbData())}
-    </script>
-    
-    {/* Canonical URL */}
-    <link rel="canonical" href="https://himalayakrishi.com/blog" />
-</Helmet>
