@@ -1,21 +1,22 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
-import compression from 'vite-plugin-compression'
+// import { compression } from 'vite-plugin-compression'  // Comment out
 import securityConfig from './src/security/config'
 
 export default defineConfig({
   root: './',
   base: '/',
   plugins: [
-    react(),
-    compression({
-      algorithm: 'gzip',
-      ext: '.gz'
-    }),
-    compression({
-      algorithm: 'brotliCompress',
-      ext: '.br'
-    })
+    react()
+    // Remove compression plugins temporarily
+    // compression({
+    //   algorithm: 'gzip',
+    //   ext: '.gz'
+    // }),
+    // compression({
+    //   algorithm: 'brotliCompress',
+    //   ext: '.br'
+    // })
   ],
   build: {
     target: 'esnext',
