@@ -236,7 +236,7 @@ const Blog = () => {
             </Helmet>
 
             {/* Hero Section with Search */}
-            <div className="relative overflow-hidden py-20 bg-[#1C4E37]">
+            <div className="relative overflow-hidden py-20 bg-[#1C4E37] mt-16">
                 <div className="container mx-auto px-4">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
