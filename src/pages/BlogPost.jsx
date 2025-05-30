@@ -69,11 +69,59 @@ const BlogPost = () => {
     const [relatedPosts, setRelatedPosts] = useState([]);
     const [scrollProgress, setScrollProgress] = useState(0);
     const [isLoaded, setIsLoaded] = useState(false);
+    const [currentPOV, setCurrentPOV] = useState('reader');
+    const [isPreviewMode, setIsPreviewMode] = useState(false);
 
     // Helper function to get canonical URL for the blog post
     const getCanonicalUrl = () => {
         const baseUrl = 'https://krishihimalaya.com';
         return `${baseUrl}/blog/${slug}`;
+    };
+
+    // Transform content based on POV
+    const transformContent = (content) => {
+        if (!content) return '';
+        
+        switch(currentPOV) {
+            case 'farmer':
+                return `
+                    <div class="farmer-view">
+                        <div class="pov-header bg-[#1C4E37]/10 p-4 rounded-lg mb-6">
+                            <h4 class="text-[#1C4E37] font-bold mb-2">Farmer's Perspective</h4>
+                            <p class="text-[#3A5944]">Practical insights for agricultural implementation</p>
+                        </div>
+                        ${content}
+                        <div class="practical-tips mt-8 bg-[#F4F9F1] p-6 rounded-xl border border-[#1C4E37]/20">
+                            <h5 class="text-[#1C4E37] font-bold mb-4">Quick Implementation Guide</h5>
+                            <ul class="space-y-3">
+                                <li class="flex items-center"><span class="mr-2">🌱</span> Step-by-step application</li>
+                                <li class="flex items-center"><span class="mr-2">⚡</span> Resource requirements</li>
+                                <li class="flex items-center"><span class="mr-2">💰</span> Expected outcomes</li>
+                            </ul>
+                        </div>
+                    </div>
+                `;
+            case 'expert':
+                return `
+                    <div class="expert-view">
+                        <div class="pov-header bg-[#D8A51D]/10 p-4 rounded-lg mb-6">
+                            <h4 class="text-[#D8A51D] font-bold mb-2">Expert Analysis</h4>
+                            <p class="text-[#3A5944]">Technical breakdown and research insights</p>
+                        </div>
+                        ${content}
+                        <div class="technical-notes mt-8 bg-[#F4F9F1] p-6 rounded-xl border border-[#D8A51D]/20">
+                            <h5 class="text-[#D8A51D] font-bold mb-4">Research Notes</h5>
+                            <ul class="space-y-3">
+                                <li class="flex items-center"><span class="mr-2">📊</span> Data analysis</li>
+                                <li class="flex items-center"><span class="mr-2">🔬</span> Methodology</li>
+                                <li class="flex items-center"><span class="mr-2">📚</span> References</li>
+                            </ul>
+                        </div>
+                    </div>
+                `;
+            default:
+                return content; // Reader view shows original content
+        }
     };
 
     // Split useEffect for data fetching
@@ -514,11 +562,34 @@ const BlogPost = () => {
                                 </div>
                             </div>
 
+                            {/* POV and Preview Controls */}
+                            <div className="mb-8 flex items-center justify-between">
+                                <div className="flex items-center gap-4">
+                                    <span className="text-[#3A5944] font-medium">Point of View:</span>
+                                    <select
+                                        value={currentPOV}
+                                        onChange={(e) => setCurrentPOV(e.target.value)}
+                                        className="px-4 py-2 rounded-full bg-white border border-[#D8A51D]/20 text-[#1C4E37] focus:outline-none focus:ring-2 focus:ring-[#D8A51D]/50"
+                                    >
+                                        <option value="reader">Reader</option>
+                                        <option value="farmer">Farmer</option>
+                                        <option value="expert">Expert</option>
+                                    </select>
+                                </div>
+                                
+                                <button
+                                    onClick={() => setIsPreviewMode(!isPreviewMode)}
+                                    className="px-6 py-2 rounded-full bg-[#1C4E37] text-white hover:bg-[#164A32] transition-all duration-300 flex items-center gap-2"
+                                >
+                                    {isPreviewMode ? 'Exit Preview' : 'Preview'}
+                                </button>
+                            </div>
+
                             {/* Enhanced article content */}
                             <div className="relative">
                                 {/* Content typography enhancement */}
                                 <div 
-                                    className="prose prose-xl max-w-none text-[#3A5944] leading-relaxed"
+                                    className={`prose prose-xl max-w-none text-[#3A5944] leading-relaxed ${isPreviewMode ? 'opacity-60 pointer-events-none' : ''}`}
                                     style={{
                                         fontSize: '1.2rem',
                                         lineHeight: '1.9',
@@ -527,6 +598,43 @@ const BlogPost = () => {
                                 >
                                     {/* Custom content styling */}
                                     <style jsx>{`
+                                        /* POV-specific content styling */
+                                        .pov-content {
+                                            position: relative;
+                                        }
+                                        .pov-content::before {
+                                            content: '';
+                                            position: absolute;
+                                            top: 0;
+                                            left: -1rem;
+                                            width: 4px;
+                                            height: 100%;
+                                            background: linear-gradient(to bottom, #D8A51D, #1C4E37);
+                                            border-radius: 2px;
+                                        }
+                                        .pov-badge::after {
+                                            content: attr(data-badge);
+                                            padding: 0.5rem 1rem;
+                                            border-radius: 9999px;
+                                            font-size: 0.875rem;
+                                            font-weight: 500;
+                                        }
+                                        .farmer-view .pov-badge::after {
+                                            content: '🌾 Farming Perspective';
+                                            background-color: rgba(28, 78, 55, 0.1);
+                                            color: #1C4E37;
+                                        }
+                                        .expert-view .pov-badge::after {
+                                            content: '👨‍🔬 Expert Analysis';
+                                            background-color: rgba(216, 165, 29, 0.1);
+                                            color: #D8A51D;
+                                        }
+                                        .preview-overlay:not(.farmer-view):not(.expert-view) .pov-badge::after {
+                                            content: '📖 General Reader';
+                                            background-color: rgba(58, 89, 68, 0.1);
+                                            color: #3A5944;
+                                        }
+
                                         .prose h1, .prose h2, .prose h3, .prose h4, .prose h5, .prose h6 {
                                             color: #1C4E37;
                                             font-family: 'Georgia', serif;
@@ -656,7 +764,20 @@ const BlogPost = () => {
                                         }
                                     `}</style>
                                     
-                                    <div dangerouslySetInnerHTML={{ __html: post.content.rendered }} />
+                                    <div 
+                                        className={`relative ${currentPOV !== 'reader' ? 'pov-content' : ''}`}
+                                        dangerouslySetInnerHTML={{ 
+                                            __html: isPreviewMode 
+                                                ? `<div class="preview-overlay bg-white/95 backdrop-blur-sm p-8 rounded-2xl border border-[#D8A51D]/20 shadow-xl">
+                                                    <div class="flex items-center justify-between mb-6">
+                                                        <h3 class="text-2xl font-serif font-bold text-[#1C4E37]">Preview Mode: ${currentPOV.charAt(0).toUpperCase() + currentPOV.slice(1)} View</h3>
+                                                        <span class="pov-badge"></span>
+                                                    </div>
+                                                    ${transformContent(post.content.rendered)}
+                                                  </div>`
+                                                : transformContent(post.content.rendered)
+                                        }} 
+                                    />
                                 </div>
                                 
                                 {/* Reading progress indicator */}
