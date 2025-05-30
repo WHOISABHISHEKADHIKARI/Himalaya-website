@@ -58,9 +58,9 @@ const SEOHelmet = ({ location, navItems }) => {
       case '/':
         return {
           title: 'हिमालय कृषि | Himalaya Krishi - नेपालको अग्रणी जैविक कृषि केन्द्र',
-          description: 'नेपालमा कृषि सहयोग, जैविक खेती र कृषि नीतिहरूको बारेमा जान्नुहोस्। सरकारी सहयोग र कृषि का कार्यक्रमहरूको जानकारी उपलब्ध छ। | Learn about agriculture support, organic farming, and policies in Nepal.',
-          keywords: 'कृषि सहयोग नेपाल, जैविक खेती, agriculture support nepal, organic farming, sustainable agriculture, कृषि नीति, farming subsidies',
-          ogDescription: 'Discover Himalaya Krishi\'s organic farming excellence in Nepal. Leading sustainable agriculture practices and farmer empowerment since 2020.'
+          description: 'नेपालमा प्रमाणित जैविक खेती, कृषि तालिम, बीउ-बिजन, र कृषि सामग्री। सरकारी अनुदान र कृषि कार्यक्रमहरूको विस्तृत जानकारी। माटो परीक्षण र व्यवस्थापन सेवाहरू उपलब्ध छन्। | Certified organic farming, agricultural training, seeds, and equipment in Nepal. Detailed information on government subsidies and programs. Soil testing and management services available.',
+          keywords: 'कृषि सहयोग नेपाल, जैविक खेती, प्रमाणित बीउ-बिजन, माटो परीक्षण, कृषि तालिम, agriculture support nepal, organic farming, certified seeds, soil testing, agricultural training',
+          ogDescription: 'Nepal\'s leading organic agriculture center providing certified seeds, training, soil testing, and comprehensive farming support since 2020.'
         };
       case '/about':
         return {
