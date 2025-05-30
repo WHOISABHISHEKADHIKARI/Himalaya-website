@@ -128,21 +128,40 @@ const BlogPost = () => {
     useEffect(() => {
         const fetchPost = async () => {
             try {
+                setLoading(true);
                 const response = await fetch(
-                    `https://blogdata.dapirates.xyz/wp-json/wp/v2/posts?slug=${slug}&_embed=true`
+                    `https://www.krishihimalaya.com/wp-json/wp/v2/posts?slug=${slug}&_embed=true`
                 );
+                
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                
                 const data = await response.json();
+                
+                if (!data || data.length === 0) {
+                    throw new Error('Post not found');
+                }
+                
                 setPost(data[0]);
-                setLoading(false);
 
                 // Fetch related posts
                 const relatedResponse = await fetch(
-                    'https://blogdata.dapirates.xyz/wp-json/wp/v2/posts?_embed=true&per_page=3'
+                    'https://www.krishihimalaya.com/wp-json/wp/v2/posts?_embed=true&per_page=3'
                 );
+                
+                if (!relatedResponse.ok) {
+                    throw new Error(`HTTP error! status: ${relatedResponse.status}`);
+                }
+                
                 const relatedData = await relatedResponse.json();
                 setRelatedPosts(relatedData.filter(p => p.id !== data[0].id));
             } catch (error) {
                 console.error('Error fetching post:', error);
+                // Set an error state that can be displayed to the user
+                setPost(null);
+                setRelatedPosts([]);
+            } finally {
                 setLoading(false);
             }
         };
@@ -198,7 +217,33 @@ const BlogPost = () => {
                     animate={{ opacity: 1 }}
                 >
                     <div className="animate-spin rounded-full h-16 w-16 border-4 border-[#1C4E37] border-t-transparent mb-4"></div>
-                    <p className="text-[#3A5944] font-medium">Loading article...</p>
+                    <p className="text-[#1C4E37] font-medium">Loading article...</p>
+                </motion.div>
+            </div>
+        );
+    }
+
+    if (!post) {
+        return (
+            <div className="min-h-screen flex items-center justify-center bg-gradient-to-b from-[#F4F9F1] to-[#EAEFE7]">
+                <motion.div 
+                    className="flex flex-col items-center text-center max-w-md px-4"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5 }}
+                >
+                    <div className="w-20 h-20 mb-6 text-[#D8A51D]">
+                        <FaArrowDown className="w-full h-full animate-bounce" />
+                    </div>
+                    <h2 className="text-2xl font-bold text-[#1C4E37] mb-4">Article Not Found</h2>
+                    <p className="text-[#3A5944] mb-6">We couldn't find the article you're looking for. It might have been moved or deleted.</p>
+                    <Link 
+                        to="/blog"
+                        className="inline-flex items-center px-6 py-3 bg-[#1C4E37] text-white rounded-lg hover:bg-[#2A6A4A] transition-colors duration-300"
+                    >
+                        <FaArrowLeft className="mr-2" />
+                        Back to Blog
+                    </Link>
                 </motion.div>
             </div>
         );
