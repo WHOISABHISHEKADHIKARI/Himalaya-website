@@ -1,6 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import LoadingBar from '../components/LoadingBar';
+import ProgressiveImage from '../components/ProgressiveImage';
+import LazyContent, { LazySection, LazyCard } from '../components/LazyContent';
+import SkeletonLoader from '../components/SkeletonLoader';
 import { FaPhoneAlt, FaEnvelope, FaLinkedin, FaArrowUp } from 'react-icons/fa';
+import { motion, AnimatePresence } from 'framer-motion';
 import bankingPartner from '../assets/image/Partner/Banking Parntner  kantirajpath Branch.webp';
 import consultingPartner from '../assets/image/Partner/Consultng Partner Pokhara Isha consulting .webp';
 import creativePartner from '../assets/image/Partner/Creative Content Parnter The ads Maker HETAUDA .webp';
@@ -433,11 +437,17 @@ const About = () => {
               </div>
             </section>
          {/* Partners Section with Enhanced Design */}
-         <section className="relative py-24">
+         <LazySection className="relative py-24">
         <div className="absolute inset-0 bg-gradient-to-r from-[#1C4E37]/20 via-[#D8A51D]/10 to-[#1C4E37]/20 rounded-[2.5rem] blur-2xl transition-all duration-700"></div>
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-16">
+            <motion.div 
+              className="text-center mb-16"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+            >
               <h2 className="text-3xl md:text-5xl font-serif font-bold mb-6" style={{ color: colors.primary }}>
                 Our Trusted Partners
               </h2>
@@ -445,21 +455,28 @@ const About = () => {
               <p className="text-xl max-w-3xl mx-auto" style={{ color: colors.text.medium }}>
                 Working together to deliver excellence in every aspect
               </p>
-            </div>
+            </motion.div>
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
               {/* Banking Partner */}
-              <div className="relative group perspective-1000">
+              <motion.div 
+                className="relative group perspective-1000"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.1 }}
+                viewport={{ once: true }}
+              >
                 <div className="absolute inset-0 bg-gradient-to-r from-[#1C4E37]/20 via-[#D8A51D]/10 to-[#1C4E37]/20 rounded-[2.5rem] blur-2xl transition-all duration-700 group-hover:blur-3xl group-hover:scale-105 animate-pulse"></div>
                 <div className="bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-white/95 via-white/90 to-white/80 backdrop-blur-2xl p-8 rounded-[2.5rem] border border-white/30 shadow-[0_8px_32px_rgba(28,78,55,0.15)] hover:shadow-[0_32px_80px_rgba(28,78,55,0.3)] transition-all duration-700 relative h-full overflow-hidden transform-gpu group-hover:translate-y-[-8px] hover:border-[#D8A51D]/30">
                   <div className="absolute -top-20 -right-20 w-40 h-40 bg-[#D8A51D]/5 rounded-full blur-3xl group-hover:blur-4xl transition-all duration-700"></div>
                   <div className="absolute -bottom-20 -left-20 w-40 h-40 bg-[#1C4E37]/5 rounded-full blur-3xl group-hover:blur-4xl transition-all duration-700"></div>
                   <div className="h-full flex flex-col items-center justify-center relative z-10">
                     <div className="aspect-w-16 aspect-h-9 mb-6">
-                      <img 
+                      <ProgressiveImage
                         src={bankingPartner}
                         alt="Banking Partner - Kantirajpath Branch"
                         className="object-contain w-full h-32 transform transition-all duration-700 group-hover:scale-110"
+                        blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=="
                       />
                     </div>
                     <h3 className="text-lg font-semibold text-center mb-2" style={{ color: colors.primary }}>
@@ -470,20 +487,27 @@ const About = () => {
                     </p>
                   </div>
                 </div>
-              </div>
+              </motion.div>
 
               {/* Consulting Partner */}
-              <div className="relative group perspective-1000">
+              <motion.div 
+                className="relative group perspective-1000"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                viewport={{ once: true }}
+              >
                 <div className="absolute inset-0 bg-gradient-to-r from-[#1C4E37]/20 via-[#D8A51D]/10 to-[#1C4E37]/20 rounded-[2.5rem] blur-2xl transition-all duration-700 group-hover:blur-3xl group-hover:scale-105 animate-pulse"></div>
                 <div className="bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-white/95 via-white/90 to-white/80 backdrop-blur-2xl p-8 rounded-[2.5rem] border border-white/30 shadow-[0_8px_32px_rgba(28,78,55,0.15)] hover:shadow-[0_32px_80px_rgba(28,78,55,0.3)] transition-all duration-700 relative h-full overflow-hidden transform-gpu group-hover:translate-y-[-8px] hover:border-[#D8A51D]/30">
                   <div className="absolute -top-20 -right-20 w-40 h-40 bg-[#D8A51D]/5 rounded-full blur-3xl group-hover:blur-4xl transition-all duration-700"></div>
                   <div className="absolute -bottom-20 -left-20 w-40 h-40 bg-[#1C4E37]/5 rounded-full blur-3xl group-hover:blur-4xl transition-all duration-700"></div>
                   <div className="h-full flex flex-col items-center justify-center relative z-10">
                     <div className="aspect-w-16 aspect-h-9 mb-6">
-                      <img 
+                      <ProgressiveImage
                         src={consultingPartner}
                         alt="Consulting Partner - Isha Consulting Pokhara"
                         className="object-contain w-full h-32 transform transition-all duration-700 group-hover:scale-110"
+                        blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=="
                       />
                     </div>
                     <h3 className="text-lg font-semibold text-center mb-2" style={{ color: colors.primary }}>
@@ -494,7 +518,7 @@ const About = () => {
                     </p>
                   </div>
                 </div>
-              </div>
+              </motion.div>
 
               {/* Creative Content Partner */}
               <div className="relative group perspective-1000">
@@ -546,7 +570,7 @@ const About = () => {
             </div>
           </div>
         </div>
-      </section>
+      </LazySection>
       
       
             {/* Testimonials Section */}

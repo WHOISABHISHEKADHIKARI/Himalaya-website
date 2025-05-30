@@ -4,6 +4,13 @@ import react from '@vitejs/plugin-react'
 import securityConfig from './src/security/config'
 
 export default defineConfig({
+  css: {
+    postcss: './postcss.config.cjs',
+    devSourcemap: true
+  },
+  optimizeDeps: {
+    include: ['react', 'react-dom', 'react-router-dom', 'react-helmet-async']
+  },
   root: './',
   base: '/',
   plugins: [
@@ -24,20 +31,11 @@ export default defineConfig({
     sourcemap: false,
     cssCodeSplit: true,
     assetsInlineLimit: 4096,
+    outDir: 'dist',
+    emptyOutDir: true,
     rollupOptions: {
       output: {
-        manualChunks: {
-          vendor: ['react', 'react-dom'],
-          ui: ['react-icons', 'framer-motion'],
-          routing: ['react-router-dom'],
-          meta: ['react-helmet-async']
-        },
-        assetFileNames: (assetInfo) => {
-          if (assetInfo.name.endsWith('.css')) {
-            return 'assets/css/[name]-[hash][extname]';
-          }
-          return 'assets/[name]-[hash][extname]';
-        },
+        assetFileNames: 'assets/[name]-[hash][extname]',
         chunkFileNames: 'assets/js/[name]-[hash].js',
         entryFileNames: 'assets/js/[name]-[hash].js'
       }

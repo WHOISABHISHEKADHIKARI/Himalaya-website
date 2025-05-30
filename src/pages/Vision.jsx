@@ -67,6 +67,15 @@ const Vision = () => {
   const [scrollProgress, setScrollProgress] = useState(0);
   const [isLoaded, setIsLoaded] = useState(false);
 
+  useEffect(() => {
+    // Simulate loading time
+    const timer = setTimeout(() => {
+      setIsLoaded(true);
+    }, 1500);
+
+    return () => clearTimeout(timer);
+  }, []);
+
   // SEO optimization
   useEffect(() => {
     document.title = "Himalaya Krishi | Premium Sustainable Agriculture & Dairy";
@@ -591,9 +600,39 @@ const CropCard = ({ title, items }) => (
   </motion.div>
 );
 
+// Add Skeleton Loader Component
+const SkeletonLoader = () => (
+  <div className="animate-pulse">
+    {/* Hero Section Skeleton */}
+    <div className="w-full h-[60vh] bg-gray-200"></div>
+    
+    {/* Content Sections Skeleton */}
+    <div className="container mx-auto px-4 py-16 space-y-12">
+      {/* Section Title Skeleton */}
+      <div className="space-y-4 text-center">
+        <div className="h-8 bg-gray-200 rounded w-1/3 mx-auto"></div>
+        <div className="h-4 bg-gray-200 rounded w-2/3 mx-auto"></div>
+      </div>
+      
+      {/* Cards Grid Skeleton */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {[1, 2, 3].map((item) => (
+          <div key={item} className="bg-white rounded-lg p-6 shadow-lg">
+            <div className="h-12 w-12 bg-gray-200 rounded-full mb-4"></div>
+            <div className="h-6 bg-gray-200 rounded w-3/4 mb-3"></div>
+            <div className="space-y-2">
+              <div className="h-4 bg-gray-200 rounded w-full"></div>
+              <div className="h-4 bg-gray-200 rounded w-5/6"></div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+);
+
 // Change the export name to match the component name
 export default Vision;
-
 // Remove these unused sections
 // Remove: const ownerImage = new URL...
 // Remove: const managerImage = new URL...
