@@ -195,9 +195,14 @@ const BlogPost = () => {
                 <meta property="og:title" content={`${post.title.rendered} | Himalaya Krishi`} />
                 <meta property="og:description" content={post.excerpt.rendered.replace(/<[^>]+>/g, '')} />
                 <meta property="og:type" content="article" />
+                <meta property="og:image" content={featuredImage || 'https://krishihimalaya.com/logo_512.png'} />
+                <meta property="og:image:width" content="1200" />
+                <meta property="og:image:height" content="630" />
+                <meta property="og:site_name" content="Himalaya Krishi" />
                 <meta name="twitter:card" content="summary_large_image" />
                 <meta name="twitter:title" content={`${post.title.rendered} | Himalaya Krishi`} />
                 <meta name="twitter:description" content={post.excerpt.rendered.replace(/<[^>]+>/g, '')} />
+                <meta name="twitter:image" content={featuredImage || 'https://krishihimalaya.com/logo_512.png'} />
                 <link rel="icon" type="image/png" sizes="192x192" href="/logo_192.png" />
                 <link rel="icon" type="image/png" sizes="512x512" href="/logo_512.png" />
             </Helmet>
@@ -582,6 +587,72 @@ const BlogPost = () => {
                                             border-radius: 1rem;
                                             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
                                             margin: 2rem auto;
+                                        }
+                                        /* Responsive Table Styles */
+                                        .prose table {
+                                            width: 100%;
+                                            margin: 2rem 0;
+                                            border-collapse: separate;
+                                            border-spacing: 0;
+                                            border-radius: 1rem;
+                                            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+                                        }
+                                        /* Table wrapper for horizontal scrolling */
+                                        .prose table {
+                                            display: table;
+                                            width: 100%;
+                                        }
+                                        /* Apply this style after the content is rendered */
+                                        .prose :global(table) {
+                                            overflow-x: auto;
+                                            display: block;
+                                        }
+                                        .prose table thead {
+                                            background: linear-gradient(to right, #1C4E37, #2A6A4A);
+                                            color: white;
+                                        }
+                                        .prose table th {
+                                            padding: 1rem;
+                                            text-align: left;
+                                            font-weight: 600;
+                                            border-bottom: 2px solid #D8A51D;
+                                        }
+                                        .prose table th:first-child {
+                                            border-top-left-radius: 1rem;
+                                        }
+                                        .prose table th:last-child {
+                                            border-top-right-radius: 1rem;
+                                        }
+                                        .prose table td {
+                                            padding: 1rem;
+                                            border-bottom: 1px solid rgba(216, 165, 29, 0.2);
+                                            background-color: white;
+                                        }
+                                        .prose table tr:last-child td:first-child {
+                                            border-bottom-left-radius: 1rem;
+                                        }
+                                        .prose table tr:last-child td:last-child {
+                                            border-bottom-right-radius: 1rem;
+                                        }
+                                        .prose table tr:nth-child(even) td {
+                                            background-color: #F4F9F1;
+                                        }
+                                        .prose table tr:hover td {
+                                            background-color: rgba(216, 165, 29, 0.05);
+                                        }
+                                        /* For mobile screens */
+                                        @media (max-width: 768px) {
+                                            .prose :global(table) {
+                                                width: 100%;
+                                                overflow-x: auto;
+                                                -webkit-overflow-scrolling: touch;
+                                                display: block;
+                                            }
+                                            .prose table th, 
+                                            .prose table td {
+                                                white-space: nowrap;
+                                                min-width: 120px;
+                                            }
                                         }
                                     `}</style>
                                     
