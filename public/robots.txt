@@ -2,6 +2,12 @@
 User-agent: *
 Allow: /
 
+
+# Sitemaps
+Sitemap: https://krishihimalaya.com/sitemap-index.xml
+Sitemap: https://krishihimalaya.com/sitemap.xml
+Sitemap: https://krishihimalaya.com/blog-sitemap.xml
+
 # Disallow admin and private areas
 Disallow: /admin/
 Disallow: /private/

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:news="http://www.google.com/schemas/sitemap-news/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <!-- Main Blog Page -->
+  <url>
+    <loc>https://krishihimalaya.com/blog</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2024-07-15</lastmod>
+  </url>
+  
+  <!-- Individual Blog Posts -->
+  <!-- Note: In a production environment, these would be dynamically generated -->
+  <!-- Example blog post entries based on your structure -->
+  <url>
+    <loc>https://krishihimalaya.com/blog/organic-farming-techniques-nepal</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2024-07-10</lastmod>
+    <image:image>
+      <image:loc>https://krishihimalaya.com/assets/blog/organic-farming-techniques-nepal.webp</image:loc>
+      <image:title>Organic Farming Techniques in Nepal</image:title>
+    </image:image>
+  </url>
+  
+  <url>
+    <loc>https://krishihimalaya.com/blog/sustainable-agriculture-practices</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2024-07-05</lastmod>
+    <image:image>
+      <image:loc>https://krishihimalaya.com/assets/blog/sustainable-agriculture-practices.webp</image:loc>
+      <image:title>Sustainable Agriculture Practices</image:title>
+    </image:image>
+  </url>
+  
+  <url>
+    <loc>https://krishihimalaya.com/blog/himalayan-farming-challenges</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2024-06-28</lastmod>
+    <image:image>
+      <image:loc>https://krishihimalaya.com/assets/blog/himalayan-farming-challenges.webp</image:loc>
+      <image:title>Himalayan Farming Challenges</image:title>
+    </image:image>
+  </url>
+  
+  <url>
+    <loc>https://krishihimalaya.com/blog/agricultural-technology-nepal</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2024-06-20</lastmod>
+    <image:image>
+      <image:loc>https://krishihimalaya.com/assets/blog/agricultural-technology-nepal.webp</image:loc>
+      <image:title>Agricultural Technology in Nepal</image:title>
+    </image:image>
+  </url>
+  
+  <url>
+    <loc>https://krishihimalaya.com/blog/crop-rotation-benefits</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2024-06-15</lastmod>
+    <image:image>
+      <image:loc>https://krishihimalaya.com/assets/blog/crop-rotation-benefits.webp</image:loc>
+      <image:title>Benefits of Crop Rotation</image:title>
+    </image:image>
+  </url>
+</urlset>
