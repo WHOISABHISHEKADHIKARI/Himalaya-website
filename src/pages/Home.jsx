@@ -5,6 +5,9 @@ import { FaArrowRight } from "react-icons/fa";
 import { useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import SEO from '../components/SEO';
+import ProgressiveImage from '../components/ProgressiveImage';
+import LazyContent, { LazySection, LazyCard } from '../components/LazyContent';
+import SkeletonLoader from '../components/SkeletonLoader';
 import imag1 from '../assets/image/imag1.webp';
 import imag5 from '../assets/image/imag5.webp';
 import imag6 from '../assets/image/imag6.webp';
@@ -215,43 +218,77 @@ const Home = () => {
       </AnimatePresence>
 
       {/* Hero Section */}
-      <section 
-        className="relative h-screen flex items-center pt-28"
-        style={{
-          backgroundImage: `url(${imag1})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center center'
-        }}
-      >
-        <div className="absolute inset-0" style={{ backgroundColor: colors.primary, opacity: 0.7 }}></div>
-        <div className="container mx-auto px-4 relative z-10 text-center">
-          <h1 className="text-4xl md:text-6xl font-serif font-bold mb-6" style={{ color: colors.text.light }}>
-            Himalaya Krishi
-          </h1>
-          <p className="text-xl md:text-2xl mb-12 max-w-3xl mx-auto" style={{ color: colors.text.light }}>
-            Nepal's First Organic Farming
-          </p>
-          <div className="mt-8 flex flex-col md:flex-row gap-6 justify-center">
-            <ActionButton text="Learn About Us" link="/about" variant="primary" />
-            <ActionButton text="Contact Us" link="/contact" variant="secondary" />
-          </div>
+      <section className="relative h-screen flex items-center pt-28 overflow-hidden">
+        {/* Progressive Background Image */}
+        <div className="absolute inset-0">
+          <ProgressiveImage
+            src={imag1}
+            alt="Himalaya Krishi organic farm landscape"
+            priority={true}
+            className="w-full h-full object-cover"
+            blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=="
+          />
+        </div>
+        
+        {/* Overlay */}
+        <div className="absolute inset-0 z-10" style={{ backgroundColor: colors.primary, opacity: 0.7 }}></div>
+        
+        {/* Content */}
+        <div className="container mx-auto px-4 relative z-20 text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+          >
+            <h1 className="text-4xl md:text-6xl font-serif font-bold mb-6" style={{ color: colors.text.light }}>
+              Himalaya Krishi
+            </h1>
+            <p className="text-xl md:text-2xl mb-12 max-w-3xl mx-auto" style={{ color: colors.text.light }}>
+              Nepal's First Organic Farming
+            </p>
+            <div className="mt-8 flex flex-col md:flex-row gap-6 justify-center">
+              <ActionButton text="Learn About Us" link="/about" variant="primary" />
+              <ActionButton text="Contact Us" link="/contact" variant="secondary" />
+            </div>
+          </motion.div>
         </div>
       </section>
 
       {/* Heritage Section */}
-      <section id="heritage" className="py-24" style={{ backgroundColor: colors.background.card }}>
+      <LazySection id="heritage" className="py-24" style={{ backgroundColor: colors.background.card }}>
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-5xl font-serif font-bold mb-6" style={{ color: colors.text.dark }}>Our Heritage</h2>
+              <motion.h2 
+                className="text-3xl md:text-5xl font-serif font-bold mb-6" 
+                style={{ color: colors.text.dark }}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}
+                viewport={{ once: true }}
+              >
+                Our Heritage
+              </motion.h2>
               <div className="w-32 h-1 mx-auto mb-8" style={{ backgroundColor: colors.secondary }}></div>
-              <p className="text-xl max-w-3xl mx-auto" style={{ color: colors.text.medium }}>
+              <motion.p 
+                className="text-xl max-w-3xl mx-auto" 
+                style={{ color: colors.text.medium }}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                viewport={{ once: true }}
+              >
                 A legacy of organic excellence since 1992, rooted in tradition and growing with innovation.
-              </p>
+              </motion.p>
             </div>
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-              <div>
+              <motion.div
+                initial={{ opacity: 0, x: -30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6 }}
+                viewport={{ once: true }}
+              >
                 <h3 className="text-3xl md:text-4xl font-serif font-bold mb-6" style={{ color: colors.text.dark }}>Our Heritage</h3>
                 <div className="w-24 h-1 mb-8" style={{ backgroundColor: colors.secondary }}></div>
                 <p className="text-lg mb-6 text-justify" style={{ color: colors.text.medium }}>
@@ -264,22 +301,28 @@ const Home = () => {
                   <span className="w-16 h-1" style={{ backgroundColor: colors.secondary }}></span>
                   <span className="ml-4 font-medium" style={{ color: colors.text.gold }}>Est. 1992</span>
                 </div>
-              </div>
-              <div className="relative h-[600px]">
+              </motion.div>
+              <motion.div 
+                className="relative h-[600px]"
+                initial={{ opacity: 0, x: 30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                viewport={{ once: true }}
+              >
                 <div className="absolute -top-5 -right-5 w-full h-full border-2" style={{ backgroundColor: colors.secondary }}></div>
-                <img 
+                <ProgressiveImage
                   src={imag9}
-                  alt="Our organic farm heritage showing Murrah buffaloes" 
+                  alt="Our organic farm heritage showing Murrah buffaloes"
                   className="w-full h-full object-cover relative z-10 shadow-xl rounded-lg"
-                  loading="lazy"
+                  blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=="
                   width="800"
                   height="600"
                 />
-              </div>
+              </motion.div>
             </div>
           </div>
         </div>
-      </section>
+      </LazySection>
 
       {/* Our Philosophy Section */}
       <section className="py-24" style={{ backgroundColor: colors.background.accent }}>
@@ -304,38 +347,62 @@ const Home = () => {
                   Our products stand as a testament to quality, authenticity, and the power of nature. Every step, from our cows to our crops, follows sustainable practices. We believe in working with nature, not against it to produce the finest organic products.
                 </p>
               </div>
-              <div className="order-1 md:order-2">
+              <motion.div 
+                className="order-1 md:order-2"
+                initial={{ opacity: 0, x: 30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                viewport={{ once: true }}
+              >
                 <div className="grid grid-cols-2 gap-6">
                   <div className="space-y-6">
-                    <div className="overflow-hidden rounded-lg shadow-xl">
-                      <img 
+                    <motion.div 
+                      className="overflow-hidden rounded-lg shadow-xl"
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.6, delay: 0.3 }}
+                      viewport={{ once: true }}
+                    >
+                      <ProgressiveImage
                         src={imag7}
-                        alt="Organic farming practices in action" 
+                        alt="Organic farming practices in action"
                         className="w-full h-48 object-cover hover:scale-110 transition-transform duration-700"
-                        loading="lazy"
+                        blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=="
                       />
-                    </div>
-                    <div className="overflow-hidden rounded-lg shadow-xl">
-                      <img 
+                    </motion.div>
+                    <motion.div 
+                      className="overflow-hidden rounded-lg shadow-xl"
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.6, delay: 0.4 }}
+                      viewport={{ once: true }}
+                    >
+                      <ProgressiveImage
                         src={imag5}
-                        alt="Sustainable agricultural methods" 
+                        alt="Sustainable agricultural methods"
                         className="w-full h-64 object-cover hover:scale-110 transition-transform duration-700"
-                        loading="lazy"
+                        blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=="
                       />
-                    </div>
+                    </motion.div>
                   </div>
-                  <div className="mt-12">
+                  <motion.div 
+                    className="mt-12"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: 0.5 }}
+                    viewport={{ once: true }}
+                  >
                     <div className="overflow-hidden rounded-lg shadow-xl">
-                      <img 
+                      <ProgressiveImage
                         src={imag6}
-                        alt="Our organic farm landscape" 
+                        alt="Our organic farm landscape"
                         className="w-full h-96 object-cover hover:scale-110 transition-transform duration-700"
-                        loading="lazy"
+                        blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=="
                       />
                     </div>
-                  </div>
+                  </motion.div>
                 </div>
-              </div>
+              </motion.div>
             </div>
           </div>
         </div>
@@ -359,16 +426,23 @@ const Home = () => {
             <div className="relative rounded-xl overflow-hidden shadow-2xl" role="region" aria-label="Testimonial carousel" aria-live="polite">
               {/* Image Section - Top */}
               <div className="relative h-[550px]">
-                <motion.img 
-                  key={currentImageIndex}
-                  src={testimonialImages[currentImageIndex]}
-                  alt={`Visitor testimonial ${currentImageIndex + 1}`}
-                  className="w-full h-full object-cover"
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  exit={{ opacity: 0 }}
-                  transition={{ duration: 0.5 }}
-                />
+                <AnimatePresence mode="wait">
+                  <motion.div
+                    key={currentImageIndex}
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 0.5 }}
+                    className="w-full h-full"
+                  >
+                    <ProgressiveImage
+                      src={testimonialImages[currentImageIndex]}
+                      alt={`Visitor testimonial ${currentImageIndex + 1}`}
+                      className="w-full h-full object-cover"
+                      blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=="
+                    />
+                  </motion.div>
+                </AnimatePresence>
                 
                 {/* Premium Gradient Overlay */}
                 <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/70"></div>
