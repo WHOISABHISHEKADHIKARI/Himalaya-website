@@ -4,12 +4,45 @@ import { FaShare, FaFacebook, FaTwitter, FaLinkedin, FaWhatsapp, FaCopy, FaCheck
 
 const ShareButtons = ({ url, title }) => {
     const [copied, setCopied] = useState(false);
+    
+    // Helper function to clean and encode URLs properly
+    const getCleanUrl = (inputUrl) => {
+        try {
+            // Parse the URL to handle it properly
+            const urlObj = new URL(inputUrl);
+            // Remove any fragments
+            urlObj.hash = '';
+            // Return the clean URL
+            return encodeURIComponent(urlObj.toString());
+        } catch (e) {
+            console.error('Invalid URL:', e);
+            return encodeURIComponent(inputUrl);
+        }
+    };
 
+    // Get the raw clean URL (without encoding) for clipboard
+    const getRawCleanUrl = (inputUrl) => {
+        try {
+            // Parse the URL to handle it properly
+            const urlObj = new URL(inputUrl);
+            // Remove any fragments
+            urlObj.hash = '';
+            // Return the clean URL without encoding
+            return urlObj.toString();
+        } catch (e) {
+            console.error('Invalid URL:', e);
+            return inputUrl;
+        }
+    };
+
+    const cleanUrl = getCleanUrl(url);
+    const rawCleanUrl = getRawCleanUrl(url);
+    
     const shareData = {
-        facebook: `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`,
-        twitter: `https://twitter.com/intent/tweet?url=${encodeURIComponent(url)}&text=${encodeURIComponent(title)}`,
-        linkedin: `https://www.linkedin.com/shareArticle?mini=true&url=${encodeURIComponent(url)}&title=${encodeURIComponent(title)}`,
-        whatsapp: `https://wa.me/?text=${encodeURIComponent(`${title} ${url}`)}`
+        facebook: `https://www.facebook.com/sharer/sharer.php?u=${cleanUrl}`,
+        twitter: `https://twitter.com/intent/tweet?url=${cleanUrl}&text=${encodeURIComponent(title)}`,
+        linkedin: `https://www.linkedin.com/shareArticle?mini=true&url=${cleanUrl}&title=${encodeURIComponent(title)}`,
+        whatsapp: `https://wa.me/?text=${encodeURIComponent(`${title} ${rawCleanUrl}`)}`
     };
 
     const handleShare = (platform) => {
@@ -18,11 +51,43 @@ const ShareButtons = ({ url, title }) => {
 
     const copyToClipboard = async () => {
         try {
-            await navigator.clipboard.writeText(url);
+            // Create a rich text blob with HTML for better link preview
+            const richText = new Blob(
+                [`<a href="${rawCleanUrl}">${title}</a>`], 
+                { type: 'text/html' }
+            );
+            
+            // Create a plain text blob as fallback
+            const plainText = new Blob(
+                [rawCleanUrl], 
+                { type: 'text/plain' }
+            );
+            
+            // Try to use the modern clipboard API with rich content
+            if (navigator.clipboard && navigator.clipboard.write) {
+                const clipboardItem = new ClipboardItem({
+                    'text/html': richText,
+                    'text/plain': plainText
+                });
+                
+                await navigator.clipboard.write([clipboardItem]);
+            } else {
+                // Fallback to the basic clipboard API
+                await navigator.clipboard.writeText(rawCleanUrl);
+            }
+            
             setCopied(true);
             setTimeout(() => setCopied(false), 2000);
         } catch (err) {
             console.error('Failed to copy:', err);
+            // Ultimate fallback
+            try {
+                await navigator.clipboard.writeText(rawCleanUrl);
+                setCopied(true);
+                setTimeout(() => setCopied(false), 2000);
+            } catch (fallbackErr) {
+                console.error('Fallback copy also failed:', fallbackErr);
+            }
         }
     };
 

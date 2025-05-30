@@ -163,6 +163,13 @@ const Navbar = ({ isHomePage }) => {
                   style={{ background: `linear-gradient(135deg, #B88A17, #D8A51D)` }}
                 ></div>
               </button>
+              
+              {/* Google Translate Element */}
+              <div 
+                id="google_translate_element" 
+                className="relative z-10"
+                style={{ minWidth: '120px' }}
+              ></div>
             </div>
 
             {/* Mobile Menu Button with Animations */}
@@ -229,6 +236,14 @@ const Navbar = ({ isHomePage }) => {
                 Get in Touch
               </span>
             </button>
+            
+            {/* Google Translate Element for Mobile */}
+            <div 
+              className="mt-4 p-2 bg-white bg-opacity-10 rounded-xl"
+              style={{ minHeight: '40px' }}
+            >
+              <div id="google_translate_element_mobile"></div>
+            </div>
           </div>
         </div>
       </nav>

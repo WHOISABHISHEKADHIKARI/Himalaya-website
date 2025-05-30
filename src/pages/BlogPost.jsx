@@ -70,6 +70,12 @@ const BlogPost = () => {
     const [scrollProgress, setScrollProgress] = useState(0);
     const [isLoaded, setIsLoaded] = useState(false);
 
+    // Helper function to get canonical URL for the blog post
+    const getCanonicalUrl = () => {
+        const baseUrl = 'https://krishihimalaya.com';
+        return `${baseUrl}/blog/${slug}`;
+    };
+
     // Split useEffect for data fetching
     useEffect(() => {
         const fetchPost = async () => {
@@ -107,7 +113,7 @@ const BlogPost = () => {
         // Add canonical URL
         const canonicalLink = document.querySelector('link[rel="canonical"]') || document.createElement('link');
         canonicalLink.rel = 'canonical';
-        canonicalLink.href = window.location.href;
+        canonicalLink.href = getCanonicalUrl(); // Use the helper function instead of window.location.href
         if (!document.querySelector('link[rel="canonical"]')) {
             document.head.appendChild(canonicalLink);
         }
@@ -133,7 +139,7 @@ const BlogPost = () => {
             const canonical = document.querySelector('link[rel="canonical"]');
             if (canonical) canonical.remove();
         };
-    }, [post]); // Depend on post
+    }, [post, slug]); // Add slug to dependencies
 
     if (loading) {
         return (
@@ -184,6 +190,14 @@ const BlogPost = () => {
             <Helmet>
                 <title>{post.title.rendered} | Himalaya Krishi</title>
                 <meta name="description" content={post.excerpt.rendered.replace(/<[^>]+>/g, '')} />
+                <link rel="canonical" href={getCanonicalUrl()} />
+                <meta property="og:url" content={getCanonicalUrl()} />
+                <meta property="og:title" content={`${post.title.rendered} | Himalaya Krishi`} />
+                <meta property="og:description" content={post.excerpt.rendered.replace(/<[^>]+>/g, '')} />
+                <meta property="og:type" content="article" />
+                <meta name="twitter:card" content="summary_large_image" />
+                <meta name="twitter:title" content={`${post.title.rendered} | Himalaya Krishi`} />
+                <meta name="twitter:description" content={post.excerpt.rendered.replace(/<[^>]+>/g, '')} />
                 <link rel="icon" type="image/png" sizes="192x192" href="/logo_192.png" />
                 <link rel="icon" type="image/png" sizes="512x512" href="/logo_512.png" />
             </Helmet>
@@ -259,8 +273,8 @@ const BlogPost = () => {
                             onClick={() => {
                                 if (navigator.share) {
                                     navigator.share({
-                                        title: post.title.rendered,
-                                        url: window.location.href
+                                        title: post.title.rendered.replace(/<[^>]+>/g, ''),
+                                        url: getCanonicalUrl()
                                     });
                                 } else {
                                     // Fallback: scroll to share section
@@ -446,21 +460,21 @@ const BlogPost = () => {
                                             icon: FaFacebook, 
                                             color: 'hover:text-blue-600', 
                                             bg: 'hover:bg-blue-50',
-                                            url: `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(window.location.href)}`
+                                            url: `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(getCanonicalUrl())}`
                                         },
                                         { 
                                             platform: 'twitter', 
                                             icon: FaTwitter, 
                                             color: 'hover:text-blue-400', 
                                             bg: 'hover:bg-blue-50',
-                                            url: `https://twitter.com/intent/tweet?url=${encodeURIComponent(window.location.href)}&text=${encodeURIComponent(post.title.rendered)}`
+                                            url: `https://twitter.com/intent/tweet?url=${encodeURIComponent(getCanonicalUrl())}&text=${encodeURIComponent(post.title.rendered.replace(/<[^>]+>/g, ''))}`
                                         },
                                         { 
                                             platform: 'linkedin', 
                                             icon: FaLinkedin, 
                                             color: 'hover:text-blue-700', 
                                             bg: 'hover:bg-blue-50',
-                                            url: `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(window.location.href)}`
+                                            url: `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(getCanonicalUrl())}`
                                         }
                                     ].map(({ platform, icon: Icon, color, bg, url }) => (
                                         <motion.a 
@@ -483,8 +497,8 @@ const BlogPost = () => {
                                         onClick={() => {
                                             if (navigator.share) {
                                                 navigator.share({
-                                                    title: post.title.rendered,
-                                                    url: window.location.href
+                                                    title: post.title.rendered.replace(/<[^>]+>/g, ''),
+                                                    url: getCanonicalUrl()
                                                 });
                                             }
                                         }}
@@ -622,24 +636,42 @@ const BlogPost = () => {
                         </div>
                         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
                             <ShareButtons
-                                url={window.location.href}
-                                title={post.title.rendered}
+                                url={getCanonicalUrl()}
+                                title={post.title.rendered.replace(/<[^>]+>/g, '')}
                             />
                             <div className="flex items-center gap-4">
                                 <span className="text-[#3A5944] font-medium">Share on Social:</span>
                                 {[
-                                    { platform: 'facebook', icon: FaFacebook, color: 'text-blue-600' },
-                                    { platform: 'twitter', icon: FaTwitter, color: 'text-blue-400' },
-                                    { platform: 'linkedin', icon: FaLinkedin, color: 'text-blue-700' }
-                                ].map(({ platform, icon: Icon, color }) => (
-                                    <motion.button 
+                                    { 
+                                        platform: 'facebook', 
+                                        icon: FaFacebook, 
+                                        color: 'text-blue-600',
+                                        url: `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(getCanonicalUrl())}`
+                                    },
+                                    { 
+                                        platform: 'twitter', 
+                                        icon: FaTwitter, 
+                                        color: 'text-blue-400',
+                                        url: `https://twitter.com/intent/tweet?url=${encodeURIComponent(getCanonicalUrl())}&text=${encodeURIComponent(post.title.rendered.replace(/<[^>]+>/g, ''))}`
+                                    },
+                                    { 
+                                        platform: 'linkedin', 
+                                        icon: FaLinkedin, 
+                                        color: 'text-blue-700',
+                                        url: `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(getCanonicalUrl())}`
+                                    }
+                                ].map(({ platform, icon: Icon, color, url }) => (
+                                    <motion.a 
                                         key={platform} 
+                                        href={url}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
                                         className={`p-2 rounded-full hover:bg-gray-100 transition-colors duration-300 ${color}`}
                                         whileHover={{ scale: 1.1 }}
                                         whileTap={{ scale: 0.95 }}
                                     >
                                         <Icon size={24} />
-                                    </motion.button>
+                                    </motion.a>
                                 ))}
                             </div>
                         </div>
