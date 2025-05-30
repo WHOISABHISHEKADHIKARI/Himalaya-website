@@ -233,45 +233,27 @@
     },
     {
       "@type": "LocalBusiness",
-      "additionalType": ["https://schema.org/FarmersMarket", "https://schema.org/OrganizationRole"],
       "@id": "https://krishihimalaya.com/#localbusiness",
-      "name": "Himalaya Krishi Center",
-      "image": [
-        "https://krishihimalaya.com/assets/images/center-front.jpg",
-        "https://krishihimalaya.com/assets/images/training-hall.jpg",
-        "https://krishihimalaya.com/assets/images/organic-farm.jpg"
-      ],
+      "name": "Himalaya Krishi",
+      "image": "https://krishihimalaya.com/assets/logo/logo_white_bg_removed.webp",
       "priceRange": "₨₨-₨₨₨",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "Hetauda-4",
-        "addressLocality": "Hetauda",
-        "addressRegion": "Bagmati",
-        "postalCode": "44107",
-        "addressCountry": "NP"
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": "27.7172",
-        "longitude": "85.3240"
-      },
-      "url": "https://krishihimalaya.com",
-      "telephone": "+977-987654321",
+      "areaServed": [
+        {
+          "@type": "State",
+          "name": "Bagmati Pradesh"
+        },
+        {
+          "@type": "State",
+          "name": "Gandaki Pradesh"
+        }
+      ],
       "openingHoursSpecification": [
         {
           "@type": "OpeningHoursSpecification",
-          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
           "opens": "09:00",
           "closes": "17:00"
         }
-      ],
-      "hasMap": "https://goo.gl/maps/xyz123",
-      "sameAs": [
-        "https://facebook.com/himalayakrishi",
-        "https://twitter.com/himalayakrishi",
-        "https://instagram.com/himalayakrishi",
-        "https://linkedin.com/company/himalayakrishi",
-        "https://youtube.com/c/himalayakrishi"
       ]
     }
   ]
