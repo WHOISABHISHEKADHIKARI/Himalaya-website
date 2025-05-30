@@ -116,3 +116,44 @@
 .stagger-children > *:nth-child(4) { animation-delay: 0.4s; }
 .stagger-children > *:nth-child(5) { animation-delay: 0.5s; }
 .stagger-children > *:nth-child(6) { animation-delay: 0.6s; }
+
+/* Google Translate Widget Styling */
+.goog-te-gadget {
+  font-family: inherit !important;
+  color: white !important;
+}
+
+.goog-te-gadget .goog-te-combo {
+  padding: 5px 10px;
+  border-radius: 8px;
+  border: 1px solid rgba(216, 165, 29, 0.5);
+  background-color: rgba(28, 78, 55, 0.8);
+  color: white;
+  font-size: 14px;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.goog-te-gadget .goog-te-combo:hover,
+.goog-te-gadget .goog-te-combo:focus {
+  border-color: #D8A51D;
+  box-shadow: 0 0 8px rgba(216, 165, 29, 0.4);
+}
+
+.goog-te-banner-frame {
+  display: none !important;
+}
+
+body {
+  top: 0 !important;
+}
+
+/* Mobile styling */
+#google_translate_element_mobile .goog-te-gadget {
+  width: 100%;
+}
+
+#google_translate_element_mobile .goog-te-gadget .goog-te-combo {
+  width: 100%;
+  padding: 8px 12px;
+}
