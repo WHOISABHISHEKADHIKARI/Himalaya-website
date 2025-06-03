@@ -47,7 +47,7 @@ export default defineConfig({
     open: false,
     cors: true,
     headers: {
-      'Cross-Origin-Embedder-Policy': 'require-corp',
+      'Cross-Origin-Embedder-Policy': 'credentialless',
       'Cross-Origin-Opener-Policy': 'same-origin',
       ...securityConfig.headers
     }
@@ -57,7 +57,7 @@ export default defineConfig({
     host: true,
     cors: true,
     headers: {
-      'Cross-Origin-Embedder-Policy': 'require-corp',
+      'Cross-Origin-Embedder-Policy': 'credentialless',
       'Cross-Origin-Opener-Policy': 'same-origin',
       ...securityConfig.headers
     }
@@ -66,4 +66,3 @@ export default defineConfig({
     __DEV__: JSON.stringify(process.env.NODE_ENV === 'development')
   }
 })
-

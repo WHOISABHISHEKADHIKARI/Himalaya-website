@@ -12,6 +12,7 @@ const securityConfig = {
         "https://maps.googleapis.com",
         "https://reactjs.org",
         "https://krishihimalaya.com",
+        "https://blogdata.dapirates.xyz",
         "http://localhost:*"
       ],
       "style-src": [
@@ -19,6 +20,7 @@ const securityConfig = {
         "'unsafe-inline'",
         "https://fonts.googleapis.com",
         "https://krishihimalaya.com",
+        "https://blogdata.dapirates.xyz",
         "http://localhost:*"
       ],
       "img-src": [
@@ -29,7 +31,8 @@ const securityConfig = {
         "https://*.googleapis.com",
         "https://*.gstatic.com",
         "https://maps.gstatic.com",
-        "https://krishihimalaya.com"
+        "https://krishihimalaya.com",
+        "https://blogdata.dapirates.xyz"
       ],
       "font-src": ["'self'", "https://fonts.gstatic.com", "data:", "http://localhost:*"],
       "frame-src": [
@@ -37,7 +40,8 @@ const securityConfig = {
         "https://*.google.com",
         "https://www.google.com/maps/",
         "https://maps.google.com",
-        "https://krishihimalaya.com"
+        "https://krishihimalaya.com",
+        "https://blogdata.dapirates.xyz"
       ],
       "connect-src": [
         "'self'", 
@@ -45,6 +49,7 @@ const securityConfig = {
         "http://localhost:*",
         "wss://localhost:*",
         "https://krishihimalaya.com",
+        "https://blogdata.dapirates.xyz",
         "https://maps.googleapis.com",
         "https://vitals.vercel-insights.com",
         "https://*.vercel-insights.com"
