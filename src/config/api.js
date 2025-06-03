@@ -1,10 +1,7 @@
 // API configuration for blog and other data fetching
 const API_CONFIG = {
-    // Base URLs for different environments
-    baseUrls: {
-        production: 'https://blogdata.dapirates.xyz',
-        development: 'https://blogdata.dapirates.xyz',
-    },
+    // Base URL for API
+    baseUrl: 'https://blogdata.dapirates.xyz',
 
     // API endpoints
     endpoints: {
@@ -24,9 +21,9 @@ const API_CONFIG = {
         },
     },
 
-    // Get the current environment's base URL
+    // Get the base URL
     getBaseUrl: () => {
-        return API_CONFIG.baseUrls.development;
+        return API_CONFIG.baseUrl;
     },
 
     // Helper function to build URLs with parameters
