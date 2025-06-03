@@ -281,7 +281,7 @@ const ImageHandler = ({
             </AnimatePresence>
 
             {/* Custom styles for shimmer effect */}
-            <style jsx>{`
+            <style>{`
                 @keyframes shimmer {
                     0% {
                         transform: translateX(-100%);
