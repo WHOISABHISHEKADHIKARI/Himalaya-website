@@ -2,7 +2,16 @@ import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FaExpand, FaDownload, FaShare, FaTimes } from 'react-icons/fa';
 
-const ImageHandler = ({ src, alt, className, onClick, showControls = true, lazy = true, quality = 'high' }) => {
+const ImageHandler = ({
+    src,
+    alt,
+    className,
+    onClick,
+    showControls = true,
+    lazy = true,
+    quality = 'high',
+    crossOrigin = 'anonymous',
+}) => {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(false);
     const [isZoomed, setIsZoomed] = useState(false);
@@ -45,21 +54,22 @@ const ImageHandler = ({ src, alt, className, onClick, showControls = true, lazy 
             }
             return;
         }
-        
-        console.log('ImageHandler loading image:', src);
+
         const img = new Image();
-        
+
         // Add quality parameters for better image loading
         const optimizedSrc = quality === 'high' ? `${src}?w=1200&h=800&fit=crop&auto=format,compress` : src;
         img.src = optimizedSrc;
-        
+
+        // Add crossOrigin attribute to fix CORS issues
+        img.crossOrigin = crossOrigin;
+
         img.onload = () => {
-            console.log('ImageHandler: Image loaded successfully');
             setLoading(false);
             setImageLoaded(true);
         };
-        
-        img.onerror = (e) => {
+
+        img.onerror = e => {
             console.error('ImageHandler: Error loading image:', e);
             // Fallback to original src if optimized fails
             if (optimizedSrc !== src) {
@@ -69,7 +79,7 @@ const ImageHandler = ({ src, alt, className, onClick, showControls = true, lazy 
                 setLoading(false);
             }
         };
-    }, [src, isInView, quality]);
+    }, [src, isInView, quality, crossOrigin]);
 
     const handleImageClick = () => {
         if (onClick) {
@@ -81,7 +91,7 @@ const ImageHandler = ({ src, alt, className, onClick, showControls = true, lazy 
 
     const handleDownload = async () => {
         try {
-            const response = await fetch(src);
+            const response = await fetch(src, { mode: 'cors', credentials: 'omit' });
             const blob = await response.blob();
             const url = window.URL.createObjectURL(blob);
             const a = document.createElement('a');
@@ -101,7 +111,7 @@ const ImageHandler = ({ src, alt, className, onClick, showControls = true, lazy 
             try {
                 await navigator.share({
                     title: alt || 'Image',
-                    url: src
+                    url: src,
                 });
             } catch (error) {
                 console.error('Share failed:', error);
@@ -125,13 +135,17 @@ const ImageHandler = ({ src, alt, className, onClick, showControls = true, lazy 
                         <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/40 to-transparent animate-shimmer" />
                     </div>
                 )}
-                
+
                 {/* Error state */}
                 {error ? (
                     <div className="absolute inset-0 bg-gradient-to-br from-gray-100 to-gray-200 flex flex-col items-center justify-center text-gray-500">
                         <div className="w-16 h-16 bg-gray-300 rounded-lg mb-3 flex items-center justify-center">
                             <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 20 20">
-                                <path fillRule="evenodd" d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z" clipRule="evenodd" />
+                                <path
+                                    fillRule="evenodd"
+                                    d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z"
+                                    clipRule="evenodd"
+                                />
                             </svg>
                         </div>
                         <span className="text-sm font-medium">Image not available</span>
@@ -148,14 +162,15 @@ const ImageHandler = ({ src, alt, className, onClick, showControls = true, lazy 
                             onClick={handleImageClick}
                             loading={lazy ? 'lazy' : 'eager'}
                             onLoad={() => setImageLoaded(true)}
+                            crossOrigin={crossOrigin}
                         />
-                        
+
                         {/* Image overlay gradient */}
                         <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                        
+
                         {/* Image controls */}
                         {showControls && imageLoaded && (
-                            <motion.div 
+                            <motion.div
                                 className="absolute top-4 right-4 flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                                 initial={{ y: -10 }}
                                 animate={{ y: 0 }}
@@ -164,7 +179,7 @@ const ImageHandler = ({ src, alt, className, onClick, showControls = true, lazy 
                                     className="p-2 bg-white/90 backdrop-blur-sm rounded-full text-gray-700 hover:bg-white hover:text-gray-900 transition-all duration-200 shadow-lg"
                                     whileHover={{ scale: 1.1 }}
                                     whileTap={{ scale: 0.95 }}
-                                    onClick={(e) => {
+                                    onClick={e => {
                                         e.stopPropagation();
                                         handleImageClick();
                                     }}
@@ -172,12 +187,12 @@ const ImageHandler = ({ src, alt, className, onClick, showControls = true, lazy 
                                 >
                                     <FaExpand size={14} />
                                 </motion.button>
-                                
+
                                 <motion.button
                                     className="p-2 bg-white/90 backdrop-blur-sm rounded-full text-gray-700 hover:bg-white hover:text-gray-900 transition-all duration-200 shadow-lg"
                                     whileHover={{ scale: 1.1 }}
                                     whileTap={{ scale: 0.95 }}
-                                    onClick={(e) => {
+                                    onClick={e => {
                                         e.stopPropagation();
                                         handleDownload();
                                     }}
@@ -185,13 +200,13 @@ const ImageHandler = ({ src, alt, className, onClick, showControls = true, lazy 
                                 >
                                     <FaDownload size={14} />
                                 </motion.button>
-                                
+
                                 {navigator.share && (
                                     <motion.button
                                         className="p-2 bg-white/90 backdrop-blur-sm rounded-full text-gray-700 hover:bg-white hover:text-gray-900 transition-all duration-200 shadow-lg"
                                         whileHover={{ scale: 1.1 }}
                                         whileTap={{ scale: 0.95 }}
-                                        onClick={(e) => {
+                                        onClick={e => {
                                             e.stopPropagation();
                                             handleShare();
                                         }}
@@ -202,10 +217,10 @@ const ImageHandler = ({ src, alt, className, onClick, showControls = true, lazy 
                                 )}
                             </motion.div>
                         )}
-                        
+
                         {/* Image caption overlay */}
                         {alt && (
-                            <motion.div 
+                            <motion.div
                                 className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                                 initial={{ y: 10 }}
                                 animate={{ y: 0 }}
@@ -236,7 +251,7 @@ const ImageHandler = ({ src, alt, className, onClick, showControls = true, lazy 
                         >
                             <FaTimes size={20} />
                         </motion.button>
-                        
+
                         {/* Zoomed image */}
                         <motion.img
                             src={src}
@@ -246,9 +261,10 @@ const ImageHandler = ({ src, alt, className, onClick, showControls = true, lazy 
                             animate={{ scale: 1, opacity: 1 }}
                             exit={{ scale: 0.8, opacity: 0 }}
                             transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
-                            onClick={(e) => e.stopPropagation()}
+                            onClick={e => e.stopPropagation()}
+                            crossOrigin={crossOrigin}
                         />
-                        
+
                         {/* Image info */}
                         {alt && (
                             <motion.div
@@ -263,12 +279,16 @@ const ImageHandler = ({ src, alt, className, onClick, showControls = true, lazy 
                     </motion.div>
                 )}
             </AnimatePresence>
-            
+
             {/* Custom styles for shimmer effect */}
             <style jsx>{`
                 @keyframes shimmer {
-                    0% { transform: translateX(-100%); }
-                    100% { transform: translateX(100%); }
+                    0% {
+                        transform: translateX(-100%);
+                    }
+                    100% {
+                        transform: translateX(100%);
+                    }
                 }
                 .animate-shimmer {
                     animation: shimmer 2s infinite;
