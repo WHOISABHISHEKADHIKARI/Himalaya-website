@@ -81,7 +81,11 @@ const Contact = () => {
         setStatus('Failed to send message. Please try again.');
       }
     } catch (error) {
-      setStatus('Error sending message. Please try again.');
+      setStatus({
+        type: 'error',
+        message: 'Unable to send message. Please check your connection and try again.',
+        details: error.message
+      });
     }
   };
 

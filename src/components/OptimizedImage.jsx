@@ -59,6 +59,15 @@ const OptimizedImage = ({
   const handleError = () => {
     setHasError(true);
     setIsLoaded(false);
+    // Add retry mechanism
+    if (retryCount < maxRetries) {
+      setTimeout(() => {
+        setRetryCount(prev => prev + 1);
+        // Attempt to reload image
+        const img = imgRef.current;
+        if (img) img.src = src;
+      }, 1000 * Math.pow(2, retryCount)); // Exponential backoff
+    }
   };
 
   if (hasError) {

@@ -1,63 +1,17 @@
 const securityConfig = {
   contentSecurityPolicy: {
     directives: {
-      "upgrade-insecure-requests": [],
-      "default-src": ["'self'"],
+      // Remove unsafe-inline where possible
       "script-src": [
         "'self'",
-        "'unsafe-inline'",
-        "'unsafe-eval'",
+        // Only keep necessary external sources
         "https://*.googleapis.com",
-        "https://*.gstatic.com",
-        "https://maps.googleapis.com",
-        "https://reactjs.org",
-        "https://krishihimalaya.com",
-        "https://blogdata.dapirates.xyz",
-        "http://localhost:*"
+        "https://*.gstatic.com"
       ],
-      "style-src": [
-        "'self'",
-        "'unsafe-inline'",
-        "https://fonts.googleapis.com",
-        "https://krishihimalaya.com",
-        "https://blogdata.dapirates.xyz",
-        "http://localhost:*"
-      ],
-      "img-src": [
-        "'self'",
-        "data:",
-        "blob:",
-        "http://localhost:*",
-        "https://*.googleapis.com",
-        "https://*.gstatic.com",
-        "https://maps.gstatic.com",
-        "https://krishihimalaya.com",
-        "https://blogdata.dapirates.xyz"
-      ],
-      "font-src": ["'self'", "https://fonts.gstatic.com", "data:", "http://localhost:*"],
-      "frame-src": [
-        "'self'", 
-        "https://*.google.com",
-        "https://www.google.com/maps/",
-        "https://maps.google.com",
-        "https://krishihimalaya.com",
-        "https://blogdata.dapirates.xyz"
-      ],
-      "connect-src": [
-        "'self'", 
-        "https://*.googleapis.com", 
-        "http://localhost:*",
-        "wss://localhost:*",
-        "https://krishihimalaya.com",
-        "https://blogdata.dapirates.xyz",
-        "https://maps.googleapis.com",
-        "https://vitals.vercel-insights.com",
-        "https://*.vercel-insights.com"
-      ],
-      "worker-src": ["'self'", "blob:", "http://localhost:*"],
-      "object-src": ["'none'"],
-      "manifest-src": ["'self'", "https://krishihimalaya.com", "http://localhost:*"],
-      "media-src": ["'self'", "https://krishihimalaya.com", "blob:", "http://localhost:*"]
+      // Add more restrictive policies
+      "img-src": ["'self'", "https:", "data:"],
+      "connect-src": ["'self'", "https://api.yourservice.com"],
+      "frame-ancestors": ["'none'"]
     }
   }
 };
