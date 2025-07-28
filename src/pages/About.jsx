@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import LoadingBar from '../components/LoadingBar';
+import LoadingSpinner from '../components/LoadingSpinner';
 import ProgressiveImage from '../components/ProgressiveImage';
 import LazyContent, { LazySection, LazyCard } from '../components/LazyContent';
 import SkeletonLoader from '../components/SkeletonLoader';
@@ -39,10 +40,44 @@ const About = () => {
   const [showBackToTop, setShowBackToTop] = useState(false);
   const [scrollProgress, setScrollProgress] = useState(0);
   const [videoError, setVideoError] = useState(false);
+  const [error, setError] = useState(null);
+  const [imagesLoaded, setImagesLoaded] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
+    const loadImages = async () => {
+      try {
+        const imagePromises = [
+          founder,
+          owner,
+          manager,
+          fenchu,
+          bankingPartner,
+          consultingPartner,
+          creativePartner,
+          techPartner
+        ].map(src => {
+          return new Promise((resolve, reject) => {
+            const img = new Image();
+            img.src = src;
+            img.onload = resolve;
+            img.onerror = reject;
+          });
+        });
+
+        await Promise.all(imagePromises);
+        setImagesLoaded(true);
+      } catch (err) {
+        setError('Failed to load some images. Please refresh the page.');
+      }
+    };
+
+    loadImages();
+
     let timer = setTimeout(() => {
-      setLoading(false);
+      if (!error) {
+        setLoading(false);
+      }
     }, 1500);
 
     // Back to top visibility handler and scroll progress
@@ -60,6 +95,12 @@ const About = () => {
         timer = null;
       }
       window.removeEventListener('scroll', handleScroll);
+      // Cleanup image loading
+      const images = document.images;
+      for (let i = 0; i < images.length; i++) {
+        images[i].onload = null;
+        images[i].onerror = null;
+      }
     };
   }, []);
 
@@ -73,6 +114,32 @@ const About = () => {
   const handleVideoError = () => {
     setVideoError(true);
   };
+
+  if (loading) {
+    return <LoadingSpinner />;
+  }
+
+  if (error) {
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-gray-50">
+        <div className="max-w-md w-full p-6 bg-white rounded-lg shadow-lg text-center">
+          <div className="mb-4">
+            <svg className="mx-auto h-12 w-12 text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+            </svg>
+          </div>
+          <h3 className="text-lg font-medium text-gray-900 mb-2">Error Loading Page</h3>
+          <p className="text-sm text-gray-500 mb-4">{error}</p>
+          <button
+            onClick={() => window.location.reload()}
+            className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-red-600 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500"
+          >
+            Try Again
+          </button>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div style={{ backgroundColor: colors.background.primary }}>
@@ -295,7 +362,7 @@ const About = () => {
                       A Legacy of Growth
                     </h3>
                     <p className="text-[#1C4E37]/80 text-center font-medium leading-relaxed tracking-wide">
-                      From our humble beginnings to our current success, we've maintained steady growth while staying true to our organic principles and commitment to quality.
+                      From our humble beginnings to our current success, we&apos;ve maintained steady growth while staying true to our organic principles and commitment to quality.
                     </p>
                     <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[#D8A51D]/20 to-transparent transform scale-x-0 group-hover:scale-x-100 transition-transform duration-700"></div>
                   </div>
@@ -606,7 +673,7 @@ const About = () => {
                       <p className="text-lg mb-4" style={{ color: colors.primary }}>Branch Manager, ADBL</p>
                       <div className="w-16 h-1 mb-6" style={{ backgroundColor: colors.secondary }}></div>
                       <p className="italic mb-6 leading-relaxed" style={{ color: colors.text.medium }}>
-                        "It brings me immense joy to witness their growth from humble beginnings. As someone who has been a helping hand in their journey, I am proud to see their dedication and the meaningful impact they've created."
+                        "It brings me immense joy to witness their growth from humble beginnings. As someone who has been a helping hand in their journey, I am proud to see their dedication and the meaningful impact they&apos;ve created."
                       </p>
                     </div>
                   </div>
@@ -633,7 +700,7 @@ const About = () => {
                       <p className="text-lg mb-4" style={{ color: colors.primary }}>Livestock & Poultry Farm Consultant</p>
                       <div className="w-16 h-1 mb-6" style={{ backgroundColor: colors.secondary }}></div>
                       <p className="italic mb-6 leading-relaxed" style={{ color: colors.text.medium }}>
-                        "It's inspiring to see young leadership driving innovation in agriculture by a small and youth-led team. Their vision has inspired me. Their energy and vision for growth is remarkable, and I'm excited to see how they've embraced transformation to showcase their journey and fix the issues."
+                        "It&apos;s inspiring to see young leadership driving innovation in agriculture by a small and youth-led team. Their vision has inspired me. Their energy and vision for growth is remarkable, and I&apos;m excited to see how they&apos;ve embraced transformation to showcase their journey and fix the issues."
                       </p>
                     </div>
                   </div>
@@ -660,7 +727,7 @@ const About = () => {
                       <p className="text-lg mb-4" style={{ color: colors.primary }}>Manahari 5 Ward Chief</p>
                       <div className="w-16 h-1 mb-6" style={{ backgroundColor: colors.secondary }}></div>
                       <p className="italic mb-6 leading-relaxed" style={{ color: colors.text.medium }}>
-                        "The farm beautifully captures the essence of their organic farming journey and represents Manahari's showcase. As a member of Manahari municipality, I am impressed by how they've showcased their commitment to serving society through this digital platform."
+                        "The farm beautifully captures the essence of their organic farming journey and represents Manahari&apos;s showcase. As a member of Manahari municipality, I am impressed by how they&apos;ve showcased their commitment to serving society through this digital platform."
                       </p>
                     </div>
                   </div>
@@ -687,7 +754,7 @@ const About = () => {
                       <p className="text-lg mb-4" style={{ color: colors.primary }}>Senior veterinary,Agri Entrepreneur , Founer oF MNS Agro </p>
                       <div className="w-16 h-1 mb-6" style={{ backgroundColor: colors.secondary }}></div>
                       <p className="italic mb-6 leading-relaxed" style={{ color: colors.text.medium }}>
-                        "It's inspiring to witness the seamless transfer of agricultural legacy across generations here. What truly sets this farm apart is seeing energetic young minds bringing fresh perspectives while honoring traditional farming wisdom. The enthusiasm and innovation of these young farmers, combined with their deep respect for sustainable practices, showcases how the next generation is revolutionizing organic agriculture in Manahari."
+                        "It&apos;s inspiring to witness the seamless transfer of agricultural legacy across generations here. What truly sets this farm apart is seeing energetic young minds bringing fresh perspectives while honoring traditional farming wisdom. The enthusiasm and innovation of these young farmers, combined with their deep respect for sustainable practices, showcases how the next generation is revolutionizing organic agriculture in Manahari."
                       </p>
                     </div>
                   </div>

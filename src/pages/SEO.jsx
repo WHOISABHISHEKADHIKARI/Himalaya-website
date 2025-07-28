@@ -34,7 +34,7 @@ const SEO = () => {
       "name": "What is organic farming and why is it important in Nepal?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Organic farming is a method of agriculture that avoids the use of synthetic fertilizers and pesticides. In Nepal, it's crucial for preserving soil health, protecting biodiversity, and producing healthier food while maintaining traditional farming practices."
+        "text": "Organic farming is a method of agriculture that avoids the use of synthetic fertilizers and pesticides. In Nepal, it&apos;s crucial for preserving soil health, protecting biodiversity, and producing healthier food while maintaining traditional farming practices."
       }
     },
     {

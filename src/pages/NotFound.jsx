@@ -67,7 +67,7 @@ const NotFound = () => {
             माफ गर्नुहोस्, तपाईंले खोज्नुभएको पृष्ठ उपलब्ध छैन।
           </p>
           <p className="text-xl mb-8" style={{ color: colors.text.medium }}>
-            The page you're looking for doesn't exist or has been moved.
+            The page you&apos;re looking for doesn&apos;t exist or has been moved.
           </p>
           
           <div className="space-y-4">

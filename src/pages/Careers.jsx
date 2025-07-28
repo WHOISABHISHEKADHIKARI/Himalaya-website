@@ -59,9 +59,9 @@ const Careers = () => {
                       <path d="M20 6h-4V4c0-1.11-.89-2-2-2h-4c-1.11 0-2 .89-2 2v2H4c-1.11 0-1.99.89-1.99 2L2 19c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2zm-6 0h-4V4h4v2z"/>
                     </svg>
                   </div>
-                  <h2 className="text-2xl font-bold text-[#1C4E37] mb-4">We're Working On It!</h2>
+                  <h2 className="text-2xl font-bold text-[#1C4E37] mb-4">We&apos;re Working On It!</h2>
                   <p className="text-[#1C4E37]/80 mb-8">
-                    Thank you for your interest in joining our team. While we don't have any vacancies available right now, we're always looking for talented individuals who share our passion for sustainable agriculture.
+                    Thank you for your interest in joining our team. While we don&apos;t have any vacancies available right now, we&apos;re always looking for talented individuals who share our passion for sustainable agriculture.
                   </p>
                   <Link
                     to="/contact"

@@ -33,7 +33,7 @@ const NewsAboutUs = () => {
     },
     {
       id: 3,
-      title: "Lumpy Skin Dilemma: Unmasking Nepal's Cattle Plague",
+      title: "Lumpy Skin Dilemma: Unmasking Nepal&apos;s Cattle Plague",
       source: "Medium",
       summary: "An in-depth analysis of the Lumpy Skin Disease affecting cattle in Nepal, its economic impact, and the challenges faced by farmers in managing this contagious crisis.",
       link: "https://medium.com/@abhishekadhikari1254/lumpy-skin-dilemma-unmasking-nepals-cattle-plague-a-contagious-crisis-of-economic-losses-f8055852714f",

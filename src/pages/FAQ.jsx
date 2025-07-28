@@ -16,7 +16,7 @@ const FAQ = () => {
   const faqs = [
     {
       question: "What is organic farming and why is it important in Nepal?",
-      answer: "Organic farming is a method of agriculture that avoids the use of synthetic fertilizers and pesticides. In Nepal, it's crucial for preserving soil health, protecting biodiversity, and producing healthier food while maintaining traditional farming practices."
+      answer: "Organic farming is a method of agriculture that avoids the use of synthetic fertilizers and pesticides. In Nepal, it&apos;s crucial for preserving soil health, protecting biodiversity, and producing healthier food while maintaining traditional farming practices."
     },
     {
       question: "How does Himalaya Krishi support local farmers?",

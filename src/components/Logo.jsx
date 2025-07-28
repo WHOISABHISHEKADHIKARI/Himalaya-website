@@ -27,7 +27,7 @@ const Logo = () => (
           alt="हिमालय कृषि लोगो | Himalaya Krishi Logo"
           className="h-16 w-auto transform transition-all duration-300 group-hover:scale-105"
           loading="eager"
-          fetchpriority="high"
+          fetchPriority="high"
           width="64"
           height="64"
           decoding="async"

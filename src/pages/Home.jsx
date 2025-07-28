@@ -31,6 +31,7 @@ const testimonialImages = [
 ];
 
 // Stats array
+// eslint-disable-next-line no-unused-vars
 const stats = [
   { value: "1000+", label: "Farmers Empowered" },
   { value: "5000+", label: "Hectares Organic" },
@@ -38,6 +39,7 @@ const stats = [
 ];
 
 // Features array
+// eslint-disable-next-line no-unused-vars
 const features = [
   {
     icon: "🌱",
@@ -244,7 +246,7 @@ const Home = () => {
               Himalaya Krishi
             </h1>
             <p className="text-xl md:text-2xl mb-12 max-w-3xl mx-auto" style={{ color: colors.text.light }}>
-              Nepal's First Organic Farming
+              Nepal&apos;s First Organic Farming
             </p>
             <div className="mt-8 flex flex-col md:flex-row gap-6 justify-center">
               <ActionButton text="Learn About Us" link="/about" variant="primary" />
@@ -295,7 +297,7 @@ const Home = () => {
                   Our journey began in 1992 with a small herd of Murrah buffaloes. What started as a modest dairy farm has now evolved into a thriving organic enterprise. Through decades of dedication, we have expanded our operations while staying true to our roots.
                 </p>
                 <p className="text-lg mb-6 text-justify" style={{ color: colors.text.medium }}>
-                  Today, we stand as a testament to sustainable growth, blending traditional wisdom with modern practices. Our commitment to quality and authenticity has never wavered, even as we've grown from a family business to a community cornerstone.
+                  Today, we stand as a testament to sustainable growth, blending traditional wisdom with modern practices. Our commitment to quality and authenticity has never wavered, even as we&apos;ve grown from a family business to a community cornerstone.
                 </p>
                 <div className="flex items-center mt-8">
                   <span className="w-16 h-1" style={{ backgroundColor: colors.secondary }}></span>
@@ -332,7 +334,7 @@ const Home = () => {
               <h2 className="text-3xl md:text-5xl font-serif font-bold mb-6" style={{ color: colors.text.dark }}>Our Philosophy</h2>
               <div className="w-32 h-1 mx-auto mb-8" style={{ backgroundColor: colors.secondary }}></div>
               <p className="text-xl max-w-3xl mx-auto" style={{ color: colors.text.medium }}>
-                Embracing nature's wisdom while pioneering sustainable agricultural practices.
+                Embracing nature&apos;s wisdom while pioneering sustainable agricultural practices.
               </p>
             </div>
             
@@ -414,7 +416,7 @@ const Home = () => {
           <div className="max-w-5xl mx-auto">
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-5xl font-serif font-bold mb-4" style={{ color: colors.text.dark }}>
-                Voices of vistors
+                Voices of visitors
               </h2>
               <div className="w-32 h-1 mx-auto mb-6" style={{ backgroundColor: colors.secondary }}></div>
               <p className="text-lg max-w-2xl mx-auto" style={{ color: colors.text.medium }}>
@@ -518,7 +520,7 @@ const Home = () => {
                 <div className="text-center max-w-3xl mx-auto pt-6">
                   <blockquote>
                     <p className="text-lg md:text-xl leading-relaxed mb-6 italic" style={{ color: colors.text.medium }}>
-                      "Visiting Himalaya Krishi Farm was a revelation. The passion and innovation of young farmers are transforming agriculture, and blending modern techniques with traditional wisdom could amplify their impact even further."
+                      &quot;Visiting Himalaya Krishi Farm was a revelation. The passion and innovation of young farmers are transforming agriculture, and blending modern techniques with traditional wisdom could amplify their impact even further.&quot;
                     </p>
                   </blockquote>
                   

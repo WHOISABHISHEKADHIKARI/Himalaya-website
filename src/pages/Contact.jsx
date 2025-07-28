@@ -161,7 +161,7 @@ const Contact = () => {
           variants={fadeIn}>
           <div className="w-16 h-1 bg-[#D8A51D] mx-auto mb-8" />
           <h1 className="text-4xl md:text-5xl font-serif font-bold text-center mb-4" style={{ color: colors.primary }}>Contact Us</h1>
-          <p className="text-lg text-center mb-12" style={{ color: colors.text.medium }}>We'd love to hear from you. Please fill out the form below.</p>
+          <p className="text-lg text-center mb-12" style={{ color: colors.text.medium }}>We&apos;d love to hear from you. Please fill out the form below.</p>
           
           {/* Add location information */}
           <div className="flex items-center mb-6 justify-center">

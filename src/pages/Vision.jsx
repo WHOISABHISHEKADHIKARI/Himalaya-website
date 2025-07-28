@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { GiCow, GiFarmTractor, GiWheat, GiMilkCarton } from 'react-icons/gi';
 import { FaHotel, FaSeedling, FaLeaf, FaChartLine, FaArrowDown, FaMountain, FaHandHoldingHeart } from 'react-icons/fa';
@@ -6,8 +6,10 @@ import { motion, AnimatePresence, useScroll, useTransform } from 'framer-motion'
 import ScrollToTopButton from '../components/ScrollToTopButton';
 import { Helmet } from 'react-helmet-async';
 import ProgressiveImage from '../components/ProgressiveImage';
+import LoadingSpinner from '../components/LoadingSpinner';
 
 // Premium color palette - preserved from original
+// eslint-disable-next-line no-unused-vars
 const colors = {
   primary: '#1C4E37', // Deep forest green
   secondary: '#D8A51D', // Rich gold
@@ -89,19 +91,9 @@ const revealFromRight = {
 const Vision = () => {
   const [scrollProgress, setScrollProgress] = useState(0);
   const [isLoading, setIsLoading] = useState(true);
+  const [isLoaded, setIsLoaded] = useState(false);
   const heroRef = useRef(null);
 
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsLoading(false);
-    }, 1500);
-
-    return () => clearTimeout(timer);
-  }, []);
-
-  if (isLoading) {
-    return <LoadingSpinner />;
-  }
   const { scrollYProgress } = useScroll({
     target: heroRef,
     offset: ["start start", "end start"]
@@ -112,8 +104,8 @@ const Vision = () => {
   const heroBackgroundY = useTransform(scrollYProgress, [0, 1], [0, 50]);
 
   useEffect(() => {
-    // Simulate loading time
     const timer = setTimeout(() => {
+      setIsLoading(false);
       setIsLoaded(true);
     }, 1500);
 
@@ -178,6 +170,10 @@ const Vision = () => {
     
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  if (isLoading) {
+    return <LoadingSpinner />;
+  }
 
   return (
     <div className="relative bg-gradient-to-b from-[#F4F9F1] to-[#EAEFE7] min-h-screen font-sans">
@@ -523,7 +519,7 @@ const Vision = () => {
                 </h3>
                 
                 <div className="bg-[rgba(28,78,55,0.02)] p-6 rounded-xl mb-6">
-                  <p className="text-[#3A5944] mb-4">Our premium dairy operation focuses on quality over quantity, producing some of Nepal's finest dairy products from our carefully maintained buffalo herd.</p>
+                  <p className="text-[#3A5944] mb-4">Our premium dairy operation focuses on quality over quantity, producing some of Nepal&apos;s finest dairy products from our carefully maintained buffalo herd.</p>
                 </div>
                 
                 <ul className="space-y-4 mt-auto">

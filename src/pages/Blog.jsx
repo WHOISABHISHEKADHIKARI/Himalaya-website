@@ -30,21 +30,14 @@ const SkeletonCard = () => (
 );
 
 const BlogSchema = () => {
-  const [isLoading, setIsLoading] = useState(true);
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsLoading(false);
-    }, 1500);
-
-    return () => clearTimeout(timer);
-  }, []);
-
-  if (isLoading) {
-    return <LoadingSpinner />;
-  }
-
-}
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Blog',
+    name: 'Himalaya Krishi Blog',
+    description: 'Latest insights on organic farming, sustainable agriculture, and agricultural technology in Nepal',
+    url: 'https://himalayakrishi.com/blog'
+  };
+};
 
 // Blog Card Component
 const BlogCard = ({ post, index }) => (
@@ -121,12 +114,7 @@ const BlogCard = ({ post, index }) => (
 // Add structured data for blog listing
 const generateBlogStructuredData = () => {
     return {
-        '@context': 'https://schema.org',
-        '@type': 'Blog',
-        name: 'Himalaya Krishi Blog',
-        description:
-            'Latest insights on organic farming, sustainable agriculture, and agricultural technology in Nepal',
-        url: 'https://himalayakrishi.com/blog',
+        ...BlogSchema(),
         publisher: {
             '@type': 'Organization',
             name: 'Himalaya Krishi',

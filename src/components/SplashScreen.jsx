@@ -60,7 +60,7 @@ const SplashScreen = ({ onFinish = () => {} }) => {
             }}
             style={{ display: imageError ? 'none' : 'block' }}
             loading="eager"
-            fetchpriority="high"
+            fetchPriority="high"
             width="256"
             height="256"
           />
