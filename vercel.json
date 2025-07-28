@@ -7,7 +7,6 @@
   ],
   "cleanUrls": true,
   "trailingSlash": false,
-
   "headers": [
     {
       "source": "/(.*)",
@@ -26,7 +25,5 @@
         }
       ]
     }
-  ],
-  "cleanUrls": true,
-  "trailingSlash": false
+  ]
 }
