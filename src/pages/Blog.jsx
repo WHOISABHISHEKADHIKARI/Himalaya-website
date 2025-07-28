@@ -44,6 +44,8 @@ const Blog = () => {
     return <LoadingSpinner />;
   }
 
+}
+
 // Blog Card Component
 const BlogCard = ({ post, index }) => (
     <Link key={post.id} to={`/blog/${post.slug}`} className="block h-full">
