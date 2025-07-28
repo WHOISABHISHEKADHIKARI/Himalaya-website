@@ -29,7 +29,7 @@ const SkeletonCard = () => (
     </div>
 );
 
-const Blog = () => {
+const BlogSchema = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
