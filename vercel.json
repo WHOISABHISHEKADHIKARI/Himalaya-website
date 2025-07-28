@@ -5,13 +5,9 @@
   "rewrites": [
     { "source": "/(.*)", "destination": "/index.html" }
   ],
-  "routes": [
-    {
-      "src": "/[^.]+",
-      "dest": "/",
-      "status": 200
-    }
-  ],
+  "cleanUrls": true,
+  "trailingSlash": false,
+
   "headers": [
     {
       "source": "/(.*)",
