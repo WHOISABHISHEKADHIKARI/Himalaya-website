@@ -46,6 +46,7 @@ export default defineConfig({
     host: true,
     open: false,
     cors: true,
+    historyApiFallback: true,
     headers: {
       'Cross-Origin-Embedder-Policy': 'credentialless',
       'Cross-Origin-Opener-Policy': 'same-origin',
