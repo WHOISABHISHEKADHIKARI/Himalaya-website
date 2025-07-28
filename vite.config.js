@@ -46,7 +46,9 @@ export default defineConfig({
     host: true,
     open: false,
     cors: true,
-    historyApiFallback: true,
+    historyApiFallback: {
+      index: '/index.html'
+    },
     headers: {
       'Cross-Origin-Embedder-Policy': 'credentialless',
       'Cross-Origin-Opener-Policy': 'same-origin',
@@ -57,6 +59,9 @@ export default defineConfig({
     port: 4173,
     host: true,
     cors: true,
+    historyApiFallback: {
+      index: '/index.html'
+    },
     headers: {
       'Cross-Origin-Embedder-Policy': 'credentialless',
       'Cross-Origin-Opener-Policy': 'same-origin',
