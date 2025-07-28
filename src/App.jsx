@@ -1,4 +1,4 @@
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, useLocation } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
 import { lazy, Suspense } from 'react';
 import { Analytics } from '@vercel/analytics/react';
@@ -28,8 +28,9 @@ const Blog = lazy(() => import('./pages/Blog'));
 const BlogPost = lazy(() => import('./pages/BlogPost'));
 
 function App() {
+  const location = useLocation();
   return (
-    <ErrorBoundary>
+    <ErrorBoundary location={location}>
       <HelmetProvider>
         <Suspense fallback={<div className="h-20 bg-[#1C4E37]"></div>}>
           <Navbar />

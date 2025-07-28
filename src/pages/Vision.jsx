@@ -88,7 +88,15 @@ const revealFromRight = {
 
 const Vision = () => {
   const [scrollProgress, setScrollProgress] = useState(0);
-  const [isLoaded, setIsLoaded] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 1500);
+
+    return () => clearTimeout(timer);
+  }, []);
   const heroRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: heroRef,

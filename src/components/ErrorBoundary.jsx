@@ -5,6 +5,11 @@ class ErrorBoundary extends React.Component {
   constructor(props) {
     super(props);
     this.state = { hasError: false, error: null };
+    this.resetErrorBoundary = this.resetErrorBoundary.bind(this);
+  }
+
+  resetErrorBoundary() {
+    this.setState({ hasError: false, error: null });
   }
 
   static getDerivedStateFromError(error) {
@@ -12,12 +17,19 @@ class ErrorBoundary extends React.Component {
   }
 
   componentDidCatch(error, errorInfo) {
-    // Replace console.error with proper error tracking
-    // Consider using an error tracking service
     this.setState({
       hasError: true,
       error: error
     });
+  }
+
+  componentDidUpdate(prevProps) {
+    if (this.state.hasError) {
+      // Reset error state when location changes
+      if (window.location.pathname !== prevProps.location?.pathname) {
+        this.resetErrorBoundary();
+      }
+    }
   }
 
   render() {
@@ -37,10 +49,10 @@ class ErrorBoundary extends React.Component {
             </p>
             <div className="space-x-4">
               <button
-                onClick={() => window.location.reload()}
+                onClick={this.resetErrorBoundary}
                 className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-green-600 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500"
               >
-                Reload Page
+                Try Again
               </button>
               <Link
                 to="/"

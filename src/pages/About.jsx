@@ -36,16 +36,14 @@ import { Helmet } from 'react-helmet-async';
 
 const About = () => {
   const [loading, setLoading] = useState(true);
-  const [isLoading, setIsLoading] = useState(true);
   const [showBackToTop, setShowBackToTop] = useState(false);
   const [scrollProgress, setScrollProgress] = useState(0);
   const [videoError, setVideoError] = useState(false);
 
   useEffect(() => {
-    const timer = setTimeout(() => {
+    let timer = setTimeout(() => {
       setLoading(false);
-      setIsLoading(false);
-    }, 2000); // Reduced from 3000ms
+    }, 1500);
 
     // Back to top visibility handler and scroll progress
     const handleScroll = () => {
@@ -57,7 +55,10 @@ const About = () => {
 
     window.addEventListener('scroll', handleScroll);
     return () => {
-      clearTimeout(timer);
+      if (timer) {
+        clearTimeout(timer);
+        timer = null;
+      }
       window.removeEventListener('scroll', handleScroll);
     };
   }, []);

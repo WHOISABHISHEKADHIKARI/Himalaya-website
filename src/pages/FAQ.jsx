@@ -1,8 +1,18 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 import LinkedInProfile from '../components/LinkedInProfile';
+import LoadingSpinner from '../components/LoadingSpinner';
 
 const FAQ = () => {
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 1500);
+
+    return () => clearTimeout(timer);
+  }, []);
   const faqs = [
     {
       question: "What is organic farming and why is it important in Nepal?",

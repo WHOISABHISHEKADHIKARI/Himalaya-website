@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { FaCalendar, FaUser } from 'react-icons/fa';
 import logo from '../assets/logo/whitelogo-blackbg-removebg-preview.webp';
 import { Helmet } from 'react-helmet-async';
+import LoadingSpinner from '../components/LoadingSpinner';
 
 // Skeleton Card Component
 const SkeletonCard = () => (
@@ -27,6 +28,16 @@ const SkeletonCard = () => (
         </div>
     </div>
 );
+
+const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 1500);
+
+    return () => clearTimeout(timer);
+  }, []);
 
 // Blog Card Component
 const BlogCard = ({ post, index }) => (
