@@ -89,6 +89,7 @@ const revealFromRight = {
 const Vision = () => {
   const [scrollProgress, setScrollProgress] = useState(0);
   const [isLoading, setIsLoading] = useState(true);
+  const heroRef = useRef(null);
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -97,7 +98,10 @@ const Vision = () => {
 
     return () => clearTimeout(timer);
   }, []);
-  const heroRef = useRef(null);
+
+  if (isLoading) {
+    return <LoadingSpinner />;
+  }
   const { scrollYProgress } = useScroll({
     target: heroRef,
     offset: ["start start", "end start"]

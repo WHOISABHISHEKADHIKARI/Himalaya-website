@@ -29,7 +29,8 @@ const SkeletonCard = () => (
     </div>
 );
 
-const [isLoading, setIsLoading] = useState(true);
+const Blog = () => {
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -38,6 +39,10 @@ const [isLoading, setIsLoading] = useState(true);
 
     return () => clearTimeout(timer);
   }, []);
+
+  if (isLoading) {
+    return <LoadingSpinner />;
+  }
 
 // Blog Card Component
 const BlogCard = ({ post, index }) => (

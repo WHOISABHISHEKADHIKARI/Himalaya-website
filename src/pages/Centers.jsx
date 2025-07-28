@@ -15,13 +15,22 @@ const Centers = () => {
     return () => clearTimeout(timer);
   }, []);
   
+  if (isLoading) {
+    return <LoadingSpinner />;
+  }
+
   return (
-    <div>
+    <div className="min-h-screen bg-gradient-to-b from-[#F4F9F1] to-[#EAEFE7]">
       <Helmet>
         <title>{centerName} Center - Himalaya Krishi</title>
         <meta name="description" content="Empowering farmers with sustainable practices and support at our centers." />
       </Helmet>
-      {/* Add your component content here */}
+      <div className="container mx-auto px-4 py-8">
+        <h1 className="text-4xl font-bold text-[#1C4E37] mb-6">{centerName} Center</h1>
+        <div className="bg-white rounded-lg shadow-lg p-6">
+          <p className="text-gray-600">Content for {centerName} center will be available soon.</p>
+        </div>
+      </div>
     </div>
   );
 };
