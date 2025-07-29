@@ -1,8 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
-import Navbar from '../components/Navbar';
-import Footer from '../components/Footer';
 
 const colors = {
   primary: '#1C4E37',
@@ -41,8 +39,7 @@ const NotFound = () => {
         
         {/* Rest of meta tags remain the same ... */}
       </Helmet>
-      <Navbar />
-      <main className="flex-grow flex items-center justify-center py-20 px-4">
+      <main className="flex-grow flex items-center justify-center py-20 px-4 pt-32">
         <div className="max-w-3xl text-center">
           <div className="mb-12">
             <h1 className="text-9xl font-bold" style={{ color: colors.primary }}>४०४</h1>
@@ -95,7 +92,6 @@ const NotFound = () => {
           </div>
         </div>
       </main>
-      <Footer />
     </div>
   );
 };
