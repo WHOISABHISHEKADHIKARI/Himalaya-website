@@ -1,7 +1,6 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 // import { compression } from 'vite-plugin-compression'  // Comment out
-import securityConfig from './src/security/config'
 
 export default defineConfig({
   css: {
@@ -48,11 +47,6 @@ export default defineConfig({
     cors: true,
     historyApiFallback: {
       index: '/index.html'
-    },
-    headers: {
-      'Cross-Origin-Embedder-Policy': 'credentialless',
-      'Cross-Origin-Opener-Policy': 'same-origin',
-      ...securityConfig.headers
     }
   },
   preview: {
@@ -61,11 +55,6 @@ export default defineConfig({
     cors: true,
     historyApiFallback: {
       index: '/index.html'
-    },
-    headers: {
-      'Cross-Origin-Embedder-Policy': 'credentialless',
-      'Cross-Origin-Opener-Policy': 'same-origin',
-      ...securityConfig.headers
     }
   },
   define: {

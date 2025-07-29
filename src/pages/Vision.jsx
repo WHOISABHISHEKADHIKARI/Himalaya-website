@@ -106,14 +106,23 @@ const Vision = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsLoading(false);
-      setIsLoaded(true);
     }, 1500);
 
-    return () => clearTimeout(timer);
+    const loadTimer = setTimeout(() => {
+      setIsLoaded(true);
+    }, 1800);
+
+    return () => {
+      clearTimeout(timer);
+      clearTimeout(loadTimer);
+    };
   }, []);
 
-  // SEO optimization
+  // SEO optimization with proper cleanup
   useEffect(() => {
+    // Only run on client side
+    if (typeof window === 'undefined') return;
+    
     document.title = "Our Vision | Himalaya Krishi | Premium Sustainable Agriculture";
     
     let metaDescription = document.querySelector('meta[name="description"]');
@@ -130,7 +139,7 @@ const Vision = () => {
       "@type": "Organization",
       "name": "हिमालय कृषि तथा पशुपालन फार्म | Himalaya Krishi Tatha Pasupalan Farm",
       "description": "नेपालको अग्रणी जैविक कृषि र पशुपालन फार्म | Leading organic farming and dairy production in Nepal",
-      "url": window.location.href,
+      "url": typeof window !== 'undefined' ? window.location.href : '',
       "areaServed": {
         "@type": "Country",
         "name": "Nepal"
@@ -156,19 +165,35 @@ const Vision = () => {
     }
     scriptTag.innerHTML = JSON.stringify(schemaData);
     
-    // Scroll progress handler
+    return () => {
+      // Cleanup schema tag on unmount
+      const schemaTag = document.querySelector('#schema-data');
+      if (schemaTag) {
+        schemaTag.remove();
+      }
+    };
+  }, []);
+
+  // Separate scroll handler with proper cleanup
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+    
     const handleScroll = () => {
-      const totalHeight = document.body.scrollHeight - window.innerHeight;
-      const progress = (window.pageYOffset / totalHeight) * 100;
-      setScrollProgress(progress);
+      try {
+        const totalHeight = document.body.scrollHeight - window.innerHeight;
+        const progress = totalHeight > 0 ? (window.pageYOffset / totalHeight) * 100 : 0;
+        setScrollProgress(Math.min(Math.max(progress, 0), 100));
+      } catch (error) {
+        console.warn('Scroll handler error:', error);
+      }
     };
     
-    window.addEventListener('scroll', handleScroll);
+    // Use passive listener for better performance
+    window.addEventListener('scroll', handleScroll, { passive: true });
     
-    // Set loaded state after a short delay for initial animations
-    setTimeout(() => setIsLoaded(true), 300);
-    
-    return () => window.removeEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
   }, []);
 
   if (isLoading) {
@@ -190,17 +215,11 @@ const Vision = () => {
         <motion.div 
           className="h-full bg-gradient-to-r from-[#1C4E37] via-[#D8A51D] to-[#1C4E37]"
           style={{ 
-            width: `${scrollProgress}%`,
-            backgroundSize: '200% 100%',
-            backgroundPosition: `${scrollProgress}% 0`
-          }}
-          animate={{
-            backgroundPosition: ['0% 0%', '100% 0%'],
+            width: `${scrollProgress}%`
           }}
           transition={{
-            duration: 3,
-            repeat: Infinity,
-            ease: 'linear'
+            duration: 0.1,
+            ease: 'easeOut'
           }}
         />
       </div>
@@ -213,31 +232,8 @@ const Vision = () => {
             className="absolute top-0 left-0 w-full h-full bg-[#1C4E37] opacity-[0.03] rounded-b-[100px]"
             style={{ y: heroBackgroundY }}
           />
-          <motion.div 
-            className="absolute -top-20 -right-20 w-96 h-96 rounded-full bg-[#D8A51D] opacity-[0.03] blur-3xl"
-            animate={{
-              scale: [1, 1.1, 1],
-              opacity: [0.03, 0.05, 0.03],
-            }}
-            transition={{
-              duration: 8,
-              repeat: Infinity,
-              ease: 'easeInOut'
-            }}
-          />
-          <motion.div 
-            className="absolute -bottom-20 -left-20 w-96 h-96 rounded-full bg-[#1C4E37] opacity-[0.03] blur-3xl"
-            animate={{
-              scale: [1, 1.2, 1],
-              opacity: [0.03, 0.06, 0.03],
-            }}
-            transition={{
-              duration: 10,
-              repeat: Infinity,
-              ease: 'easeInOut',
-              delay: 2
-            }}
-          />
+          <div className="absolute -top-20 -right-20 w-96 h-96 rounded-full bg-[#D8A51D] opacity-[0.03] blur-3xl" />
+          <div className="absolute -bottom-20 -left-20 w-96 h-96 rounded-full bg-[#1C4E37] opacity-[0.03] blur-3xl" />
         </div>
         
         <motion.div 
@@ -294,16 +290,9 @@ const Vision = () => {
               })}
             >
               <span className="font-medium">Explore Our Vision</span>
-              <motion.div
-                animate={{ y: [0, 5, 0] }}
-                transition={{ 
-                  duration: 1.5, 
-                  repeat: Infinity, 
-                  ease: "easeInOut" 
-                }}
-              >
+              <div className="animate-bounce">
                 <FaArrowDown className="text-[#D8A51D] group-hover:text-white transition-colors duration-300" />
-              </motion.div>
+              </div>
             </motion.button>
           </motion.div>
         </motion.div>

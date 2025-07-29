@@ -47,10 +47,23 @@ class ErrorBoundary extends React.Component {
     // Log error to your preferred error tracking service
     console.error('Error caught by boundary:', error, errorInfo);
     
+    // Check if it's a chunk loading error
+    const isChunkError = error?.message?.includes('Loading chunk') || 
+                        error?.message?.includes('Failed to fetch dynamically imported module') ||
+                        error?.name === 'ChunkLoadError';
+    
     this.setState({
       hasError: true,
-      error: error
+      error: error,
+      isChunkError
     });
+    
+    // Auto-retry for chunk errors
+    if (isChunkError && this.state.retryCount < 2) {
+      setTimeout(() => {
+        this.resetErrorBoundary();
+      }, 1000);
+    }
   }
 
   componentDidUpdate(prevProps) {
@@ -64,7 +77,9 @@ class ErrorBoundary extends React.Component {
 
   render() {
     if (this.state.hasError) {
-      const isChunkLoadError = this.state.error?.message?.includes('Failed to fetch dynamically imported module');
+      const isChunkLoadError = this.state.isChunkError || 
+                              this.state.error?.message?.includes('Failed to fetch dynamically imported module') ||
+                              this.state.error?.message?.includes('Loading chunk');
 
       return (
         <div className="min-h-screen flex items-center justify-center bg-gray-50">
