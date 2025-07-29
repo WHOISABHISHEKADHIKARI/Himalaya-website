@@ -20,7 +20,7 @@ const NewsAboutUs = () => {
       summary: "Abhishek Adhikari, a 25-year-old youth from Manahari, Makwanpur, is redefining the future of agriculture in Nepal. His farm produces 400 liters of milk daily with 7% fat content using organic methods.",
       link: "https://thehamro.com/abhishek-adhikari-meet-the-young-techie-behind-a-400-liter-per-day-organic-milk-farm/",
       date: "2024",
-      image: "/images/news/abhishek-farm.jpg"
+      image: "/himalaya-favicon.svg"
     },
     {
       id: 2,
@@ -29,7 +29,7 @@ const NewsAboutUs = () => {
       summary: "मनहरी मकवानपुरका २५ वर्षीय युवा, हाल नेपालका उत्कृष्ट युवा कृषक मध्ये एकका रूपमा चिनिन्छन्। दैनिक ४०० लिटर दूध उत्पादन गर्ने फार्म सञ्चालन गर्दै।",
       link: "https://www.nawalpuronline.com/2025/05/26329",
       date: "2024",
-      image: "/images/news/abhishek-dairy.jpg"
+      image: "/himalaya-favicon.svg"
     },
     {
       id: 3,
@@ -38,7 +38,7 @@ const NewsAboutUs = () => {
       summary: "An in-depth analysis of the Lumpy Skin Disease affecting cattle in Nepal, its economic impact, and the challenges faced by farmers in managing this contagious crisis.",
       link: "https://medium.com/@abhishekadhikari1254/lumpy-skin-dilemma-unmasking-nepals-cattle-plague-a-contagious-crisis-of-economic-losses-f8055852714f",
       date: "July 23, 2023",
-      image: "/images/news/lumpy-skin.jpg"
+      image: "/himalaya-favicon.svg"
     }
   ];
 
@@ -141,7 +141,7 @@ const NewsAboutUs = () => {
                         className="object-cover w-full h-48 transform transition-all duration-700 group-hover:scale-110"
                         onError={(e) => {
                           e.target.onerror = null;
-                          e.target.src = '/images/news/placeholder.jpg';
+                          e.target.src = '/himalaya-favicon.svg';
                         }}
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>

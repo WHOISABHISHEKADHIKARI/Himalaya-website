@@ -787,7 +787,6 @@ const About = () => {
                     <video
                       controls
                       className="w-full rounded-lg shadow-lg"
-                      poster="/assets/images/farm-poster.jpg"
                       onLoadStart={() => setIsLoading(true)}
                       onLoadedData={() => setIsLoading(false)}
                       onError={(e) => {
@@ -801,11 +800,9 @@ const About = () => {
                         type="video/mp4"
                       />
                       {/* Fallback content */}
-                      <img 
-                        src="/assets/images/farm-poster.jpg" 
-                        alt="Farm overview" 
-                        className="w-full rounded-lg shadow-lg"
-                      />
+                      <div className="w-full h-64 bg-gray-200 rounded-lg shadow-lg flex items-center justify-center">
+                        <p className="text-gray-500">Video not supported by your browser</p>
+                      </div>
                     </video>
                     {videoError && (
                       <div className="mt-4 text-red-600 text-sm">
