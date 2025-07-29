@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { 
   FaFacebook, 
   FaWhatsapp, 
@@ -105,14 +106,14 @@ const Footer = () => {
             <ul className="space-y-2">
               {content.links.slice(0, 4).map((link, index) => (
                 <li key={index}>
-                  <a 
-                    href={link.url}
+                  <Link 
+                    to={link.url}
                     className="text-gray-300 hover:text-[#D8A51D] transition-colors duration-300 flex items-center group"
                   >
                     <span className="transform group-hover:translate-x-2 transition-transform duration-300">
                       {getTranslatedText(link.name)}
                     </span>
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -151,36 +152,36 @@ const Footer = () => {
             {/* Added Links */}
             <ul className="space-y-2">
               <li>
-                <a 
-                  href="/faq"
+                <Link 
+                  to="/faq"
                   className="text-gray-300 hover:text-[#D8A51D] transition-colors duration-300 flex items-center group"
                 >
                   <span className="transform group-hover:translate-x-2 transition-transform duration-300">FAQ</span>
-                </a>
+                </Link>
               </li>
               <li>
-                <a 
-                  href="/terms"
+                <Link 
+                  to="/terms"
                   className="text-gray-300 hover:text-[#D8A51D] transition-colors duration-300 flex items-center group"
                 >
                   <span className="transform group-hover:translate-x-2 transition-transform duration-300">Terms & Conditions</span>
-                </a>
+                </Link>
               </li>
               <li>
-                <a 
-                  href="/careers"
+                <Link 
+                  to="/careers"
                   className="text-gray-300 hover:text-[#D8A51D] transition-colors duration-300 flex items-center group"
                 >
                   <span className="transform group-hover:translate-x-2 transition-transform duration-300">Careers</span>
-                </a>
+                </Link>
               </li>
               <li>
-                <a 
-                  href="/NewsAboutUs"
+                <Link 
+                  to="/NewsAboutUs"
                   className="text-gray-300 hover:text-[#D8A51D] transition-colors duration-300 flex items-center group"
                 >
                   <span className="transform group-hover:translate-x-2 transition-transform duration-300">News About Us</span>
-                </a>
+                </Link>
               </li>
               <li className="mt-4">
                 <div className="relative group cursor-pointer">

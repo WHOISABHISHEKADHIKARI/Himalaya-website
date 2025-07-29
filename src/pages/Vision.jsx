@@ -92,6 +92,7 @@ const Vision = () => {
   const [scrollProgress, setScrollProgress] = useState(0);
   const [isLoading, setIsLoading] = useState(true);
   const [isLoaded, setIsLoaded] = useState(false);
+  const [hasError, setHasError] = useState(false);
   const heroRef = useRef(null);
 
   const { scrollYProgress } = useScroll({
@@ -118,58 +119,91 @@ const Vision = () => {
     };
   }, []);
 
-  // SEO optimization with proper cleanup
+  // Error handling effect
+  useEffect(() => {
+    const handleError = (error) => {
+      console.error('Vision page error:', error);
+      setHasError(true);
+    };
+
+    const handleUnhandledRejection = (event) => {
+      console.error('Unhandled promise rejection:', event.reason);
+      setHasError(true);
+    };
+
+    window.addEventListener('error', handleError);
+    window.addEventListener('unhandledrejection', handleUnhandledRejection);
+
+    return () => {
+      window.removeEventListener('error', handleError);
+      window.removeEventListener('unhandledrejection', handleUnhandledRejection);
+    };
+  }, []);
+
+  // SEO optimization with proper cleanup and error handling
   useEffect(() => {
     // Only run on client side
     if (typeof window === 'undefined') return;
     
-    document.title = "Our Vision | Himalaya Krishi | Premium Sustainable Agriculture";
-    
-    let metaDescription = document.querySelector('meta[name="description"]');
-    if (!metaDescription) {
-      metaDescription = document.createElement('meta');
-      metaDescription.name = "description";
-      document.head.appendChild(metaDescription);
+    try {
+      document.title = "Our Vision | Himalaya Krishi | Premium Sustainable Agriculture";
+      
+      let metaDescription = document.querySelector('meta[name="description"]');
+      if (!metaDescription) {
+        metaDescription = document.createElement('meta');
+        metaDescription.name = "description";
+        document.head.appendChild(metaDescription);
+      }
+      metaDescription.content = "Experience Himalaya Krishi's vision for premium organic dairy and sustainable agriculture solutions from the pristine Himalayan region of Nepal.";
+    } catch (error) {
+      console.warn('SEO setup error:', error);
     }
-    metaDescription.content = "Experience Himalaya Krishi's vision for premium organic dairy and sustainable agriculture solutions from the pristine Himalayan region of Nepal.";
     
-    // Enhanced structured data for SEO
-    const schemaData = {
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "हिमालय कृषि तथा पशुपालन फार्म | Himalaya Krishi Tatha Pasupalan Farm",
-      "description": "नेपालको अग्रणी जैविक कृषि र पशुपालन फार्म | Leading organic farming and dairy production in Nepal",
-      "url": typeof window !== 'undefined' ? window.location.href : '',
-      "areaServed": {
-        "@type": "Country",
-        "name": "Nepal"
-      },
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Hetauda",
-        "addressRegion": "Bagmati",
-        "addressCountry": "Nepal"
-      },
-      "sameAs": [
-        "https://facebook.com/himalayakrishi",
-        "https://instagram.com/himalayakrishi"
-      ]
-    };
+    try {
+      // Enhanced structured data for SEO
+      const schemaData = {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "हिमालय कृषि तथा पशुपालन फार्म | Himalaya Krishi Tatha Pasupalan Farm",
+        "description": "नेपालको अग्रणी जैविक कृषि र पशुपालन फार्म | Leading organic farming and dairy production in Nepal",
+        "url": typeof window !== 'undefined' ? window.location.href : '',
+        "areaServed": {
+          "@type": "Country",
+          "name": "Nepal"
+        },
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Hetauda",
+          "addressRegion": "Bagmati",
+          "addressCountry": "Nepal"
+        },
+        "sameAs": [
+          "https://facebook.com/himalayakrishi",
+          "https://instagram.com/himalayakrishi"
+        ]
+      };
 
-    let scriptTag = document.querySelector('#schema-data');
-    if (!scriptTag) {
-      scriptTag = document.createElement('script');
-      scriptTag.id = "schema-data";
-      scriptTag.type = "application/ld+json";
-      document.head.appendChild(scriptTag);
+      let scriptTag = document.querySelector('#schema-data');
+      if (!scriptTag) {
+        scriptTag = document.createElement('script');
+        scriptTag.id = "schema-data";
+        scriptTag.type = "application/ld+json";
+        document.head.appendChild(scriptTag);
+      }
+      scriptTag.innerHTML = JSON.stringify(schemaData);
+    } catch (error) {
+      console.warn('Schema data setup error:', error);
     }
-    scriptTag.innerHTML = JSON.stringify(schemaData);
     
     return () => {
       // Cleanup schema tag on unmount
-      const schemaTag = document.querySelector('#schema-data');
-      if (schemaTag) {
-        schemaTag.remove();
+      try {
+        const schemaTag = document.querySelector('#schema-data');
+        if (schemaTag) {
+          schemaTag.remove();
+        }
+      } catch (error) {
+        console.warn('Schema cleanup error:', error);
       }
     };
   }, []);
@@ -200,8 +234,27 @@ const Vision = () => {
     return <LoadingSpinner />;
   }
 
-  return (
-    <div className="relative bg-gradient-to-b from-[#F4F9F1] to-[#EAEFE7] min-h-screen font-sans">
+  // Error fallback
+  if (hasError) {
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-green-50 to-blue-50">
+        <div className="text-center p-8">
+          <h2 className="text-2xl font-bold text-gray-800 mb-4">Something went wrong</h2>
+          <p className="text-gray-600 mb-6">We're sorry, but there was an error loading this page.</p>
+          <button 
+            onClick={() => window.location.reload()} 
+            className="bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700 transition-colors"
+          >
+            Reload Page
+          </button>
+        </div>
+      </div>
+    );
+  }
+
+  try {
+    return (
+      <div className="relative bg-gradient-to-b from-[#F4F9F1] to-[#EAEFE7] min-h-screen font-sans">
       <ScrollToTopButton />
       <Helmet>
         <title>Our Vision & Business Plan | Himalaya Krishi</title>
@@ -666,8 +719,13 @@ const Vision = () => {
           </motion.div>
         </div>
       </footer>
-    </div>
-  );
+      </div>
+    );
+  } catch (error) {
+    console.error('Vision component error:', error);
+    setHasError(true);
+    return null;
+  }
 };
 
 // Enhanced Helper Components
