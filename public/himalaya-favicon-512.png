@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 400 400">
+  <rect width="400" height="400" fill="#000000"/>
+  
+  <!-- Sun rays -->
+  <g stroke="#ffffff" stroke-width="3" fill="none">
+    <line x1="200" y1="40" x2="200" y2="60"/>
+    <line x1="230" y1="45" x2="225" y2="62"/>
+    <line x1="255" y1="60" x2="245" y2="75"/>
+    <line x1="275" y1="80" x2="262" y2="92"/>
+    <line x1="290" y1="105" x2="275" y2="115"/>
+    <line x1="170" y1="45" x2="175" y2="62"/>
+    <line x1="145" y1="60" x2="155" y2="75"/>
+    <line x1="125" y1="80" x2="138" y2="92"/>
+    <line x1="110" y1="105" x2="125" y2="115"/>
+  </g>
+  
+  <!-- Sun semicircle -->
+  <path d="M 150 80 A 50 50 0 0 1 250 80 Z" fill="#ffffff"/>
+  
+  <!-- Mountain ranges -->
+  <g fill="#ffffff">
+    <!-- Back mountains -->
+    <path d="M 50 180 L 100 120 L 150 160 L 200 100 L 250 140 L 300 110 L 350 150 L 400 130 L 400 200 L 50 200 Z" opacity="0.7"/>
+    
+    <!-- Front mountains -->
+    <path d="M 30 200 L 80 140 L 130 180 L 180 120 L 230 160 L 280 130 L 330 170 L 380 150 L 400 180 L 400 220 L 30 220 Z"/>
+  </g>
+  
+  <!-- Horizontal lines representing fields -->
+  <g stroke="#ffffff" stroke-width="2" fill="none">
+    <line x1="50" y1="240" x2="350" y2="240"/>
+    <line x1="50" y1="250" x2="350" y2="250"/>
+    <line x1="50" y1="260" x2="350" y2="260"/>
+    <line x1="50" y1="270" x2="350" y2="270"/>
+    <line x1="50" y1="280" x2="350" y2="280"/>
+  </g>
+  
+  <!-- HIMALAYA text -->
+  <text x="200" y="320" font-family="Arial, sans-serif" font-size="32" font-weight="bold" text-anchor="middle" fill="#ffffff">HIMALAYA</text>
+  
+  <!-- KRISHI TATHA PASUPALAN FARM text -->
+  <text x="200" y="345" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#ffffff">KRISHI TATHA PASUPALAN</text>
+  <text x="200" y="360" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#ffffff">FARM</text>
+  
+  <!-- ESTD 2073 -->
+  <text x="80" y="120" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#ffffff">ESTD</text>
+  <text x="320" y="120" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#ffffff">2073</text>
+  
+  <!-- Decorative leaf at bottom -->
+  <path d="M 190 375 Q 200 365 210 375 Q 200 385 190 375" fill="#ffffff"/>
+  <path d="M 195 380 Q 200 375 205 380" stroke="#ffffff" stroke-width="1" fill="none"/>
+</svg>
