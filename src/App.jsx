@@ -1,7 +1,11 @@
 import { Routes, Route, useLocation } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
-import { lazy, Suspense } from 'react';
+import { lazy, Suspense, useEffect } from 'react';
 import { Analytics } from '@vercel/analytics/react';
+import { initializeSampleData } from './utils/sampleBlogData';
+import { cleanupBlobUrls } from './components/MediaUploader';
+import BLOG_CONFIG from './config/api';
+import { AdminAuthProvider } from './components/AdminAuth';
 import ErrorBoundary from './components/ErrorBoundary'; // Import directly to avoid circular dependency
 
 // Lazy load components
@@ -26,6 +30,8 @@ const AgricultureSupport = lazy(() => import('./pages/AgricultureSupport'));
 const Centers = lazy(() => import('./pages/Centers'));
 const Blog = lazy(() => import('./pages/Blog'));
 const BlogPost = lazy(() => import('./pages/BlogPost'));
+const BlogPublish = lazy(() => import('./pages/BlogPublish'));
+const BlogCMS = lazy(() => import('./pages/BlogCMS'));
 
 // Loading fallback component
 const LoadingFallback = () => (
@@ -36,12 +42,21 @@ const LoadingFallback = () => (
 
 function App() {
   const location = useLocation();
+  
+  // Initialize sample blog data and cleanup blob URLs and placeholder images on app start
+  useEffect(() => {
+    initializeSampleData();
+    cleanupBlobUrls();
+    BLOG_CONFIG.fixPlaceholderImages();
+  }, []);
+
   return (
     <ErrorBoundary location={location}>
       <HelmetProvider>
-        <Suspense fallback={<div className="h-20 bg-[#1C4E37]"></div>}>
-          <Navbar />
-        </Suspense>
+        <AdminAuthProvider>
+          <Suspense fallback={<div className="h-20 bg-[#1C4E37]"></div>}>
+            <Navbar />
+          </Suspense>
         <Suspense fallback={<LoadingFallback />}>
           <Routes>
             <Route path="/" element={<Home />} />
@@ -57,6 +72,8 @@ function App() {
             <Route path="/centers/:centerName" element={<Centers />} />
             <Route path="/blog" element={<Blog />} />
             <Route path="/blog/:slug" element={<BlogPost />} />
+            <Route path="/blog/publish" element={<BlogPublish />} />
+            <Route path="/blog/cms" element={<BlogCMS />} />
             <Route path="/ne/about" element={<About />} />
             <Route path="/ne/vision" element={<Vision />} />
             <Route path="/ne/contact" element={<Contact />} />
@@ -69,13 +86,16 @@ function App() {
             <Route path="/ne/centers/:centerName" element={<Centers />} />
             <Route path="/ne/blog" element={<Blog />} />
             <Route path="/ne/blog/:slug" element={<BlogPost />} />
+            <Route path="/ne/blog/publish" element={<BlogPublish />} />
+            <Route path="/ne/blog/cms" element={<BlogCMS />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Suspense>
-        <Suspense fallback={<div className="h-20"></div>}>
-          <Footer />
-        </Suspense>
-        <Analytics />
+          <Suspense fallback={<div className="h-20"></div>}>
+            <Footer />
+          </Suspense>
+          <Analytics />
+        </AdminAuthProvider>
       </HelmetProvider>
     </ErrorBoundary>
   );

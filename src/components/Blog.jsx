@@ -1,4 +1,8 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
+import { FaCalendar, FaUser, FaArrowRight } from 'react-icons/fa';
+import BLOG_CONFIG from '../config/api';
 
 const Blog = () => {
     const [posts, setPosts] = useState([]);
@@ -6,25 +10,21 @@ const Blog = () => {
     const [error, setError] = useState(null);
 
     useEffect(() => {
-        const fetchPosts = async () => {
+        const loadPosts = () => {
             try {
-                const response = await fetch('https://blogdata.dapirates.xyz/wp-json/wp/v2/posts?_embed=true');
-
-                if (!response.ok) {
-                    throw new Error(`HTTP error! status: ${response.status}`);
-                }
-
-                const data = await response.json();
-                setPosts(data);
-                setLoading(false);
+                const localPosts = BLOG_CONFIG.getPosts()
+                    .filter(post => post.status === 'published')
+                    .slice(0, 6);
+                setPosts(localPosts);
             } catch (error) {
-                console.error('Error fetching posts:', error);
+                console.error('Error loading posts:', error);
                 setError('Failed to load posts');
+            } finally {
                 setLoading(false);
             }
         };
 
-        fetchPosts();
+        loadPosts();
     }, []);
 
     if (loading) return <div>Loading...</div>;
@@ -35,8 +35,8 @@ const Blog = () => {
             <h1>Blog Posts</h1>
             {posts.map(post => (
                 <div key={post.id}>
-                    <h2>{post.title.rendered}</h2>
-                    <div dangerouslySetInnerHTML={{ __html: post.excerpt.rendered }} />
+                    <h2>{post.title}</h2>
+                    <p>{post.excerpt}</p>
                 </div>
             ))}
         </div>

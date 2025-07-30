@@ -57,12 +57,16 @@ const ImageHandler = ({
 
         const img = new Image();
 
-        // Add quality parameters for better image loading
-        const optimizedSrc = quality === 'high' ? `${src}?w=1200&h=800&fit=crop&auto=format,compress` : src;
+        // Check if src is a blob URL or data URL - don't add optimization parameters to these
+        const isBlobUrl = src.startsWith('blob:');
+        const isDataUrl = src.startsWith('data:');
+        const optimizedSrc = !isBlobUrl && !isDataUrl && quality === 'high' ? `${src}?w=1200&h=800&fit=crop&auto=format,compress` : src;
         img.src = optimizedSrc;
 
-        // Add crossOrigin attribute to fix CORS issues
-        img.crossOrigin = crossOrigin;
+        // Add crossOrigin attribute to fix CORS issues (but not for blob URLs or data URLs)
+        if (!isBlobUrl && !isDataUrl) {
+            img.crossOrigin = crossOrigin;
+        }
 
         img.onload = () => {
             setLoading(false);
@@ -71,8 +75,8 @@ const ImageHandler = ({
 
         img.onerror = e => {
             console.error('ImageHandler: Error loading image:', e);
-            // Fallback to original src if optimized fails
-            if (optimizedSrc !== src) {
+            // Fallback to original src if optimized fails (but not for blob URLs or data URLs)
+            if (optimizedSrc !== src && !isBlobUrl && !isDataUrl) {
                 img.src = src;
             } else {
                 setError(true);
@@ -162,7 +166,7 @@ const ImageHandler = ({
                             onClick={handleImageClick}
                             loading={lazy ? 'lazy' : 'eager'}
                             onLoad={() => setImageLoaded(true)}
-                            crossOrigin={crossOrigin}
+                            crossOrigin={src && !src.startsWith('blob:') && !src.startsWith('data:') ? crossOrigin : undefined}
                         />
 
                         {/* Image overlay gradient */}
@@ -262,7 +266,7 @@ const ImageHandler = ({
                             exit={{ scale: 0.8, opacity: 0 }}
                             transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
                             onClick={e => e.stopPropagation()}
-                            crossOrigin={crossOrigin}
+                            crossOrigin={src && !src.startsWith('blob:') && !src.startsWith('data:') ? crossOrigin : undefined}
                         />
 
                         {/* Image info */}

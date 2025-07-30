@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { FaCalendar, FaUser } from 'react-icons/fa';
+import { FaCalendar, FaUser, FaPlus, FaEdit, FaSearch, FaFilter, FaEye, FaArrowRight, FaTags, FaFolder } from 'react-icons/fa';
 import logo from '../assets/logo/whitelogo-blackbg-removebg-preview.webp';
 import { Helmet } from 'react-helmet-async';
 import LoadingSpinner from '../components/LoadingSpinner';
+import BLOG_CONFIG from '../config/api';
 
 // Skeleton Card Component
 const SkeletonCard = () => (
@@ -51,10 +52,10 @@ const BlogCard = ({ post, index }) => (
             <div className="w-full h-48 bg-[#1C4E37] flex items-center justify-center overflow-hidden flex-shrink-0 relative">
                 <div className="absolute inset-0 bg-gradient-to-br from-black/10 via-transparent to-[#D8A51D]/20"></div>
 
-                {post._embedded?.['wp:featuredmedia'] ? (
+                {post.featuredImage ? (
                     <img
-                        src={post._embedded['wp:featuredmedia'][0].source_url}
-                        alt={post.title.rendered}
+                        src={post.featuredImage}
+                        alt={post.title}
                         className="w-full h-full object-cover relative z-10 opacity-80"
                         loading="lazy"
                         onError={e => {
@@ -66,7 +67,7 @@ const BlogCard = ({ post, index }) => (
                 ) : null}
                 <div
                     className="w-full h-full flex items-center justify-center relative z-10"
-                    style={{ display: post._embedded?.['wp:featuredmedia'] ? 'none' : 'flex' }}
+                    style={{ display: post.featuredImage ? 'none' : 'flex' }}
                 >
                     <img
                         src={logo}
@@ -84,25 +85,19 @@ const BlogCard = ({ post, index }) => (
                     </span>
                     <span className="flex items-center">
                         <FaUser className="mr-1" />
-                        Admin
+                        {post.author || 'Admin'}
+                    </span>
+                    <span className="flex items-center">
+                        <FaEye className="mr-1" />
+                        {post.views || 0} views
                     </span>
                 </div>
-                <h2
-                    className="text-xl font-bold text-[#1C4E37] mb-3 hover:text-[#D8A51D] transition-colors line-clamp-2"
-                    dangerouslySetInnerHTML={{
-                        __html: post.title.rendered
-                            .replace(/src="http:\/\//gi, 'src="https://')
-                            .replace(/<img(.*?)>/gi, '<img$1 crossorigin="anonymous">'),
-                    }}
-                />
-                <div
-                    className="text-gray-600 mb-4 line-clamp-3 flex-grow"
-                    dangerouslySetInnerHTML={{
-                        __html: post.excerpt.rendered
-                            .replace(/src="http:\/\//gi, 'src="https://')
-                            .replace(/<img(.*?)>/gi, '<img$1 crossorigin="anonymous">'),
-                    }}
-                />
+                <h2 className="text-xl font-bold text-[#1C4E37] mb-3 hover:text-[#D8A51D] transition-colors line-clamp-2">
+                    {post.title}
+                </h2>
+                <div className="text-gray-600 mb-4 line-clamp-3 flex-grow">
+                    {post.excerpt}
+                </div>
                 <span className="inline-flex items-center text-[#D8A51D] hover:text-[#1C4E37] transition-colors mt-auto">
                     Read More →
                 </span>
@@ -154,46 +149,48 @@ const generateBreadcrumbData = () => {
 
 const Blog = () => {
     const [posts, setPosts] = useState([]);
+    const [filteredPosts, setFilteredPosts] = useState([]);
+    const [categories, setCategories] = useState([]);
+    const [tags, setTags] = useState([]);
     const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
+    const [searchTerm, setSearchTerm] = useState('');
+    const [selectedCategory, setSelectedCategory] = useState('');
+    const [selectedTag, setSelectedTag] = useState('');
+    const [currentPage, setCurrentPage] = useState(1);
     const [filter, setFilter] = useState('all');
     const [displayedPosts, setDisplayedPosts] = useState([]);
     const [loadingMore, setLoadingMore] = useState(false);
     const [page, setPage] = useState(1);
-    const [error, setError] = useState(null);
     const postsPerPage = 6;
 
     // API base URL
     const API_BASE_URL = 'https://blogdata.dapirates.xyz';
 
     useEffect(() => {
-        const fetchPosts = async () => {
+        const loadBlogData = () => {
             try {
                 setLoading(true);
                 setError(null);
 
-                // Build URL with URLSearchParams for better parameter handling
-                const apiUrl = new URL(`${API_BASE_URL}/wp-json/wp/v2/posts`);
-                apiUrl.searchParams.append('_embed', 'true');
-                apiUrl.searchParams.append('per_page', '20');
+                // Load data from local storage
+                const localPosts = BLOG_CONFIG.getPosts().filter(post => post.status === 'published');
+                const localCategories = BLOG_CONFIG.getCategories();
+                const localTags = BLOG_CONFIG.getTags();
 
-                const response = await fetch(apiUrl);
-
-                if (!response.ok) {
-                    throw new Error(`HTTP error! status: ${response.status}`);
-                }
-
-                const data = await response.json();
-                setPosts(data);
-                setDisplayedPosts(data.slice(0, postsPerPage));
-            } catch (error) {
-                console.error('Error fetching posts:', error);
+                setPosts(localPosts);
+                setCategories(localCategories);
+                setTags(localTags);
+                setDisplayedPosts(localPosts.slice(0, postsPerPage));
+            } catch (err) {
+                console.error('Error loading blog data:', err);
                 setError('Failed to load blog posts. Please try again later.');
             } finally {
                 setLoading(false);
             }
         };
 
-        fetchPosts();
+        loadBlogData();
     }, []);
 
     const loadMorePosts = () => {
@@ -262,8 +259,26 @@ const Blog = () => {
                         animate={{ opacity: 1, y: 0 }}
                         className="text-center text-white"
                     >
-                        <h1 className="text-5xl md:text-7xl font-serif font-bold mb-6">Our Blog</h1>
-                        <p className="text-xl opacity-90 mb-8">Insights and Updates from Himalaya Krishi</p>
+                        <div className="flex justify-between items-start">
+                            <div>
+                                <h1 className="text-5xl md:text-7xl font-serif font-bold mb-6">Our Blog</h1>
+                                <p className="text-xl opacity-90 mb-8">Insights and Updates from Himalaya Krishi</p>
+                            </div>
+                            <div className="flex gap-3">
+                                <Link
+                                    to="/blog/cms"
+                                    className="flex items-center gap-2 bg-[#D8A51D] text-white px-6 py-3 rounded-lg hover:bg-[#C4941A] transition-colors shadow-lg"
+                                >
+                                    <FaEdit /> Manage Blog
+                                </Link>
+                                <Link
+                                    to="/blog/publish"
+                                    className="flex items-center gap-2 bg-white text-[#1C4E37] px-6 py-3 rounded-lg hover:bg-gray-100 transition-colors shadow-lg"
+                                >
+                                    <FaPlus /> Publish Post
+                                </Link>
+                            </div>
+                        </div>
                         <div className="max-w-2xl mx-auto">
                             <input
                                 type="text"

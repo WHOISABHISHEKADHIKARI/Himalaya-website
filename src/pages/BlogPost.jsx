@@ -12,11 +12,15 @@ import {
     FaClock,
     FaArrowDown,
     FaArrowLeft,
+    FaEye,
+    FaTags,
+    FaFolder,
 } from 'react-icons/fa';
 import ImageHandler from '../components/ImageHandler';
 import ShareButtons from '../components/ShareButtons';
 import ScrollToTopButton from '../components/ScrollToTopButton';
 import logoImage from '../assets/logo/whitelogo-blackbg-removebg-previewaa.webp';
+import BLOG_CONFIG from '../config/api';
 
 // Animation variants
 const fadeIn = {
@@ -73,13 +77,13 @@ const RelatedPostCard = ({ post }) => {
                 {featuredImage ? (
                     <div className="overflow-hidden rounded-t-3xl relative">
                         <ImageHandler
-                            src={featuredImage}
-                            alt={post.title.rendered}
-                            className="w-full h-56 object-cover"
-                            showControls={false}
-                            quality="high"
-                            crossOrigin="anonymous"
-                        />
+                                            src={featuredImage}
+                                            alt={post.title}
+                                            className="w-full h-56 object-cover"
+                                            showControls={false}
+                                            quality="high"
+                                            crossOrigin="anonymous"
+                                        />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
                     </div>
                 ) : (
@@ -101,10 +105,9 @@ const RelatedPostCard = ({ post }) => {
                 )}
 
                 <div className="p-8 relative z-10">
-                    <h3
-                        className="font-serif font-bold text-[#1C4E37] text-xl mb-4 line-clamp-2 group-hover:text-[#D8A51D] transition-colors duration-300 leading-tight"
-                        dangerouslySetInnerHTML={{ __html: post.title.rendered }}
-                    />
+                    <h3 className="font-serif font-bold text-[#1C4E37] text-xl mb-4 line-clamp-2 group-hover:text-[#D8A51D] transition-colors duration-300 leading-tight">
+                        {post.title}
+                    </h3>
                     <div className="flex items-center gap-3 text-[#3A5944] text-sm">
                         <FaCalendar className="text-[#D8A51D]" />
                         <span>
@@ -132,8 +135,7 @@ const BlogPost = () => {
     const [relatedPosts, setRelatedPosts] = useState([]);
     const [scrollProgress, setScrollProgress] = useState(0);
     const [isLoaded, setIsLoaded] = useState(false);
-    const [currentPOV, setCurrentPOV] = useState('reader');
-    const [isPreviewMode, setIsPreviewMode] = useState(false);
+
     const [error, setError] = useState(null);
 
     // API base URL - same for all environments
@@ -155,96 +157,44 @@ const BlogPost = () => {
             .replace(/<img(.*?)>/gi, '<img$1 crossorigin="anonymous">');
     };
 
-    // Transform content based on POV
-    const transformContent = content => {
-        if (!content) return '';
 
-        // First fix images in the content
-        const fixedContent = fixContentImages(content);
 
-        switch (currentPOV) {
-            case 'farmer':
-                return `
-          <div class="farmer-view">
-            <div class="pov-header bg-[#1C4E37]/10 p-4 rounded-lg mb-6">
-              <h4 class="text-[#1C4E37] font-bold mb-2">Farmer's Perspective</h4>
-              <p class="text-[#3A5944]">Practical insights for agricultural implementation</p>
-            </div>
-            ${fixedContent}
-            <div class="practical-tips mt-8 bg-[#F4F9F1] p-6 rounded-xl border border-[#1C4E37]/20">
-              <h5 class="text-[#1C4E37] font-bold mb-4">Quick Implementation Guide</h5>
-              <ul class="space-y-3">
-                <li class="flex items-center"><span class="mr-2">🌱</span> Step-by-step application</li>
-                <li class="flex items-center"><span class="mr-2">⚡</span> Resource requirements</li>
-                <li class="flex items-center"><span class="mr-2">💰</span> Expected outcomes</li>
-              </ul>
-            </div>
-          </div>
-        `;
-            case 'expert':
-                return `
-          <div class="expert-view">
-            <div class="pov-header bg-[#D8A51D]/10 p-4 rounded-lg mb-6">
-              <h4 class="text-[#D8A51D] font-bold mb-2">Expert Analysis</h4>
-              <p class="text-[#3A5944]">Technical breakdown and research insights</p>
-            </div>
-            ${fixedContent}
-            <div class="technical-notes mt-8 bg-[#F4F9F1] p-6 rounded-xl border border-[#D8A51D]/20">
-              <h5 class="text-[#D8A51D] font-bold mb-4">Research Notes</h5>
-              <ul class="space-y-3">
-                <li class="flex items-center"><span class="mr-2">📊</span> Data analysis</li>
-                <li class="flex items-center"><span class="mr-2">🔬</span> Methodology</li>
-                <li class="flex items-center"><span class="mr-2">📚</span> References</li>
-              </ul>
-            </div>
-          </div>
-        `;
-            default:
-                return fixedContent; // Reader view shows original content with fixed images
-        }
-    };
-
-    // Fetch post data
+    // Load post data from local storage
     useEffect(() => {
-        const fetchPost = async () => {
+        const loadPost = () => {
             try {
                 setLoading(true);
                 setError(null);
 
-                // Build URL with URLSearchParams for better parameter handling
-                const apiUrl = new URL(`${API_BASE_URL}/wp-json/wp/v2/posts`);
-                apiUrl.searchParams.append('slug', slug);
-                apiUrl.searchParams.append('_embed', 'true');
-
-                const response = await fetch(apiUrl);
-
-                if (!response.ok) {
-                    throw new Error(`HTTP error! status: ${response.status}`);
+                // Load posts from local storage
+                const posts = BLOG_CONFIG.getPosts();
+                const foundPost = posts.find(p => p.slug === slug && p.status === 'published');
+                
+                if (!foundPost) {
+                    setError('Post not found');
+                    return;
                 }
-
-                const data = await response.json();
-
-                if (!data || data.length === 0) {
-                    throw new Error('Post not found');
-                }
-
-                setPost(data[0]);
-
-                // Fetch related posts
-                const relatedUrl = new URL(`${API_BASE_URL}/wp-json/wp/v2/posts`);
-                relatedUrl.searchParams.append('_embed', 'true');
-                relatedUrl.searchParams.append('per_page', '3');
-
-                const relatedResponse = await fetch(relatedUrl);
-
-                if (!relatedResponse.ok) {
-                    throw new Error(`HTTP error! status: ${relatedResponse.status}`);
-                }
-
-                const relatedData = await relatedResponse.json();
-                setRelatedPosts(relatedData.filter(p => p.id !== data[0].id));
+                
+                // Increment view count
+                foundPost.views = (foundPost.views || 0) + 1;
+                const updatedPosts = posts.map(p => p.id === foundPost.id ? foundPost : p);
+                BLOG_CONFIG.savePosts(updatedPosts);
+                
+                setPost(foundPost);
+                
+                // Get related posts (same category, excluding current post)
+                const related = posts
+                    .filter(p => 
+                        p.id !== foundPost.id && 
+                        p.status === 'published' && 
+                        p.category?.id === foundPost.category?.id
+                    )
+                    .slice(0, 3);
+                
+                setRelatedPosts(related);
+                
             } catch (error) {
-                console.error('Error fetching post:', error);
+                console.error('Error loading post:', error);
                 setError(error.message);
                 setPost(null);
                 setRelatedPosts([]);
@@ -253,9 +203,9 @@ const BlogPost = () => {
             }
         };
 
-        fetchPost();
+        loadPost();
         window.scrollTo(0, 0);
-    }, [slug, API_BASE_URL]);
+    }, [slug]);
 
     // Handle scroll and SEO
     useEffect(() => {
@@ -327,26 +277,26 @@ const BlogPost = () => {
     }
 
     // Check if featuredImage exists and is a valid URL
-    const featuredImage = post._embedded?.['wp:featuredmedia']?.[0]?.source_url || null;
+    const featuredImage = post.featuredImage || null;
 
     return (
         <div className="relative bg-gradient-to-b from-[#F4F9F1] to-[#EAEFE7] min-h-screen font-sans">
             <ScrollToTopButton />
             <Helmet>
-                <title>{post.title.rendered} | Himalaya Krishi</title>
-                <meta name="description" content={post.excerpt.rendered.replace(/<[^>]+>/g, '')} />
+                <title>{post.title} | Himalaya Krishi</title>
+                <meta name="description" content={post.excerpt} />
                 <link rel="canonical" href={getCanonicalUrl()} />
                 <meta property="og:url" content={getCanonicalUrl()} />
-                <meta property="og:title" content={`${post.title.rendered} | Himalaya Krishi`} />
-                <meta property="og:description" content={post.excerpt.rendered.replace(/<[^>]+>/g, '')} />
+                <meta property="og:title" content={`${post.title} | Himalaya Krishi`} />
+                <meta property="og:description" content={post.excerpt} />
                 <meta property="og:type" content="article" />
                 <meta property="og:image" content={featuredImage || 'https://himalayakrishi.com/logo_512.png'} />
                 <meta property="og:image:width" content="1200" />
                 <meta property="og:image:height" content="630" />
                 <meta property="og:site_name" content="Himalaya Krishi" />
                 <meta name="twitter:card" content="summary_large_image" />
-                <meta name="twitter:title" content={`${post.title.rendered} | Himalaya Krishi`} />
-                <meta name="twitter:description" content={post.excerpt.rendered.replace(/<[^>]+>/g, '')} />
+                <meta name="twitter:title" content={`${post.title} | Himalaya Krishi`} />
+                <meta name="twitter:description" content={post.excerpt} />
                 <meta name="twitter:image" content={featuredImage || 'https://himalayakrishi.com/logo_512.png'} />
             </Helmet>
 
@@ -388,12 +338,9 @@ const BlogPost = () => {
                     <motion.h1
                         className="text-5xl md:text-6xl font-serif font-bold text-[#1C4E37] mb-6 tracking-tight leading-tight"
                         variants={heroTextAnimation}
-                        dangerouslySetInnerHTML={{
-                            __html: post.title.rendered
-                                .replace(/src="http:\/\//gi, 'src="https://')
-                                .replace(/<img(.*?)>/gi, '<img$1 crossorigin="anonymous">'),
-                        }}
-                    />
+                    >
+                        {post.title}
+                    </motion.h1>
 
                     <motion.div className="flex flex-wrap items-center gap-6 mb-8" variants={heroTextAnimation}>
                         <span className="flex items-center px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full text-[#3A5944] border border-white/30">
@@ -402,7 +349,11 @@ const BlogPost = () => {
                         </span>
                         <span className="flex items-center px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full text-[#3A5944] border border-white/30">
                             <FaUser className="mr-2 text-[#D8A51D]" />
-                            Admin
+                            {post.author || 'Admin'}
+                        </span>
+                        <span className="flex items-center px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full text-[#3A5944] border border-white/30">
+                            <FaEye className="mr-2 text-[#D8A51D]" />
+                            {post.views || 0} views
                         </span>
                         <span className="flex items-center px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full text-[#3A5944] border border-white/30">
                             <FaClock className="mr-2 text-[#D8A51D]" />5 min read
@@ -425,7 +376,7 @@ const BlogPost = () => {
                             <div className="relative overflow-hidden">
                                 <ImageHandler
                                     src={featuredImage}
-                                    alt={post.title.rendered}
+                                    alt={post.title}
                                     className="w-full h-[600px] object-cover"
                                     quality="high"
                                     showControls={true}
@@ -465,54 +416,28 @@ const BlogPost = () => {
                 >
                     <div className="relative bg-gradient-to-br from-white via-white to-[#F4F9F1]/30 rounded-3xl shadow-2xl overflow-hidden border border-[#D8A51D]/10">
                         <div className="relative z-10 p-12 lg:p-16">
-                            {/* POV and Preview Controls */}
-                            <div className="mb-8 flex items-center justify-between">
-                                <div className="flex items-center gap-4">
-                                    <span className="text-[#3A5944] font-medium">Point of View:</span>
-                                    <select
-                                        value={currentPOV}
-                                        onChange={e => setCurrentPOV(e.target.value)}
-                                        className="px-4 py-2 rounded-full bg-white border border-[#D8A51D]/20 text-[#1C4E37] focus:outline-none focus:ring-2 focus:ring-[#D8A51D]/50"
-                                    >
-                                        <option value="reader">Reader</option>
-                                        <option value="farmer">Farmer</option>
-                                        <option value="expert">Expert</option>
-                                    </select>
-                                </div>
-
-                                <button
-                                    onClick={() => setIsPreviewMode(!isPreviewMode)}
-                                    className="px-6 py-2 rounded-full bg-[#1C4E37] text-white hover:bg-[#164A32] transition-all duration-300 flex items-center gap-2"
-                                >
-                                    {isPreviewMode ? 'Exit Preview' : 'Preview'}
-                                </button>
-                            </div>
-
-                            {/* Enhanced article content */}
+                            {/* Article content */}
                             <div className="relative">
                                 <div
-                                    className={`prose prose-xl max-w-none text-[#3A5944] leading-relaxed ${isPreviewMode ? 'opacity-60 pointer-events-none' : ''}`}
+                                    className="prose prose-xl max-w-none text-[#3A5944] leading-relaxed"
                                     style={{
                                         fontSize: '1.2rem',
                                         lineHeight: '1.9',
                                         fontFamily: 'system-ui, -apple-system, sans-serif',
                                     }}
                                 >
-                                    <div
-                                        className={`relative ${currentPOV !== 'reader' ? 'pov-content' : ''}`}
-                                        dangerouslySetInnerHTML={{
-                                            __html: isPreviewMode
-                                                ? `<div class="preview-overlay bg-white/95 backdrop-blur-sm p-8 rounded-2xl border border-[#D8A51D]/20 shadow-xl">
-                            <div class="flex items-center justify-between mb-6">
-                              <h3 class="text-2xl font-serif font-bold text-[#1C4E37]">Preview Mode: ${currentPOV.charAt(0).toUpperCase() + currentPOV.slice(1)} View</h3>
-                              <span class="pov-badge"></span>
-                            </div>
-                            ${transformContent(post.content.rendered)}
-                          </div>`
-                                                : transformContent(post.content.rendered),
-                                        }}
-                                    />
+                                    <div className="whitespace-pre-wrap text-gray-700 leading-relaxed">
+                                        {fixContentImages(post.content)}
+                                    </div>
                                 </div>
+                            </div>
+
+                            {/* Share Buttons */}
+                            <div className="mt-12 pt-8 border-t border-[#D8A51D]/20">
+                                <ShareButtons 
+                                    url={getCanonicalUrl()} 
+                                    title={post.title}
+                                />
                             </div>
                         </div>
                     </div>
