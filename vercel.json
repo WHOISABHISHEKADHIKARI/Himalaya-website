@@ -6,12 +6,6 @@
     { "source": "/api/(.*)", "destination": "/api/$1" },
     { "source": "/((?!.*\\.).*)$", "destination": "/index.html" }
   ],
-  "routes": [
-    { "handle": "filesystem" },
-    { "src": "/assets/(.*)", "headers": { "cache-control": "public, max-age=31536000, immutable" } },
-    { "src": "/(.*\\.(js|css|png|jpg|jpeg|gif|ico|svg|webp|mp4|pdf)$)", "headers": { "cache-control": "public, max-age=31536000" } },
-    { "src": "/(.*)", "dest": "/index.html", "status": 200 }
-  ],
   "cleanUrls": true,
   "trailingSlash": false,
   "headers": [
