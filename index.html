@@ -2,6 +2,7 @@
 <html lang="en" translate="yes">
   <head>
     <meta charset="UTF-8" />
+    
     <!-- Favicon and App Icons -->
     <link rel="icon" type="image/svg+xml" href="/himalaya-favicon.svg" />
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
@@ -10,17 +11,16 @@
     <link rel="icon" type="image/webp" sizes="16x16" href="/favicon-16x16.webp" />
     <link rel="manifest" href="/manifest.json" />
     <link rel="mask-icon" href="/himalaya-favicon.svg" color="#1C4E37" />
-    <!-- Preload logo image for better LCP performance -->
+    
+    <!-- Preload critical resources -->
     <link rel="preload" as="image" href="/src/assets/logo/whitelogo-blackbg-removebg-preview.webp" type="image/webp" />
     
+    <!-- App metadata -->
     <meta name="apple-mobile-web-app-title" content="Himalaya Krishi" />
     <meta name="application-name" content="Himalaya Krishi" />
     <meta name="msapplication-TileColor" content="#1C4E37" />
     <meta name="theme-color" content="#1C4E37" />
     <meta name="mobile-web-app-capable" content="yes" />
-    <meta name="description" content="Himalaya Krishi - Leading sustainable and organic farm in Nepal. Pioneering modern agricultural techniques with traditional wisdom. Best integrated farming system featuring organic dairy and sustainable practices.">
-<meta name="keywords" content="best farm in Nepal, Nepal organic farm, sustainable farm, murra farm, organic farming Nepal, integrated farming Nepal, dairy farm Nepal">
-
     
     <!-- Primary Meta Tags -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -38,84 +38,18 @@
     <link rel="alternate" hreflang="x-default" href="https://krishihimalaya.com/" />
     <meta name="geo.region" content="NP" />
     <meta name="geo.placename" content="Manahari" />
-    <link rel="preconnect" href="https://www.googletagmanager.com">
-<link rel="dns-prefetch" href="https://www.googletagmanager.com">
     
-    <!-- Open Graph   -->
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://krishihimalaya.com" />
-    <meta property="og:title" content="Himalaya Krishi - Expert Agricultural Consulting & Organic Certification in Nepal" />
-    <meta property="og:description" content="Leading platform for sustainable agriculture in Nepal. Expert guidance on organic certification, modern farming techniques, and agricultural . Join our community of successful farmers." />
-    <meta property="og:image" content="https://krishihimalaya.com/seo/og-image.webp" />
-    <meta property="og:image:type" content="image/webp" />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
-    <meta property="og:image:alt" content="Himalaya Krishi - Sustainable Agriculture Excellence" />
-    <meta property="og:site_name" content="Himalaya Krishi" />
-    <meta property="og:locale" content="en_US" />
-    <meta property="og:locale:alternate" content="ne_NP" />
-     
-   <!-- Twitter -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:site" content="@himalayakrishi">
-    <meta name="twitter:creator" content="@himalayakrishi">
-    <meta name="twitter:title" content="Himalaya Krishi | Organic Farming Nepal">
-    <meta property="og:title" content="Himalaya Krishi | Organic Farming Nepal">
-    <meta property="og:description" content="Nepal's leading organic agriculture center providing sustainable farming solutions and training">
-    <meta property="og:image" content="https://www.krishihimalaya.com/images/og-image.jpg">
-    <meta property="og:url" content="https://www.krishihimalaya.com">
-    <meta property="og:type" content="website">
-    <meta property="og:site_name" content="Himalaya Krishi">
-    <meta property="og:locale" content="en_US">
-    <meta property="og:locale:alternate" content="ne_NP">
-    
-    <meta name="twitter:description" content="Nepal's leading organic agriculture center">
-    <meta name="twitter:image" content="https://www.krishihimalaya.com/images/twitter-card.jpg">
-    <meta name="twitter:description" content="Leading platform for sustainable agriculture in Nepal..." />
-    <meta name="twitter:image" content="https://krishihimalaya.com/seo/og-image.webp" />
-    <meta name="facebook-domain-verification" content="1enzeqpxrc595luqerlrau2xr6e3f6" />
-    <meta name="twitter:image:alt" content="Himalaya Krishi - Sustainable Agriculture Excellence" />
-    
-    
-    <!-- Preconnect and DNS Prefetch -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
-    <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
-
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-10889142294">
-</script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'AW-10889142294');
-</script>
-    
-    <!-- Update Open Graph Tags -->
-    <meta property="og:title" content="Himalaya Krishi - Nepal's Best Organic Farm & Sustainable Agriculture Center" />
-    <meta property="og:description" content="Leading organic farm in Nepal specializing in sustainable agriculture, modern farming techniques, and dairy production. Join Nepal's premier farming community." />
-    
-    <!-- Update Twitter Tags -->
-    <meta name="twitter:title" content="Himalaya Krishi - Nepal's Best Organic Farm" />
-    <meta name="twitter:description" content="Nepal's leading organic farm and sustainable agriculture center. Modern farming techniques, dairy production, and agricultural innovation hub." />
-    
-    <meta name="author" content="Himalaya Krishi" />
-    <meta name="robots" content="index, follow, max-image-preview:large" />
-    <link rel="canonical" href="https://krishihimalaya.com" />
-    <link rel="alternate" hreflang="en" href="https://krishihimalaya.com/" />
-    <link rel="alternate" hreflang="ne" href="https://krishihimalaya.com/ne/" />
-    <link rel="alternate" hreflang="x-default" href="https://krishihimalaya.com/" />
-    <meta name="geo.region" content="NP" />
-    <meta name="geo.placename" content="Manahari" />
+    <!-- Security Headers -->
+    <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+    <meta http-equiv="X-Frame-Options" content="DENY" />
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin" />
+    <meta name="format-detection" content="telephone=no" />
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://krishihimalaya.com" />
-    <meta property="og:title" content="Himalaya Krishi - Expert Agricultural Consulting & Organic Certification in Nepal" />
-    <meta property="og:description" content="Leading platform for sustainable agriculture in Nepal. Expert guidance on organic certification, modern farming techniques, and agricultural . Join our community of successful farmers." />
+    <meta property="og:title" content="Himalaya Krishi - Nepal's Best Organic Farm & Sustainable Agriculture Center" />
+    <meta property="og:description" content="Leading organic farm in Nepal specializing in sustainable agriculture, modern farming techniques, and dairy production. Join Nepal's premier farming community." />
     <meta property="og:image" content="https://krishihimalaya.com/seo/og-image.webp" />
     <meta property="og:image:type" content="image/webp" />
     <meta property="og:image:width" content="1200" />
@@ -125,44 +59,32 @@
     <meta property="og:locale" content="en_US" />
     <meta property="og:locale:alternate" content="ne_NP" />
      
-   <!-- Twitter -->
+    <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@himalayakrishi">
     <meta name="twitter:creator" content="@himalayakrishi">
-    <meta name="twitter:title" content="Himalaya Krishi | Organic Farming Nepal">
-    <meta property="og:title" content="Himalaya Krishi | Organic Farming Nepal">
-    <meta property="og:description" content="Nepal's leading organic agriculture center providing sustainable farming solutions and training">
-    <meta property="og:image" content="https://www.krishihimalaya.com/images/og-image.jpg">
-    <meta property="og:url" content="https://www.krishihimalaya.com">
-    <meta property="og:type" content="website">
-    <meta property="og:site_name" content="Himalaya Krishi">
-    <meta property="og:locale" content="en_US">
-    <meta property="og:locale:alternate" content="ne_NP">
-    
-    <meta name="twitter:description" content="Nepal's leading organic agriculture center">
-    <meta name="twitter:image" content="https://www.krishihimalaya.com/images/twitter-card.jpg">
-    <meta name="twitter:description" content="Leading platform for sustainable agriculture in Nepal. Expert guidance on organic certification, modern farming techniques, and agricultural . Join our community of successful farmers." />
+    <meta name="twitter:title" content="Himalaya Krishi - Nepal's Best Organic Farm">
+    <meta name="twitter:description" content="Nepal's leading organic farm and sustainable agriculture center. Modern farming techniques, dairy production, and agricultural innovation hub." />
     <meta name="twitter:image" content="https://krishihimalaya.com/seo/og-image.webp" />
-    <meta name="facebook-domain-verification" content="1enzeqpxrc595luqerlrau2xr6e3f6" />
     <meta name="twitter:image:alt" content="Himalaya Krishi - Sustainable Agriculture Excellence" />
-    
+    <meta name="facebook-domain-verification" content="1enzeqpxrc595luqerlrau2xr6e3f6" />
     
     <!-- Preconnect and DNS Prefetch -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://www.googletagmanager.com">
     <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
     <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com">
 
     <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-10889142294">
-</script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'AW-10889142294');
-</script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-10889142294"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-10889142294');
+    </script>
     
     <!-- Structured Data -->
     <script type="application/ld+json">
@@ -179,7 +101,6 @@
         "width": "512",
         "height": "512"
       },
-      "description": "Nepal's premier agricultural resource offering कृषि सहयोग (agriculture support), खेतीका विधिहरू (farming techniques), and सरकारी सब्सिडी (government subsidies) since 1992.",
       "foundingDate": "1992",
       "address": {
         "@type": "PostalAddress",
@@ -243,14 +164,9 @@
           "sameAs": "https://www.wikidata.org/wiki/Q2792"
         },
         {
-          "@type": "State",
-          "name": "Gandaki Province",
-          "sameAs": "https://www.wikidata.org/wiki/Q2793"
-        },
-        {
-          "@type": "State",
-          "name": "Province No. 1",
-          "sameAs": "https://www.wikidata.org/wiki/Q2791"
+          "@type": "Country",
+          "name": "Nepal",
+          "sameAs": "https://www.wikidata.org/wiki/Q837"
         }
       ],
       "hasOfferCatalog": {
@@ -259,167 +175,27 @@
         "itemListElement": [
           {
             "@type": "Offer",
-            "name": "कृषि सहयोग सल्लाहकार",
-            "description": "Expert consultation for agricultural  and subsidies in Nepal",
-            "category": "Government Subsidy Assistance",
-            "url": "https://krishihimalaya.com/services/",
-            "areaServed": "Nepal",
-            "availableLanguage": ["ne", "en"]
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Organic Certification Assistance",
+              "description": "Complete support for organic farming certification process"
+            }
           },
           {
             "@type": "Offer",
-            "name": "Organic Certification",
-            "description": "Complete organic farming certification guidance and support",
-            "category": "Certification Services",
-            "url": "https://krishihimalaya.com/services/organic-certification",
-            "areaServed": "Nepal",
-            "availableLanguage": ["ne", "en"]
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Agricultural Training Programs",
+              "description": "Comprehensive training on modern farming techniques"
+            }
           },
           {
             "@type": "Offer",
-            "name": "खेती प्रशिक्षण",
-            "description": "Comprehensive farming workshops in Nepali and English",
-            "category": "Training Programs",
-            "url": "https://krishihimalaya.com/services/training",
-            "areaServed": "Nepal",
-            "availableLanguage": ["ne", "en"]
-          },
-          {
-            "@type": "Offer",
-            "name": "Sustainable Farming Consultation",
-            "description": "Expert guidance on sustainable and modern farming practices",
-            "category": "Agricultural Consulting",
-            "url": "https://krishihimalaya.com/services/consultation",
-            "areaServed": "Nepal",
-            "availableLanguage": ["ne", "en"]
-          }
-        ]
-      },
-      "review": {
-        "@type": "Review",
-        "reviewRating": {
-          "@type": "Rating",
-          "ratingValue": "4.8",
-          "bestRating": "5"
-        },
-        "author": {
-          "@type": "Person",
-          "name": "राम बहादुर"
-        }
-      },
-      "faqPage": {
-        "@type": "FAQPage",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "How can I apply for agricultural  in Nepal?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "To apply for agricultural  in Nepal, visit our  consultation service where our experts will guide you through the application process, required documents, and eligibility criteria for various government subsidies."
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Sustainable Farming Consultation",
+              "description": "Expert guidance on sustainable agriculture practices"
             }
-          },
-          {
-            "@type": "Question",
-            "name": "कृषि सहयोगको लागि कसरी आवेदन दिने?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "कृषि सहयोगको लागि आवेदन दिन हाम्रो सहयोग परामर्श सेवामा सम्पर्क गर्नुहोस्। हाम्रा विज्ञहरूले तपाईंलाई आवेदन प्रक्रिया, आवश्यक कागजात र विभिन्न सरकारी सब्सिडीको योग्यता मापदण्डको बारेमा मार्गदर्शन गर्नेछन्।"
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "What are the benefits of organic certification for Nepalese farmers?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Organic certification helps Nepalese farmers access premium markets, receive better prices for their produce, qualify for government incentives, and adopt sustainable farming practices that protect soil health and biodiversity."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "कृषि सहयोगको लागि के कागजातहरू आवश्यक छन्?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "कृषि सहयोगको लागि नागरिकताको प्रमाणपत्र, जग्गाको दस्तावेज, बैंक खाताको विवरण, फारम भर्ने आवेदन, र सिफारिस पत्र आवश्यक हुन्छ। हामी तपाईंलाई सम्पूर्ण प्रक्रियामा सहयोग गर्नेछौं।"
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "How long does the organic certification process take in Nepal?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "The organic certification process typically takes 3-6 months in Nepal, depending on farm size, documentation readiness, and inspection scheduling. Himalaya Krishi helps expedite this process through our expert guidance."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "के हामी जैविक खेती गर्न सानो जग्गामा पनि सक्छौं?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "हो, जैविक खेती सानो जग्गामा पनि गर्न सकिन्छ। हामीले उचित प्रविधि, फसल चक्र, र सानो स्थानमा उपयुक्त बिरुवाहरूको बारेमा तपाईंलाई प्रशिक्षण दिन्छौं।"
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "What training programs do you offer for new farmers?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "We offer comprehensive training programs covering organic farming basics, soil management, pest control, irrigation techniques, and market access strategies. Programs are available in both Nepali and English."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "What government agricultural subsidies are available in Nepal?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "The Nepalese government offers subsidies for organic farming inputs, irrigation systems, greenhouse construction, and livestock development. Himalaya Krishi provides complete guidance on eligibility criteria and application processes for these programs."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "जैविक खेतीमा प्रयोग हुने प्रमुख जैविक मलहरू के के हुन्?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "जैविक खेतीमा गोबरको मल, वर्मीकम्पोष्ट, हरियो मल, जैविक खाद, र जैविक कीटनाशक प्रयोग गरिन्छ। हामीले यी सबै उत्पादनहरूको उचित प्रयोग विधि र उत्पादन तरिकाको प्रशिक्षण दिन्छौं।"
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "How can I test my soil quality in Nepal?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Himalaya Krishi offers comprehensive soil testing services that analyze pH levels, nutrient content, and organic matter. We provide customized recommendations based on test results to optimize your farming practices."
-            }
-          },
-          {
-a            "@type": "Question",
-            "name": "कृषि ऋणको लागि कस बैंकहरूले राम्रो सुविधा दिन्छन्?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "नेपाल राष्ट्र बैंक, कृषि विकास बैंक, र अन्य वाणिज्य बैंकहरूले कृषि ऋण दिन्छन्। हामीले तपाईंलाई उचित बैंक छनौट गर्न र आवेदन प्रक्रियामा सहयोग गर्नेछन्।"
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "What crops are most profitable for organic farming in Nepal?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "High-value organic crops in Nepal include coffee, cardamom, ginger, turmeric, and medicinal herbs. We provide market analysis and cultivation guidance to help farmers select the most profitable crops for their region."
-            }
-          }
-        ]
-      },
-      "makesOffer": {
-        "@type": "Offer",
-        "itemOffered": [
-          {
-            "@type": "Service",
-            "name": "Organic Farming Consultation",
-            "description": "Expert guidance on organic farming practices and certification"
-          },
-          {
-            "@type": "Service",
-            "name": "कृषि खेती परामर्श",
-            "description": "कृषि खेती अभ्यास र प्रमाणीकरणमा विशेषज्ञ मार्गदर्शन"
           }
         ]
       }
@@ -429,18 +205,14 @@ a            "@type": "Question",
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
-    <noscript>Please enable JavaScript to view this website.</noscript>
-    <!-- Google Translate Script -->
-    <script type="text/javascript">
-    function googleTranslateElementInit() {
-    new google.translate.TranslateElement({
-    pageLanguage: 'en',
-    includedLanguages: 'en,ne,hi,zh-CN,fr,de,es,ru,ar,ja,ko', // Add languages you want to support
-    layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
-    autoDisplay: false
-    }, 'google_translate_element');
-    }
-    </script>
-    <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    
+    <!-- Error handling for unsupported browsers -->
+    <noscript>
+      <div style="text-align: center; padding: 50px; font-family: Arial, sans-serif;">
+        <h1>JavaScript Required</h1>
+        <p>This website requires JavaScript to function properly. Please enable JavaScript in your browser settings.</p>
+        <p>यो वेबसाइटले काम गर्न JavaScript चाहिन्छ। कृपया आफ्नो ब्राउजर सेटिङमा JavaScript सक्षम गर्नुहोस्।</p>
+      </div>
+    </noscript>
   </body>
 </html>
