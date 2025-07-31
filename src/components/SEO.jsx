@@ -5,7 +5,7 @@ const SEO = ({ title, description, keywords, canonicalUrl, ogImage, ogType = 'we
   const siteName = 'Himalaya Krishi';
   const defaultDescription = 'Experience Nepal\'s finest organic farming at Himalaya Krishi. We offer premium organic products, sustainable agriculture solutions, and empower local farmers since 1992.';
   const defaultKeywords = 'organic farming nepal, sustainable agriculture, organic products, farmer empowerment, himalayan agriculture';
-  const defaultOgImage = 'https://krishihimalaya.com/og-image.jpg';
+  const defaultOgImage = 'https://krishihimalaya.com/assets/logo/logo_512.png';
 
   // Structured data for organization
   const organizationSchema = {
@@ -13,7 +13,7 @@ const SEO = ({ title, description, keywords, canonicalUrl, ogImage, ogType = 'we
     '@type': 'Organization',
     'name': 'Himalaya Krishi',
     'url': 'https://krishihimalaya.com',
-    'logo': 'https://krishihimalaya.com/logo.png',
+    'logo': 'https://krishihimalaya.com/assets/logo/logo_512.png',
     'sameAs': [
       'https://facebook.com/himalayakrishi',
       'https://twitter.com/himalayakrishi',

@@ -71,7 +71,7 @@ const Navbar = ({ isHomePage }) => {
   return (
     <>
       <Suspense fallback={null}>
-        <SEOHelmet location={location} navItems={navItems} />
+        <SEOHelmet navItems={navItems} />
       </Suspense>
 
       {/* Navigation with Bilingual Support */}

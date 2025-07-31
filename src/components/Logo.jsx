@@ -1,18 +1,18 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
-import logo from '../assets/logo/whitelogo-blackbg.png';
+import logo from '../assets/logo/whitelogo-blackbg-removebg-preview.webp';
 
 const Logo = () => (
   <>
     <Helmet>
-      <link rel="preload" href={logo} as="image" type="image/png" />
-      <meta property="og:image" content={`${window.location.origin}/assets/logo/whitelogo-blackbg.png`} />
+      <link rel="preload" href={logo} as="image" type="image/webp" />
+      <meta property="og:image" content={`${window.location.origin}/assets/logo/logo_512.png`} />
       <meta property="og:image:width" content="512" />
       <meta property="og:image:height" content="512" />
       <meta property="og:image:alt" content="हिमालय कृषि लोगो | Himalaya Krishi Logo" />
-      <meta name="image" content={`${window.location.origin}/assets/logo/whitelogo-blackbg.png`} />
-      <meta name="twitter:image" content={`${window.location.origin}/assets/logo/whitelogo-blackbg.png`} />
+      <meta name="image" content={`${window.location.origin}/assets/logo/logo_512.png`} />
+      <meta name="twitter:image" content={`${window.location.origin}/assets/logo/logo_512.png`} />
       <meta name="twitter:image:alt" content="हिमालय कृषि लोगो | Himalaya Krishi Logo" />
     </Helmet>
 

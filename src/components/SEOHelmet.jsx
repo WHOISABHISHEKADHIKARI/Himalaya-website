@@ -1,26 +1,68 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
+import { useLocation } from 'react-router-dom';
 
-const SEOHelmet = ({ location, navItems }) => {
+const SEOHelmet = ({ navItems }) => {
+  const location = useLocation();
   // Shared organization schema
   const organizationSchema = {
     "@context": "https://schema.org",
-    "@type": "Organization",
+    "@type": ["Organization", "LocalBusiness", "Farm"],
     "name": "हिमालय कृषि | Himalaya Krishi",
-    "alternateName": ["Himalaya Agriculture", "हिमालय एग्रीकल्चर"],
+    "alternateName": ["Himalaya Agriculture", "हिमालय एग्रीकल्चर", "Himalaya Organic Farm"],
     "url": "https://krishihimalaya.com",
     "logo": "https://krishihimalaya.com/assets/logo/logo_white_bg_removed.webp",
-    "description": "नेपालको अग्रणी जैविक कृषि केन्द्र | Nepal's Leading Organic Agriculture Center",
+    "description": "Nepal's premier organic farming enterprise empowering 1000+ farmers with sustainable agriculture, certified organic products, and innovative farming solutions since 2020.",
     "knowsAbout": [
       "Organic Farming",
-      "Agricultural Support",
-      "Farming Techniques",
-      "Government Subsidies",
-      "Agricultural Policies",
       "Sustainable Agriculture",
-      "Crop Rotation",
-      "Soil Health Management"
+      "Agricultural Consultation",
+      "Organic Certification",
+      "Government Farming Subsidies",
+      "Soil Testing & Management",
+      "Crop Planning & Rotation",
+      "Integrated Farming Systems",
+      "Agricultural Training Programs",
+      "Organic Seed Production",
+      "Dairy Farming",
+      "Agricultural Equipment",
+      "Farming Technology",
+      "Agricultural Innovation"
     ],
+    "areaServed": {
+      "@type": "Country",
+      "name": "Nepal"
+    },
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Agricultural Services & Products",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Organic Farming Consultation",
+            "description": "Expert guidance for sustainable organic farming practices"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Product",
+            "name": "Certified Organic Seeds",
+            "description": "High-quality certified organic seeds for various crops"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Agricultural Training Programs",
+            "description": "Comprehensive training in modern organic farming techniques"
+          }
+        }
+      ]
+    },
     "sameAs": [
       "https://www.facebook.com/profile.php?id=61572480220650",
       "https://wa.me/9779823405140"
@@ -49,7 +91,15 @@ const SEOHelmet = ({ location, navItems }) => {
     "founder": {
       "@type": "Person",
       "name": "Himalaya Krishi Team"
-    }
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.8",
+      "reviewCount": "150",
+      "bestRating": "5"
+    },
+    "award": "Nepal's Leading Organic Agriculture Center 2023",
+    "slogan": "Empowering Farmers, Enriching Nepal"
   };
 
   // Get page-specific meta content
@@ -57,31 +107,95 @@ const SEOHelmet = ({ location, navItems }) => {
     switch(pathname) {
       case '/':
         return {
-          title: 'हिमालय कृषि | Himalaya Krishi - नेपालको अग्रणी जैविक कृषि केन्द्र',
-          description: 'नेपालमा प्रमाणित जैविक खेती, कृषि तालिम, बीउ-बिजन, र कृषि सामग्री। सरकारी अनुदान र कृषि कार्यक्रमहरूको विस्तृत जानकारी। माटो परीक्षण र व्यवस्थापन सेवाहरू उपलब्ध छन्। | Certified organic farming, agricultural training, seeds, and equipment in Nepal. Detailed information on government subsidies and programs. Soil testing and management services available.',
-          keywords: 'कृषि सहयोग नेपाल, जैविक खेती, प्रमाणित बीउ-बिजन, माटो परीक्षण, कृषि तालिम, agriculture support nepal, organic farming, certified seeds, soil testing, agricultural training',
-          ogDescription: 'Nepal\'s leading organic agriculture center providing certified seeds, training, soil testing, and comprehensive farming support since 2020.'
+          title: 'Himalaya Krishi | Nepal\'s Premier Organic Farm & Sustainable Agriculture Center',
+          description: 'Transform your farming with Nepal\'s leading organic agriculture center. Expert training, certified organic seeds, government subsidy guidance, soil testing, and comprehensive farming solutions. Join 1000+ successful farmers achieving sustainable prosperity through proven organic methods.',
+          keywords: 'organic farming nepal, sustainable agriculture, certified organic seeds, agricultural training nepal, government farming subsidies, soil testing services, organic certification nepal, himalayan agriculture, farming equipment nepal, agricultural consultancy',
+          ogDescription: 'Nepal\'s most trusted organic farming partner. Expert guidance, certified seeds, training programs, and government subsidy support for sustainable agricultural success.'
         };
       case '/about':
         return {
-          title: 'About | कृषि सहयोग र नीतिहरू - Agriculture Support & Policies',
-          description: 'जैविक खेती र कृषि सहयोग सम्बन्धी जानकारी। हाम्रो यात्रा र उपलब्धिहरू। | Information about organic farming and agricultural support. Our journey and achievements.',
-          keywords: 'हिमालय कृषि इतिहास, जैविक खेती नेपाल, himalaya krishi history, organic farming nepal, sustainable agriculture practices',
-          ogDescription: 'Learn about Himalaya Krishi\'s journey in organic farming, our heritage, and commitment to sustainable agriculture in Nepal.'
+          title: 'About Himalaya Krishi | Leading Organic Farm & Agricultural Innovation Center',
+          description: 'Discover the inspiring journey of Nepal\'s most successful organic farming enterprise. From humble beginnings to empowering 1000+ farmers with sustainable practices, premium organic products, and innovative agricultural solutions. Learn about our award-winning approach to organic excellence.',
+          keywords: 'himalaya krishi story, organic farm nepal success, agricultural innovation nepal, sustainable farming leader, organic farming pioneer nepal, agricultural excellence, farming success stories nepal',
+          ogDescription: 'From vision to reality: How Himalaya Krishi became Nepal\'s most trusted name in organic farming and sustainable agriculture innovation.'
         };
       case '/vision':
         return {
-          title: 'Vision | कृषि सहयोग र नीतिहरू - Agriculture Support & Policies',
-          description: 'दिगो कृषि र जैविक खेतीको भविष्य। कृषि नीति र सहयोग कार्यक्रमहरू। | Future of sustainable farming and organic agriculture. Agricultural policies and support programs.',
-          keywords: 'कृषि भविष्य, जैविक खेती योजना, agriculture future, organic farming plans, sustainable development goals',
-          ogDescription: 'Explore Himalaya Krishi\'s vision for sustainable farming, organic excellence, and agricultural innovation in Nepal.'
+          title: 'Our Vision | Transforming Nepal\'s Agricultural Future Through Organic Excellence',
+          description: 'Envision a prosperous Nepal where every farmer thrives through sustainable organic practices. Our comprehensive vision includes premium dairy production, integrated farming systems, agricultural tourism, and community empowerment. Join us in building Nepal\'s most advanced organic agriculture ecosystem.',
+          keywords: 'nepal agriculture future, organic farming vision, sustainable agriculture goals, agricultural transformation nepal, farming innovation, organic dairy vision, agricultural tourism nepal',
+          ogDescription: 'Building Nepal\'s agricultural future: Our vision for organic excellence, farmer prosperity, and sustainable community development.'
         };
+      case '/contact':
+         return {
+           title: 'Contact Himalaya Krishi | Expert Agricultural Consultation & Support Services',
+           description: 'Get expert agricultural guidance from Nepal\'s leading organic farming specialists. Free consultation on organic certification, government subsidies, soil testing, crop planning, and sustainable farming techniques. Connect with our experienced team for personalized farming solutions.',
+           keywords: 'agricultural consultation nepal, organic farming expert, farming advice nepal, agricultural support services, organic certification help, government subsidy guidance, soil testing consultation',
+           ogDescription: 'Expert agricultural consultation and support services. Get personalized guidance for successful organic farming and sustainable agriculture in Nepal.'
+         };
+      case '/blog':
+        return {
+          title: 'Agricultural Blog | Latest Farming Tips & Organic Agriculture Insights',
+          description: 'Stay updated with the latest organic farming techniques, agricultural innovations, government policies, and expert tips from Nepal\'s leading agriculture specialists. Discover proven methods for sustainable farming success and crop optimization.',
+          keywords: 'agricultural blog nepal, organic farming tips, sustainable agriculture news, farming techniques blog, agricultural innovation nepal, crop management tips, farming success stories',
+          ogDescription: 'Expert insights on organic farming, sustainable agriculture, and agricultural innovation from Nepal\'s leading farming specialists.'
+        };
+      case '/faq':
+        return {
+          title: 'Frequently Asked Questions | Organic Farming & Agricultural Support',
+          description: 'Find answers to common questions about organic farming, government subsidies, agricultural certification, soil testing, crop planning, and farming techniques. Get expert guidance on starting your organic farming journey in Nepal.',
+          keywords: 'organic farming faq, agricultural questions nepal, farming subsidies help, organic certification questions, soil testing faq, crop planning help',
+          ogDescription: 'Get answers to your organic farming questions from Nepal\'s agricultural experts. Comprehensive FAQ on farming techniques and support services.'
+        };
+      case '/terms':
+        return {
+          title: 'Terms & Conditions | Himalaya Krishi Agricultural Services',
+          description: 'Read our terms and conditions for agricultural consultation services, organic farming training programs, and product purchases. Understand our service policies and commitment to sustainable agriculture in Nepal.',
+          keywords: 'himalaya krishi terms, agricultural services policy, organic farming terms, consultation agreement, farming services conditions',
+          ogDescription: 'Terms and conditions for Himalaya Krishi\'s agricultural services, training programs, and organic farming consultation.'
+        };
+      case '/centers':
+        return {
+          title: 'Agricultural Centers | Training & Support Locations Across Nepal',
+          description: 'Discover our agricultural training centers and support locations across Nepal. Find the nearest center for organic farming consultation, soil testing, seed distribution, and agricultural equipment. Expert support available nationwide.',
+          keywords: 'agricultural centers nepal, farming training locations, organic farming centers, agricultural support offices, farming consultation centers nepal',
+          ogDescription: 'Find agricultural training centers and support locations across Nepal for organic farming consultation and expert guidance.'
+        };
+      case '/careers':
+        return {
+          title: 'Careers | Join Nepal\'s Leading Organic Agriculture Team',
+          description: 'Join Himalaya Krishi and build a rewarding career in sustainable agriculture. Explore opportunities in organic farming, agricultural research, training, and rural development. Help us empower farmers and transform Nepal\'s agricultural landscape.',
+          keywords: 'agricultural jobs nepal, organic farming careers, agricultural research jobs, farming consultant jobs, rural development careers nepal',
+          ogDescription: 'Build your career with Nepal\'s leading organic agriculture organization. Opportunities in farming, research, training, and rural development.'
+        };
+      case '/agriculture-support':
+        return {
+          title: 'Agriculture Support Services | Government Subsidies & Farming Assistance',
+          description: 'Comprehensive agricultural support services including government subsidy guidance, organic certification assistance, soil testing, crop planning, and farming equipment support. Expert help for successful sustainable farming in Nepal.',
+          keywords: 'agriculture support nepal, government farming subsidies, organic certification help, soil testing services, crop planning assistance, farming equipment support',
+          ogDescription: 'Complete agricultural support services including government subsidies, certification help, and expert farming guidance in Nepal.'
+        };
+      case '/blog/cms':
+         return {
+           title: 'Blog CMS - Content Management | Himalaya Krishi',
+           description: 'Content Management System for Himalaya Krishi Blog. Manage blog posts, categories, and media content efficiently.',
+           keywords: 'blog cms, content management, himalaya krishi admin, blog management system',
+           ogDescription: 'Professional content management system for Himalaya Krishi blog administration'
+         };
+
+       case '/blog/publish':
+         return {
+           title: 'Publish Blog Post - Content Creation | Himalaya Krishi',
+           description: 'Create and publish blog posts for Himalaya Krishi. Share your knowledge and insights with the farming community.',
+           keywords: 'publish blog post, content creation, himalaya krishi blog, farming articles, agriculture writing',
+           ogDescription: 'Create and share valuable farming content with the agricultural community'
+         };
       default:
         return {
-          title: 'Contact | कृषि सहयोग र नीतिहरू - Agriculture Support & Policies',
-          description: 'कृषि सम्बन्धी सल्लाह र सहयोगको लागि सम्पर्क गर्नुहोस्। | Contact us for agricultural consultation and support.',
-          keywords: 'कृषि सम्पर्क, जैविक खेती सल्लाह, agriculture contact, organic farming consultation, farming expert nepal',
-          ogDescription: 'Connect with Himalaya Krishi for sustainable farming solutions and organic agriculture expertise in Nepal.'
+          title: 'Himalaya Krishi | Nepal\'s Premier Organic Agriculture Center',
+          description: 'Nepal\'s most trusted organic farming partner providing expert consultation, certified seeds, training programs, and comprehensive agricultural support services.',
+          keywords: 'himalaya krishi, organic farming nepal, agricultural services, farming consultation nepal',
+          ogDescription: 'Nepal\'s leading organic agriculture center providing comprehensive farming solutions and expert consultation services.'
         };
     }
   };
@@ -110,7 +224,7 @@ const SEOHelmet = ({ location, navItems }) => {
       <meta property="og:url" content={`https://krishihimalaya.com${location.pathname}`} />
       <meta property="og:title" content={metaContent.title} />
       <meta property="og:description" content={metaContent.ogDescription} />
-      <meta property="og:image" content="https://krishihimalaya.com/assets/logo/whitelogo-blackbg-removebg-preview.webp" />
+      <meta property="og:image" content="https://krishihimalaya.com/assets/logo/logo_512.png" />
       <meta property="og:image:width" content="1200" />
       <meta property="og:image:height" content="630" />
       <meta property="og:site_name" content="Himalaya Krishi" />
@@ -156,10 +270,17 @@ const SEOHelmet = ({ location, navItems }) => {
         {JSON.stringify({
           "@context": "https://schema.org",
           "@type": "SiteNavigationElement",
-          "name": navItems.map(item => item.name),
-          "url": navItems.map(item => 
-            `https://krishihimalaya.com${item.name === 'Home' ? '/' : `/${item.name.toLowerCase()}`}`
-          )
+          "name": ["Home", "About", "Vision", "Contact", "Blog", "FAQ", "Centers", "Careers"],
+          "url": [
+            "https://krishihimalaya.com/",
+            "https://krishihimalaya.com/about",
+            "https://krishihimalaya.com/vision",
+            "https://krishihimalaya.com/contact",
+            "https://krishihimalaya.com/blog",
+            "https://krishihimalaya.com/faq",
+            "https://krishihimalaya.com/centers",
+            "https://krishihimalaya.com/careers"
+          ]
         })}
       </script>
     </Helmet>

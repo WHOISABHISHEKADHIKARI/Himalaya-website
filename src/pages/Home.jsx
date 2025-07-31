@@ -159,7 +159,7 @@ const Home = () => {
         description="Experience Nepal's finest organic farming at Himalaya Krishi. We offer premium organic products, sustainable agriculture solutions, and empower local farmers since 1992."
         keywords="organic farming nepal, sustainable agriculture, organic products, farmer empowerment, murrah buffalo, organic certification, himalayan agriculture"
         canonicalUrl="https://krishihimalaya.com"
-        ogImage="https://krishihimalaya.com/og-image.jpg"
+        ogImage="https://krishihimalaya.com/assets/logo/logo_512.png"
       >
         <meta name="geo.region" content="NP" />
         <meta name="geo.placename" content="Manahari" />
@@ -170,7 +170,7 @@ const Home = () => {
             "@type": ["Organization", "LocalBusiness", "Farm"],
             "name": "Himalaya Krishi",
             "url": "https://krishihimalaya.com",
-            "logo": "https://krishihimalaya.com/logo.png",
+            "logo": "https://krishihimalaya.com/assets/logo/logo_512.png",
             "description": "Nepal's premier organic farming initiative promoting sustainable agriculture since 1992.",
             "foundingDate": "1992",
             "address": {

@@ -157,3 +157,220 @@ body {
   width: 100%;
   padding: 8px 12px;
 }
+
+/* Enhanced Blog content styles for CMS integration */
+.blog-content {
+  @apply text-gray-800 leading-relaxed;
+  font-size: 1.1rem;
+  line-height: 1.8;
+}
+
+.blog-content h1,
+.blog-content h2,
+.blog-content h3,
+.blog-content h4,
+.blog-content h5,
+.blog-content h6 {
+  @apply font-serif font-bold text-[#1C4E37] mt-8 mb-4 leading-tight;
+}
+
+.blog-content h1 {
+  @apply text-3xl lg:text-4xl;
+}
+
+.blog-content h2 {
+  @apply text-2xl lg:text-3xl;
+  border-bottom: 2px solid #D8A51D;
+  padding-bottom: 0.5rem;
+}
+
+.blog-content h3 {
+  @apply text-xl lg:text-2xl;
+}
+
+.blog-content h4 {
+  @apply text-lg lg:text-xl;
+}
+
+.blog-content p {
+  @apply mb-6 leading-relaxed text-justify;
+}
+
+.blog-content ul,
+.blog-content ol {
+  @apply mb-6 pl-6 space-y-2;
+}
+
+.blog-content ul {
+  list-style-type: disc;
+}
+
+.blog-content ol {
+  list-style-type: decimal;
+}
+
+.blog-content li {
+  @apply mb-2 leading-relaxed;
+}
+
+.blog-content li::marker {
+  color: #D8A51D;
+}
+
+.blog-content blockquote {
+  @apply border-l-4 border-[#D8A51D] pl-6 pr-4 py-4 italic text-gray-700 my-8 bg-[#F4F9F1]/30 rounded-r-lg;
+  position: relative;
+}
+
+.blog-content blockquote::before {
+  content: '"';
+  @apply text-6xl text-[#D8A51D] absolute -top-2 -left-2 font-serif;
+}
+
+.blog-content img {
+  @apply rounded-xl shadow-xl my-8 max-w-full h-auto mx-auto block;
+  transition: transform 0.3s ease;
+}
+
+.blog-content img:hover {
+  transform: scale(1.02);
+}
+
+.blog-content a {
+  @apply text-[#1C4E37] hover:text-[#D8A51D] font-medium transition-colors duration-300;
+  text-decoration: underline;
+  text-decoration-color: #D8A51D;
+  text-underline-offset: 3px;
+}
+
+.blog-content code {
+  @apply bg-[#F4F9F1] text-[#1C4E37] px-2 py-1 rounded text-sm font-mono border border-[#D8A51D]/20;
+}
+
+.blog-content pre {
+  @apply bg-[#1C4E37] text-white p-6 rounded-xl overflow-x-auto my-6 shadow-lg;
+}
+
+.blog-content pre code {
+  @apply bg-transparent p-0 text-white border-0;
+}
+
+.blog-content table {
+  @apply w-full border-collapse border border-gray-300 my-6 rounded-lg overflow-hidden shadow-lg;
+}
+
+.blog-content th,
+.blog-content td {
+  @apply border border-gray-300 px-4 py-3 text-left;
+}
+
+.blog-content th {
+  @apply bg-[#1C4E37] text-white font-semibold;
+}
+
+.blog-content td {
+  @apply bg-white;
+}
+
+.blog-content tr:nth-child(even) td {
+  @apply bg-[#F4F9F1]/30;
+}
+
+/* Enhanced formatting for CMS content */
+.blog-content strong,
+.blog-content b {
+  @apply font-bold text-[#1C4E37];
+}
+
+.blog-content em,
+.blog-content i {
+  @apply italic text-gray-700;
+}
+
+.blog-content hr {
+  @apply my-8 border-0 h-px bg-gradient-to-r from-transparent via-[#D8A51D] to-transparent;
+}
+
+/* Post metadata styles */
+.post-metadata {
+  @apply bg-gradient-to-r from-[#F4F9F1] to-white p-6 rounded-xl border border-[#D8A51D]/20 mt-8;
+}
+
+.post-metadata h3 {
+  @apply text-lg font-semibold text-[#1C4E37] mb-4 border-b border-[#D8A51D]/30 pb-2;
+}
+
+.post-metadata .metadata-grid {
+  @apply grid grid-cols-1 md:grid-cols-2 gap-4;
+}
+
+.post-metadata .metadata-item {
+  @apply flex items-center space-x-2;
+}
+
+.post-metadata .metadata-label {
+  @apply font-medium text-gray-600 min-w-[100px];
+}
+
+.post-metadata .metadata-value {
+  @apply text-[#1C4E37] font-medium;
+}
+
+.post-metadata .tags-container {
+  @apply flex flex-wrap gap-2 mt-2;
+}
+
+.post-metadata .tag {
+  @apply bg-[#D8A51D] text-white px-3 py-1 rounded-full text-sm font-medium hover:bg-[#1C4E37] transition-colors duration-300 cursor-pointer;
+}
+
+/* Category badge styles */
+.category-badge {
+  @apply inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-[#1C4E37] text-white hover:bg-[#D8A51D] transition-colors duration-300;
+}
+
+/* Reading time indicator */
+.reading-time {
+  @apply inline-flex items-center space-x-1 text-gray-600 text-sm;
+}
+
+/* Enhanced post header styles */
+.post-header {
+  @apply space-y-4;
+}
+
+.post-meta-info {
+  @apply flex flex-wrap items-center gap-4 text-sm text-gray-600;
+}
+
+.post-meta-info > div {
+  @apply flex items-center space-x-1;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .blog-content {
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+  
+  .blog-content h1 {
+    @apply text-2xl;
+  }
+  
+  .blog-content h2 {
+    @apply text-xl;
+  }
+  
+  .blog-content h3 {
+    @apply text-lg;
+  }
+  
+  .post-metadata .metadata-grid {
+    @apply grid-cols-1;
+  }
+  
+  .post-meta-info {
+    @apply flex-col items-start gap-2;
+  }
+}

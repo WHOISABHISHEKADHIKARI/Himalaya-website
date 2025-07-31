@@ -271,12 +271,6 @@ const Blog = () => {
                                 >
                                     <FaEdit /> Manage Blog
                                 </Link>
-                                <Link
-                                    to="/blog/publish"
-                                    className="flex items-center gap-2 bg-white text-[#1C4E37] px-6 py-3 rounded-lg hover:bg-gray-100 transition-colors shadow-lg"
-                                >
-                                    <FaPlus /> Publish Post
-                                </Link>
                             </div>
                         </div>
                         <div className="max-w-2xl mx-auto">

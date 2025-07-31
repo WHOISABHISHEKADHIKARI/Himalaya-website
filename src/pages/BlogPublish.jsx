@@ -1,7 +1,7 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useNavigate, useSearchParams } from 'react-router-dom';
-import { Helmet } from 'react-helmet-async';
+import SEOHelmet from '../components/SEOHelmet';
 import {
     FaSave, FaEye, FaImage, FaTags, FaFolder, FaCalendar,
     FaUser, FaUpload, FaTimes, FaPlus, FaTrash, FaPhotoVideo,
@@ -9,7 +9,8 @@ import {
 } from 'react-icons/fa';
 import BLOG_CONFIG from '../config/api';
 import MediaUploader from '../components/MediaUploader';
-import { ProtectedRoute } from '../components/AdminAuth';
+import RichTextEditor from '../components/RichTextEditor';
+import { EnhancedProtectedRoute } from '../components/EnhancedAdminAuth';
 
 const BlogPublish = () => {
     const navigate = useNavigate();
@@ -129,10 +130,7 @@ const BlogPublish = () => {
 
     return (
         <>
-            <Helmet>
-                <title>Publish Blog Post - Himalaya Krishi</title>
-                <meta name="description" content="Create and publish blog posts for Himalaya Krishi" />
-            </Helmet>
+            <SEOHelmet />
 
             <div className="min-h-screen bg-gradient-to-br from-[#F4F9F1] to-[#EAEFE7] py-8">
                 <div className="container mx-auto px-4 max-w-4xl">
@@ -212,14 +210,10 @@ const BlogPublish = () => {
                                         <label className="block text-[#1C4E37] font-semibold mb-2">
                                             Content *
                                         </label>
-                                        <textarea
-                                            name="content"
+                                        <RichTextEditor
                                             value={formData.content}
-                                            onChange={handleInputChange}
-                                            rows={15}
-                                            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#1C4E37] focus:border-transparent"
-                                            placeholder="Write your blog content here..."
-                                            required
+                                            onChange={(content) => setFormData(prev => ({ ...prev, content }))}
+                                            placeholder="Tell your story..."
                                         />
                                     </div>
 
@@ -420,9 +414,12 @@ const BlogPublish = () => {
                                         />
                                     )}
                                     
-                                    <div className="whitespace-pre-wrap text-gray-700 leading-relaxed">
-                                        {formData.content || 'Blog content will appear here...'}
-                                    </div>
+                                    <div 
+                                        className="text-gray-700 leading-relaxed prose prose-lg max-w-none"
+                                        dangerouslySetInnerHTML={{
+                                            __html: formData.content || '<p class="text-gray-400 italic">Blog content will appear here...</p>'
+                                        }}
+                                    />
                                     
                                     {selectedTags.length > 0 && (
                                         <div className="mt-8 pt-6 border-t">
@@ -508,9 +505,9 @@ const BlogPublish = () => {
 // Wrap with authentication
 const ProtectedBlogPublish = () => {
     return (
-        <ProtectedRoute>
+        <EnhancedProtectedRoute>
             <BlogPublish />
-        </ProtectedRoute>
+        </EnhancedProtectedRoute>
     );
 };
 

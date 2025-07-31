@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import SEOHelmet from '../components/SEOHelmet';
 import LoadingSpinner from '../components/LoadingSpinner';
 
 const Terms = () => {
@@ -19,6 +20,7 @@ const Terms = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-[#1C4E37]/5 via-white to-[#F4F9F1]/50">
+      <SEOHelmet />
       {/* Decorative Elements */}
       <div className="absolute top-0 left-0 w-full h-64 bg-gradient-to-r from-[#1C4E37]/10 via-[#D8A51D]/5 to-[#1C4E37]/10 transform -skew-y-6"></div>
       <div className="absolute top-20 left-20 w-72 h-72 bg-[#D8A51D]/5 rounded-full blur-3xl animate-pulse"></div>

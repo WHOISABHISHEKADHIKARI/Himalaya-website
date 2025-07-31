@@ -102,7 +102,7 @@ const formatFileSize = (bytes) => {
 const MediaItem = ({ media, onSelect, onDelete, selected, showActions = true }) => {
     const [showPreview, setShowPreview] = useState(false);
     const [editMode, setEditMode] = useState(false);
-    const [editData, setEditData] = useState({ alt: media.alt, caption: media.caption });
+    const [editData, setEditData] = useState({ alt: media.alt || '', caption: media.caption || '' });
 
     const handleSaveEdit = () => {
         const mediaLibrary = getMediaLibrary();

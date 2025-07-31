@@ -5,7 +5,7 @@ import { Analytics } from '@vercel/analytics/react';
 import { initializeSampleData } from './utils/sampleBlogData';
 import { cleanupBlobUrls } from './components/MediaUploader';
 import BLOG_CONFIG from './config/api';
-import { AdminAuthProvider } from './components/AdminAuth';
+import { EnhancedAdminAuthProvider } from './components/EnhancedAdminAuth';
 import ErrorBoundary from './components/ErrorBoundary'; // Import directly to avoid circular dependency
 
 // Lazy load components
@@ -29,7 +29,7 @@ const Careers = lazy(() => import('./pages/Careers')); // Add this line
 const AgricultureSupport = lazy(() => import('./pages/AgricultureSupport'));
 const Centers = lazy(() => import('./pages/Centers'));
 const Blog = lazy(() => import('./pages/Blog'));
-const BlogPost = lazy(() => import('./pages/BlogPost'));
+const BlogPost = lazy(() => import('./pages/blogpost'));
 const BlogPublish = lazy(() => import('./pages/BlogPublish'));
 const BlogCMS = lazy(() => import('./pages/BlogCMS'));
 
@@ -53,7 +53,7 @@ function App() {
   return (
     <ErrorBoundary location={location}>
       <HelmetProvider>
-        <AdminAuthProvider>
+        <EnhancedAdminAuthProvider>
           <Suspense fallback={<div className="h-20 bg-[#1C4E37]"></div>}>
             <Navbar />
           </Suspense>
@@ -95,7 +95,7 @@ function App() {
             <Footer />
           </Suspense>
           <Analytics />
-        </AdminAuthProvider>
+        </EnhancedAdminAuthProvider>
       </HelmetProvider>
     </ErrorBoundary>
   );

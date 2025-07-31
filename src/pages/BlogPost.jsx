@@ -147,14 +147,51 @@ const BlogPost = () => {
         return `${baseUrl}/blog/${slug}`;
     };
 
-    // Fix images in content by adding crossOrigin attribute and fixing URLs
-    const fixContentImages = htmlContent => {
-        if (!htmlContent) return '';
+    // Enhanced content processing with better CMS integration
+    const processContentFromCMS = (content) => {
+        if (!content) return '';
+        
+        // Handle both HTML content and plain text from CMS
+        if (typeof content === 'string') {
+            // If it's HTML, process it
+            if (content.includes('<') && content.includes('>')) {
+                return content
+                    .replace(/src="http:\/\//gi, 'src="https://')
+                    .replace(/<img(.*?)>/gi, '<img$1 crossorigin="anonymous" loading="lazy">')
+                    .replace(/\n/g, '<br>');
+            }
+            // If it's plain text, convert line breaks to HTML
+            return content.replace(/\n/g, '<br>');
+        }
+        return content;
+    };
 
-        // Add crossOrigin attribute to all img tags and ensure HTTPS URLs
-        return htmlContent
-            .replace(/src="http:\/\//gi, 'src="https://')
-            .replace(/<img(.*?)>/gi, '<img$1 crossorigin="anonymous">');
+    // Enhanced reading time calculation
+    const calculateReadingTime = (content) => {
+        if (!content) return '5 min read';
+        const wordsPerMinute = 200;
+        const textContent = content.replace(/<[^>]*>/g, ''); // Remove HTML tags
+        const wordCount = textContent.split(/\s+/).length;
+        const readingTime = Math.ceil(wordCount / wordsPerMinute);
+        return `${readingTime} min read`;
+    };
+
+    // Enhanced post metadata
+    const getPostMetadata = () => {
+        if (!post) return {};
+        
+        return {
+            readingTime: calculateReadingTime(post.content),
+            publishDate: new Date(post.date).toLocaleDateString('en-US', {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric'
+            }),
+            lastModified: post.lastModified ? new Date(post.lastModified).toLocaleDateString() : null,
+            category: post.category?.name || 'General',
+            tags: post.tags || [],
+            author: post.author || 'Himalaya Krishi Team'
+        };
     };
 
 
@@ -283,21 +320,85 @@ const BlogPost = () => {
         <div className="relative bg-gradient-to-b from-[#F4F9F1] to-[#EAEFE7] min-h-screen font-sans">
             <ScrollToTopButton />
             <Helmet>
+                {/* Basic Meta Tags */}
                 <title>{post.title} | Himalaya Krishi</title>
-                <meta name="description" content={post.excerpt} />
+                <meta name="description" content={post.excerpt || `Read about ${post.title} on Himalaya Krishi - Nepal's leading organic farming blog.`} />
+                <meta name="keywords" content={`${post.category?.name || 'organic farming'}, ${post.tags?.map(tag => tag.name).join(', ') || 'agriculture, Nepal, sustainable farming'}, Himalaya Krishi`} />
+                <meta name="author" content={getPostMetadata().author} />
+                <meta name="robots" content="index, follow" />
                 <link rel="canonical" href={getCanonicalUrl()} />
+                
+                {/* Open Graph Meta Tags for Rich Link Previews */}
                 <meta property="og:url" content={getCanonicalUrl()} />
-                <meta property="og:title" content={`${post.title} | Himalaya Krishi`} />
-                <meta property="og:description" content={post.excerpt} />
                 <meta property="og:type" content="article" />
+                <meta property="og:title" content={post.title} />
+                <meta property="og:description" content={post.excerpt || `Discover insights about ${post.title} on Himalaya Krishi - Nepal's premier organic farming platform.`} />
                 <meta property="og:image" content={featuredImage || 'https://himalayakrishi.com/logo_512.png'} />
+                <meta property="og:image:secure_url" content={featuredImage || 'https://himalayakrishi.com/logo_512.png'} />
                 <meta property="og:image:width" content="1200" />
                 <meta property="og:image:height" content="630" />
+                <meta property="og:image:alt" content={`${post.title} - Himalaya Krishi`} />
                 <meta property="og:site_name" content="Himalaya Krishi" />
+                <meta property="og:locale" content="en_US" />
+                <meta property="og:locale:alternate" content="ne_NP" />
+                
+                {/* Article-specific Open Graph Tags */}
+                <meta property="article:published_time" content={new Date(post.date).toISOString()} />
+                {post.lastModified && <meta property="article:modified_time" content={new Date(post.lastModified).toISOString()} />}
+                <meta property="article:author" content={getPostMetadata().author} />
+                <meta property="article:section" content={post.category?.name || 'Agriculture'} />
+                {post.tags?.map((tag, index) => (
+                    <meta key={index} property="article:tag" content={tag.name} />
+                ))}
+                
+                {/* Twitter Card Meta Tags for Enhanced Sharing */}
                 <meta name="twitter:card" content="summary_large_image" />
-                <meta name="twitter:title" content={`${post.title} | Himalaya Krishi`} />
-                <meta name="twitter:description" content={post.excerpt} />
+                <meta name="twitter:site" content="@himalayakrishi" />
+                <meta name="twitter:creator" content="@himalayakrishi" />
+                <meta name="twitter:title" content={post.title} />
+                <meta name="twitter:description" content={post.excerpt || `Discover insights about ${post.title} on Himalaya Krishi.`} />
                 <meta name="twitter:image" content={featuredImage || 'https://himalayakrishi.com/logo_512.png'} />
+                <meta name="twitter:image:alt" content={`${post.title} - Himalaya Krishi`} />
+                
+                {/* Additional Meta Tags for Better SEO */}
+                <meta name="theme-color" content="#1C4E37" />
+                <meta name="msapplication-TileColor" content="#1C4E37" />
+                
+                {/* Structured Data for Rich Snippets */}
+                <script type="application/ld+json">
+                    {JSON.stringify({
+                        "@context": "https://schema.org",
+                        "@type": "Article",
+                        "headline": post.title,
+                        "description": post.excerpt,
+                        "image": {
+                            "@type": "ImageObject",
+                            "url": featuredImage || 'https://himalayakrishi.com/logo_512.png',
+                            "width": 1200,
+                            "height": 630
+                        },
+                        "author": {
+                            "@type": "Person",
+                            "name": getPostMetadata().author
+                        },
+                        "publisher": {
+                            "@type": "Organization",
+                            "name": "Himalaya Krishi",
+                            "logo": {
+                                "@type": "ImageObject",
+                                "url": "https://himalayakrishi.com/logo_512.png"
+                            }
+                        },
+                        "datePublished": new Date(post.date).toISOString(),
+                        "dateModified": post.lastModified ? new Date(post.lastModified).toISOString() : new Date(post.date).toISOString(),
+                        "mainEntityOfPage": {
+                            "@type": "WebPage",
+                            "@id": getCanonicalUrl()
+                        },
+                        "articleSection": post.category?.name || 'Agriculture',
+                        "keywords": post.tags?.map(tag => tag.name).join(', ') || 'organic farming, agriculture, Nepal'
+                    })}
+                </script>
             </Helmet>
 
             {/* Scroll Progress Indicator */}
@@ -345,19 +446,32 @@ const BlogPost = () => {
                     <motion.div className="flex flex-wrap items-center gap-6 mb-8" variants={heroTextAnimation}>
                         <span className="flex items-center px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full text-[#3A5944] border border-white/30">
                             <FaCalendar className="mr-2 text-[#D8A51D]" />
-                            {new Date(post.date).toLocaleDateString()}
+                            {getPostMetadata().publishDate}
                         </span>
                         <span className="flex items-center px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full text-[#3A5944] border border-white/30">
                             <FaUser className="mr-2 text-[#D8A51D]" />
-                            {post.author || 'Admin'}
+                            {getPostMetadata().author}
                         </span>
                         <span className="flex items-center px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full text-[#3A5944] border border-white/30">
                             <FaEye className="mr-2 text-[#D8A51D]" />
                             {post.views || 0} views
                         </span>
                         <span className="flex items-center px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full text-[#3A5944] border border-white/30">
-                            <FaClock className="mr-2 text-[#D8A51D]" />5 min read
+                            <FaClock className="mr-2 text-[#D8A51D]" />
+                            {getPostMetadata().readingTime}
                         </span>
+                        {post.category && (
+                            <span className="flex items-center px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full text-[#3A5944] border border-white/30">
+                                <FaFolder className="mr-2 text-[#D8A51D]" />
+                                {post.category.name}
+                            </span>
+                        )}
+                        {post.tags && post.tags.length > 0 && (
+                            <span className="flex items-center px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full text-[#3A5944] border border-white/30">
+                                <FaTags className="mr-2 text-[#D8A51D]" />
+                                {post.tags.slice(0, 2).map(tag => tag.name).join(', ')}
+                            </span>
+                        )}
                     </motion.div>
                 </motion.div>
             </header>
@@ -426,8 +540,40 @@ const BlogPost = () => {
                                         fontFamily: 'system-ui, -apple-system, sans-serif',
                                     }}
                                 >
-                                    <div className="whitespace-pre-wrap text-gray-700 leading-relaxed">
-                                        {fixContentImages(post.content)}
+                                    {/* Enhanced content display with CMS integration */}
+                                    <div 
+                                        className="blog-content text-gray-700 leading-relaxed"
+                                        dangerouslySetInnerHTML={{
+                                            __html: processContentFromCMS(post.content)
+                                        }}
+                                    />
+                                    
+                                    {/* Post metadata footer */}
+                                    <div className="mt-8 pt-6 border-t border-gray-200">
+                                        <div className="flex flex-wrap gap-4 text-sm text-gray-600">
+                                            <span>Published: {getPostMetadata().publishDate}</span>
+                                            {getPostMetadata().lastModified && (
+                                                <span>Updated: {getPostMetadata().lastModified}</span>
+                                            )}
+                                            <span>Author: {getPostMetadata().author}</span>
+                                        </div>
+                                        
+                                        {/* Tags display */}
+                                        {post.tags && post.tags.length > 0 && (
+                                            <div className="mt-4">
+                                                <span className="text-sm font-medium text-gray-700 mr-2">Tags:</span>
+                                                <div className="inline-flex flex-wrap gap-2">
+                                                    {post.tags.map((tag, index) => (
+                                                        <span 
+                                                            key={index}
+                                                            className="px-3 py-1 bg-[#F4F9F1] text-[#1C4E37] text-xs rounded-full border border-[#D8A51D]/20"
+                                                        >
+                                                            {tag.name}
+                                                        </span>
+                                                    ))}
+                                                </div>
+                                            </div>
+                                        )}
                                     </div>
                                 </div>
                             </div>
@@ -435,9 +581,11 @@ const BlogPost = () => {
                             {/* Share Buttons */}
                             <div className="mt-12 pt-8 border-t border-[#D8A51D]/20">
                                 <ShareButtons 
-                                    url={getCanonicalUrl()} 
-                                    title={post.title}
-                                />
+                                url={getCanonicalUrl()} 
+                                title={post.title}
+                                description={post.excerpt || `Discover insights about ${post.title} on Himalaya Krishi - Nepal's premier organic farming platform.`}
+                                image={featuredImage || 'https://himalayakrishi.com/logo_512.png'}
+                            />
                             </div>
                         </div>
                     </div>

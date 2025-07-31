@@ -1,20 +1,22 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link, useNavigate } from 'react-router-dom';
-import { Helmet } from 'react-helmet-async';
+import SEOHelmet from '../components/SEOHelmet';
 import {
     FaPlus, FaEdit, FaTrash, FaEye, FaSearch, FaFilter,
     FaTags, FaFolder, FaCalendar, FaUser, FaChartBar,
     FaSave, FaTimes, FaCheck, FaSignOutAlt, FaShieldAlt,
-    FaImage, FaCog, FaUsers, FaFileAlt
+    FaImage, FaCog, FaUsers, FaFileAlt, FaCopy, FaExternalLinkAlt,
+    FaEyeSlash
 } from 'react-icons/fa';
 import BLOG_CONFIG from '../config/api';
-import { ProtectedRoute, useAdminAuth } from '../components/AdminAuth';
+import { EnhancedProtectedRoute, useEnhancedAdminAuth, EnhancedSessionStatus, EnhancedLogoutButton } from '../components/EnhancedAdminAuth';
 import MediaUploader from '../components/MediaUploader';
+import RichTextEditor from '../components/RichTextEditor';
 
 const BlogCMS = () => {
     const navigate = useNavigate();
-    const { user, logout } = useAdminAuth();
+    const { user, logout } = useEnhancedAdminAuth();
     const [activeTab, setActiveTab] = useState('posts');
     const [posts, setPosts] = useState([]);
     const [categories, setCategories] = useState([]);
@@ -27,6 +29,14 @@ const BlogCMS = () => {
     const [formData, setFormData] = useState({ name: '' });
     const [message, setMessage] = useState('');
     const [selectedMedia, setSelectedMedia] = useState([]);
+    const [showQuickEdit, setShowQuickEdit] = useState(false);
+    const [editingPost, setEditingPost] = useState(null);
+    const [quickEditData, setQuickEditData] = useState({
+        title: '',
+        content: '',
+        excerpt: '',
+        status: 'draft'
+    });
 
     useEffect(() => {
         loadData();
@@ -49,6 +59,51 @@ const BlogCMS = () => {
         loadData();
         showMessage('Post deleted successfully!');
         setShowModal(false);
+    };
+
+    const handleDeletePost = (id) => {
+        const post = posts.find(p => p.id === id);
+        openModal('delete', post);
+    };
+
+    const handleQuickEdit = (post) => {
+        setEditingPost(post);
+        setQuickEditData({
+            title: post.title,
+            content: post.content,
+            excerpt: post.excerpt,
+            status: post.status
+        });
+        setShowQuickEdit(true);
+    };
+
+    const handleSaveQuickEdit = () => {
+        if (editingPost) {
+            const updatedPost = {
+                ...editingPost,
+                ...quickEditData,
+                updatedAt: new Date().toISOString()
+            };
+            
+            BLOG_CONFIG.updatePost(editingPost.id, updatedPost);
+            loadData();
+            setShowQuickEdit(false);
+            setEditingPost(null);
+            showMessage('Post updated successfully!');
+        }
+    };
+
+    const handleDuplicatePost = (post) => {
+        const duplicatedPost = {
+            ...post,
+            title: `${post.title} (Copy)`,
+            status: 'draft',
+            id: undefined // Let the system generate a new ID
+        };
+        
+        BLOG_CONFIG.createPost(duplicatedPost);
+        loadData();
+        showMessage('Post duplicated successfully!');
     };
 
     const togglePostStatus = (post) => {
@@ -141,10 +196,7 @@ const BlogCMS = () => {
 
     return (
         <>
-            <Helmet>
-                <title>Blog CMS - Himalaya Krishi</title>
-                <meta name="description" content="Content Management System for Himalaya Krishi Blog" />
-            </Helmet>
+            <SEOHelmet />
 
             <div className="min-h-screen bg-gradient-to-br from-[#F4F9F1] to-[#EAEFE7]">
                 {/* Admin Header */}
@@ -181,26 +233,38 @@ const BlogCMS = () => {
                     <motion.div
                         initial={{ opacity: 0, y: -20 }}
                         animate={{ opacity: 1, y: 0 }}
-                        className="mb-8"
+                        className="bg-white rounded-2xl shadow-lg p-6 mb-8"
                     >
-                        <div className="flex justify-between items-center mb-6">
+                        <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
                             <div>
-                                <h2 className="text-4xl font-serif font-bold text-[#1C4E37] mb-2">
-                                    Content Management
-                                </h2>
+                                <h1 className="text-3xl font-serif font-bold text-[#1C4E37] mb-2">
+                                    Blog Management System
+                                </h1>
                                 <p className="text-[#3A5944]">
-                                    Manage your blog content, media, and settings
+                                    Manage your blog posts, categories, and media content
                                 </p>
                             </div>
-                            <button
-                                onClick={() => navigate('/blog/publish')}
-                                className="flex items-center gap-2 bg-[#1C4E37] text-white px-6 py-3 rounded-lg hover:bg-[#2A5F47] transition-colors"
-                            >
-                                <FaPlus /> New Post
-                            </button>
+                            <div className="flex flex-col md:flex-row items-center gap-4">
+                                <EnhancedSessionStatus />
+                                <div className="flex items-center gap-3">
+                                    <button
+                                        onClick={() => navigate('/blog')}
+                                        className="flex items-center gap-2 px-4 py-2 bg-[#1C4E37] text-white rounded-lg hover:bg-[#164A32] transition-colors"
+                                    >
+                                        <FaEye /> View Blog
+                                    </button>
+                                    <EnhancedLogoutButton />
+                                </div>
+                            </div>
                         </div>
+                    </motion.div>
 
-                        {/* Statistics */}
+                    {/* Statistics */}
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 0.1 }}
+                    >
                         <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
                             <div className="bg-white rounded-xl p-6 shadow-lg">
                                 <div className="flex items-center justify-between">
@@ -329,11 +393,18 @@ const BlogCMS = () => {
                                                 </div>
                                                 <div className="flex items-center gap-2">
                                                     <button
-                                                        onClick={() => navigate(`/blog/publish?edit=${post.id}`)}
+                                                        onClick={() => handleQuickEdit(post)}
                                                         className="p-2 text-blue-600 hover:bg-blue-100 rounded-lg transition-colors"
-                                                        title="Edit"
+                                                        title="Quick Edit"
                                                     >
                                                         <FaEdit />
+                                                    </button>
+                                                    <button
+                                                        onClick={() => handleDuplicatePost(post)}
+                                                        className="p-2 text-gray-600 hover:bg-gray-100 rounded-lg transition-colors"
+                                                        title="Duplicate"
+                                                    >
+                                                        <FaCopy />
                                                     </button>
                                                     <button
                                                         onClick={() => togglePostStatus(post)}
@@ -344,10 +415,10 @@ const BlogCMS = () => {
                                                         }`}
                                                         title={post.status === 'published' ? 'Move to Draft' : 'Publish'}
                                                     >
-                                                        <FaEye />
+                                                        {post.status === 'published' ? <FaEyeSlash /> : <FaEye />}
                                                     </button>
                                                     <button
-                                                        onClick={() => openModal('delete', post)}
+                                                        onClick={() => handleDeletePost(post.id)}
                                                         className="p-2 text-red-600 hover:bg-red-100 rounded-lg transition-colors"
                                                         title="Delete"
                                                     >
@@ -495,6 +566,105 @@ const BlogCMS = () => {
                 </div>
             </div>
 
+            {/* Quick Edit Modal */}
+            <AnimatePresence>
+                {showQuickEdit && (
+                    <motion.div
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4"
+                        onClick={() => setShowQuickEdit(false)}
+                    >
+                        <motion.div
+                            initial={{ scale: 0.95, opacity: 0 }}
+                            animate={{ scale: 1, opacity: 1 }}
+                            exit={{ scale: 0.95, opacity: 0 }}
+                            className="bg-white rounded-xl p-6 w-full max-w-2xl max-h-[90vh] overflow-auto"
+                            onClick={(e) => e.stopPropagation()}
+                        >
+                            <div className="flex justify-between items-center mb-4">
+                                <h3 className="text-lg font-semibold text-[#1C4E37]">
+                                    Quick Edit: {editingPost?.title}
+                                </h3>
+                                <button
+                                    onClick={() => setShowQuickEdit(false)}
+                                    className="text-gray-400 hover:text-gray-600"
+                                >
+                                    <FaTimes />
+                                </button>
+                            </div>
+
+                            <div className="space-y-4">
+                                <div>
+                                    <label className="block text-sm font-medium text-[#3A5944] mb-1">
+                                        Title
+                                    </label>
+                                    <input
+                                        type="text"
+                                        value={quickEditData.title}
+                                        onChange={(e) => setQuickEditData({ ...quickEditData, title: e.target.value })}
+                                        className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#1C4E37] focus:border-transparent"
+                                    />
+                                </div>
+
+                                <div>
+                                    <label className="block text-sm font-medium text-[#3A5944] mb-1">
+                                        Excerpt
+                                    </label>
+                                    <textarea
+                                        value={quickEditData.excerpt}
+                                        onChange={(e) => setQuickEditData({ ...quickEditData, excerpt: e.target.value })}
+                                        className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#1C4E37] focus:border-transparent"
+                                        rows={3}
+                                    />
+                                </div>
+
+                                <div>
+                                    <label className="block text-sm font-medium text-[#3A5944] mb-1">
+                                        Status
+                                    </label>
+                                    <select
+                                        value={quickEditData.status}
+                                        onChange={(e) => setQuickEditData({ ...quickEditData, status: e.target.value })}
+                                        className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#1C4E37] focus:border-transparent"
+                                    >
+                                        <option value="draft">Draft</option>
+                                        <option value="published">Published</option>
+                                    </select>
+                                </div>
+
+                                <div>
+                                    <label className="block text-sm font-medium text-[#3A5944] mb-1">
+                                        Content
+                                    </label>
+                                    <RichTextEditor
+                                        value={quickEditData.content}
+                                        onChange={(content) => setQuickEditData({ ...quickEditData, content })}
+                                        height={300}
+                                    />
+                                </div>
+
+                                <div className="flex gap-3 pt-4">
+                                    <button
+                                        onClick={handleSaveQuickEdit}
+                                        className="flex-1 bg-[#1C4E37] text-white py-2 rounded-lg hover:bg-[#2A5F47] transition-colors flex items-center justify-center gap-2"
+                                    >
+                                        <FaSave /> Save Changes
+                                    </button>
+                                    <button
+                                        onClick={() => setShowQuickEdit(false)}
+                                        className="flex-1 bg-gray-300 text-gray-700 py-2 rounded-lg hover:bg-gray-400 transition-colors"
+                                    >
+                                        Cancel
+                                    </button>
+                                </div>
+                            </div>
+                        </motion.div>
+                    </motion.div>
+                )}
+            </AnimatePresence>
+
             {/* Enhanced Modal */}
             <AnimatePresence>
                 {showModal && (
@@ -638,9 +808,9 @@ const BlogCMS = () => {
 // Wrap with authentication
 const ProtectedBlogCMS = () => {
     return (
-        <ProtectedRoute>
+        <EnhancedProtectedRoute>
             <BlogCMS />
-        </ProtectedRoute>
+        </EnhancedProtectedRoute>
     );
 };
 
