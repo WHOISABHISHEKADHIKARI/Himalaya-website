@@ -344,6 +344,17 @@ const BlogCMS = () => {
                             {/* Posts Tab */}
                             {activeTab === 'posts' && (
                                 <div>
+                                    {/* Header with New Post Button */}
+                                    <div className="flex justify-between items-center mb-6">
+                                        <h2 className="text-xl font-semibold text-[#1C4E37]">Manage Posts</h2>
+                                        <Link
+                                            to="/blog/publish"
+                                            className="flex items-center gap-2 bg-[#1C4E37] text-white px-4 py-2 rounded-lg hover:bg-[#2A5F47] transition-colors"
+                                        >
+                                            <FaPlus /> New Post
+                                        </Link>
+                                    </div>
+
                                     {/* Search and Filter */}
                                     <div className="flex flex-col md:flex-row gap-4 mb-6">
                                         <div className="flex-1 relative">
