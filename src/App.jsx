@@ -29,7 +29,7 @@ const Careers = lazy(() => import('./pages/Careers')); // Add this line
 const AgricultureSupport = lazy(() => import('./pages/AgricultureSupport'));
 const Centers = lazy(() => import('./pages/Centers'));
 const Blog = lazy(() => import('./pages/Blog'));
-const BlogPost = lazy(() => import('./pages/blogpost'));
+const BlogPost = lazy(() => import('./pages/BlogPost'));
 const BlogPublish = lazy(() => import('./pages/BlogPublish'));
 const BlogCMS = lazy(() => import('./pages/BlogCMS'));
 
