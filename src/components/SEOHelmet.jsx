@@ -190,6 +190,13 @@ const SEOHelmet = ({ navItems }) => {
            keywords: 'publish blog post, content creation, himalaya krishi blog, farming articles, agriculture writing',
            ogDescription: 'Create and share valuable farming content with the agricultural community'
          };
+      case '/search':
+        return {
+          title: 'Search | Find Information About Himalaya Krishi Services',
+          description: 'Search for information about our organic farming services, agricultural consultation, training programs, and sustainable agriculture solutions. Find what you need quickly and easily.',
+          keywords: 'search himalaya krishi, find farming services, agricultural information search, organic farming search, farming consultation search',
+          ogDescription: 'Search and find information about Himalaya Krishi\'s organic farming services and agricultural solutions.'
+        };
       default:
         return {
           title: 'Himalaya Krishi | Nepal\'s Premier Organic Agriculture Center',

@@ -9,25 +9,31 @@
   <url>
     <loc>https://krishihimalaya.com/about</loc>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.9</priority>
     <lastmod>2024-12-19</lastmod>
   </url>
   <url>
-    <loc>https://krishihimalaya.com/blog</loc>
+    <loc>https://krishihimalaya.com/vision</loc>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.9</priority>
     <lastmod>2024-12-19</lastmod>
   </url>
   <url>
     <loc>https://krishihimalaya.com/contact</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <lastmod>2024-12-19</lastmod>
+  </url>
+  <url>
+    <loc>https://krishihimalaya.com/search</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <lastmod>2024-12-19</lastmod>
   </url>
   <url>
-    <loc>https://krishihimalaya.com/vision</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://krishihimalaya.com/blog</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
     <lastmod>2024-12-19</lastmod>
   </url>
   <url>

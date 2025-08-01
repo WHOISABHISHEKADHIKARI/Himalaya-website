@@ -32,6 +32,7 @@ const Blog = lazy(() => import('./pages/Blog'));
 const BlogPost = lazy(() => import('./pages/BlogPost'));
 const BlogPublish = lazy(() => import('./pages/BlogPublish'));
 const BlogCMS = lazy(() => import('./pages/BlogCMS'));
+const Search = lazy(() => import('./pages/Search'));
 
 // Loading fallback component
 const LoadingFallback = () => (
@@ -74,6 +75,7 @@ function App() {
             <Route path="/blog/:slug" element={<BlogPost />} />
             <Route path="/blog/publish" element={<BlogPublish />} />
             <Route path="/blog/cms" element={<BlogCMS />} />
+            <Route path="/search" element={<Search />} />
             <Route path="/ne/about" element={<About />} />
             <Route path="/ne/vision" element={<Vision />} />
             <Route path="/ne/contact" element={<Contact />} />
@@ -88,6 +90,7 @@ function App() {
             <Route path="/ne/blog/:slug" element={<BlogPost />} />
             <Route path="/ne/blog/publish" element={<BlogPublish />} />
             <Route path="/ne/blog/cms" element={<BlogCMS />} />
+            <Route path="/ne/search" element={<Search />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Suspense>

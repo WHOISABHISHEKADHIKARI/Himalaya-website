@@ -29,11 +29,18 @@ Disallow: /*&fbclid=*
 Disallow: /*?ref=*
 Disallow: /*&ref=*
 
-# Prevent crawling of search results and filters
-Disallow: /search
+# Allow main search page but prevent crawling of search results and filters
+Allow: /search$
+Disallow: /search?*
 Disallow: /*?search=*
 Disallow: /*?filter=*
 Disallow: /*?sort=*
+
+# Disallow CMS and admin pages
+Disallow: /blog/cms
+Disallow: /blog/publish
+Disallow: /ne/blog/cms
+Disallow: /ne/blog/publish
 
 # Block development and testing paths
 Disallow: /test/

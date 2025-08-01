@@ -796,7 +796,7 @@ const About = () => {
                       }}
                     >
                       <source 
-                        src="/assets/video/farmvideo.mp4" 
+                        src="/videos/farmvideo.mp4" 
                         type="video/mp4"
                       />
                       {/* Fallback content */}
