@@ -1,62 +1,23 @@
-<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <rect width="512" height="512" fill="#000000"/>
-  
-  <!-- Sun -->
-  <circle cx="256" cy="100" r="30" fill="white"/>
-  
-  <!-- Sun rays -->
-  <g stroke="white" stroke-width="4" stroke-linecap="round">
-    <line x1="256" y1="50" x2="256" y2="70"/>
-    <line x1="295" y1="61" x2="285" y2="79"/>
-    <line x1="320" y1="100" x2="300" y2="100"/>
-    <line x1="295" y1="139" x2="285" y2="121"/>
-    <line x1="256" y1="150" x2="256" y2="130"/>
-    <line x1="217" y1="139" x2="227" y2="121"/>
-    <line x1="192" y1="100" x2="212" y2="100"/>
-    <line x1="217" y1="61" x2="227" y2="79"/>
-  </g>
-  
-  <!-- Mountains -->
-  <path d="M80 280L140 180L180 220L256 140L320 200L380 160L450 280H80Z" fill="white"/>
-  <path d="M120 280L160 220L200 250L256 180L310 240L350 200L400 280H120Z" fill="white"/>
-  <path d="M160 280L200 240L256 260L310 220L360 280H160Z" fill="white"/>
-  
-  <!-- Horizontal lines representing fields -->
-  <line x1="80" y1="300" x2="450" y2="300" stroke="white" stroke-width="3"/>
-  <line x1="80" y1="315" x2="450" y2="315" stroke="white" stroke-width="3"/>
-  <line x1="80" y1="330" x2="450" y2="330" stroke="white" stroke-width="3"/>
-  <line x1="80" y1="345" x2="450" y2="345" stroke="white" stroke-width="3"/>
-  
-  <!-- HIMALAYA text -->
-  <text x="256" y="400" font-family="Arial, sans-serif" font-size="42" font-weight="bold" fill="white" text-anchor="middle">HIMALAYA</text>
-  
-  <!-- KRISHI TATHA PASUPALAN FARM text -->
-  <text x="256" y="430" font-family="Arial, sans-serif" font-size="14" fill="white" text-anchor="middle">KRISHI TATHA PASUPALAN</text>
-  <text x="256" y="450" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="white" text-anchor="middle">FARM</text>
-  
-  <!-- Decorative lines -->
-  <g stroke="white" stroke-width="2">
-    <line x1="80" y1="460" x2="180" y2="460"/>
-    <line x1="80" y1="470" x2="160" y2="470"/>
-    <line x1="80" y1="480" x2="140" y2="480"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <rect width="64" height="64" fill="#000000"/>
+  <g fill="#ffffff">
+    <!-- Mountain range representing Himalaya -->
+    <polygon points="8,45 16,28 24,45" opacity="0.9"/>
+    <polygon points="20,45 28,25 36,45" opacity="0.8"/>
+    <polygon points="32,45 40,30 48,45" opacity="0.7"/>
+    <polygon points="44,45 52,32 60,45" opacity="0.6"/>
     
-    <line x1="330" y1="460" x2="430" y2="460"/>
-    <line x1="350" y1="470" x2="430" y2="470"/>
-    <line x1="370" y1="480" x2="430" y2="480"/>
+    <!-- Sun -->
+    <circle cx="48" cy="18" r="6" opacity="0.9"/>
+    <path d="M48,8 L48,12 M48,24 L48,28 M36,18 L40,18 M56,18 L60,18 M39,11 L42,14 M54,22 L57,25 M57,11 L54,14 M42,22 L39,25" stroke="#ffffff" stroke-width="1" opacity="0.7"/>
+    
+    <!-- Farm fields/agricultural land -->
+    <rect x="6" y="48" width="52" height="2" opacity="0.6"/>
+    <rect x="10" y="52" width="44" height="1" opacity="0.5"/>
+    <rect x="14" y="55" width="36" height="1" opacity="0.4"/>
+    <rect x="18" y="58" width="28" height="1" opacity="0.3"/>
+    
+    <!-- Company name elements -->
+    <text x="32" y="62" font-family="Arial, sans-serif" font-size="8" font-weight="bold" text-anchor="middle" fill="#ffffff" opacity="0.9">HIMALAYA</text>
   </g>
-  
-  <!-- Leaf symbol at bottom -->
-  <path d="M256 490C260 486 264 482 268 478C272 474 276 470 280 466C276 462 272 458 268 454C264 450 260 446 256 442C252 446 248 450 244 454C240 458 236 462 232 466C236 470 240 474 244 478C248 482 252 486 256 490Z" fill="white"/>
-  
-  <!-- ESTD and 2073 -->
-  <text x="120" y="60" font-family="Arial, sans-serif" font-size="16" fill="white" text-anchor="middle">ESTD</text>
-  <text x="390" y="60" font-family="Arial, sans-serif" font-size="16" fill="white" text-anchor="middle">2073</text>
-  
-  <!-- Vertical lines -->
-  <line x1="50" y1="50" x2="50" y2="280" stroke="white" stroke-width="4"/>
-  <line x1="462" y1="50" x2="462" y2="280" stroke="white" stroke-width="4"/>
-  
-  <!-- Circles at top of vertical lines -->
-  <circle cx="50" cy="40" r="8" fill="white"/>
-  <circle cx="462" cy="40" r="8" fill="white"/>
 </svg>

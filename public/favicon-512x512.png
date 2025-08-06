@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <rect width="512" height="512" fill="#000000"/>
+  <g fill="#ffffff">
+    <!-- Mountain range representing Himalaya -->
+    <polygon points="64,380 128,220 192,380" opacity="0.9"/>
+    <polygon points="160,380 224,200 288,380" opacity="0.8"/>
+    <polygon points="256,380 320,240 384,380" opacity="0.7"/>
+    <polygon points="352,380 416,260 480,380" opacity="0.6"/>
+    
+    <!-- Sun with detailed rays -->
+    <circle cx="384" cy="140" r="50" opacity="0.9"/>
+    <path d="M384,60 L384,90 M384,190 L384,220 M304,140 L334,140 M434,140 L464,140 M319,75 L339,95 M429,185 L449,205 M449,75 L429,95 M339,185 L319,205" stroke="#ffffff" stroke-width="8" opacity="0.7"/>
+    
+    <!-- Farm fields/agricultural terraces -->
+    <rect x="50" y="400" width="412" height="12" opacity="0.6"/>
+    <rect x="70" y="420" width="372" height="10" opacity="0.5"/>
+    <rect x="90" y="438" width="332" height="8" opacity="0.4"/>
+    <rect x="110" y="454" width="292" height="6" opacity="0.3"/>
+    <rect x="130" y="468" width="252" height="4" opacity="0.2"/>
+    
+    <!-- Company branding -->
+    <text x="256" y="500" font-family="Arial, sans-serif" font-size="36" font-weight="bold" text-anchor="middle" fill="#ffffff" opacity="0.9">HIMALAYA KRISHI TATHA PASUPALAN</text>
+  </g>
+</svg>

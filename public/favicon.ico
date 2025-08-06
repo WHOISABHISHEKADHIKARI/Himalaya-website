@@ -1,9 +1,19 @@
-<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
   <rect width="32" height="32" fill="#000000"/>
-  
-  <!-- Simple leaf icon in white -->
-  <path d="M16 6C12 6 8 10 8 16C8 20 10 22 12 24C14 26 16 26 16 26C16 26 18 26 20 24C22 22 24 20 24 16C24 10 20 6 16 6Z" fill="white"/>
-  
-  <!-- Stem -->
-  <line x1="16" y1="26" x2="16" y2="30" stroke="white" stroke-width="2"/>
+  <g fill="#ffffff">
+    <!-- Mountain peaks representing Himalaya -->
+    <polygon points="6,22 10,14 14,22" opacity="0.9"/>
+    <polygon points="12,22 16,12 20,22" opacity="0.8"/>
+    <polygon points="18,22 22,16 26,22" opacity="0.7"/>
+    
+    <!-- Sun -->
+    <circle cx="24" cy="10" r="3" opacity="0.9"/>
+    
+    <!-- Farm fields -->
+    <rect x="4" y="24" width="24" height="1" opacity="0.6"/>
+    <rect x="6" y="26" width="20" height="1" opacity="0.5"/>
+    
+    <!-- Company initial H for Himalaya -->
+    <text x="16" y="30" font-family="Arial, sans-serif" font-size="6" font-weight="bold" text-anchor="middle" fill="#ffffff">H</text>
+  </g>
 </svg>
