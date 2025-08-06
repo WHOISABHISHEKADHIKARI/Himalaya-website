@@ -1,8 +1,8 @@
 {
-  "buildCommand": "cd Himalaya-website && npm run build",
-  "outputDirectory": "Himalaya-website/dist",
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist",
   "framework": "vite",
-  "installCommand": "cd Himalaya-website && npm install",
+  "cwd": "Himalaya-website",
   "routes": [
     {
       "src": "/api/(.*)",
