@@ -9,11 +9,8 @@ const IMAGE_CACHE = 'himalaya-images-v1.2.0';
 // Critical resources to cache immediately
 const CRITICAL_RESOURCES = [
   '/',
-  '/index.html',
   '/manifest.json',
-  '/favicon.ico',
-  '/assets/css/index.css',
-  '/assets/js/main.js'
+  '/favicon.ico'
 ];
 
 // Routes to cache for offline access
@@ -31,12 +28,27 @@ self.addEventListener('install', (event) => {
   
   event.waitUntil(
     Promise.all([
-      // Cache critical resources
-      caches.open(STATIC_CACHE).then((cache) => {
+      // Cache critical resources with error handling
+      caches.open(STATIC_CACHE).then(async (cache) => {
         console.log('[SW] Caching critical resources');
-        return cache.addAll(CRITICAL_RESOURCES.map(url => new Request(url, {
-          cache: 'reload'
-        })));
+        
+        // Cache resources individually to handle failures gracefully
+        const cachePromises = CRITICAL_RESOURCES.map(async (url) => {
+          try {
+            const request = new Request(url, { cache: 'reload' });
+            const response = await fetch(request);
+            if (response.ok) {
+              await cache.put(request, response);
+              console.log(`[SW] Cached: ${url}`);
+            } else {
+              console.warn(`[SW] Failed to cache ${url}: ${response.status}`);
+            }
+          } catch (error) {
+            console.warn(`[SW] Error caching ${url}:`, error);
+          }
+        });
+        
+        await Promise.allSettled(cachePromises);
       }),
       
       // Skip waiting to activate immediately
