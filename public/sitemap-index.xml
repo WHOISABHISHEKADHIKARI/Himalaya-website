@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Main website sitemap -->
+  <sitemap>
+    <loc>https://krishihimalaya.com/sitemap.xml</loc>
+    <lastmod>2024-12-31</lastmod>
+  </sitemap>
+  
+  <!-- Blog posts sitemap -->
+  <sitemap>
+    <loc>https://krishihimalaya.com/blog-sitemap.xml</loc>
+    <lastmod>2024-12-31</lastmod>
+  </sitemap>
+  
+  <!-- Future sitemaps can be added here -->
+  <!-- Products sitemap (when available) -->
+  <!-- <sitemap>
+    <loc>https://krishihimalaya.com/products-sitemap.xml</loc>
+    <lastmod>2024-12-31</lastmod>
+  </sitemap> -->
+  
+  <!-- Services sitemap (when available) -->
+  <!-- <sitemap>
+    <loc>https://krishihimalaya.com/services-sitemap.xml</loc>
+    <lastmod>2024-12-31</lastmod>
+  </sitemap> -->
+</sitemapindex>

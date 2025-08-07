@@ -1,0 +1,197 @@
+# Robots.txt for Himalaya Krishi - Nepal's Leading Organic Farm
+# Website: https://krishihimalaya.com
+# Last Updated: 2024-12-31
+
+# Default rules for all crawlers
+User-agent: *
+Allow: /
+
+# === SECURITY & PRIVACY RESTRICTIONS ===
+# Disallow admin and private areas
+Disallow: /admin/
+Disallow: /private/
+Disallow: /login/
+Disallow: /account/
+Disallow: /dashboard/
+Disallow: /wp-admin/
+Disallow: /wp-content/
+Disallow: /wp-includes/
+Disallow: /.git/
+Disallow: /node_modules/
+Disallow: /src/
+Disallow: /scripts/
+Disallow: /.env
+Disallow: /config/
+
+# === DUPLICATE CONTENT PREVENTION ===
+# Prevent crawling of URLs with tracking parameters
+Disallow: /*?utm_*
+Disallow: /*&utm_*
+Disallow: /*?fb_*
+Disallow: /*&fb_*
+Disallow: /*?gclid=*
+Disallow: /*&gclid=*
+Disallow: /*?fbclid=*
+Disallow: /*&fbclid=*
+Disallow: /*?ref=*
+Disallow: /*&ref=*
+Disallow: /*?source=*
+Disallow: /*&source=*
+Disallow: /*?campaign=*
+Disallow: /*&campaign=*
+Disallow: /*?medium=*
+Disallow: /*&medium=*
+
+# Prevent crawling of session and temporary parameters
+Disallow: /*?sessionid=*
+Disallow: /*?PHPSESSID=*
+Disallow: /*?jsessionid=*
+Disallow: /*?sid=*
+Disallow: /*?_ga=*
+Disallow: /*?_gid=*
+
+# === SEARCH & FILTERING RESTRICTIONS ===
+# Allow main search page but prevent crawling of search results
+Allow: /search$
+Disallow: /search?*
+Disallow: /*?search=*
+Disallow: /*?filter=*
+Disallow: /*?sort=*
+Disallow: /*?page=*
+Disallow: /*?limit=*
+Disallow: /*?offset=*
+
+# === CMS & ADMIN RESTRICTIONS ===
+# Disallow CMS and admin pages
+Disallow: /blog/cms
+Disallow: /blog/publish
+Disallow: /blog/generator
+Disallow: /blog/admin
+Disallow: /cms/
+Disallow: /editor/
+Disallow: /publish/
+
+# === DEVELOPMENT & TESTING RESTRICTIONS ===
+# Block development and testing paths
+Disallow: /test/
+Disallow: /dev/
+Disallow: /staging/
+Disallow: /beta/
+Disallow: /demo/
+Disallow: /_next/
+Disallow: /api/
+Disallow: /temp/
+Disallow: /tmp/
+Disallow: /backup/
+Disallow: /logs/
+
+# === PHANTOM URL PREVENTION ===
+# Block suspicious URL patterns that generate garbled content
+Disallow: /Classic/
+Disallow: /ckyfue/
+Disallow: /trraqe/
+Disallow: /m109118175
+Disallow: /m109203189
+Disallow: /Ne/ne/homes/
+Disallow: /Config
+Disallow: /gravge
+Disallow: /*Classic*
+Disallow: /*ckyfue*
+Disallow: /*trraqe*
+Disallow: /*m109118175*
+Disallow: /*m109203189*
+Disallow: /*gravge*
+
+# === FILE TYPE RESTRICTIONS ===
+# Block access to sensitive file types
+Disallow: /*.sql$
+Disallow: /*.log$
+Disallow: /*.bak$
+Disallow: /*.old$
+Disallow: /*.tmp$
+Disallow: /*.env$
+Disallow: /*.config$
+
+# Set crawl rate for general bots
+Crawl-delay: 1
+
+# === SPECIFIC BOT CONFIGURATIONS ===
+# Google Bot - Allow faster crawling
+User-agent: Googlebot
+Crawl-delay: 0.5
+Allow: /
+
+# Bing Bot
+User-agent: Bingbot
+Crawl-delay: 1
+Allow: /
+
+# Yandex Bot
+User-agent: YandexBot
+Crawl-delay: 2
+Allow: /
+
+# Baidu Bot
+User-agent: Baiduspider
+Crawl-delay: 2
+Allow: /
+
+# Facebook Bot (for social sharing)
+User-agent: facebookexternalhit
+Crawl-delay: 1
+Allow: /
+
+# Twitter Bot (for social sharing)
+User-agent: Twitterbot
+Crawl-delay: 1
+Allow: /
+
+# LinkedIn Bot (for social sharing)
+User-agent: LinkedInBot
+Crawl-delay: 1
+Allow: /
+
+# WhatsApp Bot (for link previews)
+User-agent: WhatsApp
+Crawl-delay: 1
+Allow: /
+
+# === AGGRESSIVE CRAWLERS RESTRICTIONS ===
+# Block aggressive or unwanted bots
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: MajesticSEO
+Disallow: /
+
+User-agent: BLEXBot
+Disallow: /
+
+# === SITEMAP DECLARATIONS ===
+# Main sitemap index
+Sitemap: https://krishihimalaya.com/sitemap-index.xml
+
+# Individual sitemaps
+Sitemap: https://krishihimalaya.com/sitemap.xml
+Sitemap: https://krishihimalaya.com/blog-sitemap.xml
+
+# === ADDITIONAL SEO DIRECTIVES ===
+# Host declaration (preferred domain)
+Host: krishihimalaya.com
+
+# Clean URLs preference
+Clean-param: utm_source&utm_medium&utm_campaign&utm_term&utm_content
+Clean-param: fbclid&gclid&ref&source
+
+# === END OF ROBOTS.TXT ===
+# For questions about this robots.txt file, contact: info@krishihimalaya.com
+# Last reviewed: December 2024

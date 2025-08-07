@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+  
+  <!-- Homepage - Highest Priority -->
+  <url>
+    <loc>https://krishihimalaya.com/</loc>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+    <lastmod>2024-12-31T10:00:00+05:45</lastmod>
+    <image:image>
+      <image:loc>https://krishihimalaya.com/assets/logo/whitelogo-blackbg.webp</image:loc>
+      <image:title>Himalaya Krishi - Nepal's Leading Organic Farm</image:title>
+      <image:caption>Premier organic farming and sustainable agriculture center in Nepal</image:caption>
+    </image:image>
+  </url>
+  
+  <!-- Core Business Pages -->
+  <url>
+    <loc>https://krishihimalaya.com/about</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <lastmod>2024-12-31T10:00:00+05:45</lastmod>
+    <image:image>
+      <image:loc>https://krishihimalaya.com/assets/image/imag1.webp</image:loc>
+      <image:title>About Himalaya Krishi - Our Story</image:title>
+      <image:caption>Learn about Nepal's premier organic farming initiative since 1992</image:caption>
+    </image:image>
+  </url>
+  
+  <url>
+    <loc>https://krishihimalaya.com/vision</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <lastmod>2024-12-31T10:00:00+05:45</lastmod>
+    <image:image>
+      <image:loc>https://krishihimalaya.com/assets/image/imag5.webp</image:loc>
+      <image:title>Our Vision for Sustainable Agriculture</image:title>
+      <image:caption>Transforming Nepal's agricultural landscape through sustainable practices</image:caption>
+    </image:image>
+  </url>
+  
+  <url>
+    <loc>https://krishihimalaya.com/contact</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <lastmod>2024-12-31T10:00:00+05:45</lastmod>
+  </url>
+  
+  <!-- Service Pages -->
+  <url>
+    <loc>https://krishihimalaya.com/agriculture-support-policies</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2024-12-31T10:00:00+05:45</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://krishihimalaya.com/NewsAboutUs</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2024-12-31T10:00:00+05:45</lastmod>
+  </url>
+  
+  <!-- Content Pages -->
+  <url>
+    <loc>https://krishihimalaya.com/blog</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2024-12-31T10:00:00+05:45</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://krishihimalaya.com/careers</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2024-12-31T10:00:00+05:45</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://krishihimalaya.com/faq</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <lastmod>2024-12-31T10:00:00+05:45</lastmod>
+  </url>
+  
+  <!-- Utility Pages -->
+  <url>
+    <loc>https://krishihimalaya.com/search</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <lastmod>2024-12-31T10:00:00+05:45</lastmod>
+  </url>
+  
+  <!-- Legal Pages -->
+  <url>
+    <loc>https://krishihimalaya.com/terms</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <lastmod>2024-12-31T10:00:00+05:45</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://krishihimalaya.com/privacy</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <lastmod>2024-12-31T10:00:00+05:45</lastmod>
+  </url>
+  
+  <!-- Nepali Language Pages -->
+  <url>
+    <loc>https://krishihimalaya.com/ne/about</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2024-12-31T10:00:00+05:45</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://krishihimalaya.com/ne/vision</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2024-12-31T10:00:00+05:45</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://krishihimalaya.com/ne/contact</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2024-12-31T10:00:00+05:45</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://krishihimalaya.com/ne/agriculture-support-policies</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2024-12-31T10:00:00+05:45</lastmod>
+  </url>
+  
+</urlset>

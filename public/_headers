@@ -1,0 +1,87 @@
+# Netlify/Vercel Headers Configuration
+# Security headers to prevent phantom URL generation
+
+/*
+  X-Frame-Options: DENY
+  X-Content-Type-Options: nosniff
+  X-XSS-Protection: 1; mode=block
+  Referrer-Policy: strict-origin-when-cross-origin
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com https://googletagmanager.com https://www.googletagmanager.com/gtag/js; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://www.google-analytics.com https://www.googletagmanager.com https://googletagmanager.com;
+  Strict-Transport-Security: max-age=31536000; includeSubDomains
+  Permissions-Policy: geolocation=(), microphone=(), camera=()
+
+# Block suspicious URL patterns
+/Classic/*
+  X-Robots-Tag: noindex, nofollow
+  Status: 404
+
+/ckyfue/*
+  X-Robots-Tag: noindex, nofollow
+  Status: 404
+
+/trraqe/*
+  X-Robots-Tag: noindex, nofollow
+  Status: 404
+
+/m109118175*
+  X-Robots-Tag: noindex, nofollow
+  Status: 404
+
+/m109203189*
+  X-Robots-Tag: noindex, nofollow
+  Status: 404
+
+/Ne/ne/homes/*
+  X-Robots-Tag: noindex, nofollow
+  Status: 404
+
+/Config*
+  X-Robots-Tag: noindex, nofollow
+  Status: 404
+
+/gravge*
+  X-Robots-Tag: noindex, nofollow
+  Status: 404
+
+# Redirect old URLs
+/agriculture-support
+  Location: /agriculture-support-policies
+  Status: 301
+
+/centers
+  Location: /NewsAboutUs
+  Status: 301
+
+# Cache control for static assets
+/assets/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/*.png
+  Cache-Control: public, max-age=31536000, immutable
+
+/*.jpg
+  Cache-Control: public, max-age=31536000, immutable
+
+/*.jpeg
+  Cache-Control: public, max-age=31536000, immutable
+
+/*.webp
+  Cache-Control: public, max-age=31536000, immutable
+
+/*.svg
+  Cache-Control: public, max-age=31536000, immutable
+
+/*.ico
+  Cache-Control: public, max-age=31536000, immutable
+
+/*.woff
+  Cache-Control: public, max-age=31536000, immutable
+
+/*.woff2
+  Cache-Control: public, max-age=31536000, immutable

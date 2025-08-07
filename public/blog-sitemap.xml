@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:news="http://www.google.com/schemas/sitemap-news/0.9"
+        xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+  
+  <!-- Blog main page -->
+  <url>
+    <loc>https://krishihimalaya.com/blog</loc>
+    <lastmod>2024-12-31</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://krishihimalaya.com/images/blog-hero.jpg</image:loc>
+      <image:title>Himalaya Krishi Blog - Organic Farming Insights</image:title>
+      <image:caption>Latest articles on organic farming, sustainable agriculture, and farming techniques in Nepal</image:caption>
+    </image:image>
+  </url>
+  
+  <!-- Individual Blog Posts -->
+  <url>
+    <loc>https://krishihimalaya.com/blog/organic-farming-techniques-nepal</loc>
+    <lastmod>2024-12-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://krishihimalaya.com/assets/blog/organic-farming-techniques-nepal.webp</image:loc>
+      <image:title>Complete Guide to Organic Farming Techniques in Nepal</image:title>
+      <image:caption>Learn proven organic farming methods for sustainable agriculture in Nepal's diverse climate</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://krishihimalaya.com/blog/sustainable-agriculture-practices</loc>
+    <lastmod>2024-12-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://krishihimalaya.com/assets/blog/sustainable-agriculture-practices.webp</image:loc>
+      <image:title>Sustainable Agriculture Practices in Nepal</image:title>
+      <image:caption>Discover how sustainable farming is transforming agriculture in Nepal's mountainous regions</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://krishihimalaya.com/blog/himalayan-farming-challenges</loc>
+    <lastmod>2024-12-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://krishihimalaya.com/assets/blog/himalayan-farming-challenges.webp</image:loc>
+      <image:title>Overcoming Himalayan Farming Challenges</image:title>
+      <image:caption>Solutions and strategies for addressing unique farming challenges in Nepal's mountain regions</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://krishihimalaya.com/blog/agricultural-technology-nepal</loc>
+    <lastmod>2024-12-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://krishihimalaya.com/assets/blog/agricultural-technology-nepal.webp</image:loc>
+      <image:title>Modern Agricultural Technology in Nepal</image:title>
+      <image:caption>How technology is revolutionizing farming practices in Nepal's agricultural sector</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://krishihimalaya.com/blog/crop-rotation-benefits</loc>
+    <lastmod>2024-12-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://krishihimalaya.com/assets/blog/crop-rotation-benefits.webp</image:loc>
+      <image:title>Crop Rotation Benefits for Himalayan Farming</image:title>
+      <image:caption>Understanding how crop rotation improves soil health and increases yields in mountain agriculture</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Additional Blog Posts -->
+  <url>
+    <loc>https://krishihimalaya.com/blog/himalayan-organic-certification</loc>
+    <lastmod>2024-12-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://krishihimalaya.com/images/organic-certification.jpg</image:loc>
+      <image:title>Getting Organic Certification in Nepal</image:title>
+      <image:caption>Step-by-step guide to obtaining organic certification for your farm in Nepal</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://krishihimalaya.com/blog/seasonal-farming-calendar-nepal</loc>
+    <lastmod>2024-12-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://krishihimalaya.com/images/farming-calendar.jpg</image:loc>
+      <image:title>Seasonal Farming Calendar for Nepal</image:title>
+      <image:caption>Complete planting and harvesting schedule for crops in Nepal's diverse climate zones</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://krishihimalaya.com/blog/water-conservation-techniques</loc>
+    <lastmod>2024-12-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://krishihimalaya.com/images/water-conservation.jpg</image:loc>
+      <image:title>Water Conservation Techniques for Mountain Farming</image:title>
+      <image:caption>Innovative water-saving methods for sustainable agriculture in water-scarce regions</image:caption>
+    </image:image>
+  </url>
+</urlset>
