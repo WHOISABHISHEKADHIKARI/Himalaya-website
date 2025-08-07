@@ -6,6 +6,7 @@ import { useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import SEO from '../components/SEO';
 import ProgressiveImage from '../components/ProgressiveImage';
+import OptimizedImage from '../components/OptimizedImage';
 import LazyContent, { LazySection, LazyCard } from '../components/LazyContent';
 import SkeletonLoader from '../components/SkeletonLoader';
 import imag1 from '../assets/image/imag1.webp';
@@ -116,6 +117,348 @@ const colors = {
     card: '#FFFFFF',
     accent: 'rgba(216, 165, 29, 0.07)'
   }
+};
+
+// Gallery Component with delayed loading
+const GallerySection = () => {
+  const [showGallery, setShowGallery] = useState(false);
+
+  // Gallery images from public/assets/gallary (corrected directory path)
+  const galleryImages = [
+    {
+      src: "/assets/gallary/1724651083866.jpg",
+      alt: "Himalaya Krishi Farm Activities",
+      title: "Farm Operations"
+    },
+    {
+      src: "/assets/gallary/1724651084206.jpg",
+      alt: "Agricultural Development",
+      title: "Farm Growth"
+    },
+    {
+      src: "/assets/gallary/1724651084905.jpg",
+      alt: "Organic Farming Methods",
+      title: "Sustainable Practices"
+    },
+    {
+      src: "/assets/gallary/1724651084994.jpg",
+      alt: "Farm Infrastructure",
+      title: "Modern Facilities"
+    },
+    {
+      src: "/assets/gallary/1724651085198.jpg",
+      alt: "Agricultural Excellence",
+      title: "Quality Production"
+    },
+    {
+      src: "/assets/gallary/1724651085671.jpg",
+      alt: "Farm Landscape",
+      title: "Natural Beauty"
+    },
+    {
+      src: "/assets/gallary/1724651090098.jpg",
+      alt: "Farm Activities",
+      title: "Agricultural Work"
+    },
+    {
+      src: "/assets/gallary/1751250556796.jpeg",
+      alt: "Farm Activities",
+      title: "Daily Operations"
+    },
+    {
+      src: "/assets/gallary/497349672_122132875598749340_8339112857976662526_n (1).jpg",
+      alt: "Farm Community",
+      title: "Team Work"
+    },
+    {
+      src: "/assets/gallary/WhatsApp Image 2025-08-05 at 10.37.47_8c730d5b.jpg",
+      alt: "Organic Farming Practices",
+      title: "Sustainable Agriculture"
+    },
+    {
+      src: "/assets/gallary/WhatsApp Image 2025-08-05 at 10.37.47_a5cc7b1f.jpg",
+      alt: "Farm Development",
+      title: "Agricultural Progress"
+    },
+    {
+      src: "/assets/gallary/WhatsApp Image 2025-08-05 at 10.37.48_dffecf45.jpg",
+      alt: "Farm Infrastructure",
+      title: "Modern Facilities"
+    },
+    {
+      src: "/assets/gallary/WhatsApp Image 2025-08-05 at 10.37.49_9ad2ed53.jpg",
+      alt: "Agricultural Methods",
+      title: "Natural Farming"
+    },
+    {
+      src: "/assets/gallary/WhatsApp Image 2025-08-05 at 10.37.49_e7d38ea2.jpg",
+      alt: "Farm Equipment",
+      title: "Agricultural Tools"
+    },
+    {
+      src: "/assets/gallary/WhatsApp Image 2025-08-05 at 10.37.50_0f694c24.jpg",
+      alt: "Farm Landscape",
+      title: "Organic Fields"
+    },
+    {
+      src: "/assets/gallary/WhatsApp Image 2025-08-05 at 10.37.50_d4c9a0a8.jpg",
+      alt: "Crop Production",
+      title: "Harvest Time"
+    },
+    {
+      src: "/assets/gallary/WhatsApp Image 2025-08-05 at 10.37.51_1209cc07.jpg",
+      alt: "Farm Workers",
+      title: "Dedicated Team"
+    },
+    {
+      src: "/assets/gallary/WhatsApp Image 2025-08-05 at 10.37.51_33734862.jpg",
+      alt: "Agricultural Innovation",
+      title: "Modern Techniques"
+    },
+    {
+      src: "/assets/gallary/WhatsApp Image 2025-08-05 at 10.37.52_1907965d.jpg",
+      alt: "Farm Management",
+      title: "Efficient Operations"
+    },
+    {
+      src: "/assets/gallary/WhatsApp Image 2025-08-05 at 10.37.52_390d4be6.jpg",
+      alt: "Sustainable Farming",
+      title: "Eco-Friendly Methods"
+    },
+    {
+      src: "/assets/gallary/WhatsApp Image 2025-08-05 at 10.37.52_644c82e2.jpg",
+      alt: "Farm Productivity",
+      title: "High Yield Crops"
+    },
+    {
+      src: "/assets/gallary/WhatsApp Image 2025-08-05 at 10.37.52_8049a61d.jpg",
+      alt: "Agricultural Excellence",
+      title: "Quality Standards"
+    },
+    {
+      src: "/assets/gallary/WhatsApp Image 2025-08-05 at 10.37.52_a0dffc20.jpg",
+      alt: "Farm Technology",
+      title: "Advanced Systems"
+    },
+    {
+      src: "/assets/gallary/WhatsApp Image 2025-08-05 at 10.37.53_226a0733.jpg",
+      alt: "Organic Cultivation",
+      title: "Natural Growth"
+    },
+    {
+      src: "/assets/gallary/WhatsApp Image 2025-08-05 at 10.37.53_40adf995.jpg",
+      alt: "Farm Sustainability",
+      title: "Environmental Care"
+    },
+    {
+      src: "/assets/gallary/WhatsApp Image 2025-08-05 at 10.37.53_97185639.jpg",
+      alt: "Agricultural Research",
+      title: "Innovation Hub"
+    },
+    {
+      src: "/assets/gallary/WhatsApp Image 2025-08-05 at 10.37.53_9b84a2e8.jpg",
+      alt: "Farm Development",
+      title: "Growth & Progress"
+    },
+    {
+      src: "/assets/gallary/WhatsApp Image 2025-08-05 at 10.37.54_4af3acb3.jpg",
+      alt: "Farm Community",
+      title: "Team Collaboration"
+    },
+    {
+      src: "/assets/gallary/WhatsApp Image 2025-08-05 at 10.37.54_b9ff23ab.jpg",
+      alt: "Agricultural Success",
+      title: "Achievement"
+    },
+    {
+      src: "/assets/gallary/WhatsApp Image 2025-08-05 at 10.37.55_396fcdf6.jpg",
+      alt: "Farm Excellence",
+      title: "Quality Production"
+    },
+    {
+      src: "/assets/gallary/WhatsApp Image 2025-08-05 at 10.37.55_44f44ded.jpg",
+      alt: "Sustainable Agriculture",
+      title: "Green Farming"
+    },
+    {
+      src: "/assets/gallary/WhatsApp Image 2025-08-05 at 10.37.56_155f8cfc.jpg",
+      alt: "Farm Innovation",
+      title: "Future Farming"
+    },
+    {
+      src: "/assets/gallary/WhatsApp Image 2025-08-05 at 10.37.56_54241bc1.jpg",
+      alt: "Agricultural Heritage",
+      title: "Traditional Values"
+    },
+    {
+      src: "/assets/gallary/image1.jpg",
+      alt: "Farm Scenery",
+      title: "Beautiful Landscape"
+    },
+    {
+      src: "/assets/gallary/image2.jpg",
+      alt: "Agricultural View",
+      title: "Farm Panorama"
+    },
+    {
+      src: "/assets/gallary/photo.jpg",
+      alt: "Farm Photography",
+      title: "Captured Moments"
+    },
+    {
+      src: "/assets/gallary/photo1.jpg",
+      alt: "Farm Life",
+      title: "Rural Beauty"
+    },
+    {
+      src: "/assets/gallary/photo2.jpg",
+      alt: "Agricultural Journey",
+      title: "Farm Story"
+    }
+  ];
+
+  // Download function for images
+  const downloadImage = async (imageUrl, filename) => {
+    try {
+      const response = await fetch(imageUrl);
+      const blob = await response.blob();
+      const url = window.URL.createObjectURL(blob);
+      const link = document.createElement('a');
+      link.href = url;
+      link.download = filename || 'himalaya-farm-image.jpg';
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      window.URL.revokeObjectURL(url);
+    } catch (error) {
+      console.error('Download failed:', error);
+    }
+  };
+
+  // Load gallery with short delay
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowGallery(true);
+    }, 1000); // 1 second delay
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (!showGallery) {
+    return (
+      <motion.section 
+        className="py-24" 
+        style={{ backgroundColor: colors.light }}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.8 }}
+      >
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto text-center">
+            <motion.h2 
+              className="text-3xl md:text-5xl font-serif font-bold mb-6" 
+              style={{ color: colors.text.dark }}
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+            >
+              Our Gallery
+            </motion.h2>
+            <div className="w-32 h-1 mx-auto mb-8" style={{ backgroundColor: colors.secondary }}></div>
+            <motion.div 
+              className="flex flex-col items-center gap-4"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+            >
+              <div className="w-12 h-12 border-4 border-[#D8A51D] border-t-transparent rounded-full animate-spin"></div>
+              <p className="text-xl" style={{ color: colors.text.medium }}>
+                Preparing our beautiful gallery for you...
+              </p>
+              <p className="text-sm" style={{ color: colors.text.light }}>
+                Gallery will load shortly
+              </p>
+            </motion.div>
+          </div>
+        </div>
+      </motion.section>
+    );
+  }
+
+  return (
+    <motion.section 
+      className="py-24" 
+      style={{ backgroundColor: colors.light }}
+      initial={{ opacity: 0, y: 50 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8 }}
+    >
+      <div className="container mx-auto px-4">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-16">
+            <motion.h2 
+              className="text-3xl md:text-5xl font-serif font-bold mb-6" 
+              style={{ color: colors.text.dark }}
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+            >
+              Our Gallery
+            </motion.h2>
+            <div className="w-32 h-1 mx-auto mb-8" style={{ backgroundColor: colors.secondary }}></div>
+            <motion.p 
+              className="text-xl max-w-3xl mx-auto" 
+              style={{ color: colors.text.medium }}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+            >
+              Explore the beauty of our organic farm through these captivating images showcasing our commitment to sustainable agriculture.
+            </motion.p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            {galleryImages.map((image, index) => (
+              <motion.div
+                key={index}
+                className="group relative overflow-hidden rounded-lg shadow-lg hover:shadow-2xl transition-all duration-500"
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                whileHover={{ y: -10, scale: 1.02 }}
+              >
+                <div className="aspect-square overflow-hidden">
+                  <OptimizedImage
+                    src={image.src}
+                    alt={image.alt}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                    width={400}
+                    height={400}
+                    quality={85}
+                  />
+                  
+                  {/* Overlay */}
+                  <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-all duration-300 flex items-center justify-center">
+                    <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-center">
+                      <button
+                        onClick={() => downloadImage(encodeURI(image.src), `image-${index + 1}.jpg`)}
+                        className="bg-white text-black px-4 py-2 rounded-full font-medium hover:bg-gray-100 transition-colors duration-200 flex items-center gap-2 mx-auto"
+                      >
+                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                        </svg>
+                        Download
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </motion.section>
+  );
 };
 
 const Home = () => {
@@ -557,345 +900,5 @@ const VisitorVoiceCard = () => {
     </motion.div>
   );
  };
-
-// Gallery Component with delayed loading
-const GallerySection = () => {
-  const [showGallery, setShowGallery] = useState(false);
-
-  // Gallery images from public/assets/gallary (corrected directory path)
-  const galleryImages = [
-    {
-      src: "/assets/gallary/1724651083866.jpg",
-      alt: "Himalaya Krishi Farm Activities",
-      title: "Farm Operations"
-    },
-    {
-      src: "/assets/gallary/1724651084206.jpg",
-      alt: "Agricultural Development",
-      title: "Farm Growth"
-    },
-    {
-      src: "/assets/gallary/1724651084905.jpg",
-      alt: "Organic Farming Methods",
-      title: "Sustainable Practices"
-    },
-    {
-      src: "/assets/gallary/1724651084994.jpg",
-      alt: "Farm Infrastructure",
-      title: "Modern Facilities"
-    },
-    {
-      src: "/assets/gallary/1724651085198.jpg",
-      alt: "Agricultural Excellence",
-      title: "Quality Production"
-    },
-    {
-      src: "/assets/gallary/1724651085671.jpg",
-      alt: "Farm Landscape",
-      title: "Natural Beauty"
-    },
-    {
-      src: "/assets/gallary/1724651090098.jpg",
-      alt: "Farm Activities",
-      title: "Agricultural Work"
-    },
-    {
-      src: "/assets/gallary/1751250556796.jpeg",
-      alt: "Farm Activities",
-      title: "Daily Operations"
-    },
-    {
-      src: "/assets/gallary/497349672_122132875598749340_8339112857976662526_n (1).jpg",
-      alt: "Farm Community",
-      title: "Team Work"
-    },
-    {
-      src: "/assets/gallary/WhatsApp Image 2025-08-05 at 10.37.47_8c730d5b.jpg",
-      alt: "Organic Farming Practices",
-      title: "Sustainable Agriculture"
-    },
-    {
-      src: "/assets/gallary/WhatsApp Image 2025-08-05 at 10.37.47_a5cc7b1f.jpg",
-      alt: "Farm Development",
-      title: "Agricultural Progress"
-    },
-    {
-      src: "/assets/gallary/WhatsApp Image 2025-08-05 at 10.37.48_dffecf45.jpg",
-      alt: "Farm Infrastructure",
-      title: "Modern Facilities"
-    },
-    {
-      src: "/assets/gallary/WhatsApp Image 2025-08-05 at 10.37.49_9ad2ed53.jpg",
-      alt: "Agricultural Methods",
-      title: "Natural Farming"
-    },
-    {
-      src: "/assets/gallary/WhatsApp Image 2025-08-05 at 10.37.49_e7d38ea2.jpg",
-      alt: "Farm Equipment",
-      title: "Agricultural Tools"
-    },
-    {
-      src: "/assets/gallary/WhatsApp Image 2025-08-05 at 10.37.50_0f694c24.jpg",
-      alt: "Farm Landscape",
-      title: "Organic Fields"
-    },
-    {
-      src: "/assets/gallary/WhatsApp Image 2025-08-05 at 10.37.50_d4c9a0a8.jpg",
-      alt: "Crop Production",
-      title: "Harvest Time"
-    },
-    {
-      src: "/assets/gallary/WhatsApp Image 2025-08-05 at 10.37.51_1209cc07.jpg",
-      alt: "Farm Workers",
-      title: "Dedicated Team"
-    },
-    {
-      src: "/assets/gallary/WhatsApp Image 2025-08-05 at 10.37.51_33734862.jpg",
-      alt: "Agricultural Innovation",
-      title: "Modern Techniques"
-    },
-    {
-      src: "/assets/gallary/WhatsApp Image 2025-08-05 at 10.37.52_1907965d.jpg",
-      alt: "Farm Management",
-      title: "Efficient Operations"
-    },
-    {
-      src: "/assets/gallary/WhatsApp Image 2025-08-05 at 10.37.52_390d4be6.jpg",
-      alt: "Sustainable Farming",
-      title: "Eco-Friendly Methods"
-    },
-    {
-      src: "/assets/gallary/WhatsApp Image 2025-08-05 at 10.37.52_644c82e2.jpg",
-      alt: "Farm Productivity",
-      title: "High Yield Crops"
-    },
-    {
-      src: "/assets/gallary/WhatsApp Image 2025-08-05 at 10.37.52_8049a61d.jpg",
-      alt: "Agricultural Excellence",
-      title: "Quality Standards"
-    },
-    {
-      src: "/assets/gallary/WhatsApp Image 2025-08-05 at 10.37.52_a0dffc20.jpg",
-      alt: "Farm Technology",
-      title: "Advanced Systems"
-    },
-    {
-      src: "/assets/gallary/WhatsApp Image 2025-08-05 at 10.37.53_226a0733.jpg",
-      alt: "Organic Cultivation",
-      title: "Natural Growth"
-    },
-    {
-      src: "/assets/gallary/WhatsApp Image 2025-08-05 at 10.37.53_40adf995.jpg",
-      alt: "Farm Sustainability",
-      title: "Environmental Care"
-    },
-    {
-      src: "/assets/gallary/WhatsApp Image 2025-08-05 at 10.37.53_97185639.jpg",
-      alt: "Agricultural Research",
-      title: "Innovation Hub"
-    },
-    {
-      src: "/assets/gallary/WhatsApp Image 2025-08-05 at 10.37.53_9b84a2e8.jpg",
-      alt: "Farm Development",
-      title: "Growth & Progress"
-    },
-    {
-      src: "/assets/gallary/WhatsApp Image 2025-08-05 at 10.37.54_4af3acb3.jpg",
-      alt: "Farm Community",
-      title: "Team Collaboration"
-    },
-    {
-      src: "/assets/gallary/WhatsApp Image 2025-08-05 at 10.37.54_b9ff23ab.jpg",
-      alt: "Agricultural Success",
-      title: "Achievement"
-    },
-    {
-      src: "/assets/gallary/WhatsApp Image 2025-08-05 at 10.37.55_396fcdf6.jpg",
-      alt: "Farm Excellence",
-      title: "Quality Production"
-    },
-    {
-      src: "/assets/gallary/WhatsApp Image 2025-08-05 at 10.37.55_44f44ded.jpg",
-      alt: "Sustainable Agriculture",
-      title: "Green Farming"
-    },
-    {
-      src: "/assets/gallary/WhatsApp Image 2025-08-05 at 10.37.56_155f8cfc.jpg",
-      alt: "Farm Innovation",
-      title: "Future Farming"
-    },
-    {
-      src: "/assets/gallary/WhatsApp Image 2025-08-05 at 10.37.56_54241bc1.jpg",
-      alt: "Agricultural Heritage",
-      title: "Traditional Values"
-    },
-    {
-      src: "/assets/gallary/image1.jpg",
-      alt: "Farm Scenery",
-      title: "Beautiful Landscape"
-    },
-    {
-      src: "/assets/gallary/image2.jpg",
-      alt: "Agricultural View",
-      title: "Farm Panorama"
-    },
-    {
-      src: "/assets/gallary/photo.jpg",
-      alt: "Farm Photography",
-      title: "Captured Moments"
-    },
-    {
-      src: "/assets/gallary/photo1.jpg",
-      alt: "Farm Life",
-      title: "Rural Beauty"
-    },
-    {
-      src: "/assets/gallary/photo2.jpg",
-      alt: "Agricultural Journey",
-      title: "Farm Story"
-    }
-  ];
-
-  // Download function for images
-  const downloadImage = async (imageUrl, filename) => {
-    try {
-      const response = await fetch(imageUrl);
-      const blob = await response.blob();
-      const url = window.URL.createObjectURL(blob);
-      const link = document.createElement('a');
-      link.href = url;
-      link.download = filename || 'himalaya-farm-image.jpg';
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
-      window.URL.revokeObjectURL(url);
-    } catch (error) {
-      console.error('Download failed:', error);
-    }
-  };
-
-  // Load gallery with short delay
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setShowGallery(true);
-    }, 1000); // 1 second delay
-
-    return () => clearTimeout(timer);
-  }, []);
-
-  if (!showGallery) {
-    return (
-      <motion.section 
-        className="py-24" 
-        style={{ backgroundColor: colors.light }}
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.8 }}
-      >
-        <div className="container mx-auto px-4">
-          <div className="max-w-6xl mx-auto text-center">
-            <motion.h2 
-              className="text-3xl md:text-5xl font-serif font-bold mb-6" 
-              style={{ color: colors.text.dark }}
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-            >
-              Our Gallery
-            </motion.h2>
-            <div className="w-32 h-1 mx-auto mb-8" style={{ backgroundColor: colors.secondary }}></div>
-            <motion.div 
-              className="flex flex-col items-center gap-4"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.3 }}
-            >
-              <div className="w-12 h-12 border-4 border-[#D8A51D] border-t-transparent rounded-full animate-spin"></div>
-              <p className="text-xl" style={{ color: colors.text.medium }}>
-                Preparing our beautiful gallery for you...
-              </p>
-              <p className="text-sm" style={{ color: colors.text.light }}>
-                Gallery will load shortly
-              </p>
-            </motion.div>
-          </div>
-        </div>
-      </motion.section>
-    );
-  }
-
-  return (
-    <motion.section 
-      className="py-24" 
-      style={{ backgroundColor: colors.light }}
-      initial={{ opacity: 0, y: 50 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8 }}
-    >
-      <div className="container mx-auto px-4">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
-            <motion.h2 
-              className="text-3xl md:text-5xl font-serif font-bold mb-6" 
-              style={{ color: colors.text.dark }}
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-            >
-              Our Gallery
-            </motion.h2>
-            <div className="w-32 h-1 mx-auto mb-8" style={{ backgroundColor: colors.secondary }}></div>
-            <motion.p 
-              className="text-xl max-w-3xl mx-auto" 
-              style={{ color: colors.text.medium }}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.4 }}
-            >
-              Explore the beauty of our organic farm through these captivating images showcasing our commitment to sustainable agriculture.
-            </motion.p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-            {galleryImages.map((image, index) => (
-              <motion.div
-                key={index}
-                className="group relative overflow-hidden rounded-lg shadow-lg hover:shadow-2xl transition-all duration-500"
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                whileHover={{ y: -10, scale: 1.02 }}
-              >
-                <div className="aspect-square overflow-hidden">
-                  <img
-                    src={encodeURI(image.src)}
-                    alt={image.alt}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                    loading="lazy"
-                  />
-                  
-                  {/* Overlay */}
-                  <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-all duration-300 flex items-center justify-center">
-                    <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-center">
-                      <button
-                        onClick={() => downloadImage(encodeURI(image.src), `image-${index + 1}.jpg`)}
-                        className="bg-white text-black px-4 py-2 rounded-full font-medium hover:bg-gray-100 transition-colors duration-200 flex items-center gap-2 mx-auto"
-                      >
-                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                        </svg>
-                        Download
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </div>
-    </motion.section>
-  );
-};
 
 export default Home;

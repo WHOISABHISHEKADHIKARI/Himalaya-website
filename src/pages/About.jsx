@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import LoadingBar from '../components/LoadingBar';
 import LoadingSpinner from '../components/LoadingSpinner';
 import ProgressiveImage from '../components/ProgressiveImage';
+import OptimizedImage from '../components/OptimizedImage';
 import LazyContent, { LazySection, LazyCard } from '../components/LazyContent';
 import SkeletonLoader from '../components/SkeletonLoader';
 import { FaPhoneAlt, FaEnvelope, FaLinkedin, FaArrowUp } from 'react-icons/fa';
@@ -386,11 +387,13 @@ const About = () => {
                       <div className="md:w-2/5">
                         <div className="relative h-full">
                           <div className="absolute inset-0" style={{ backgroundColor: `${colors.primary}10` }}></div>
-                          <img 
+                          <OptimizedImage 
                             src={founder}
                             alt="Thapa Prasad Adhikari - Co-founder of our organic farm" 
                             className="w-full h-full object-cover"
-                            loading="lazy"
+                            width={400}
+                            height={500}
+                            quality={85}
                           />
                         </div>
                       </div>
@@ -413,11 +416,13 @@ const About = () => {
                       <div className="md:w-2/5">
                         <div className="relative h-full">
                           <div className="absolute inset-0" style={{ backgroundColor: `${colors.primary}10` }}></div>
-                          <img 
+                          <OptimizedImage 
                             src={owner}
                             alt="Kedar Prasad Adhikari - Owner of our organic farm" 
                             className="w-full h-full object-cover"
-                            loading="lazy"
+                            width={400}
+                            height={500}
+                            quality={85}
                           />
                         </div>
                       </div>
@@ -446,11 +451,13 @@ const About = () => {
                       <div className="md:w-2/5">
                         <div className="relative h-full">
                           <div className="absolute inset-0" style={{ backgroundColor: `${colors.primary}10` }}></div>
-                          <img 
+                          <OptimizedImage 
                             src={manager}
                             alt="Abhishek Adhikari - Manager of our organic farm" 
                             className="w-full h-full object-cover"
-                            loading="lazy"
+                            width={400}
+                            height={500}
+                            quality={85}
                           />
                         </div>
                       </div>
@@ -534,11 +541,13 @@ const About = () => {
                   <div className="absolute -bottom-20 -left-20 w-40 h-40 bg-green-800/5 rounded-full blur-3xl group-hover:blur-4xl transition-all duration-700"></div>
                   <div className="h-full flex flex-col items-center justify-center relative z-10">
                     <div className="aspect-w-16 aspect-h-9 mb-6">
-                      <img 
+                      <OptimizedImage 
                         src={bankingPartner}
                         alt="Banking Partner - Kantirajpath Branch"
                         className="object-contain w-full h-32 transform transition-all duration-700 group-hover:scale-110"
-                        loading="lazy"
+                        width={300}
+                        height={128}
+                        quality={85}
                       />
                     </div>
                     <h3 className="text-lg font-semibold text-center mb-2" style={{ color: colors.primary }}>
@@ -565,11 +574,13 @@ const About = () => {
                   <div className="absolute -bottom-20 -left-20 w-40 h-40 bg-green-800/5 rounded-full blur-3xl group-hover:blur-4xl transition-all duration-700"></div>
                   <div className="h-full flex flex-col items-center justify-center relative z-10">
                     <div className="aspect-w-16 aspect-h-9 mb-6">
-                      <img 
+                      <OptimizedImage 
                         src={consultingPartner}
                         alt="Consulting Partner - Isha Consulting Pokhara"
                         className="object-contain w-full h-32 transform transition-all duration-700 group-hover:scale-110"
-                        loading="lazy"
+                        width={300}
+                        height={128}
+                        quality={85}
                       />
                     </div>
                     <h3 className="text-lg font-semibold text-center mb-2" style={{ color: colors.primary }}>
@@ -590,10 +601,13 @@ const About = () => {
                   <div className="absolute -bottom-20 -left-20 w-40 h-40 bg-green-800/5 rounded-full blur-3xl group-hover:blur-4xl transition-all duration-700"></div>
                   <div className="h-full flex flex-col items-center justify-center relative z-10">
                     <div className="aspect-w-16 aspect-h-9 mb-6">
-                      <img 
+                      <OptimizedImage 
                         src={creativePartner}
                         alt="Creative Content Partner - The Ads Maker Hetauda"
                         className="object-contain w-full h-32 transform transition-all duration-700 group-hover:scale-110"
+                        width={300}
+                        height={128}
+                        quality={85}
                       />
                     </div>
                     <h3 className="text-lg font-semibold text-center mb-2" style={{ color: colors.primary }}>
@@ -614,10 +628,13 @@ const About = () => {
                   <div className="absolute -bottom-20 -left-20 w-40 h-40 bg-green-800/5 rounded-full blur-3xl group-hover:blur-4xl transition-all duration-700"></div>
                   <div className="h-full flex flex-col items-center justify-center relative z-10">
                     <div className="aspect-w-16 aspect-h-9 mb-6">
-                      <img 
+                      <OptimizedImage 
                         src={techPartner}
                         alt="Tech Support Partner - SDTech Chitwan"
                         className="object-contain w-full h-32 transform transition-all duration-700 group-hover:scale-110"
+                        width={300}
+                        height={128}
+                        quality={85}
                       />
                     </div>
                     <h3 className="text-lg font-semibold text-center mb-2" style={{ color: colors.primary }}>
@@ -654,11 +671,13 @@ const About = () => {
                     <div className="md:w-2/5">
                       <div className="relative h-full">
                         <div className="absolute inset-0" style={{ backgroundColor: `${colors.primary}10` }}></div>
-                        <img 
+                        <OptimizedImage 
                           src="/assets/faces/Shree Krishna Parajuli.jpg"
                           alt="Shree Krishna Parajuli" 
                           className="w-full h-full object-cover"
-                          loading="lazy"
+                          width={400}
+                          height={500}
+                          quality={85}
                         />
                       </div>
                     </div>
@@ -681,11 +700,13 @@ const About = () => {
                     <div className="md:w-2/5">
                       <div className="relative h-full">
                         <div className="absolute inset-0" style={{ backgroundColor: `${colors.primary}10` }}></div>
-                        <img 
+                        <OptimizedImage 
                           src="/assets/faces/Bharat Gautam.jpg"
                           alt="Bharat Gautam" 
                           className="w-full h-full object-cover"
-                          loading="lazy"
+                          width={400}
+                          height={500}
+                          quality={85}
                         />
                       </div>
                     </div>
@@ -708,11 +729,13 @@ const About = () => {
                     <div className="md:w-2/5">
                       <div className="relative h-full">
                         <div className="absolute inset-0" style={{ backgroundColor: `${colors.primary}10` }}></div>
-                        <img 
+                        <OptimizedImage 
                           src="/assets/faces/Dipendra Adhikari.jpg"
                           alt="Dipendra Adhikari" 
                           className="w-full h-full object-cover"
-                          loading="lazy"
+                          width={400}
+                          height={500}
+                          quality={85}
                         />
                       </div>
                     </div>
@@ -735,11 +758,13 @@ const About = () => {
                     <div className="md:w-2/5">
                       <div className="relative h-full">
                         <div className="absolute inset-0" style={{ backgroundColor: `${colors.primary}10` }}></div>
-                        <img 
+                        <OptimizedImage 
                           src={fenchu}
                           alt="Fenchu Lama" 
                           className="w-full h-full object-cover"
-                          loading="lazy"
+                          width={400}
+                          height={500}
+                          quality={85}
                         />
                       </div>
                     </div>

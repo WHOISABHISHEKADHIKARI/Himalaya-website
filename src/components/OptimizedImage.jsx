@@ -15,8 +15,10 @@ const OptimizedImage = ({
   const [isLoaded, setIsLoaded] = useState(false);
   const [hasError, setHasError] = useState(false);
   const [isInView, setIsInView] = useState(priority);
+  const [retryCount, setRetryCount] = useState(0);
   const imgRef = useRef(null);
   const observerRef = useRef(null);
+  const maxRetries = 3;
 
   // Intersection Observer for lazy loading
   useEffect(() => {
@@ -39,17 +41,16 @@ const OptimizedImage = ({
     return () => observerRef.current?.disconnect();
   }, [priority]);
 
-  // Generate optimized image sources
+  // Generate optimized image sources (only if optimized versions exist)
   const generateSrcSet = (baseSrc, format) => {
-    if (!baseSrc) return '';
-    const sizes = [480, 768, 1024, 1280, 1920];
-    return sizes
-      .map(size => `${baseSrc.replace(/\.(jpg|jpeg|png)$/i, `_${size}w.${format}`)} ${size}w`)
-      .join(', ');
+    // For now, return empty string to use original images
+    // This prevents 404 errors for non-existent optimized versions
+    return '';
   };
 
-  const webpSrc = src?.replace(/\.(jpg|jpeg|png)$/i, '.webp');
-  const avifSrc = src?.replace(/\.(jpg|jpeg|png)$/i, '.avif');
+  // Use original src for now since optimized versions may not exist
+  const webpSrc = '';
+  const avifSrc = '';
 
   const handleLoad = () => {
     setIsLoaded(true);
@@ -59,14 +60,14 @@ const OptimizedImage = ({
   const handleError = () => {
     setHasError(true);
     setIsLoaded(false);
-    // Add retry mechanism
+    // Add retry mechanism with longer fallback time
     if (retryCount < maxRetries) {
       setTimeout(() => {
         setRetryCount(prev => prev + 1);
         // Attempt to reload image
         const img = imgRef.current;
         if (img) img.src = src;
-      }, 1000 * Math.pow(2, retryCount)); // Exponential backoff
+      }, Math.max(20000, 1000 * Math.pow(2, retryCount))); // At least 20 seconds fallback
     }
   };
 
@@ -111,37 +112,25 @@ const OptimizedImage = ({
 
       {/* Main image */}
       {isInView && (
-        <picture>
-          <source 
-            srcSet={generateSrcSet(avifSrc, 'avif')} 
-            type="image/avif" 
-            sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-          />
-          <source 
-            srcSet={generateSrcSet(webpSrc, 'webp')} 
-            type="image/webp" 
-            sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-          />
-          <img
-            src={src}
-            alt={alt}
-            width={width}
-            height={height}
-            loading={priority ? 'eager' : 'lazy'}
-            decoding="async"
-            onLoad={handleLoad}
-            onError={handleError}
-            className={`w-full h-full object-cover transition-all duration-700 ease-out ${
-              isLoaded 
-                ? 'opacity-100 scale-100 filter-none' 
-                : 'opacity-0 scale-105 filter blur-sm'
-            }`}
-            style={{
-              transform: isLoaded ? 'scale(1)' : 'scale(1.05)',
-              filter: isLoaded ? 'blur(0px)' : 'blur(4px)'
-            }}
-          />
-        </picture>
+        <img
+          src={src}
+          alt={alt}
+          width={width}
+          height={height}
+          loading={priority ? 'eager' : 'lazy'}
+          decoding="async"
+          onLoad={handleLoad}
+          onError={handleError}
+          className={`w-full h-full object-cover transition-all duration-700 ease-out ${
+            isLoaded 
+              ? 'opacity-100 scale-100 filter-none' 
+              : 'opacity-0 scale-105 filter blur-sm'
+          }`}
+          style={{
+            transform: isLoaded ? 'scale(1)' : 'scale(1.05)',
+            filter: isLoaded ? 'blur(0px)' : 'blur(4px)'
+          }}
+        />
       )}
     </div>
   );
