@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  
+  <!-- Core Agricultural Services -->
+  <url>
+    <loc>https://krishihimalaya.com/services/organic-certification</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2024-12-31T10:00:00+05:45</lastmod>
+    <image:image>
+      <image:loc>https://krishihimalaya.com/assets/services/organic-certification.jpg</image:loc>
+      <image:title>Organic Certification Services</image:title>
+      <image:caption>Professional organic certification services for farmers and agricultural products</image:caption>
+    </image:image>
+  </url>
+  
+  <url>
+    <loc>https://krishihimalaya.com/services/soil-testing</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2024-12-31T10:00:00+05:45</lastmod>
+    <image:image>
+      <image:loc>https://krishihimalaya.com/assets/services/soil-testing.jpg</image:loc>
+      <image:title>Advanced Soil Testing Services</image:title>
+      <image:caption>Comprehensive soil analysis and testing services for optimal crop production</image:caption>
+    </image:image>
+  </url>
+  
+  <url>
+    <loc>https://krishihimalaya.com/services/agricultural-training</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2024-12-31T10:00:00+05:45</lastmod>
+    <image:image>
+      <image:loc>https://krishihimalaya.com/assets/gallary/WhatsApp Image 2025-08-05 at 11.39.39 AM.jpeg</image:loc>
+      <image:title>Agricultural Training Programs</image:title>
+      <image:caption>Comprehensive training programs for modern and sustainable farming techniques</image:caption>
+    </image:image>
+  </url>
+  
+  <url>
+    <loc>https://krishihimalaya.com/services/government-subsidies</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2024-12-31T10:00:00+05:45</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://krishihimalaya.com/services/crop-planning</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2024-12-31T10:00:00+05:45</lastmod>
+  </url>
+  
+  <!-- Product and Supply Services -->
+  <url>
+    <loc>https://krishihimalaya.com/products/organic-seeds</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2024-12-31T10:00:00+05:45</lastmod>
+    <image:image>
+      <image:loc>https://krishihimalaya.com/assets/products/organic-seeds.jpg</image:loc>
+      <image:title>Premium Organic Seeds</image:title>
+      <image:caption>High-quality certified organic seeds for various crops and vegetables</image:caption>
+    </image:image>
+  </url>
+  
+  <url>
+    <loc>https://krishihimalaya.com/products/organic-fertilizers</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2024-12-31T10:00:00+05:45</lastmod>
+    <image:image>
+      <image:loc>https://krishihimalaya.com/assets/products/organic-fertilizers.jpg</image:loc>
+      <image:title>Organic Fertilizers and Compost</image:title>
+      <image:caption>Natural and organic fertilizers for sustainable crop nutrition</image:caption>
+    </image:image>
+  </url>
+  
+  <url>
+    <loc>https://krishihimalaya.com/products/farming-equipment</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2024-12-31T10:00:00+05:45</lastmod>
+    <image:image>
+      <image:loc>https://krishihimalaya.com/assets/products/farming-equipment.jpg</image:loc>
+      <image:title>Modern Farming Equipment</image:title>
+      <image:caption>Advanced agricultural tools and equipment for efficient farming</image:caption>
+    </image:image>
+  </url>
+  
+  <!-- Specialized Services -->
+  <url>
+    <loc>https://krishihimalaya.com/services/pest-management</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2024-12-31T10:00:00+05:45</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://krishihimalaya.com/services/irrigation-consulting</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2024-12-31T10:00:00+05:45</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://krishihimalaya.com/services/market-linkage</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2024-12-31T10:00:00+05:45</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://krishihimalaya.com/services/financial-planning</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2024-12-31T10:00:00+05:45</lastmod>
+  </url>
+  
+  <!-- Technology Services -->
+  <url>
+    <loc>https://krishihimalaya.com/services/precision-agriculture</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <lastmod>2024-12-31T10:00:00+05:45</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://krishihimalaya.com/services/drone-monitoring</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <lastmod>2024-12-31T10:00:00+05:45</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://krishihimalaya.com/services/weather-forecasting</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+    <lastmod>2024-12-31T10:00:00+05:45</lastmod>
+  </url>
+  
+  <!-- Consultation Services -->
+  <url>
+    <loc>https://krishihimalaya.com/services/farm-design</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <lastmod>2024-12-31T10:00:00+05:45</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://krishihimalaya.com/services/business-planning</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <lastmod>2024-12-31T10:00:00+05:45</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://krishihimalaya.com/services/sustainability-consulting</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <lastmod>2024-12-31T10:00:00+05:45</lastmod>
+  </url>
+  
+  <!-- Educational Services -->
+  <url>
+    <loc>https://krishihimalaya.com/services/workshops</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+    <lastmod>2024-12-31T10:00:00+05:45</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://krishihimalaya.com/services/field-visits</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+    <lastmod>2024-12-31T10:00:00+05:45</lastmod>
+    <image:image>
+      <image:loc>https://krishihimalaya.com/assets/gallary/Hari Har Vist1.jpg</image:loc>
+      <image:title>Educational Field Visits</image:title>
+      <image:caption>Guided field visits and practical learning experiences at our organic farm</image:caption>
+    </image:image>
+  </url>
+  
+  <url>
+    <loc>https://krishihimalaya.com/services/online-courses</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <lastmod>2024-12-31T10:00:00+05:45</lastmod>
+  </url>
+  
+  <!-- Support Services -->
+  <url>
+    <loc>https://krishihimalaya.com/services/technical-support</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+    <lastmod>2024-12-31T10:00:00+05:45</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://krishihimalaya.com/services/emergency-assistance</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <lastmod>2024-12-31T10:00:00+05:45</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://krishihimalaya.com/services/equipment-rental</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+    <lastmod>2024-12-31T10:00:00+05:45</lastmod>
+  </url>
+  
+</urlset>

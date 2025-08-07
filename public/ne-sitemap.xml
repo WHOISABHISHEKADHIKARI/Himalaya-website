@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <!-- Nepali Homepage -->
+  <url>
+    <loc>https://krishihimalaya.com/ne/</loc>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+    <lastmod>2024-12-31T10:00:00+05:45</lastmod>
+    <xhtml:link rel="alternate" hreflang="ne" href="https://krishihimalaya.com/ne/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://krishihimalaya.com/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://krishihimalaya.com/" />
+    <image:image>
+      <image:loc>https://krishihimalaya.com/black-favicon-512x512.webp</image:loc>
+      <image:title>हिमालय कृषि - नेपालको अग्रणी जैविक फार्म</image:title>
+      <image:caption>नेपालको प्रमुख जैविक कृषि केन्द्र र दिगो कृषि समाधान प्रदायक</image:caption>
+      <image:geo_location>मनहरी, मकवानपुर, नेपाल</image:geo_location>
+    </image:image>
+  </url>
+  
+  <!-- Nepali About Page -->
+  <url>
+    <loc>https://krishihimalaya.com/ne/about</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <lastmod>2024-12-31T10:00:00+05:45</lastmod>
+    <xhtml:link rel="alternate" hreflang="ne" href="https://krishihimalaya.com/ne/about" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://krishihimalaya.com/about" />
+    <image:image>
+      <image:loc>https://krishihimalaya.com/assets/gallary/image1.jpg</image:loc>
+      <image:title>हिमालय कृषिको बारेमा - हाम्रो कथा</image:title>
+      <image:caption>२०२० देखि नेपालको प्रमुख जैविक कृषि पहलको बारेमा जान्नुहोस्</image:caption>
+    </image:image>
+  </url>
+  
+  <!-- Nepali Vision Page -->
+  <url>
+    <loc>https://krishihimalaya.com/ne/vision</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <lastmod>2024-12-31T10:00:00+05:45</lastmod>
+    <xhtml:link rel="alternate" hreflang="ne" href="https://krishihimalaya.com/ne/vision" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://krishihimalaya.com/vision" />
+    <image:image>
+      <image:loc>https://krishihimalaya.com/assets/gallary/WhatsApp Image 2025-08-05 at 11.39.39 AM.jpeg</image:loc>
+      <image:title>दिगो कृषिको लागि हाम्रो दृष्टिकोण</image:title>
+      <image:caption>दिगो अभ्यासहरू मार्फत नेपालको कृषि परिदृश्यलाई रूपान्तरण गर्दै</image:caption>
+    </image:image>
+  </url>
+  
+  <!-- Nepali Contact Page -->
+  <url>
+    <loc>https://krishihimalaya.com/ne/contact</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <lastmod>2024-12-31T10:00:00+05:45</lastmod>
+    <xhtml:link rel="alternate" hreflang="ne" href="https://krishihimalaya.com/ne/contact" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://krishihimalaya.com/contact" />
+  </url>
+  
+  <!-- Nepali Agriculture Support Policies -->
+  <url>
+    <loc>https://krishihimalaya.com/ne/agriculture-support-policies</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2024-12-31T10:00:00+05:45</lastmod>
+    <xhtml:link rel="alternate" hreflang="ne" href="https://krishihimalaya.com/ne/agriculture-support-policies" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://krishihimalaya.com/agriculture-support-policies" />
+  </url>
+  
+  <!-- Nepali Centers Page -->
+  <url>
+    <loc>https://krishihimalaya.com/ne/centers</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2024-12-31T10:00:00+05:45</lastmod>
+    <xhtml:link rel="alternate" hreflang="ne" href="https://krishihimalaya.com/ne/centers" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://krishihimalaya.com/centers" />
+  </url>
+  
+  <!-- Nepali News About Us -->
+  <url>
+    <loc>https://krishihimalaya.com/ne/NewsAboutUs</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2024-12-31T10:00:00+05:45</lastmod>
+    <xhtml:link rel="alternate" hreflang="ne" href="https://krishihimalaya.com/ne/NewsAboutUs" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://krishihimalaya.com/NewsAboutUs" />
+  </url>
+  
+  <!-- Nepali Blog -->
+  <url>
+    <loc>https://krishihimalaya.com/ne/blog</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2024-12-31T10:00:00+05:45</lastmod>
+    <xhtml:link rel="alternate" hreflang="ne" href="https://krishihimalaya.com/ne/blog" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://krishihimalaya.com/blog" />
+  </url>
+  
+  <!-- Nepali Careers -->
+  <url>
+    <loc>https://krishihimalaya.com/ne/careers</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2024-12-31T10:00:00+05:45</lastmod>
+    <xhtml:link rel="alternate" hreflang="ne" href="https://krishihimalaya.com/ne/careers" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://krishihimalaya.com/careers" />
+  </url>
+  
+  <!-- Nepali FAQ -->
+  <url>
+    <loc>https://krishihimalaya.com/ne/faq</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <lastmod>2024-12-31T10:00:00+05:45</lastmod>
+    <xhtml:link rel="alternate" hreflang="ne" href="https://krishihimalaya.com/ne/faq" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://krishihimalaya.com/faq" />
+  </url>
+  
+  <!-- Nepali Service Pages -->
+  <url>
+    <loc>https://krishihimalaya.com/ne/services/organic-certification</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2024-12-31T10:00:00+05:45</lastmod>
+    <xhtml:link rel="alternate" hreflang="ne" href="https://krishihimalaya.com/ne/services/organic-certification" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://krishihimalaya.com/services/organic-certification" />
+  </url>
+  
+  <url>
+    <loc>https://krishihimalaya.com/ne/services/soil-testing</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2024-12-31T10:00:00+05:45</lastmod>
+    <xhtml:link rel="alternate" hreflang="ne" href="https://krishihimalaya.com/ne/services/soil-testing" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://krishihimalaya.com/services/soil-testing" />
+  </url>
+  
+  <url>
+    <loc>https://krishihimalaya.com/ne/services/agricultural-training</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2024-12-31T10:00:00+05:45</lastmod>
+    <xhtml:link rel="alternate" hreflang="ne" href="https://krishihimalaya.com/ne/services/agricultural-training" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://krishihimalaya.com/services/agricultural-training" />
+    <image:image>
+      <image:loc>https://krishihimalaya.com/assets/gallary/WhatsApp Image 2025-08-05 at 11.39.39 AM.jpeg</image:loc>
+      <image:title>कृषि तालिम कार्यक्रमहरू</image:title>
+      <image:caption>आधुनिक र दिगो कृषि प्रविधिहरूको लागि व्यापक तालिम कार्यक्रमहरू</image:caption>
+    </image:image>
+  </url>
+  
+  <url>
+    <loc>https://krishihimalaya.com/ne/services/government-subsidies</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2024-12-31T10:00:00+05:45</lastmod>
+    <xhtml:link rel="alternate" hreflang="ne" href="https://krishihimalaya.com/ne/services/government-subsidies" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://krishihimalaya.com/services/government-subsidies" />
+  </url>
+  
+  <!-- Nepali Product Pages -->
+  <url>
+    <loc>https://krishihimalaya.com/ne/products/organic-seeds</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+    <lastmod>2024-12-31T10:00:00+05:45</lastmod>
+    <xhtml:link rel="alternate" hreflang="ne" href="https://krishihimalaya.com/ne/products/organic-seeds" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://krishihimalaya.com/products/organic-seeds" />
+  </url>
+  
+  <url>
+    <loc>https://krishihimalaya.com/ne/products/organic-fertilizers</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+    <lastmod>2024-12-31T10:00:00+05:45</lastmod>
+    <xhtml:link rel="alternate" hreflang="ne" href="https://krishihimalaya.com/ne/products/organic-fertilizers" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://krishihimalaya.com/products/organic-fertilizers" />
+  </url>
+  
+  <url>
+    <loc>https://krishihimalaya.com/ne/products/farming-equipment</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+    <lastmod>2024-12-31T10:00:00+05:45</lastmod>
+    <xhtml:link rel="alternate" hreflang="ne" href="https://krishihimalaya.com/ne/products/farming-equipment" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://krishihimalaya.com/products/farming-equipment" />
+  </url>
+  
+  <!-- Nepali Blog Posts -->
+  <url>
+    <loc>https://krishihimalaya.com/ne/blog/organic-farming-guide</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <lastmod>2024-12-31T10:00:00+05:45</lastmod>
+    <xhtml:link rel="alternate" hreflang="ne" href="https://krishihimalaya.com/ne/blog/organic-farming-guide" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://krishihimalaya.com/blog/organic-farming-guide" />
+  </url>
+  
+  <url>
+    <loc>https://krishihimalaya.com/ne/blog/sustainable-agriculture-practices</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <lastmod>2024-12-31T10:00:00+05:45</lastmod>
+    <xhtml:link rel="alternate" hreflang="ne" href="https://krishihimalaya.com/ne/blog/sustainable-agriculture-practices" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://krishihimalaya.com/blog/sustainable-agriculture-practices" />
+  </url>
+  
+  <url>
+    <loc>https://krishihimalaya.com/ne/blog/government-farming-subsidies</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <lastmod>2024-12-31T10:00:00+05:45</lastmod>
+    <xhtml:link rel="alternate" hreflang="ne" href="https://krishihimalaya.com/ne/blog/government-farming-subsidies" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://krishihimalaya.com/blog/government-farming-subsidies" />
+  </url>
+  
+  <url>
+    <loc>https://krishihimalaya.com/ne/blog/soil-health-management</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <lastmod>2024-12-31T10:00:00+05:45</lastmod>
+    <xhtml:link rel="alternate" hreflang="ne" href="https://krishihimalaya.com/ne/blog/soil-health-management" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://krishihimalaya.com/blog/soil-health-management" />
+  </url>
+  
+  <url>
+    <loc>https://krishihimalaya.com/ne/blog/modern-farming-techniques</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <lastmod>2024-12-31T10:00:00+05:45</lastmod>
+    <xhtml:link rel="alternate" hreflang="ne" href="https://krishihimalaya.com/ne/blog/modern-farming-techniques" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://krishihimalaya.com/blog/modern-farming-techniques" />
+  </url>
+  
+</urlset>

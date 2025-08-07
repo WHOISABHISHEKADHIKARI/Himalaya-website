@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  
+  <!-- Homepage Images -->
+  <url>
+    <loc>https://krishihimalaya.com/</loc>
+    <image:image>
+      <image:loc>https://krishihimalaya.com/assets/logo/whitelogo-blackbg-512x512.webp</image:loc>
+      <image:title>Himalaya Krishi - Nepal's Leading Organic Farm Logo</image:title>
+      <image:caption>Official logo of Himalaya Krishi, Nepal's premier organic farming center</image:caption>
+      <image:geo_location>Manahari, Makwanpur, Nepal</image:geo_location>
+      <image:license>https://krishihimalaya.com/terms</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://krishihimalaya.com/assets/gallary/1724651083866.jpg</image:loc>
+      <image:title>Organic Farming Excellence at Himalaya Krishi</image:title>
+      <image:caption>Sustainable agriculture practices and modern farming techniques at our organic farm</image:caption>
+      <image:geo_location>Manahari, Makwanpur, Nepal</image:geo_location>
+    </image:image>
+    <image:image>
+      <image:loc>https://krishihimalaya.com/assets/gallary/image1.jpg</image:loc>
+      <image:title>Modern Agricultural Facilities</image:title>
+      <image:caption>State-of-the-art farming infrastructure and equipment at Himalaya Krishi</image:caption>
+      <image:geo_location>Manahari, Makwanpur, Nepal</image:geo_location>
+    </image:image>
+  </url>
+  
+  <!-- Gallery Images -->
+  <url>
+    <loc>https://krishihimalaya.com/gallery</loc>
+    <image:image>
+      <image:loc>https://krishihimalaya.com/assets/gallary/WhatsApp Image 2025-08-05 at 11.39.39 AM.jpeg</image:loc>
+      <image:title>Agricultural Training Session</image:title>
+      <image:caption>Farmers participating in organic farming training at Himalaya Krishi</image:caption>
+      <image:geo_location>Manahari, Makwanpur, Nepal</image:geo_location>
+    </image:image>
+    <image:image>
+      <image:loc>https://krishihimalaya.com/assets/gallary/Hari Har Vist1.jpg</image:loc>
+      <image:title>Farm Visit Documentation</image:title>
+      <image:caption>Official visit and inspection of Himalaya Krishi facilities</image:caption>
+      <image:geo_location>Manahari, Makwanpur, Nepal</image:geo_location>
+    </image:image>
+    <image:image>
+      <image:loc>https://krishihimalaya.com/assets/gallary/Hetauda Enterpenure viist on mudfest.jpg</image:loc>
+      <image:title>Entrepreneurship Event Participation</image:title>
+      <image:caption>Himalaya Krishi team at agricultural entrepreneurship event in Hetauda</image:caption>
+      <image:geo_location>Hetauda, Nepal</image:geo_location>
+    </image:image>
+  </url>
+  
+  <!-- Logo and Branding Images -->
+  <url>
+    <loc>https://krishihimalaya.com/about</loc>
+    <image:image>
+      <image:loc>https://krishihimalaya.com/assets/logo/logo.svg</image:loc>
+      <image:title>Himalaya Krishi Vector Logo</image:title>
+      <image:caption>Scalable vector logo of Himalaya Krishi for high-quality display</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://krishihimalaya.com/assets/logo/whitelogo-blackbg-192x192.webp</image:loc>
+      <image:title>Himalaya Krishi Logo 192x192</image:title>
+      <image:caption>Medium size logo for web applications and social media</image:caption>
+    </image:image>
+  </url>
+  
+  <!-- Favicon and App Icons -->
+  <url>
+    <loc>https://krishihimalaya.com/</loc>
+    <image:image>
+      <image:loc>https://krishihimalaya.com/favicon-192x192.png</image:loc>
+      <image:title>Himalaya Krishi Favicon 192x192</image:title>
+      <image:caption>High-resolution favicon for web browsers and bookmarks</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://krishihimalaya.com/favicon-512x512.png</image:loc>
+      <image:title>Himalaya Krishi Favicon 512x512</image:title>
+      <image:caption>Large favicon for high-DPI displays and PWA icons</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://krishihimalaya.com/apple-touch-icon.png</image:loc>
+      <image:title>Himalaya Krishi Apple Touch Icon</image:title>
+      <image:caption>Apple touch icon for iOS devices and Safari bookmarks</image:caption>
+    </image:image>
+  </url>
+  
+  <!-- Team and People Images -->
+  <url>
+    <loc>https://krishihimalaya.com/about</loc>
+    <image:image>
+      <image:loc>https://krishihimalaya.com/assets/faces/face1.jpg</image:loc>
+      <image:title>Himalaya Krishi Team Member</image:title>
+      <image:caption>Professional portrait of Himalaya Krishi team member</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://krishihimalaya.com/assets/faces/face2.jpg</image:loc>
+      <image:title>Agricultural Expert</image:title>
+      <image:caption>Expert agriculturalist working with Himalaya Krishi</image:caption>
+    </image:image>
+  </url>
+  
+  <!-- Pattern and Design Images -->
+  <url>
+    <loc>https://krishihimalaya.com/</loc>
+    <image:image>
+      <image:loc>https://krishihimalaya.com/assets/patterns/pattern1.svg</image:loc>
+      <image:title>Agricultural Pattern Design</image:title>
+      <image:caption>Decorative pattern inspired by agricultural themes</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://krishihimalaya.com/assets/patterns/pattern2.svg</image:loc>
+      <image:title>Organic Farming Pattern</image:title>
+      <image:caption>Design pattern representing organic and sustainable farming</image:caption>
+    </image:image>
+  </url>
+  
+  <!-- Video Thumbnails -->
+  <url>
+    <loc>https://krishihimalaya.com/videos</loc>
+    <image:image>
+      <image:loc>https://krishihimalaya.com/videos/thumbnails/farm-tour-thumb.jpg</image:loc>
+      <image:title>Farm Tour Video Thumbnail</image:title>
+      <image:caption>Preview image for Himalaya Krishi farm tour video</image:caption>
+      <image:geo_location>Manahari, Makwanpur, Nepal</image:geo_location>
+    </image:image>
+  </url>
+  
+</urlset>

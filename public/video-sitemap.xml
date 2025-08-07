@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+  
+  <!-- Homepage Video -->
+  <url>
+    <loc>https://krishihimalaya.com/</loc>
+    <video:video>
+      <video:thumbnail_loc>https://krishihimalaya.com/assets/videos/thumbnails/himalaya-krishi-intro-thumb.jpg</video:thumbnail_loc>
+      <video:title>Himalaya Krishi - Leading Organic Farm in Nepal</video:title>
+      <video:description>Discover Himalaya Krishi, Nepal's premier organic farming initiative. Learn about our sustainable agriculture practices, organic certification services, and commitment to transforming Nepal's agricultural landscape through eco-friendly farming methods.</video:description>
+      <video:content_loc>https://krishihimalaya.com/assets/videos/himalaya-krishi-intro.mp4</video:content_loc>
+      <video:duration>180</video:duration>
+      <video:publication_date>2024-12-31T10:00:00+05:45</video:publication_date>
+      <video:category>Agriculture</video:category>
+      <video:tag>organic farming</video:tag>
+      <video:tag>Nepal agriculture</video:tag>
+      <video:tag>sustainable farming</video:tag>
+      <video:tag>Himalaya Krishi</video:tag>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:live>no</video:live>
+    </video:video>
+  </url>
+  
+  <!-- Organic Farming Techniques Video -->
+  <url>
+    <loc>https://krishihimalaya.com/services/organic-certification</loc>
+    <video:video>
+      <video:thumbnail_loc>https://krishihimalaya.com/assets/videos/thumbnails/organic-farming-techniques-thumb.jpg</video:thumbnail_loc>
+      <video:title>Organic Farming Techniques in Nepal</video:title>
+      <video:description>Learn comprehensive organic farming techniques specifically adapted for Nepal's diverse climate and terrain. This video covers soil preparation, natural pest management, composting, and sustainable crop rotation methods.</video:description>
+      <video:content_loc>https://krishihimalaya.com/assets/videos/organic-farming-techniques.mp4</video:content_loc>
+      <video:duration>420</video:duration>
+      <video:publication_date>2024-12-30T10:00:00+05:45</video:publication_date>
+      <video:category>Education</video:category>
+      <video:tag>organic farming techniques</video:tag>
+      <video:tag>sustainable agriculture</video:tag>
+      <video:tag>Nepal farming</video:tag>
+      <video:tag>soil health</video:tag>
+      <video:tag>composting</video:tag>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:live>no</video:live>
+    </video:video>
+  </url>
+  
+  <!-- Soil Testing Process Video -->
+  <url>
+    <loc>https://krishihimalaya.com/services/soil-testing</loc>
+    <video:video>
+      <video:thumbnail_loc>https://krishihimalaya.com/assets/videos/thumbnails/soil-testing-process-thumb.jpg</video:thumbnail_loc>
+      <video:title>Professional Soil Testing Process</video:title>
+      <video:description>Watch our comprehensive soil testing process that helps farmers understand their soil's health, nutrient content, and pH levels. Learn how proper soil analysis can significantly improve crop yields and farming efficiency.</video:description>
+      <video:content_loc>https://krishihimalaya.com/assets/videos/soil-testing-process.mp4</video:content_loc>
+      <video:duration>300</video:duration>
+      <video:publication_date>2024-12-29T10:00:00+05:45</video:publication_date>
+      <video:category>Science</video:category>
+      <video:tag>soil testing</video:tag>
+      <video:tag>soil analysis</video:tag>
+      <video:tag>agricultural science</video:tag>
+      <video:tag>crop yields</video:tag>
+      <video:tag>farming efficiency</video:tag>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:live>no</video:live>
+    </video:video>
+  </url>
+  
+  <!-- Agricultural Training Video -->
+  <url>
+    <loc>https://krishihimalaya.com/services/agricultural-training</loc>
+    <video:video>
+      <video:thumbnail_loc>https://krishihimalaya.com/assets/videos/thumbnails/agricultural-training-thumb.jpg</video:thumbnail_loc>
+      <video:title>Agricultural Training Programs at Himalaya Krishi</video:title>
+      <video:description>Explore our comprehensive agricultural training programs designed for farmers of all levels. From basic farming techniques to advanced sustainable agriculture practices, our training covers everything needed for successful farming in Nepal.</video:description>
+      <video:content_loc>https://krishihimalaya.com/assets/videos/agricultural-training.mp4</video:content_loc>
+      <video:duration>480</video:duration>
+      <video:publication_date>2024-12-28T10:00:00+05:45</video:publication_date>
+      <video:category>Education</video:category>
+      <video:tag>agricultural training</video:tag>
+      <video:tag>farmer education</video:tag>
+      <video:tag>sustainable agriculture</video:tag>
+      <video:tag>farming techniques</video:tag>
+      <video:tag>capacity building</video:tag>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:live>no</video:live>
+    </video:video>
+  </url>
+  
+  <!-- Modern Farming Equipment Video -->
+  <url>
+    <loc>https://krishihimalaya.com/products/farming-equipment</loc>
+    <video:video>
+      <video:thumbnail_loc>https://krishihimalaya.com/assets/videos/thumbnails/farming-equipment-thumb.jpg</video:thumbnail_loc>
+      <video:title>Modern Farming Equipment for Sustainable Agriculture</video:title>
+      <video:description>Discover the latest farming equipment and tools that can revolutionize your agricultural practices. Learn about efficient irrigation systems, soil preparation tools, and harvesting equipment suitable for Nepal's farming conditions.</video:description>
+      <video:content_loc>https://krishihimalaya.com/assets/videos/farming-equipment.mp4</video:content_loc>
+      <video:duration>360</video:duration>
+      <video:publication_date>2024-12-27T10:00:00+05:45</video:publication_date>
+      <video:category>Technology</video:category>
+      <video:tag>farming equipment</video:tag>
+      <video:tag>agricultural technology</video:tag>
+      <video:tag>irrigation systems</video:tag>
+      <video:tag>farming tools</video:tag>
+      <video:tag>mechanization</video:tag>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:live>no</video:live>
+    </video:video>
+  </url>
+  
+  <!-- Organic Fertilizer Production Video -->
+  <url>
+    <loc>https://krishihimalaya.com/products/organic-fertilizers</loc>
+    <video:video>
+      <video:thumbnail_loc>https://krishihimalaya.com/assets/videos/thumbnails/organic-fertilizer-production-thumb.jpg</video:thumbnail_loc>
+      <video:title>Organic Fertilizer Production and Application</video:title>
+      <video:description>Learn how to produce high-quality organic fertilizers using local materials and traditional composting methods. This video demonstrates the complete process from raw material preparation to final application in the field.</video:description>
+      <video:content_loc>https://krishihimalaya.com/assets/videos/organic-fertilizer-production.mp4</video:content_loc>
+      <video:duration>450</video:duration>
+      <video:publication_date>2024-12-26T10:00:00+05:45</video:publication_date>
+      <video:category>Education</video:category>
+      <video:tag>organic fertilizer</video:tag>
+      <video:tag>composting</video:tag>
+      <video:tag>natural nutrients</video:tag>
+      <video:tag>soil amendment</video:tag>
+      <video:tag>sustainable farming</video:tag>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:live>no</video:live>
+    </video:video>
+  </url>
+  
+  <!-- Crop Disease Management Video -->
+  <url>
+    <loc>https://krishihimalaya.com/blog/crop-disease-management</loc>
+    <video:video>
+      <video:thumbnail_loc>https://krishihimalaya.com/assets/videos/thumbnails/crop-disease-management-thumb.jpg</video:thumbnail_loc>
+      <video:title>Effective Crop Disease Management Strategies</video:title>
+      <video:description>Master the art of identifying, preventing, and treating common crop diseases in Nepal. This comprehensive guide covers integrated pest management, natural disease control methods, and early detection techniques.</video:description>
+      <video:content_loc>https://krishihimalaya.com/assets/videos/crop-disease-management.mp4</video:content_loc>
+      <video:duration>390</video:duration>
+      <video:publication_date>2024-12-25T10:00:00+05:45</video:publication_date>
+      <video:category>Education</video:category>
+      <video:tag>crop diseases</video:tag>
+      <video:tag>plant pathology</video:tag>
+      <video:tag>disease prevention</video:tag>
+      <video:tag>integrated pest management</video:tag>
+      <video:tag>natural remedies</video:tag>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:live>no</video:live>
+    </video:video>
+  </url>
+  
+  <!-- Water Management Video -->
+  <url>
+    <loc>https://krishihimalaya.com/blog/water-management-agriculture</loc>
+    <video:video>
+      <video:thumbnail_loc>https://krishihimalaya.com/assets/videos/thumbnails/water-management-thumb.jpg</video:thumbnail_loc>
+      <video:title>Water Management Strategies for Sustainable Agriculture</video:title>
+      <video:description>Explore efficient water management techniques including drip irrigation, rainwater harvesting, and drought-resistant farming practices. Learn how to optimize water usage while maintaining high crop productivity.</video:description>
+      <video:content_loc>https://krishihimalaya.com/assets/videos/water-management.mp4</video:content_loc>
+      <video:duration>330</video:duration>
+      <video:publication_date>2024-12-24T10:00:00+05:45</video:publication_date>
+      <video:category>Environment</video:category>
+      <video:tag>water management</video:tag>
+      <video:tag>irrigation</video:tag>
+      <video:tag>drought resistance</video:tag>
+      <video:tag>water conservation</video:tag>
+      <video:tag>rainwater harvesting</video:tag>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:live>no</video:live>
+    </video:video>
+  </url>
+  
+  <!-- Climate Smart Agriculture Video -->
+  <url>
+    <loc>https://krishihimalaya.com/blog/climate-smart-agriculture</loc>
+    <video:video>
+      <video:thumbnail_loc>https://krishihimalaya.com/assets/videos/thumbnails/climate-smart-agriculture-thumb.jpg</video:thumbnail_loc>
+      <video:title>Climate Smart Agriculture: Adapting to Climate Change</video:title>
+      <video:description>Understand how climate change affects agriculture and learn adaptive strategies to build resilient farming systems. This video covers climate-resilient crops, weather forecasting, and sustainable farming practices.</video:description>
+      <video:content_loc>https://krishihimalaya.com/assets/videos/climate-smart-agriculture.mp4</video:content_loc>
+      <video:duration>420</video:duration>
+      <video:publication_date>2024-12-23T10:00:00+05:45</video:publication_date>
+      <video:category>Environment</video:category>
+      <video:tag>climate change</video:tag>
+      <video:tag>climate smart agriculture</video:tag>
+      <video:tag>adaptation</video:tag>
+      <video:tag>resilience</video:tag>
+      <video:tag>weather forecasting</video:tag>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:live>no</video:live>
+    </video:video>
+  </url>
+  
+  <!-- Farm Tour Video -->
+  <url>
+    <loc>https://krishihimalaya.com/about</loc>
+    <video:video>
+      <video:thumbnail_loc>https://krishihimalaya.com/assets/videos/thumbnails/farm-tour-thumb.jpg</video:thumbnail_loc>
+      <video:title>Virtual Tour of Himalaya Krishi Organic Farm</video:title>
+      <video:description>Take a virtual tour of our organic farm in Manhari, Makwanpur. See our sustainable farming practices in action, meet our team, and discover how we're transforming agriculture in Nepal through innovative organic methods.</video:description>
+      <video:content_loc>https://krishihimalaya.com/assets/videos/farm-tour.mp4</video:content_loc>
+      <video:duration>600</video:duration>
+      <video:publication_date>2024-12-22T10:00:00+05:45</video:publication_date>
+      <video:category>Documentary</video:category>
+      <video:tag>farm tour</video:tag>
+      <video:tag>organic farm</video:tag>
+      <video:tag>sustainable agriculture</video:tag>
+      <video:tag>Nepal farming</video:tag>
+      <video:tag>agricultural innovation</video:tag>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:live>no</video:live>
+    </video:video>
+  </url>
+  
+  <!-- Seed Selection and Storage Video -->
+  <url>
+    <loc>https://krishihimalaya.com/products/organic-seeds</loc>
+    <video:video>
+      <video:thumbnail_loc>https://krishihimalaya.com/assets/videos/thumbnails/seed-selection-storage-thumb.jpg</video:thumbnail_loc>
+      <video:title>Best Practices for Seed Selection and Storage</video:title>
+      <video:description>Learn the essential techniques for selecting high-quality seeds and proper storage methods to maintain seed viability. This video covers seed testing, storage conditions, and preparation for optimal germination rates.</video:description>
+      <video:content_loc>https://krishihimalaya.com/assets/videos/seed-selection-storage.mp4</video:content_loc>
+      <video:duration>270</video:duration>
+      <video:publication_date>2024-12-21T10:00:00+05:45</video:publication_date>
+      <video:category>Education</video:category>
+      <video:tag>seed selection</video:tag>
+      <video:tag>seed storage</video:tag>
+      <video:tag>germination</video:tag>
+      <video:tag>crop varieties</video:tag>
+      <video:tag>seed quality</video:tag>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:live>no</video:live>
+    </video:video>
+  </url>
+  
+  <!-- Government Subsidies Information Video -->
+  <url>
+    <loc>https://krishihimalaya.com/services/government-subsidies</loc>
+    <video:video>
+      <video:thumbnail_loc>https://krishihimalaya.com/assets/videos/thumbnails/government-subsidies-thumb.jpg</video:thumbnail_loc>
+      <video:title>Understanding Government Farming Subsidies in Nepal</video:title>
+      <video:description>Navigate the complex world of government agricultural subsidies and support programs available to farmers in Nepal. Learn about application processes, eligibility criteria, and how to maximize benefits from government schemes.</video:description>
+      <video:content_loc>https://krishihimalaya.com/assets/videos/government-subsidies.mp4</video:content_loc>
+      <video:duration>360</video:duration>
+      <video:publication_date>2024-12-20T10:00:00+05:45</video:publication_date>
+      <video:category>Government</video:category>
+      <video:tag>government subsidies</video:tag>
+      <video:tag>farming support</video:tag>
+      <video:tag>Nepal agriculture policy</video:tag>
+      <video:tag>financial assistance</video:tag>
+      <video:tag>agricultural schemes</video:tag>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:live>no</video:live>
+    </video:video>
+  </url>
+  
+</urlset>

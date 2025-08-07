@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:news="http://www.google.com/schemas/sitemap-news/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  
+  <!-- Latest News and Updates -->
+  <url>
+    <loc>https://krishihimalaya.com/NewsAboutUs</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Himalaya Krishi News</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2024-12-31T10:00:00+05:45</news:publication_date>
+      <news:title>Himalaya Krishi Empowers 1000+ Farmers with Sustainable Agriculture</news:title>
+      <news:keywords>organic farming, sustainable agriculture, Nepal farmers, agricultural training, government subsidies</news:keywords>
+    </news:news>
+    <image:image>
+      <image:loc>https://krishihimalaya.com/assets/gallary/1724651083866.jpg</image:loc>
+      <image:title>Farmers Success Story at Himalaya Krishi</image:title>
+      <image:caption>Success stories of farmers who transformed their lives through organic farming</image:caption>
+    </image:image>
+  </url>
+  
+  <!-- Agricultural Innovation News -->
+  <url>
+    <loc>https://krishihimalaya.com/blog/agricultural-innovation-2024</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Himalaya Krishi News</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2024-12-30T15:30:00+05:45</news:publication_date>
+      <news:title>Revolutionary Organic Farming Techniques Transform Nepal's Agriculture</news:title>
+      <news:keywords>agricultural innovation, organic techniques, Nepal agriculture, farming technology, sustainable practices</news:keywords>
+    </news:news>
+  </url>
+  
+  <!-- Government Policy Updates -->
+  <url>
+    <loc>https://krishihimalaya.com/agriculture-support-policies</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Himalaya Krishi News</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2024-12-29T12:00:00+05:45</news:publication_date>
+      <news:title>New Government Subsidies Available for Organic Farmers in Nepal</news:title>
+      <news:keywords>government subsidies, agricultural policies, organic farming support, Nepal agriculture, farmer benefits</news:keywords>
+    </news:news>
+  </url>
+  
+  <!-- Training and Education News -->
+  <url>
+    <loc>https://krishihimalaya.com/blog/farmer-training-program-2024</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Himalaya Krishi News</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2024-12-28T09:00:00+05:45</news:publication_date>
+      <news:title>Comprehensive Agricultural Training Program Launches for 2024</news:title>
+      <news:keywords>agricultural training, farmer education, organic farming course, skill development, agricultural capacity building</news:keywords>
+    </news:news>
+    <image:image>
+      <image:loc>https://krishihimalaya.com/assets/gallary/WhatsApp Image 2025-08-05 at 11.39.39 AM.jpeg</image:loc>
+      <image:title>Agricultural Training Session</image:title>
+      <image:caption>Farmers participating in comprehensive agricultural training program</image:caption>
+    </image:image>
+  </url>
+  
+  <!-- Soil Testing Services News -->
+  <url>
+    <loc>https://krishihimalaya.com/blog/soil-testing-services-expansion</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Himalaya Krishi News</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2024-12-27T14:20:00+05:45</news:publication_date>
+      <news:title>Advanced Soil Testing Services Now Available Across Makwanpur</news:title>
+      <news:keywords>soil testing, agricultural services, soil health, farming optimization, agricultural technology</news:keywords>
+    </news:news>
+  </url>
+  
+  <!-- Organic Certification News -->
+  <url>
+    <loc>https://krishihimalaya.com/blog/organic-certification-milestone</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Himalaya Krishi News</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2024-12-26T11:45:00+05:45</news:publication_date>
+      <news:title>Himalaya Krishi Achieves Major Organic Certification Milestone</news:title>
+      <news:keywords>organic certification, sustainable farming, agricultural standards, quality assurance, organic produce</news:keywords>
+    </news:news>
+  </url>
+  
+  <!-- Community Impact News -->
+  <url>
+    <loc>https://krishihimalaya.com/blog/community-impact-report-2024</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Himalaya Krishi News</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2024-12-25T16:00:00+05:45</news:publication_date>
+      <news:title>Himalaya Krishi's Community Impact: Transforming Rural Livelihoods</news:title>
+      <news:keywords>community impact, rural development, agricultural transformation, farmer empowerment, sustainable livelihoods</news:keywords>
+    </news:news>
+  </url>
+  
+  <!-- Technology Integration News -->
+  <url>
+    <loc>https://krishihimalaya.com/blog/smart-farming-technology</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Himalaya Krishi News</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2024-12-24T13:30:00+05:45</news:publication_date>
+      <news:title>Smart Farming Technology Integration at Himalaya Krishi</news:title>
+      <news:keywords>smart farming, agricultural technology, precision agriculture, IoT farming, modern agriculture</news:keywords>
+    </news:news>
+  </url>
+  
+  <!-- Nepali Language News -->
+  <url>
+    <loc>https://krishihimalaya.com/ne/NewsAboutUs</loc>
+    <news:news>
+      <news:publication>
+        <news:name>हिमालय कृषि समाचार</news:name>
+        <news:language>ne</news:language>
+      </news:publication>
+      <news:publication_date>2024-12-31T10:00:00+05:45</news:publication_date>
+      <news:title>हिमालय कृषिले १००० भन्दा बढी किसानहरूलाई दिगो कृषिमा सशक्त बनायो</news:title>
+      <news:keywords>जैविक खेती, दिगो कृषि, नेपाली किसान, कृषि तालिम, सरकारी अनुदान</news:keywords>
+    </news:news>
+  </url>
+  
+</urlset>

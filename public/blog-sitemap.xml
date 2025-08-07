@@ -2,116 +2,287 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
         xmlns:news="http://www.google.com/schemas/sitemap-news/0.9"
-        xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
-  <!-- Blog main page -->
+  <!-- Main Blog Page -->
   <url>
     <loc>https://krishihimalaya.com/blog</loc>
-    <lastmod>2024-12-31</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.9</priority>
+    <lastmod>2024-12-31T10:00:00+05:45</lastmod>
+    <xhtml:link rel="alternate" hreflang="ne" href="https://krishihimalaya.com/ne/blog" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://krishihimalaya.com/blog" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://krishihimalaya.com/blog" />
     <image:image>
-      <image:loc>https://krishihimalaya.com/images/blog-hero.jpg</image:loc>
-      <image:title>Himalaya Krishi Blog - Organic Farming Insights</image:title>
-      <image:caption>Latest articles on organic farming, sustainable agriculture, and farming techniques in Nepal</image:caption>
+      <image:loc>https://krishihimalaya.com/assets/logo/whitelogo-blackbg-512x512.webp</image:loc>
+      <image:title>Himalaya Krishi Blog - Agricultural Insights</image:title>
+      <image:caption>Latest news, insights, and guides on sustainable agriculture and organic farming</image:caption>
     </image:image>
   </url>
   
-  <!-- Individual Blog Posts -->
+  <!-- Blog CMS Page -->
   <url>
-    <loc>https://krishihimalaya.com/blog/organic-farming-techniques-nepal</loc>
-    <lastmod>2024-12-30</lastmod>
+    <loc>https://krishihimalaya.com/blog/cms</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2024-12-31T10:00:00+05:45</lastmod>
+  </url>
+  
+  <!-- Blog Publish Page -->
+  <url>
+    <loc>https://krishihimalaya.com/blog/publish</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+    <lastmod>2024-12-31T10:00:00+05:45</lastmod>
+  </url>
+  
+  <!-- Organic Farming Guide -->
+  <url>
+    <loc>https://krishihimalaya.com/blog/organic-farming-guide</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <lastmod>2024-12-31T10:00:00+05:45</lastmod>
+    <xhtml:link rel="alternate" hreflang="ne" href="https://krishihimalaya.com/ne/blog/organic-farming-guide" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://krishihimalaya.com/blog/organic-farming-guide" />
     <image:image>
-      <image:loc>https://krishihimalaya.com/assets/blog/organic-farming-techniques-nepal.webp</image:loc>
-      <image:title>Complete Guide to Organic Farming Techniques in Nepal</image:title>
-      <image:caption>Learn proven organic farming methods for sustainable agriculture in Nepal's diverse climate</image:caption>
+      <image:loc>https://krishihimalaya.com/assets/gallary/image1.jpg</image:loc>
+      <image:title>Complete Guide to Organic Farming in Nepal</image:title>
+      <image:caption>Comprehensive guide covering organic farming techniques, certification process, and best practices</image:caption>
+      <image:geo_location>Manhari, Makwanpur, Nepal</image:geo_location>
     </image:image>
+    <news:news>
+      <news:publication>
+        <news:name>Himalaya Krishi Blog</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2024-12-31T10:00:00+05:45</news:publication_date>
+      <news:title>Complete Guide to Organic Farming in Nepal</news:title>
+      <news:keywords>organic farming, Nepal agriculture, sustainable farming, organic certification</news:keywords>
+    </news:news>
   </url>
-
+  
+  <!-- Sustainable Agriculture Practices -->
   <url>
     <loc>https://krishihimalaya.com/blog/sustainable-agriculture-practices</loc>
-    <lastmod>2024-12-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <lastmod>2024-12-31T10:00:00+05:45</lastmod>
+    <xhtml:link rel="alternate" hreflang="ne" href="https://krishihimalaya.com/ne/blog/sustainable-agriculture-practices" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://krishihimalaya.com/blog/sustainable-agriculture-practices" />
     <image:image>
-      <image:loc>https://krishihimalaya.com/assets/blog/sustainable-agriculture-practices.webp</image:loc>
-      <image:title>Sustainable Agriculture Practices in Nepal</image:title>
-      <image:caption>Discover how sustainable farming is transforming agriculture in Nepal's mountainous regions</image:caption>
+      <image:loc>https://krishihimalaya.com/assets/gallary/WhatsApp Image 2025-08-05 at 11.39.39 AM.jpeg</image:loc>
+      <image:title>Sustainable Agriculture Practices for Modern Farmers</image:title>
+      <image:caption>Learn about eco-friendly farming methods that preserve soil health and increase productivity</image:caption>
     </image:image>
+    <news:news>
+      <news:publication>
+        <news:name>Himalaya Krishi Blog</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2024-12-30T10:00:00+05:45</news:publication_date>
+      <news:title>Sustainable Agriculture Practices for Modern Farmers</news:title>
+      <news:keywords>sustainable agriculture, eco-friendly farming, soil health, productivity</news:keywords>
+    </news:news>
   </url>
-
+  
+  <!-- Government Farming Subsidies -->
   <url>
-    <loc>https://krishihimalaya.com/blog/himalayan-farming-challenges</loc>
-    <lastmod>2024-12-28</lastmod>
+    <loc>https://krishihimalaya.com/blog/government-farming-subsidies</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2024-12-31T10:00:00+05:45</lastmod>
+    <xhtml:link rel="alternate" hreflang="ne" href="https://krishihimalaya.com/ne/blog/government-farming-subsidies" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://krishihimalaya.com/blog/government-farming-subsidies" />
+    <news:news>
+      <news:publication>
+        <news:name>Himalaya Krishi Blog</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2024-12-29T10:00:00+05:45</news:publication_date>
+      <news:title>Understanding Government Farming Subsidies in Nepal</news:title>
+      <news:keywords>government subsidies, farming support, Nepal agriculture policy, financial assistance</news:keywords>
+    </news:news>
+  </url>
+  
+  <!-- Soil Health Management -->
+  <url>
+    <loc>https://krishihimalaya.com/blog/soil-health-management</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2024-12-31T10:00:00+05:45</lastmod>
+    <xhtml:link rel="alternate" hreflang="ne" href="https://krishihimalaya.com/ne/blog/soil-health-management" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://krishihimalaya.com/blog/soil-health-management" />
+    <image:image>
+      <image:loc>https://krishihimalaya.com/assets/gallary/image2.jpg</image:loc>
+      <image:title>Soil Health Management Techniques</image:title>
+      <image:caption>Essential practices for maintaining and improving soil fertility and structure</image:caption>
+    </image:image>
+    <news:news>
+      <news:publication>
+        <news:name>Himalaya Krishi Blog</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2024-12-28T10:00:00+05:45</news:publication_date>
+      <news:title>Soil Health Management Techniques for Better Yields</news:title>
+      <news:keywords>soil health, soil management, fertility, crop yields, soil testing</news:keywords>
+    </news:news>
+  </url>
+  
+  <!-- Modern Farming Techniques -->
+  <url>
+    <loc>https://krishihimalaya.com/blog/modern-farming-techniques</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2024-12-31T10:00:00+05:45</lastmod>
+    <xhtml:link rel="alternate" hreflang="ne" href="https://krishihimalaya.com/ne/blog/modern-farming-techniques" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://krishihimalaya.com/blog/modern-farming-techniques" />
+    <image:image>
+      <image:loc>https://krishihimalaya.com/assets/gallary/image3.jpg</image:loc>
+      <image:title>Modern Farming Techniques and Technology</image:title>
+      <image:caption>Explore cutting-edge agricultural technologies and innovative farming methods</image:caption>
+    </image:image>
+    <news:news>
+      <news:publication>
+        <news:name>Himalaya Krishi Blog</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2024-12-27T10:00:00+05:45</news:publication_date>
+      <news:title>Modern Farming Techniques and Technology Integration</news:title>
+      <news:keywords>modern farming, agricultural technology, innovation, precision agriculture</news:keywords>
+    </news:news>
+  </url>
+  
+  <!-- Crop Disease Management -->
+  <url>
+    <loc>https://krishihimalaya.com/blog/crop-disease-management</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <image:image>
-      <image:loc>https://krishihimalaya.com/assets/blog/himalayan-farming-challenges.webp</image:loc>
-      <image:title>Overcoming Himalayan Farming Challenges</image:title>
-      <image:caption>Solutions and strategies for addressing unique farming challenges in Nepal's mountain regions</image:caption>
-    </image:image>
+    <lastmod>2024-12-31T10:00:00+05:45</lastmod>
+    <xhtml:link rel="alternate" hreflang="ne" href="https://krishihimalaya.com/ne/blog/crop-disease-management" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://krishihimalaya.com/blog/crop-disease-management" />
+    <news:news>
+      <news:publication>
+        <news:name>Himalaya Krishi Blog</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2024-12-26T10:00:00+05:45</news:publication_date>
+      <news:title>Effective Crop Disease Management Strategies</news:title>
+      <news:keywords>crop diseases, plant pathology, disease prevention, integrated pest management</news:keywords>
+    </news:news>
   </url>
-
+  
+  <!-- Water Management in Agriculture -->
   <url>
-    <loc>https://krishihimalaya.com/blog/agricultural-technology-nepal</loc>
-    <lastmod>2024-12-27</lastmod>
+    <loc>https://krishihimalaya.com/blog/water-management-agriculture</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <image:image>
-      <image:loc>https://krishihimalaya.com/assets/blog/agricultural-technology-nepal.webp</image:loc>
-      <image:title>Modern Agricultural Technology in Nepal</image:title>
-      <image:caption>How technology is revolutionizing farming practices in Nepal's agricultural sector</image:caption>
-    </image:image>
+    <lastmod>2024-12-31T10:00:00+05:45</lastmod>
+    <xhtml:link rel="alternate" hreflang="ne" href="https://krishihimalaya.com/ne/blog/water-management-agriculture" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://krishihimalaya.com/blog/water-management-agriculture" />
+    <news:news>
+      <news:publication>
+        <news:name>Himalaya Krishi Blog</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2024-12-25T10:00:00+05:45</news:publication_date>
+      <news:title>Water Management Strategies for Sustainable Agriculture</news:title>
+      <news:keywords>water management, irrigation, drought resistance, water conservation</news:keywords>
+    </news:news>
   </url>
-
+  
+  <!-- Climate Smart Agriculture -->
   <url>
-    <loc>https://krishihimalaya.com/blog/crop-rotation-benefits</loc>
-    <lastmod>2024-12-26</lastmod>
+    <loc>https://krishihimalaya.com/blog/climate-smart-agriculture</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <image:image>
-      <image:loc>https://krishihimalaya.com/assets/blog/crop-rotation-benefits.webp</image:loc>
-      <image:title>Crop Rotation Benefits for Himalayan Farming</image:title>
-      <image:caption>Understanding how crop rotation improves soil health and increases yields in mountain agriculture</image:caption>
-    </image:image>
+    <lastmod>2024-12-31T10:00:00+05:45</lastmod>
+    <xhtml:link rel="alternate" hreflang="ne" href="https://krishihimalaya.com/ne/blog/climate-smart-agriculture" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://krishihimalaya.com/blog/climate-smart-agriculture" />
+    <news:news>
+      <news:publication>
+        <news:name>Himalaya Krishi Blog</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2024-12-24T10:00:00+05:45</news:publication_date>
+      <news:title>Climate Smart Agriculture: Adapting to Climate Change</news:title>
+      <news:keywords>climate change, climate smart agriculture, adaptation, resilience</news:keywords>
+    </news:news>
   </url>
-
-  <!-- Additional Blog Posts -->
+  
+  <!-- Organic Fertilizer Production -->
   <url>
-    <loc>https://krishihimalaya.com/blog/himalayan-organic-certification</loc>
-    <lastmod>2024-12-25</lastmod>
+    <loc>https://krishihimalaya.com/blog/organic-fertilizer-production</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <image:image>
-      <image:loc>https://krishihimalaya.com/images/organic-certification.jpg</image:loc>
-      <image:title>Getting Organic Certification in Nepal</image:title>
-      <image:caption>Step-by-step guide to obtaining organic certification for your farm in Nepal</image:caption>
-    </image:image>
+    <lastmod>2024-12-31T10:00:00+05:45</lastmod>
+    <xhtml:link rel="alternate" hreflang="ne" href="https://krishihimalaya.com/ne/blog/organic-fertilizer-production" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://krishihimalaya.com/blog/organic-fertilizer-production" />
+    <news:news>
+      <news:publication>
+        <news:name>Himalaya Krishi Blog</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2024-12-23T10:00:00+05:45</news:publication_date>
+      <news:title>DIY Organic Fertilizer Production Guide</news:title>
+      <news:keywords>organic fertilizer, composting, natural nutrients, soil amendment</news:keywords>
+    </news:news>
   </url>
-
+  
+  <!-- Seed Selection and Storage -->
   <url>
-    <loc>https://krishihimalaya.com/blog/seasonal-farming-calendar-nepal</loc>
-    <lastmod>2024-12-24</lastmod>
+    <loc>https://krishihimalaya.com/blog/seed-selection-storage</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <image:image>
-      <image:loc>https://krishihimalaya.com/images/farming-calendar.jpg</image:loc>
-      <image:title>Seasonal Farming Calendar for Nepal</image:title>
-      <image:caption>Complete planting and harvesting schedule for crops in Nepal's diverse climate zones</image:caption>
-    </image:image>
+    <lastmod>2024-12-31T10:00:00+05:45</lastmod>
+    <xhtml:link rel="alternate" hreflang="ne" href="https://krishihimalaya.com/ne/blog/seed-selection-storage" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://krishihimalaya.com/blog/seed-selection-storage" />
+    <news:news>
+      <news:publication>
+        <news:name>Himalaya Krishi Blog</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2024-12-22T10:00:00+05:45</news:publication_date>
+      <news:title>Best Practices for Seed Selection and Storage</news:title>
+      <news:keywords>seed selection, seed storage, germination, crop varieties</news:keywords>
+    </news:news>
   </url>
-
+  
+  <!-- Agricultural Marketing -->
   <url>
-    <loc>https://krishihimalaya.com/blog/water-conservation-techniques</loc>
-    <lastmod>2024-12-23</lastmod>
+    <loc>https://krishihimalaya.com/blog/agricultural-marketing</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
-    <image:image>
-      <image:loc>https://krishihimalaya.com/images/water-conservation.jpg</image:loc>
-      <image:title>Water Conservation Techniques for Mountain Farming</image:title>
-      <image:caption>Innovative water-saving methods for sustainable agriculture in water-scarce regions</image:caption>
-    </image:image>
+    <lastmod>2024-12-31T10:00:00+05:45</lastmod>
+    <xhtml:link rel="alternate" hreflang="ne" href="https://krishihimalaya.com/ne/blog/agricultural-marketing" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://krishihimalaya.com/blog/agricultural-marketing" />
+    <news:news>
+      <news:publication>
+        <news:name>Himalaya Krishi Blog</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2024-12-21T10:00:00+05:45</news:publication_date>
+      <news:title>Agricultural Marketing Strategies for Small Farmers</news:title>
+      <news:keywords>agricultural marketing, farm business, value chain, market access</news:keywords>
+    </news:news>
   </url>
+  
+  <!-- Farm Equipment Maintenance -->
+  <url>
+    <loc>https://krishihimalaya.com/blog/farm-equipment-maintenance</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <lastmod>2024-12-31T10:00:00+05:45</lastmod>
+    <xhtml:link rel="alternate" hreflang="ne" href="https://krishihimalaya.com/ne/blog/farm-equipment-maintenance" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://krishihimalaya.com/blog/farm-equipment-maintenance" />
+    <news:news>
+      <news:publication>
+        <news:name>Himalaya Krishi Blog</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2024-12-20T10:00:00+05:45</news:publication_date>
+      <news:title>Essential Farm Equipment Maintenance Tips</news:title>
+      <news:keywords>farm equipment, maintenance, machinery, agricultural tools</news:keywords>
+    </news:news>
+  </url>
+  
 </urlset>

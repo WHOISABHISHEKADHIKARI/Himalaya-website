@@ -1,197 +1,168 @@
-# Robots.txt for Himalaya Krishi - Nepal's Leading Organic Farm
-# Website: https://krishihimalaya.com
-# Last Updated: 2024-12-31
+# Main robots.txt for Himalaya Krishi - Nepal's Leading Organic Farm
+# Optimized for better SEO and search engine crawling
+# Last updated: 2024-12-31
 
-# Default rules for all crawlers
+# Allow all crawlers to access the site
 User-agent: *
 Allow: /
 
-# === SECURITY & PRIVACY RESTRICTIONS ===
 # Disallow admin and private areas
 Disallow: /admin/
 Disallow: /private/
-Disallow: /login/
-Disallow: /account/
-Disallow: /dashboard/
-Disallow: /wp-admin/
-Disallow: /wp-content/
-Disallow: /wp-includes/
+Disallow: /temp/
+Disallow: /cache/
+Disallow: /logs/
 Disallow: /.git/
 Disallow: /node_modules/
 Disallow: /src/
 Disallow: /scripts/
-Disallow: /.env
 Disallow: /config/
+Disallow: /.env
+Disallow: /.htaccess
+Disallow: /package.json
+Disallow: /package-lock.json
+Disallow: /vite.config.js
+Disallow: /tailwind.config.js
 
-# === DUPLICATE CONTENT PREVENTION ===
 # Prevent crawling of URLs with tracking parameters
 Disallow: /*?utm_*
-Disallow: /*&utm_*
-Disallow: /*?fb_*
-Disallow: /*&fb_*
-Disallow: /*?gclid=*
-Disallow: /*&gclid=*
-Disallow: /*?fbclid=*
-Disallow: /*&fbclid=*
 Disallow: /*?ref=*
-Disallow: /*&ref=*
 Disallow: /*?source=*
-Disallow: /*&source=*
 Disallow: /*?campaign=*
-Disallow: /*&campaign=*
-Disallow: /*?medium=*
-Disallow: /*&medium=*
-
-# Prevent crawling of session and temporary parameters
-Disallow: /*?sessionid=*
-Disallow: /*?PHPSESSID=*
-Disallow: /*?jsessionid=*
-Disallow: /*?sid=*
+Disallow: /*?fbclid=*
+Disallow: /*?gclid=*
 Disallow: /*?_ga=*
 Disallow: /*?_gid=*
+Disallow: /*?sessionid=*
+Disallow: /*?PHPSESSID=*
 
-# === SEARCH & FILTERING RESTRICTIONS ===
-# Allow main search page but prevent crawling of search results
-Allow: /search$
+# Restrict search and filtering to prevent duplicate content
 Disallow: /search?*
-Disallow: /*?search=*
-Disallow: /*?filter=*
+Disallow: /filter?*
 Disallow: /*?sort=*
 Disallow: /*?page=*
 Disallow: /*?limit=*
 Disallow: /*?offset=*
+Disallow: /*?view=*
 
-# === CMS & ADMIN RESTRICTIONS ===
-# Disallow CMS and admin pages
-Disallow: /blog/cms
-Disallow: /blog/publish
-Disallow: /blog/generator
-Disallow: /blog/admin
+# Block CMS and admin pages
 Disallow: /cms/
-Disallow: /editor/
-Disallow: /publish/
+Disallow: /dashboard/
+Disallow: /login/
+Disallow: /wp-admin/
+Disallow: /wp-content/
+Disallow: /wp-includes/
+Disallow: /blog/cms*
+Disallow: /blog/publish*
+Disallow: /blog/edit*
+Disallow: /blog/delete*
 
-# === DEVELOPMENT & TESTING RESTRICTIONS ===
-# Block development and testing paths
-Disallow: /test/
+# Disallow development and testing paths
 Disallow: /dev/
+Disallow: /test/
 Disallow: /staging/
 Disallow: /beta/
-Disallow: /demo/
-Disallow: /_next/
-Disallow: /api/
-Disallow: /temp/
-Disallow: /tmp/
-Disallow: /backup/
-Disallow: /logs/
+Disallow: /_test/
+Disallow: /debug/
+Disallow: /localhost/
+Disallow: /preview/
 
-# === PHANTOM URL PREVENTION ===
-# Block suspicious URL patterns that generate garbled content
-Disallow: /Classic/
-Disallow: /ckyfue/
-Disallow: /trraqe/
-Disallow: /m109118175
-Disallow: /m109203189
-Disallow: /Ne/ne/homes/
-Disallow: /Config
-Disallow: /gravge
-Disallow: /*Classic*
-Disallow: /*ckyfue*
-Disallow: /*trraqe*
-Disallow: /*m109118175*
-Disallow: /*m109203189*
-Disallow: /*gravge*
+# Block common exploit paths
+Disallow: /cgi-bin/
+Disallow: /.well-known/
+Disallow: /xmlrpc.php
+Disallow: /readme.html
+Disallow: /license.txt
 
-# === FILE TYPE RESTRICTIONS ===
-# Block access to sensitive file types
-Disallow: /*.sql$
-Disallow: /*.log$
-Disallow: /*.bak$
-Disallow: /*.old$
-Disallow: /*.tmp$
-Disallow: /*.env$
-Disallow: /*.config$
-
-# Set crawl rate for general bots
+# Specific rules for different bots
+# Google Bot - Prioritize for best SEO
+User-agent: Googlebot
+Allow: /
+Allow: /assets/
+Allow: /public/
+Disallow: /admin/
+Disallow: /private/
+Disallow: /cms/
 Crawl-delay: 1
 
-# === SPECIFIC BOT CONFIGURATIONS ===
-# Google Bot - Allow faster crawling
-User-agent: Googlebot
-Crawl-delay: 0.5
-Allow: /
+# Google Image Bot - Allow image crawling
+User-agent: Googlebot-Image
+Allow: /assets/
+Allow: /public/assets/
+Allow: *.jpg
+Allow: *.jpeg
+Allow: *.png
+Allow: *.webp
+Allow: *.svg
+Disallow: /admin/
 
 # Bing Bot
 User-agent: Bingbot
-Crawl-delay: 1
 Allow: /
+Allow: /assets/
+Disallow: /admin/
+Disallow: /private/
+Crawl-delay: 2
 
 # Yandex Bot
 User-agent: YandexBot
-Crawl-delay: 2
 Allow: /
+Disallow: /admin/
+Disallow: /private/
+Crawl-delay: 3
 
 # Baidu Bot
 User-agent: Baiduspider
+Allow: /
+Disallow: /admin/
+Disallow: /private/
+Crawl-delay: 5
+
+# DuckDuckGo Bot
+User-agent: DuckDuckBot
+Allow: /
+Disallow: /admin/
 Crawl-delay: 2
-Allow: /
 
-# Facebook Bot (for social sharing)
+# Social Media Bots - Important for social sharing
 User-agent: facebookexternalhit
-Crawl-delay: 1
 Allow: /
-
-# Twitter Bot (for social sharing)
+Allow: /assets/
 User-agent: Twitterbot
-Crawl-delay: 1
 Allow: /
-
-# LinkedIn Bot (for social sharing)
+Allow: /assets/
 User-agent: LinkedInBot
-Crawl-delay: 1
 Allow: /
-
-# WhatsApp Bot (for link previews)
+Allow: /assets/
 User-agent: WhatsApp
-Crawl-delay: 1
 Allow: /
+Allow: /assets/
+User-agent: TelegramBot
+Allow: /
+Allow: /assets/
 
-# === AGGRESSIVE CRAWLERS RESTRICTIONS ===
-# Block aggressive or unwanted bots
+# SEO and Analytics Bots
+User-agent: AhrefsBot
+Crawl-delay: 10
+User-agent: SemrushBot
+Crawl-delay: 10
+User-agent: MJ12bot
+Crawl-delay: 10
+
+# Block aggressive crawlers
+User-agent: SiteAuditBot
+Disallow: /
 User-agent: AhrefsBot
 Disallow: /
-
 User-agent: MJ12bot
 Disallow: /
-
 User-agent: DotBot
 Disallow: /
 
-User-agent: SemrushBot
-Disallow: /
-
-User-agent: MajesticSEO
-Disallow: /
-
-User-agent: BLEXBot
-Disallow: /
-
-# === SITEMAP DECLARATIONS ===
-# Main sitemap index
-Sitemap: https://krishihimalaya.com/sitemap-index.xml
-
-# Individual sitemaps
+# Sitemap declarations - Critical for SEO
 Sitemap: https://krishihimalaya.com/sitemap.xml
+Sitemap: https://krishihimalaya.com/sitemap-index.xml
 Sitemap: https://krishihimalaya.com/blog-sitemap.xml
 
-# === ADDITIONAL SEO DIRECTIVES ===
-# Host declaration (preferred domain)
-Host: krishihimalaya.com
-
-# Clean URLs preference
-Clean-param: utm_source&utm_medium&utm_campaign&utm_term&utm_content
-Clean-param: fbclid&gclid&ref&source
-
-# === END OF ROBOTS.TXT ===
-# For questions about this robots.txt file, contact: info@krishihimalaya.com
-# Last reviewed: December 2024
+# Host declaration for preferred domain
+Host: https://krishihimalaya.com
