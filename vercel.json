@@ -52,7 +52,7 @@
       "destination": "/api/block-phantom"
     },
     {
-      "source": "/m[0-9]+/(.*)",
+      "source": "/m:id(\\d+)/(.*)",
       "destination": "/api/block-phantom"
     },
     {

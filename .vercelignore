@@ -28,3 +28,12 @@ scripts/
 # Documentation
 docs.md
 README.md
+
+# Large video files (exceed 100MB limit)
+public/assets/video/*.mp4
+public/assets/video/
+
+# Large assets
+*.mp4
+*.mov
+*.avi
