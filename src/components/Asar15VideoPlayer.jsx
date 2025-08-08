@@ -23,29 +23,9 @@ const Asar15VideoPlayer = () => {
     }
   };
 
-  // Check if video file exists
+  // Always show video player and let the video element handle loading
   useEffect(() => {
-    const checkVideoExists = async () => {
-      try {
-        // Create an AbortController for timeout
-        const controller = new AbortController();
-        const timeoutId = setTimeout(() => controller.abort(), 5000); // 5 second timeout
-        
-        const response = await fetch('/assets/video/asar15-mudfest.mp4', { 
-          method: 'HEAD',
-          cache: 'no-cache',
-          signal: controller.signal
-        });
-        
-        clearTimeout(timeoutId);
-        setVideoExists(response.ok);
-      } catch (error) {
-        // If HEAD request fails, assume video exists and let the video element handle it
-        console.log('HEAD request failed, assuming video exists:', error.message);
-        setVideoExists(true);
-      }
-    };
-    checkVideoExists();
+    setVideoExists(true);
   }, []);
 
   // If video doesn't exist, show placeholder
@@ -122,12 +102,12 @@ const Asar15VideoPlayer = () => {
           }}
         >
           <source 
-            src="/assets/video/asar15-mudfest.mp4" 
+            src="/assets/video/farmvideo.mp4" 
             type="video/mp4"
           />
           <source 
-            src="/assets/video/asar15-mudfest.webm" 
-            type="video/webm"
+            src="/assets/video/asar15-mudfest.mp4" 
+            type="video/mp4"
           />
           <div className="w-full h-64 bg-gray-200 rounded-lg shadow-lg flex items-center justify-center">
             <p className="text-gray-500">Video not supported by your browser</p>
