@@ -5,6 +5,23 @@ const Asar15VideoPlayer = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [videoError, setVideoError] = useState(false);
   const [videoExists, setVideoExists] = useState(false);
+  const [errorDetails, setErrorDetails] = useState(null);
+  const [retryCount, setRetryCount] = useState(0);
+  const maxRetries = 2;
+
+  const retryVideoLoad = () => {
+    if (retryCount < maxRetries) {
+      setRetryCount(prev => prev + 1);
+      setVideoError(false);
+      setErrorDetails(null);
+      setIsLoading(true);
+      // Force video reload by updating the src
+      const video = document.querySelector('video');
+      if (video) {
+        video.load();
+      }
+    }
+  };
 
   // Check if video file exists
   useEffect(() => {
@@ -81,9 +98,27 @@ const Asar15VideoPlayer = () => {
           onLoadStart={() => setIsLoading(true)}
           onLoadedData={() => setIsLoading(false)}
           onError={(e) => {
-            console.warn('Video loading failed:', e);
+            const errorInfo = {
+              error: e.target.error,
+              networkState: e.target.networkState,
+              readyState: e.target.readyState,
+              src: e.target.currentSrc || e.target.src,
+              errorCode: e.target.error?.code,
+              errorMessage: e.target.error?.message
+            };
+            console.error('Video loading failed:', errorInfo);
+            setErrorDetails(errorInfo);
             setIsLoading(false);
-            setVideoError(true);
+            
+            // Auto-retry if we haven't exceeded max retries
+            if (retryCount < maxRetries) {
+              console.log(`Auto-retrying video load (attempt ${retryCount + 1}/${maxRetries})`);
+              setTimeout(() => {
+                retryVideoLoad();
+              }, 1000); // Wait 1 second before retry
+            } else {
+              setVideoError(true);
+            }
           }}
         >
           <source 
@@ -105,10 +140,29 @@ const Asar15VideoPlayer = () => {
             animate={{ opacity: 1, y: 0 }}
           >
             <p className="text-red-600 text-sm font-medium mb-2">📹 Video Loading Failed</p>
-            <p className="text-red-500 text-xs">
+            <p className="text-red-500 text-xs mb-2">
               The Asar 15 video is temporarily unavailable. This may be due to file size or network issues. 
               Please try refreshing the page or check back later.
             </p>
+            {retryCount < maxRetries && (
+               <button
+                 onClick={retryVideoLoad}
+                 className="mt-2 px-3 py-1 bg-red-600 text-white text-xs rounded hover:bg-red-700 transition-colors"
+               >
+                 Retry Loading ({retryCount}/{maxRetries})
+               </button>
+             )}
+             {errorDetails && (
+               <details className="text-xs text-red-400 mt-2">
+                 <summary className="cursor-pointer hover:text-red-600">Technical Details</summary>
+                 <div className="mt-1 p-2 bg-red-100 rounded text-red-700">
+                   <p>Error Code: {errorDetails.errorCode || 'Unknown'}</p>
+                   <p>Network State: {errorDetails.networkState}</p>
+                   <p>Ready State: {errorDetails.readyState}</p>
+                   <p>Retry Attempts: {retryCount}/{maxRetries}</p>
+                 </div>
+               </details>
+             )}
           </motion.div>
         )}
       </div>
