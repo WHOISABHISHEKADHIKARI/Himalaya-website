@@ -42,12 +42,12 @@ dist-ssr
 .vercel
 bun.lock
 
-# Large video files
-*.mp4
-*.avi
-*.mov
-*.mkv
-*.wmv
-*.flv
-*.webm
-public/assets/video/*.mp4
+# Large video files (now handled by Git LFS)
+# *.mp4
+# *.avi
+# *.mov
+# *.mkv
+# *.wmv
+# *.flv
+# *.webm
+# public/assets/video/*.mp4

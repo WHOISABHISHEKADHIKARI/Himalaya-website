@@ -107,6 +107,12 @@ async function handleRequest(request) {
   const pathname = url.pathname;
   
   try {
+    // Skip service worker for large video files to prevent fetch errors
+    if (pathname.includes('.mp4') && pathname.includes('asar15-mudfest')) {
+      console.log('[SW] Bypassing service worker for large video file:', pathname);
+      return fetch(request);
+    }
+    
     // Strategy 1: Static assets (CSS, JS, fonts) - Cache First
     if (isStaticAsset(pathname)) {
       return await cacheFirst(request, STATIC_CACHE);
@@ -145,12 +151,21 @@ async function cacheFirst(request, cacheName) {
     return cached;
   }
   
-  const response = await fetch(request);
-  if (response.status === 200) {
-    cache.put(request, response.clone());
+  try {
+    const response = await fetch(request);
+    if (response.status === 200) {
+      cache.put(request, response.clone());
+    }
+    return response;
+  } catch (error) {
+    console.warn(`[SW] Cache first fetch failed for ${request.url}:`, error);
+    // If we have a cached version, return it even if it's old
+    if (cached) {
+      return cached;
+    }
+    // Otherwise, throw the error to be handled by the main handler
+    throw error;
   }
-  
-  return response;
 }
 
 // Network First strategy - for dynamic content
@@ -220,7 +235,16 @@ async function imageStrategy(request) {
     
     return response;
   } catch (error) {
-    // Return placeholder image for failed loads
+    console.warn(`[SW] Image fetch failed for ${request.url}:`, error);
+    
+    // For video files, try to return cached version or let it fail gracefully
+    const url = new URL(request.url);
+    if (url.pathname.includes('.mp4') || url.pathname.includes('video')) {
+      // For video files, just throw the error to let the video player handle it
+      throw error;
+    }
+    
+    // Return placeholder image for failed image loads
     return new Response(
       '<svg xmlns="http://www.w3.org/2000/svg" width="400" height="300" viewBox="0 0 400 300"><rect width="400" height="300" fill="#f0f0f0"/><text x="200" y="150" text-anchor="middle" fill="#999">Image unavailable</text></svg>',
       {
