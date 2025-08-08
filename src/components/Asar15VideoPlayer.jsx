@@ -10,14 +10,22 @@ const Asar15VideoPlayer = () => {
   useEffect(() => {
     const checkVideoExists = async () => {
       try {
+        // Create an AbortController for timeout
+        const controller = new AbortController();
+        const timeoutId = setTimeout(() => controller.abort(), 5000); // 5 second timeout
+        
         const response = await fetch('/assets/video/asar15-mudfest.mp4', { 
           method: 'HEAD',
-          cache: 'no-cache'
+          cache: 'no-cache',
+          signal: controller.signal
         });
+        
+        clearTimeout(timeoutId);
         setVideoExists(response.ok);
       } catch (error) {
-        // Video doesn't exist, show placeholder
-        setVideoExists(false);
+        // If HEAD request fails, assume video exists and let the video element handle it
+        console.log('HEAD request failed, assuming video exists:', error.message);
+        setVideoExists(true);
       }
     };
     checkVideoExists();
