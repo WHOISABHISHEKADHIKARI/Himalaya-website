@@ -716,6 +716,75 @@ const Home = () => {
 
       {/* Our Gallery Section - Loads after 20 seconds */}
       <GallerySection />
+
+      {/* Asar 15 Video Section */}
+      <section className="py-24" style={{ backgroundColor: colors.background.card }}>
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-16">
+              <motion.h2 
+                className="text-3xl md:text-5xl font-serif font-bold mb-6" 
+                style={{ color: colors.text.dark }}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}
+                viewport={{ once: true }}
+              >
+                Asar 15 - Farm Experience & Mudfest
+              </motion.h2>
+              <div className="w-32 h-1 mx-auto mb-8" style={{ backgroundColor: colors.secondary }}></div>
+              <motion.p 
+                className="text-xl max-w-3xl mx-auto" 
+                style={{ color: colors.text.medium }}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                viewport={{ once: true }}
+              >
+                Experience the authentic farming life and vibrant mudfest celebrations through our exclusive Asar 15 video showcase.
+              </motion.p>
+            </div>
+            
+            <motion.div
+              className="relative max-w-4xl mx-auto"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              viewport={{ once: true }}
+            >
+              <div className="relative overflow-hidden rounded-2xl shadow-2xl">
+                <video
+                  className="w-full h-auto"
+                  controls
+                  preload="metadata"
+                  poster="/assets/gallary/WhatsApp Image 2025-08-05 at 10.37.47_8c730d5b.jpg"
+                >
+                  <source src="/assets/video/asar15.mp4" type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
+                
+                {/* Video overlay for better presentation */}
+                <div className="absolute inset-0 pointer-events-none">
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
+                </div>
+              </div>
+              
+              {/* Video description */}
+              <motion.div 
+                className="mt-8 text-center"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.5 }}
+                viewport={{ once: true }}
+              >
+                <p className="text-lg" style={{ color: colors.text.medium }}>
+                  Discover the traditional farming practices, modern techniques, and festive mudfest celebrations that make our organic farm unique.
+                </p>
+              </motion.div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
         
       
     </div>
