@@ -717,7 +717,7 @@ const Home = () => {
       {/* Our Gallery Section - Loads after 20 seconds */}
       <GallerySection />
 
-      {/* Asar 15 Video Section */}
+      {/* Asar 15 Video Section - Placeholder until video is available */}
       <section className="py-24" style={{ backgroundColor: colors.background.card }}>
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
@@ -741,7 +741,7 @@ const Home = () => {
                 transition={{ duration: 0.6, delay: 0.2 }}
                 viewport={{ once: true }}
               >
-                Experience the authentic farming life and vibrant mudfest celebrations through our exclusive Asar 15 video showcase.
+                Experience the authentic farming life and vibrant mudfest celebrations through our exclusive Asar 15 showcase.
               </motion.p>
             </div>
             
@@ -753,23 +753,25 @@ const Home = () => {
               viewport={{ once: true }}
             >
               <div className="relative overflow-hidden rounded-2xl shadow-2xl">
-                <video
-                  className="w-full h-auto"
-                  controls
-                  preload="metadata"
-                  poster="/assets/gallary/WhatsApp Image 2025-08-05 at 10.37.47_8c730d5b.jpg"
-                >
-                  <source src="/assets/video/asar15.mp4" type="video/mp4" />
-                  Your browser does not support the video tag.
-                </video>
-                
-                {/* Video overlay for better presentation */}
-                <div className="absolute inset-0 pointer-events-none">
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
+                {/* Placeholder image until video is available */}
+                <div className="relative h-96 bg-gradient-to-br from-green-100 to-green-200 flex items-center justify-center">
+                  <img
+                    src="/assets/gallary/WhatsApp Image 2025-08-05 at 10.37.47_8c730d5b.jpg"
+                    alt="Asar 15 Farm Experience & Mudfest"
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-black/20 flex items-center justify-center">
+                    <div className="text-center text-white">
+                      <svg className="w-16 h-16 mx-auto mb-4 opacity-80" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clipRule="evenodd" />
+                      </svg>
+                      <p className="text-lg font-semibold">Video Coming Soon</p>
+                    </div>
+                  </div>
                 </div>
               </div>
               
-              {/* Video description */}
+              {/* Description */}
               <motion.div 
                 className="mt-8 text-center"
                 initial={{ opacity: 0, y: 20 }}
