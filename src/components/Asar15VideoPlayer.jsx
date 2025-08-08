@@ -44,9 +44,9 @@ const Asar15VideoPlayer = () => {
         }}
       >
         <source 
-          src="/assets/video/farmvideo.mp4" 
-          type="video/mp4"
-        />
+           src="/assets/video/asar155.mp4" 
+           type="video/mp4"
+         />
         {/* Fallback content */}
         <div className="w-full h-96 bg-gray-200 rounded-2xl flex items-center justify-center">
           <p className="text-gray-500">Video not supported by your browser</p>
