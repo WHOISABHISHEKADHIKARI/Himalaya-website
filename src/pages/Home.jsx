@@ -9,6 +9,7 @@ import ProgressiveImage from '../components/ProgressiveImage';
 import OptimizedImage from '../components/OptimizedImage';
 import LazyContent, { LazySection, LazyCard } from '../components/LazyContent';
 import SkeletonLoader from '../components/SkeletonLoader';
+import Asar15VideoPlayer from '../components/Asar15VideoPlayer';
 import imag1 from '../assets/image/imag1.webp';
 import imag5 from '../assets/image/imag5.webp';
 import imag6 from '../assets/image/imag6.webp';
@@ -753,27 +754,7 @@ const Home = () => {
               transition={{ duration: 0.6, delay: 0.3 }}
               viewport={{ once: true }}
             >
-              <div className="relative overflow-hidden rounded-2xl shadow-2xl">
-                {/* Placeholder image until video is available */}
-                <div className="relative h-96 bg-gradient-to-br from-green-100 to-green-200 flex items-center justify-center">
-                  <OptimizedImage
-                    src="/assets/gallary/WhatsApp Image 2025-08-05 at 10.37.47_8c730d5b.jpg"
-                    alt="Asar 15 Farm Experience & Mudfest"
-                    className="w-full h-full object-cover"
-                    width={800}
-                    height={400}
-                    priority={false}
-                  />
-                  <div className="absolute inset-0 bg-black/20 flex items-center justify-center">
-                    <div className="text-center text-white">
-                      <svg className="w-16 h-16 mx-auto mb-4 opacity-80" fill="currentColor" viewBox="0 0 20 20">
-                        <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clipRule="evenodd" />
-                      </svg>
-                      <p className="text-lg font-semibold">Video Coming Soon</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              <Asar15VideoPlayer />
               
               {/* Description */}
               <motion.div 
