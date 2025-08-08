@@ -125,192 +125,192 @@ const GallerySection = () => {
   // Gallery images from public/assets/gallary (corrected directory path)
   const galleryImages = [
     {
-      src: "/assets/gallary/1724651083866.jpg",
+      src: "/assets/gallary/gallery-image-001.jpg",
       alt: "Himalaya Krishi Farm Activities",
       title: "Farm Operations"
     },
     {
-      src: "/assets/gallary/1724651084206.jpg",
+      src: "/assets/gallary/gallery-image-002.jpg",
       alt: "Agricultural Development",
       title: "Farm Growth"
     },
     {
-      src: "/assets/gallary/1724651084905.jpg",
+      src: "/assets/gallary/gallery-image-003.jpg",
       alt: "Organic Farming Methods",
       title: "Sustainable Practices"
     },
     {
-      src: "/assets/gallary/1724651084994.jpg",
+      src: "/assets/gallary/gallery-image-004.jpg",
       alt: "Farm Infrastructure",
       title: "Modern Facilities"
     },
     {
-      src: "/assets/gallary/1724651085198.jpg",
+      src: "/assets/gallary/gallery-image-005.jpg",
       alt: "Agricultural Excellence",
       title: "Quality Production"
     },
     {
-      src: "/assets/gallary/1724651085671.jpg",
+      src: "/assets/gallary/gallery-image-006.jpg",
       alt: "Farm Landscape",
       title: "Natural Beauty"
     },
     {
-      src: "/assets/gallary/1724651090098.jpg",
+      src: "/assets/gallary/gallery-image-007.jpg",
       alt: "Farm Activities",
       title: "Agricultural Work"
     },
     {
-      src: "/assets/gallary/1751250556796.jpeg",
+      src: "/assets/gallary/gallery-image-008.jpeg",
       alt: "Farm Activities",
       title: "Daily Operations"
     },
     {
-      src: "/assets/gallary/497349672_122132875598749340_8339112857976662526_n-1.jpg",
+      src: "/assets/gallary/gallery-image-009.jpg",
       alt: "Farm Community",
       title: "Team Work"
     },
     {
-      src: "/assets/gallary/whatsapp-image-2025-08-05-at-10.37.47_8c730d5b.jpg",
+      src: "/assets/gallary/gallery-image-015.jpg",
       alt: "Organic Farming Practices",
       title: "Sustainable Agriculture"
     },
     {
-      src: "/assets/gallary/whatsapp-image-2025-08-05-at-10.37.47_a5cc7b1f.jpg",
+      src: "/assets/gallary/gallery-image-016.jpg",
       alt: "Farm Development",
       title: "Agricultural Progress"
     },
     {
-      src: "/assets/gallary/whatsapp-image-2025-08-05-at-10.37.48_dffecf45.jpg",
+      src: "/assets/gallary/gallery-image-017.jpg",
       alt: "Farm Infrastructure",
       title: "Modern Facilities"
     },
     {
-      src: "/assets/gallary/whatsapp-image-2025-08-05-at-10.37.49_9ad2ed53.jpg",
+      src: "/assets/gallary/gallery-image-018.jpg",
       alt: "Agricultural Methods",
       title: "Natural Farming"
     },
     {
-      src: "/assets/gallary/whatsapp-image-2025-08-05-at-10.37.49_e7d38ea2.jpg",
+      src: "/assets/gallary/gallery-image-019.jpg",
       alt: "Farm Equipment",
       title: "Agricultural Tools"
     },
     {
-      src: "/assets/gallary/whatsapp-image-2025-08-05-at-10.37.50_0f694c24.jpg",
+      src: "/assets/gallary/gallery-image-020.jpg",
       alt: "Farm Landscape",
       title: "Organic Fields"
     },
     {
-      src: "/assets/gallary/whatsapp-image-2025-08-05-at-10.37.50_d4c9a0a8.jpg",
+      src: "/assets/gallary/gallery-image-021.jpg",
       alt: "Crop Production",
       title: "Harvest Time"
     },
     {
-      src: "/assets/gallary/whatsapp-image-2025-08-05-at-10.37.51_1209cc07.jpg",
+      src: "/assets/gallary/gallery-image-022.jpg",
       alt: "Farm Workers",
       title: "Dedicated Team"
     },
     {
-      src: "/assets/gallary/whatsapp-image-2025-08-05-at-10.37.51_33734862.jpg",
+      src: "/assets/gallary/gallery-image-023.jpg",
       alt: "Agricultural Innovation",
       title: "Modern Techniques"
     },
     {
-      src: "/assets/gallary/whatsapp-image-2025-08-05-at-10.37.52_1907965d.jpg",
+      src: "/assets/gallary/gallery-image-024.jpg",
       alt: "Farm Management",
       title: "Efficient Operations"
     },
     {
-      src: "/assets/gallary/whatsapp-image-2025-08-05-at-10.37.52_390d4be6.jpg",
+      src: "/assets/gallary/gallery-image-025.jpg",
       alt: "Sustainable Farming",
       title: "Eco-Friendly Methods"
     },
     {
-      src: "/assets/gallary/whatsapp-image-2025-08-05-at-10.37.52_644c82e2.jpg",
+      src: "/assets/gallary/gallery-image-026.jpg",
       alt: "Farm Productivity",
       title: "High Yield Crops"
     },
     {
-      src: "/assets/gallary/whatsapp-image-2025-08-05-at-10.37.52_8049a61d.jpg",
+      src: "/assets/gallary/gallery-image-027.jpg",
       alt: "Agricultural Excellence",
       title: "Quality Standards"
     },
     {
-      src: "/assets/gallary/whatsapp-image-2025-08-05-at-10.37.52_a0dffc20.jpg",
+      src: "/assets/gallary/gallery-image-028.jpg",
       alt: "Farm Technology",
       title: "Advanced Systems"
     },
     {
-      src: "/assets/gallary/whatsapp-image-2025-08-05-at-10.37.53_226a0733.jpg",
+      src: "/assets/gallary/gallery-image-029.jpg",
       alt: "Organic Cultivation",
       title: "Natural Growth"
     },
     {
-      src: "/assets/gallary/whatsapp-image-2025-08-05-at-10.37.53_40adf995.jpg",
+      src: "/assets/gallary/gallery-image-030.jpg",
       alt: "Farm Sustainability",
       title: "Environmental Care"
     },
     {
-      src: "/assets/gallary/whatsapp-image-2025-08-05-at-10.37.53_97185639.jpg",
+      src: "/assets/gallary/gallery-image-031.jpg",
       alt: "Agricultural Research",
       title: "Innovation Hub"
     },
     {
-      src: "/assets/gallary/whatsapp-image-2025-08-05-at-10.37.53_9b84a2e8.jpg",
+      src: "/assets/gallary/gallery-image-032.jpg",
       alt: "Farm Development",
       title: "Growth & Progress"
     },
     {
-      src: "/assets/gallary/whatsapp-image-2025-08-05-at-10.37.54_4af3acb3.jpg",
+      src: "/assets/gallary/gallery-image-033.jpg",
       alt: "Farm Community",
       title: "Team Collaboration"
     },
     {
-      src: "/assets/gallary/whatsapp-image-2025-08-05-at-10.37.54_b9ff23ab.jpg",
+      src: "/assets/gallary/gallery-image-034.jpg",
       alt: "Agricultural Success",
       title: "Achievement"
     },
     {
-      src: "/assets/gallary/whatsapp-image-2025-08-05-at-10.37.55_396fcdf6.jpg",
+      src: "/assets/gallary/gallery-image-035.jpg",
       alt: "Farm Excellence",
       title: "Quality Production"
     },
     {
-      src: "/assets/gallary/whatsapp-image-2025-08-05-at-10.37.55_44f44ded.jpg",
+      src: "/assets/gallary/gallery-image-036.jpg",
       alt: "Sustainable Agriculture",
       title: "Green Farming"
     },
     {
-      src: "/assets/gallary/whatsapp-image-2025-08-05-at-10.37.56_155f8cfc.jpg",
+      src: "/assets/gallary/gallery-image-037.jpg",
       alt: "Farm Innovation",
       title: "Future Farming"
     },
     {
-      src: "/assets/gallary/whatsapp-image-2025-08-05-at-10.37.56_54241bc1.jpg",
+      src: "/assets/gallary/gallery-image-038.jpg",
       alt: "Agricultural Heritage",
       title: "Traditional Values"
     },
     {
-      src: "/assets/gallary/image1.jpg",
+      src: "/assets/gallary/gallery-image-010.jpg",
       alt: "Farm Scenery",
       title: "Beautiful Landscape"
     },
     {
-      src: "/assets/gallary/image2.jpg",
+      src: "/assets/gallary/gallery-image-011.jpg",
       alt: "Agricultural View",
       title: "Farm Panorama"
     },
     {
-      src: "/assets/gallary/photo.jpg",
+      src: "/assets/gallary/gallery-image-012.jpg",
       alt: "Farm Photography",
       title: "Captured Moments"
     },
     {
-      src: "/assets/gallary/photo1.jpg",
+      src: "/assets/gallary/gallery-image-013.jpg",
       alt: "Farm Life",
       title: "Rural Beauty"
     },
     {
-      src: "/assets/gallary/photo2.jpg",
+      src: "/assets/gallary/gallery-image-014.jpg",
       alt: "Agricultural Journey",
       title: "Farm Story"
     }

@@ -22,7 +22,7 @@
       <image:license>https://krishihimalaya.com/terms</image:license>
     </image:image>
     <image:image>
-      <image:loc>https://krishihimalaya.com/assets/gallary/1724651083866.jpg</image:loc>
+      <image:loc>https://krishihimalaya.com/assets/gallary/gallery-image-001.jpg</image:loc>
       <image:title>Organic Farming Excellence at Himalaya Krishi</image:title>
       <image:caption>Sustainable agriculture practices and modern farming techniques</image:caption>
     </image:image>
@@ -37,7 +37,7 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://krishihimalaya.com/about" />
     <xhtml:link rel="alternate" hreflang="ne" href="https://krishihimalaya.com/ne/about" />
     <image:image>
-      <image:loc>https://krishihimalaya.com/assets/gallary/image1.jpg</image:loc>
+      <image:loc>https://krishihimalaya.com/assets/gallary/gallery-image-010.jpg</image:loc>
       <image:title>About Himalaya Krishi - Our Story</image:title>
       <image:caption>Learn about Nepal's premier organic farming initiative since 2020</image:caption>
     </image:image>
@@ -302,12 +302,12 @@
     <priority>0.5</priority>
     <lastmod>2024-12-31T10:00:00+05:45</lastmod>
     <image:image>
-      <image:loc>https://krishihimalaya.com/assets/gallary/1724651083866.jpg</image:loc>
+      <image:loc>https://krishihimalaya.com/assets/gallary/gallery-image-001.jpg</image:loc>
       <image:title>Himalaya Krishi Farm Gallery</image:title>
       <image:caption>Organic farming practices and sustainable agriculture at Himalaya Krishi</image:caption>
     </image:image>
     <image:image>
-      <image:loc>https://krishihimalaya.com/assets/gallary/image1.jpg</image:loc>
+      <image:loc>https://krishihimalaya.com/assets/gallary/gallery-image-010.jpg</image:loc>
       <image:title>Modern Farming Techniques</image:title>
       <image:caption>Advanced agricultural methods and equipment</image:caption>
     </image:image>
