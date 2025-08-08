@@ -31,7 +31,7 @@ const OptimizedImage = ({
           observerRef.current?.disconnect();
         }
       },
-      { threshold: 0.1, rootMargin: '50px' }
+      { threshold: 0.01, rootMargin: '100px' } // More aggressive loading
     );
 
     if (imgRef.current) {
@@ -58,16 +58,21 @@ const OptimizedImage = ({
   };
 
   const handleError = () => {
-    setHasError(true);
-    setIsLoaded(false);
-    // Add retry mechanism with longer fallback time
+    console.warn(`Failed to load image: ${src}`);
+    // Add retry mechanism with reasonable delay
     if (retryCount < maxRetries) {
       setTimeout(() => {
         setRetryCount(prev => prev + 1);
+        setHasError(false);
         // Attempt to reload image
         const img = imgRef.current;
-        if (img) img.src = src;
-      }, Math.max(20000, 1000 * Math.pow(2, retryCount))); // At least 20 seconds fallback
+        if (img) {
+          img.src = src + '?retry=' + retryCount;
+        }
+      }, 1000 * (retryCount + 1)); // Progressive delay: 1s, 2s, 3s
+    } else {
+      setHasError(true);
+      setIsLoaded(false);
     }
   };
 

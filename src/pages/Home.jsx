@@ -372,7 +372,7 @@ const GallerySection = () => {
                 className="group relative overflow-hidden rounded-lg shadow-lg hover:shadow-2xl transition-all duration-500"
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
+                transition={{ duration: 0.6, delay: Math.min(index * 0.05, 2) }}
                 whileHover={{ y: -10, scale: 1.02 }}
               >
                 <div className="aspect-square overflow-hidden">
@@ -383,6 +383,7 @@ const GallerySection = () => {
                     width={400}
                     height={400}
                     quality={85}
+                    priority={index < 8} // Priority load first 8 images
                   />
                   
                   {/* Overlay */}
@@ -755,10 +756,13 @@ const Home = () => {
               <div className="relative overflow-hidden rounded-2xl shadow-2xl">
                 {/* Placeholder image until video is available */}
                 <div className="relative h-96 bg-gradient-to-br from-green-100 to-green-200 flex items-center justify-center">
-                  <img
+                  <OptimizedImage
                     src="/assets/gallary/WhatsApp Image 2025-08-05 at 10.37.47_8c730d5b.jpg"
                     alt="Asar 15 Farm Experience & Mudfest"
                     className="w-full h-full object-cover"
+                    width={800}
+                    height={400}
+                    priority={false}
                   />
                   <div className="absolute inset-0 bg-black/20 flex items-center justify-center">
                     <div className="text-center text-white">

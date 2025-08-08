@@ -8,9 +8,53 @@
           "value": "public, max-age=31536000, immutable"
         }
       ]
+    },
+    {
+      "source": "/(Classic|ckyfue|trraqe|jddkaa|phtjge)/(.*)",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow"
+        }
+      ]
+    },
+    {
+      "source": "/Ne/(classic|ne/classic)/(.*)",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow"
+        }
+      ]
+    },
+    {
+      "source": "/(Config|gravge|Mobile)/(.*)",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow"
+        }
+      ]
     }
   ],
+
   "rewrites": [
+    {
+      "source": "/(Classic|ckyfue|trraqe|jddkaa|phtjge)/(.*)",
+      "destination": "/api/block-phantom"
+    },
+    {
+      "source": "/Ne/(classic|ne/classic)/(.*)",
+      "destination": "/api/block-phantom"
+    },
+    {
+      "source": "/(Config|gravge|Mobile)/(.*)",
+      "destination": "/api/block-phantom"
+    },
+    {
+      "source": "/m[0-9]+/(.*)",
+      "destination": "/api/block-phantom"
+    },
     {
       "source": "/(.*)",
       "destination": "/index.html"
