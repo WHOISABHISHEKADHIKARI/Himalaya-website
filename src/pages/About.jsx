@@ -806,7 +806,7 @@ const About = () => {
                     <video
                       controls
                       preload="metadata"
-                      poster="/assets/gallary/WhatsApp Image 2025-08-05 at 10.37.47_8c730d5b.jpg"
+                      poster="/assets/gallary/whatsapp-image-2025-08-05-at-10.37.47_8c730d5b.jpg"
                       className="w-full rounded-lg shadow-lg"
                       onLoadStart={() => setIsLoading(true)}
                       onLoadedData={() => setIsLoading(false)}
