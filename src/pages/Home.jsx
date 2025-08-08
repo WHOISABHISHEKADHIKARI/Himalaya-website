@@ -119,10 +119,8 @@ const colors = {
   }
 };
 
-// Gallery Component with delayed loading
+// Gallery Component
 const GallerySection = () => {
-  const [showGallery, setShowGallery] = useState(false);
-
   // Gallery images from public/assets/gallary (corrected directory path)
   const galleryImages = [
     {
@@ -334,56 +332,6 @@ const GallerySection = () => {
       console.error('Download failed:', error);
     }
   };
-
-  // Load gallery with short delay
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setShowGallery(true);
-    }, 1000); // 1 second delay
-
-    return () => clearTimeout(timer);
-  }, []);
-
-  if (!showGallery) {
-    return (
-      <motion.section 
-        className="py-24" 
-        style={{ backgroundColor: colors.light }}
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.8 }}
-      >
-        <div className="container mx-auto px-4">
-          <div className="max-w-6xl mx-auto text-center">
-            <motion.h2 
-              className="text-3xl md:text-5xl font-serif font-bold mb-6" 
-              style={{ color: colors.text.dark }}
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-            >
-              Our Gallery
-            </motion.h2>
-            <div className="w-32 h-1 mx-auto mb-8" style={{ backgroundColor: colors.secondary }}></div>
-            <motion.div 
-              className="flex flex-col items-center gap-4"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.3 }}
-            >
-              <div className="w-12 h-12 border-4 border-[#D8A51D] border-t-transparent rounded-full animate-spin"></div>
-              <p className="text-xl" style={{ color: colors.text.medium }}>
-                Preparing our beautiful gallery for you...
-              </p>
-              <p className="text-sm" style={{ color: colors.text.light }}>
-                Gallery will load shortly
-              </p>
-            </motion.div>
-          </div>
-        </div>
-      </motion.section>
-    );
-  }
 
   return (
     <motion.section 
